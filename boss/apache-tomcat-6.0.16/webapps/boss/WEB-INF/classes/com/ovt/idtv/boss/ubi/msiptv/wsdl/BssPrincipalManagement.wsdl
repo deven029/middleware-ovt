@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IPTV Version='2.0.4005.0' -->
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Liam O'Gorman (Microsoft) -->
+<wsdl:definitions 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+	xmlns:tns="http://www.microsoft.com/iptv/bss" 
+	xmlns:s1="http://microsoft.com/wsdl/types/" 
+	xmlns:s="http://www.w3.org/2001/XMLSchema" 
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	targetNamespace="http://www.microsoft.com/iptv/bss">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/iptv/bss">
+			<s:include schemaLocation="bsstypes.xsd"/>
+			<s:import id="guid" namespace="http://microsoft.com/wsdl/types/" schemaLocation="guid.xsd"/>
+			<s:element name="ReadAccountGroups">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadAccountGroupsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadAccountGroupsResult" type="tns:ArrayOfSubscriberGroup"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDeviceGroups">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Device"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDeviceGroupsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadDeviceGroupsResult" type="tns:ArrayOfSubscriberGroup"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreateAccount">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreateAccountResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="CreateGroup">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="group" type="tns:Group"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CreateGroupResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="DeleteAccount">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteAccountResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="DeleteAllDeviceValues">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteAllDeviceValuesResponse">
+				<s:complexType/>
+			</s:element>
+      <s:element name="DeleteAllAccountValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAllAccountValuesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="DeleteAccountValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAccountValueResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="DeleteDevicePin">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteDevicePinByType">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+						<s:element minOccurs="1" maxOccurs="1" name="type" type="s:short"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteDevicePinByTypeResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="DeleteDevicePinResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="DeleteGroup">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteGroupResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="DeleteUser">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeleteUserResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="ProvisionDevice">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceName" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="accountNativeId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ProvisionDeviceResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="ReadAccount">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadAccountResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadAccountResult" type="tns:ArrayOfAccount"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadAllDeviceValues">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadAllDeviceValuesResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadAllDeviceValuesResult" type="tns:ArrayOfDeviceValue"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+      <s:element name="ReadAllAccountValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadAllAccountValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadAllAccountValuesResult" type="tns:ArrayOfAccountValue"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDevice">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalID" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDeviceByGuid">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceID" type="s1:guid"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDevicePins">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDevicePinsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadDevicePinsResult" type="tns:ArrayOfPinInfo"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDeviceResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadDeviceResult" type="tns:ArrayOfDevice"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadDeviceByGuidResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadDeviceByGuidResult" type="tns:Device"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadForbiddenPins">
+				<s:complexType/>
+			</s:element>
+			<s:element name="ReadForbiddenPinsResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadForbiddenPinsResult" type="tns:ArrayOfString"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadGroup">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="externalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadGroupResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadGroupResult" type="tns:ArrayOfGroup"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadUser">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ReadUserResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="ReadUserResult" type="tns:ArrayOfUser"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ResetDevicePinByType">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+						<s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string"/>
+						<s:element minOccurs="1" maxOccurs="1" name="type" type="s:short"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="ResetDevicePinByTypeResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="ResetDevicePinByTypeResult" type="tns:PinStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountCreditLimit">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountCreditLimitResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateAccountDevices">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+						<s:element minOccurs="1" maxOccurs="1" name="remove" type="s:boolean"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountDevicesResponse">
+				<s:complexType/>
+			</s:element>
+      <s:element name="UpdateAccountDVRStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountDVRStatusResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateAccountRecordingDeviceId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountRecordingDeviceIdResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateAccountExternalId">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="oldAccountExternalId" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="newAccountExternalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountExternalIdResponse">
+				<s:complexType/>
+			</s:element>
+			
+			<s:element name="UpdateAccountHDStreams">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountHDStreamsResponse">
+				<s:complexType/>
+			</s:element>
+
+			<s:element name="UpdateAccountStreamAllocations">
+				<s:complexType>
+					<s:sequence>
+            			<s:element minOccurs="1" maxOccurs="1" name="accountExternalIds" type="tns:ArrayOfString"/>
+						<s:element minOccurs="1" maxOccurs="1" name="streamAllocation" type="tns:StreamAllocation"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountStreamAllocationsResponse">
+				<s:complexType/>
+			</s:element>			
+			
+			<s:element name="UpdateAccountPin">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountPinResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateAccountSDStreams">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountSDStreamsResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateAccountStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountStatusResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateAccountTimeZone">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountTimeZoneResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateAccountUsers">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="account" type="tns:Account"/>
+						<s:element minOccurs="1" maxOccurs="1" name="remove" type="s:boolean"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateAccountUsersResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateDeviceExternalId">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="oldDeviceExternalId" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="newDeviceExternalId" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDeviceExternalIdResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateDevicePin">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="device" type="tns:Device"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDevicePinByType">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="deviceId" type="s1:guid"/>
+						<s:element minOccurs="0" maxOccurs="1" name="oldPin" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="newPin" type="s:string"/>
+						<s:element minOccurs="1" maxOccurs="1" name="type" type="s:short"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDevicePinByTypeResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="1" maxOccurs="1" name="UpdateDevicePinByTypeResult" type="tns:PinStatus"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDevicePinResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateDeviceStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="device" type="tns:Device"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDeviceStatusResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateDeviceValues">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalID" type="s:string"/>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceValues" type="tns:ArrayOfDeviceValue"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+      <s:element name="UpdateDeviceValuesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateDeviceValuesAndNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceExternalID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceValues" type="tns:ArrayOfDeviceValue"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDeviceValuesAndNotifyResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateAccountValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="accountValues" type="tns:ArrayOfAccountValue"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountValuesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="DeleteAccountValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="accountValues" type="tns:ArrayOfAccountValue"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAccountValuesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="UpdateAccountValuesAndNotify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountExternalID" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="accountValues" type="tns:ArrayOfAccountValue"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAccountValuesAndNotifyResponse">
+        <s:complexType/>
+      </s:element>
+			<s:element name="UpdateDeviceVersion">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="device" type="tns:Device"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateDeviceVersionResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateEnableDateForAllPins">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalId" type="s:string"/>
+						<s:element minOccurs="1" maxOccurs="1" name="enableDate" type="s:dateTime"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateEnableDateForAllPinsResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateEnableDateForPinByType">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="deviceExternalId" type="s:string"/>
+						<s:element minOccurs="1" maxOccurs="1" name="type" type="s:short"/>
+						<s:element minOccurs="1" maxOccurs="1" name="enableDate" type="s:dateTime"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateEnableDateForPinByTypeResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateForbiddenPins">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="pins" type="tns:ArrayOfString"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateForbiddenPinsResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateGroupPrincipals">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="group" type="tns:Group"/>
+						<s:element minOccurs="1" maxOccurs="1" name="remove" type="s:boolean"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateGroupPrincipalsResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateGroupStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="group" type="tns:Group"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateGroupStatusResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateGroupType">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="group" type="tns:Group"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateGroupTypeResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateUserPin">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateUserPinResponse">
+				<s:complexType/>
+			</s:element>
+			<s:element name="UpdateUserStatus">
+				<s:complexType>
+					<s:sequence>
+						<s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="UpdateUserStatusResponse">
+				<s:complexType/>
+			</s:element>
+      <s:element name="SetGlobalDeviceValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="key" type="tns:ClientSettingKey" />
+            <s:element minOccurs="0" maxOccurs="1" name="val" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ClientSettingKey">
+        <s:restriction base="s:string">
+          <s:enumeration value="AdultPinRetryLimit" />
+          <s:enumeration value="AdultPinRetryTimeoutMinutes" />
+          <s:enumeration value="AdultRatingLocked" />
+          <s:enumeration value="AdultUnlockPeriodInMinutes" />
+          <s:enumeration value="AppHelpURL" />
+          <s:enumeration value="AppKeyURL1" />
+          <s:enumeration value="AppKeyURL2" />
+          <s:enumeration value="AppKeyURL3" />
+					<s:enumeration value="AppKeyURL4" />
+					<s:enumeration value="AppKeyURL5" />
+					<s:enumeration value="AppKeyURL6" />
+					<s:enumeration value="CGMSA_CopyFreely_Buffering" />
+          <s:enumeration value="CGMSA_CopyFreely_Recording" />
+          <s:enumeration value="CGMSA_CopyNever_Buffering" />
+          <s:enumeration value="CGMSA_CopyNever_Recording" />
+          <s:enumeration value="CGMSA_CopyOnce_Buffering" />
+          <s:enumeration value="CGMSA_CopyOnce_Recording" />
+          <s:enumeration value="ClientMenus" />
+          <s:enumeration value="CreditLimitChangeApp" />
+          <s:enumeration value="CustomStrings" />
+          <s:enumeration value="DetuneTimeoutHours" />
+          <s:enumeration value="DisabledEventIds" />
+          <s:enumeration value="DisableICC" />
+          <s:enumeration value="DvrSkip" />
+          <s:enumeration value="EITCountryCode" />
+          <s:enumeration value="EITRatingSystem" />
+          <s:enumeration value="EnabledPinTypes" />
+          <s:enumeration value="EventQueueSize" />
+          <s:enumeration value="EventUploadHours" />
+          <s:enumeration value="ExposedUserStoreKeys" />
+          <s:enumeration value="FIPS" />
+          <s:enumeration value="HideNoRightsChannels" />
+          <s:enumeration value="ParentalControlState" />
+          <s:enumeration value="PauseBufferLength" />
+          <s:enumeration value="PConUnlockPeriodInMinutes" />
+          <s:enumeration value="PinRetryLimit" />
+          <s:enumeration value="PinRetryTimeoutMinutes" />
+          <s:enumeration value="PurchasePinRetryLimit" />
+          <s:enumeration value="PurchasePinRetryTimeoutMinutes" />
+          <s:enumeration value="RelockOnChannelChange" />
+          <s:enumeration value="RequirePinToRecordBlockedShows" />
+          <s:enumeration value="ScreenSaverTimeoutMinutes" />
+          <s:enumeration value="SecondsToBlockDescriptionRequests" />
+          <s:enumeration value="UniverseDefinition" />
+          <s:enumeration value="AvailableUniverses" />
+          <s:enumeration value="ActiveUniverse" />
+          <s:enumeration value="CanDetuneOnAlert" />
+          <s:enumeration value="EAS911MediaDescriptor" />
+          <s:enumeration value="ShowAlertConfirmDialog" />
+          <s:enumeration value="AlertToneDuration" />
+          <s:enumeration value="PremiumServiceOverride" />
+          <s:enumeration value="LiveServiceOverrideDefault" />
+          <s:enumeration value="DevicePinSize" />
+          <s:enumeration value="SendServerSessionId" />
+          <s:enumeration value="SslKeyPairAndCert" />
+          <s:enumeration value="SslTrustedRootCerts" />
+          <s:enumeration value="SslIntermediateCerts" />
+          <s:enumeration value="ServerChannelsMappedFirst" />
+          <s:enumeration value="TuneEvtLogSeconds" />
+          <s:enumeration value="UseMappedServerChannelsOnly" />
+          <s:enumeration value="DvrNotificationDelay" />
+          <s:enumeration value="AllowChannelReordering" />
+          <s:enumeration value="VodBlockSizeKB" />
+          <s:enumeration value="VodMaxReadSizeKB" />
+          <s:enumeration value="VodInitialMinDataRateKbs" />
+          <s:enumeration value="VodMaxSessionCount" />
+          <s:enumeration value="IndividualFuzz" />
+          <s:enumeration value="IndividualFudge" />
+          <s:enumeration value="IndividualFloor" />
+          <s:enumeration value="IndividualMCT" />
+          <s:enumeration value="IndividualDCT" />
+          <s:enumeration value="LiveServicesEnabled" />
+          <s:enumeration value="WebProxyConfiguration" />
+          <s:enumeration value="NavigationTargetMappingFile" />
+          <s:enumeration value="IngressProfile" />
+          <s:enumeration value="EgressProfile" />
+          <s:enumeration value="EITRatingSystem_Name" />
+          <s:enumeration value="EnableEPGPhase2Guide" />
+          <s:enumeration value="GuideBrowseBarMinimumHours" />
+          <s:enumeration value="GuideCurrentWindowMinimumHours" />
+          <s:enumeration value="GuideDataStoreFileCount" />
+          <s:enumeration value="GuideDataStoreFileMinimumSize" />
+          <s:enumeration value="GuideDataStoreMaxSize" />
+          <s:enumeration value="GuideDataStoreName" />
+          <s:enumeration value="GuideDisplayReserve" />
+          <s:enumeration value="GuideEnableServerPolling" />
+          <s:enumeration value="GuideFailureRetrySpanSeconds" />
+          <s:enumeration value="GuideFailureRetryStartSeconds" />
+          <s:enumeration value="GuideFutureWindowMinimumHours" />
+          <s:enumeration value="GuideIISDownloadBlockSize" />
+          <s:enumeration value="GuideIISDownloadSleepTimeMS" />
+          <s:enumeration value="GuideMinimumRequiredListingsHours" />
+          <s:enumeration value="GuideNumFutureWindows" />
+          <s:enumeration value="GuideNumFutureWindows_Channel" />
+          <s:enumeration value="GuideStationsPerRequest_Current" />
+          <s:enumeration value="GuideStationsPerRequest_Future" />
+          <s:enumeration value="GuideStationsPerRequest_MD" />
+          <s:enumeration value="GuideUpdateSpreadSeconds" />
+          <s:enumeration value="GuideWindowSizeHours_Current" />
+          <s:enumeration value="GuideWindowSizeHours_Future" />
+          <s:enumeration value="ActivityLoggingEnabled" />
+          <s:enumeration value="TriggerSet" />
+          <s:enumeration value="ClientStore" />
+          <s:enumeration value="LastVolume" />
+          <s:enumeration value="DownloadAndPlayQueueUpdateIntervalMinutes" />
+          <s:enumeration value="EnableSeriesPriority" />
+          <s:enumeration value="MapFeatures" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SetGlobalDeviceValuesResponse">
+        <s:complexType/>
+      </s:element>
+      <s:element name="GetGlobalDeviceValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="key" type="tns:ClientSettingKey" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalDeviceValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlobalDeviceValuesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+	</s:schema>
+	</wsdl:types>
+	<wsdl:message name="CreateGroupSoapIn">
+		<wsdl:part name="parameters" element="tns:CreateGroup"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGroupSoapOut">
+		<wsdl:part name="parameters" element="tns:CreateGroupResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGroupSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteGroup"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGroupSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteGroupResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadGroupSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadGroup"/>
+	</wsdl:message>
+	<wsdl:message name="ReadGroupSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadGroupResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupStatusSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateGroupStatus"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupStatusSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateGroupStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupTypeSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateGroupType"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupTypeSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateGroupTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupPrincipalsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateGroupPrincipals"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGroupPrincipalsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateGroupPrincipalsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDeviceGroupsSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadDeviceGroups"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDeviceGroupsSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadDeviceGroupsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAccountGroupsSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadAccountGroups"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAccountGroupsSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadAccountGroupsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAccountSoapIn">
+		<wsdl:part name="parameters" element="tns:CreateAccount"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAccountSoapOut">
+		<wsdl:part name="parameters" element="tns:CreateAccountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAccountSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteAccount"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAccountSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteAccountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAccountSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadAccount"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAccountSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadAccountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountDevicesSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountDevices"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountDevicesSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountDevicesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountUsersSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountUsers"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountUsersSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountUsersResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountStatusSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountStatus"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountStatusSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountPinSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountPin"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountPinSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountPinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountCreditLimitSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountCreditLimit"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountCreditLimitSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountCreditLimitResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountTimeZoneSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountTimeZone"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountTimeZoneSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountTimeZoneResponse"/>
+	</wsdl:message>
+  <wsdl:message name="UpdateAccountDVRStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountDVRStatus"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountDVRStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountDVRStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRecordingDeviceIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountRecordingDeviceId"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRecordingDeviceIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountRecordingDeviceIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountHDStreamsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountHDStreams"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountHDStreamsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountHDStreamsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountStreamAllocationsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountStreamAllocations"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountStreamAllocationsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountStreamAllocationsResponse"/>
+	</wsdl:message>
+	
+	<wsdl:message name="UpdateAccountSDStreamsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountSDStreams"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountSDStreamsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountSDStreamsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountExternalIdSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateAccountExternalId"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateAccountExternalIdSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateAccountExternalIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ProvisionDeviceSoapIn">
+		<wsdl:part name="parameters" element="tns:ProvisionDevice"/>
+	</wsdl:message>
+	<wsdl:message name="ProvisionDeviceSoapOut">
+		<wsdl:part name="parameters" element="tns:ProvisionDeviceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUserSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteUser"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUserSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteUserResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadUserSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadUser"/>
+	</wsdl:message>
+	<wsdl:message name="ReadUserSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadUserResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateUserPinSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateUserPin"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateUserPinSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateUserPinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateUserStatusSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateUserStatus"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateUserStatusSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateUserStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceStatusSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceStatus"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceStatusSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceStatusResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceExternalIdSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceExternalId"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceExternalIdSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceExternalIdResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDevicePinSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDevicePin"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDevicePinSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDevicePinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDevicePinByTypeSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDevicePinByType"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDevicePinByTypeSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDevicePinByTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDevicePinByTypeSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteDevicePinByType"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDevicePinByTypeSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteDevicePinByTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDevicePinSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteDevicePin"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDevicePinSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteDevicePinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateForbiddenPinsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateForbiddenPins"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateForbiddenPinsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateForbiddenPinsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDevicePinsSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadDevicePins"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDevicePinsSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadDevicePinsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadForbiddenPinsSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadForbiddenPins"/>
+	</wsdl:message>
+	<wsdl:message name="ReadForbiddenPinsSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadForbiddenPinsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ResetDevicePinByTypeSoapIn">
+		<wsdl:part name="parameters" element="tns:ResetDevicePinByType"/>
+	</wsdl:message>
+	<wsdl:message name="ResetDevicePinByTypeSoapOut">
+		<wsdl:part name="parameters" element="tns:ResetDevicePinByTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceVersionSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceVersion"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceVersionSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceVersionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAllDeviceValuesSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadAllDeviceValues"/>
+	</wsdl:message>
+	<wsdl:message name="ReadAllDeviceValuesSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadAllDeviceValuesResponse"/>
+	</wsdl:message>
+  <wsdl:message name="ReadAllAccountValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadAllAccountValues"/>
+  </wsdl:message>
+  <wsdl:message name="ReadAllAccountValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadAllAccountValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAllDeviceValuesSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteAllDeviceValues"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAllDeviceValuesSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteAllDeviceValuesResponse"/>
+	</wsdl:message>
+  <wsdl:message name="DeleteAllAccountValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAllAccountValues"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAllAccountValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAllAccountValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAccountValue"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAccountValueResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDeviceValuesSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceValues"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceValuesSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceValuesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceValuesAndNotifySoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceValuesAndNotify"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateDeviceValuesAndNotifySoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateDeviceValuesAndNotifyResponse"/>
+	</wsdl:message>
+  <wsdl:message name="UpdateAccountValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountValues"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAccountValues"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAccountValuesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountValuesAndNotifySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAccountValuesAndNotify"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountValuesAndNotifySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAccountValuesAndNotifyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="SetGlobalDeviceValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGlobalDeviceValues" />
+  </wsdl:message>
+  <wsdl:message name="SetGlobalDeviceValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGlobalDeviceValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalDeviceValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalDeviceValues" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalDeviceValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalDeviceValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadDeviceSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadDevice"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDeviceSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadDeviceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDeviceByGuidSoapIn">
+		<wsdl:part name="parameters" element="tns:ReadDeviceByGuid"/>
+	</wsdl:message>
+	<wsdl:message name="ReadDeviceByGuidSoapOut">
+		<wsdl:part name="parameters" element="tns:ReadDeviceByGuidResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEnableDateForAllPinsSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateEnableDateForAllPins"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEnableDateForAllPinsSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateEnableDateForAllPinsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEnableDateForPinByTypeSoapIn">
+		<wsdl:part name="parameters" element="tns:UpdateEnableDateForPinByType"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateEnableDateForPinByTypeSoapOut">
+		<wsdl:part name="parameters" element="tns:UpdateEnableDateForPinByTypeResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="PrincipalManagementSoap">
+		<wsdl:operation name="CreateGroup">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates Subscriber group</wsdl:documentation>
+			<wsdl:input message="tns:CreateGroupSoapIn"/>
+			<wsdl:output message="tns:CreateGroupSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGroup">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes the Subscriber Group</wsdl:documentation>
+			<wsdl:input message="tns:DeleteGroupSoapIn"/>
+			<wsdl:output message="tns:DeleteGroupSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadGroup">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Subscriber group details</wsdl:documentation>
+			<wsdl:input message="tns:ReadGroupSoapIn"/>
+			<wsdl:output message="tns:ReadGroupSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupStatus">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update subscriber group status</wsdl:documentation>
+			<wsdl:input message="tns:UpdateGroupStatusSoapIn"/>
+			<wsdl:output message="tns:UpdateGroupStatusSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupType">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update subscriber group type</wsdl:documentation>
+			<wsdl:input message="tns:UpdateGroupTypeSoapIn"/>
+			<wsdl:output message="tns:UpdateGroupTypeSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupPrincipals">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the subscriber group principals</wsdl:documentation>
+			<wsdl:input message="tns:UpdateGroupPrincipalsSoapIn"/>
+			<wsdl:output message="tns:UpdateGroupPrincipalsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDeviceGroups">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read Device Subscriber Groups List</wsdl:documentation>
+			<wsdl:input message="tns:ReadDeviceGroupsSoapIn"/>
+			<wsdl:output message="tns:ReadDeviceGroupsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAccountGroups">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read Account Subscriber Groups List</wsdl:documentation>
+			<wsdl:input message="tns:ReadAccountGroupsSoapIn"/>
+			<wsdl:output message="tns:ReadAccountGroupsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAccount">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates Account</wsdl:documentation>
+			<wsdl:input message="tns:CreateAccountSoapIn"/>
+			<wsdl:output message="tns:CreateAccountSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAccount">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes the Account</wsdl:documentation>
+			<wsdl:input message="tns:DeleteAccountSoapIn"/>
+			<wsdl:output message="tns:DeleteAccountSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAccount">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Subscriber group details</wsdl:documentation>
+			<wsdl:input message="tns:ReadAccountSoapIn"/>
+			<wsdl:output message="tns:ReadAccountSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountDevices">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account Devices</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountDevicesSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountDevicesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountUsers">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account users</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountUsersSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountUsersSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountStatus">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account Status</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountStatusSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountStatusSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountPin">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account Pin</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountPinSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountPinSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountCreditLimit">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account CreditLimit</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountCreditLimitSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountCreditLimitSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountTimeZone">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account TimeZone</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountTimeZoneSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountTimeZoneSoapOut"/>
+		</wsdl:operation>
+    <wsdl:operation name="UpdateAccountDVRStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account DVRStatus</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAccountDVRStatusSoapIn"/>
+      <wsdl:output message="tns:UpdateAccountDVRStatusSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountRecordingDeviceId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account RecordingDeviceId</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAccountRecordingDeviceIdSoapIn"/>
+      <wsdl:output message="tns:UpdateAccountRecordingDeviceIdSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountStreamAllocations">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account Streams with a StreamAllocation ojbect</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountStreamAllocationsSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountStreamAllocationsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountHDStreams">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account HDStreams</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountHDStreamsSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountHDStreamsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountSDStreams">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account SDStreams</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountSDStreamsSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountSDStreamsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountExternalId">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Account ExternalId</wsdl:documentation>
+			<wsdl:input message="tns:UpdateAccountExternalIdSoapIn"/>
+			<wsdl:output message="tns:UpdateAccountExternalIdSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ProvisionDevice">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Provision an device</wsdl:documentation>
+			<wsdl:input message="tns:ProvisionDeviceSoapIn"/>
+			<wsdl:output message="tns:ProvisionDeviceSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUser">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes the user</wsdl:documentation>
+			<wsdl:input message="tns:DeleteUserSoapIn"/>
+			<wsdl:output message="tns:DeleteUserSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadUser">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the user details</wsdl:documentation>
+			<wsdl:input message="tns:ReadUserSoapIn"/>
+			<wsdl:output message="tns:ReadUserSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateUserPin">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the User Pin</wsdl:documentation>
+			<wsdl:input message="tns:UpdateUserPinSoapIn"/>
+			<wsdl:output message="tns:UpdateUserPinSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateUserStatus">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the User Status</wsdl:documentation>
+			<wsdl:input message="tns:UpdateUserStatusSoapIn"/>
+			<wsdl:output message="tns:UpdateUserStatusSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceStatus">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Device Status</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDeviceStatusSoapIn"/>
+			<wsdl:output message="tns:UpdateDeviceStatusSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceExternalId">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Device ExternalId</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDeviceExternalIdSoapIn"/>
+			<wsdl:output message="tns:UpdateDeviceExternalIdSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDevicePin">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Device PIN</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDevicePinSoapIn"/>
+			<wsdl:output message="tns:UpdateDevicePinSoapOut"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="UpdateDevicePinByType">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Device PIN by type</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDevicePinByTypeSoapIn"/>
+			<wsdl:output message="tns:UpdateDevicePinByTypeSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDevicePinByType">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the device Pin by type.</wsdl:documentation>
+			<wsdl:input message="tns:DeleteDevicePinByTypeSoapIn"/>
+			<wsdl:output message="tns:DeleteDevicePinByTypeSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDevicePin">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete the device Pin(all types).</wsdl:documentation>
+			<wsdl:input message="tns:DeleteDevicePinSoapIn"/>
+			<wsdl:output message="tns:DeleteDevicePinSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateForbiddenPins">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Forbidden pin list</wsdl:documentation>
+			<wsdl:input message="tns:UpdateForbiddenPinsSoapIn"/>
+			<wsdl:output message="tns:UpdateForbiddenPinsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDevicePins">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Device Pins .</wsdl:documentation>
+			<wsdl:input message="tns:ReadDevicePinsSoapIn"/>
+			<wsdl:output message="tns:ReadDevicePinsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadForbiddenPins">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get ForbiddenPins.</wsdl:documentation>
+			<wsdl:input message="tns:ReadForbiddenPinsSoapIn"/>
+			<wsdl:output message="tns:ReadForbiddenPinsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ResetDevicePinByType">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Reset the device Pin by type.</wsdl:documentation>
+			<wsdl:input message="tns:ResetDevicePinByTypeSoapIn"/>
+			<wsdl:output message="tns:ResetDevicePinByTypeSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceVersion">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update the Device Binary Version</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDeviceVersionSoapIn"/>
+			<wsdl:output message="tns:UpdateDeviceVersionSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAllDeviceValues">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read All Device Values from the User Store</wsdl:documentation>
+			<wsdl:input message="tns:ReadAllDeviceValuesSoapIn"/>
+			<wsdl:output message="tns:ReadAllDeviceValuesSoapOut"/>
+		</wsdl:operation>
+    <wsdl:operation name="ReadAllAccountValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Read All Account Values from the User Store</wsdl:documentation>
+      <wsdl:input message="tns:ReadAllAccountValuesSoapIn"/>
+      <wsdl:output message="tns:ReadAllAccountValuesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllDeviceValues">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete All Device Values from the User Store</wsdl:documentation>
+			<wsdl:input message="tns:DeleteAllDeviceValuesSoapIn"/>
+			<wsdl:output message="tns:DeleteAllDeviceValuesSoapOut"/>
+		</wsdl:operation>
+    <wsdl:operation name="DeleteAllAccountValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete All Account Values from the User Store</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAllAccountValuesSoapIn"/>
+      <wsdl:output message="tns:DeleteAllAccountValuesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete given Account Value from the User Store</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAccountValueSoapIn"/>
+      <wsdl:output message="tns:DeleteAccountValueSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceValues">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete All Device Values from the User Store</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDeviceValuesSoapIn"/>
+			<wsdl:output message="tns:UpdateDeviceValuesSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceValuesAndNotify">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update All Device Values from the User Store and Notify</wsdl:documentation>
+			<wsdl:input message="tns:UpdateDeviceValuesAndNotifySoapIn"/>
+			<wsdl:output message="tns:UpdateDeviceValuesAndNotifySoapOut"/>
+		</wsdl:operation>
+    <wsdl:operation name="UpdateAccountValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Account Values from the User Store</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAccountValuesSoapIn"/>
+      <wsdl:output message="tns:UpdateAccountValuesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Delete Account Values from the User Store</wsdl:documentation>
+      <wsdl:input message="tns:DeleteAccountValuesSoapIn"/>
+      <wsdl:output message="tns:DeleteAccountValuesSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountValuesAndNotify">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update All Account Values from the User Store and Notify</wsdl:documentation>
+      <wsdl:input message="tns:UpdateAccountValuesAndNotifySoapIn"/>
+      <wsdl:output message="tns:UpdateAccountValuesAndNotifySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalDeviceValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Set The Global Setting of a Key to val</wsdl:documentation>
+      <wsdl:input message="tns:SetGlobalDeviceValuesSoapIn" />
+      <wsdl:output message="tns:SetGlobalDeviceValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalDeviceValues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the Value of a Key within GlobalDeviceValues</wsdl:documentation>
+      <wsdl:input message="tns:GetGlobalDeviceValuesSoapIn" />
+      <wsdl:output message="tns:GetGlobalDeviceValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDevice">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the device details</wsdl:documentation>
+			<wsdl:input message="tns:ReadDeviceSoapIn"/>
+			<wsdl:output message="tns:ReadDeviceSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDeviceByGuid">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get the device details by Guid</wsdl:documentation>
+			<wsdl:input message="tns:ReadDeviceByGuidSoapIn"/>
+			<wsdl:output message="tns:ReadDeviceByGuidSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEnableDateForAllPins">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">update the enable date for enable/disable the device pin</wsdl:documentation>
+			<wsdl:input message="tns:UpdateEnableDateForAllPinsSoapIn"/>
+			<wsdl:output message="tns:UpdateEnableDateForAllPinsSoapOut"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEnableDateForPinByType">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">update the enable date for enable/disable the device pin by type</wsdl:documentation>
+			<wsdl:input message="tns:UpdateEnableDateForPinByTypeSoapIn"/>
+			<wsdl:output message="tns:UpdateEnableDateForPinByTypeSoapOut"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="PrincipalManagementSoap" type="tns:PrincipalManagementSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateGroup">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/CreateGroup" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGroup">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteGroup" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadGroup">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadGroup" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupStatus">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateGroupStatus" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupType">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateGroupType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGroupPrincipals">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateGroupPrincipals" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDeviceGroups">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadDeviceGroups" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAccountGroups">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadAccountGroups" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAccount">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/CreateAccount" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAccount">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteAccount" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAccount">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadAccount" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountDevices">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountDevices" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountUsers">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountUsers" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountStatus">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountStatus" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountPin">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountPin" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountCreditLimit">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountCreditLimit" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountTimeZone">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountTimeZone" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+    <wsdl:operation name="UpdateAccountDVRStatus">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountDVRStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountRecordingDeviceId">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountRecordingDeviceId" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="UpdateAccountStreamAllocations">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountStreamAllocations" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdateAccountHDStreams">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountHDStreams" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountSDStreams">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountSDStreams" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateAccountExternalId">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountExternalId" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ProvisionDevice">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ProvisionDevice" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUser">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteUser" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadUser">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadUser" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateUserPin">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateUserPin" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateUserStatus">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateUserStatus" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceStatus">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDeviceStatus" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceExternalId">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDeviceExternalId" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDevicePin">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDevicePin" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="UpdateDevicePinByType">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDevicePinByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDevicePinByType">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteDevicePinByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDevicePin">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteDevicePin" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateForbiddenPins">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateForbiddenPins" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDevicePins">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadDevicePins" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadForbiddenPins">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadForbiddenPins" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ResetDevicePinByType">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ResetDevicePinByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceVersion">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDeviceVersion" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadAllDeviceValues">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadAllDeviceValues" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+    <wsdl:operation name="ReadAllAccountValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadAllAccountValues" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllDeviceValues">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteAllDeviceValues" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+    <wsdl:operation name="DeleteAllAccountValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteAllAccountValues" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountValue">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteAccountValue" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeviceValues">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDeviceValues" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateDeviceValuesAndNotify">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateDeviceValuesAndNotify" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+    <wsdl:operation name="UpdateAccountValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountValues" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccountValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeleteAccountValues" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccountValuesAndNotify">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateAccountValuesAndNotify" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalDeviceValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/SetGlobalDeviceValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalDeviceValues">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/GetGlobalDeviceValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDevice">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadDevice" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReadDeviceByGuid">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/ReadDeviceByGuid" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEnableDateForAllPins">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateEnableDateForAllPins" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateEnableDateForPinByType">
+			<soap:operation soapAction="http://www.microsoft.com/iptv/bss/UpdateEnableDateForPinByType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="PrincipalManagement">
+		<wsdl:port name="PrincipalManagementSoap" binding="tns:PrincipalManagementSoap">
+			<soap:address location="http://localhost/bss/PrincipalManagement.asmx"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

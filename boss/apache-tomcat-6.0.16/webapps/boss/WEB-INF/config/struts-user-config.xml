@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="userInfoActionForm" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserInfoActionForm" />
+		<form-bean name="corpUserActionForm" type="com.ovt.idtv.boss.web.user.corpUser.struts.CorpUserActionForm" />
+		<form-bean name="userGroupForm" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserGroupForm" />
+		<form-bean name="userAccountForm" type="com.ovt.idtv.boss.web.user.userAccount.struts.UserAccountActionForm" />
+		<form-bean name="updateRightsForm" type="com.ovt.idtv.boss.web.batch.updaterights.struts.UpdateRightsForm" />
+		<form-bean name="userOrderPermitForm" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserOrderPermitForm" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action path="/jsp/boss/customer/register/*" type="com.ovt.idtv.boss.web.customer.CustomerServiceAction"  scope="request" parameter="{1}">
+			<forward name="customer.register" path="/boss/customer/register.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/customer/baseBusiness/*" type="com.ovt.idtv.boss.web.customer.BaseBusinessAction"  scope="request" parameter="{1}">
+			<forward name="customer.baseBusiness.search" path="/boss/customer/search.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/customer/productBusiness/*" type="com.ovt.idtv.boss.web.customer.ProductBusinessAction"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/customer/equService/*" type="com.ovt.idtv.boss.web.customer.EquServiceAction"  scope="request" parameter="{1}">
+		</action>
+		<!-- add by jhg -->
+		<action path="/jsp/boss/customer/bwService/*" type="com.ovt.idtv.boss.web.customer.BwAccountServiceAction"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/customer/invoiceBusiness/*" type="com.ovt.idtv.boss.web.customer.InvoiceBusinessAction"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/customer/receiptBusiness/*" type="com.ovt.idtv.boss.web.customer.ReceiptBusinessAction"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/customer/verifyAccount/verifyAccountAction" type="com.ovt.idtv.boss.web.customer.verifyAccount.VerifyAccountAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/customer/verifyAccount/verifyAccountAction.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 
+		<action name="userInfoActionForm" path="/jsp/boss/user/userInfo" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserInfoAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="equInfo" path="/jsp/boss/user/userInfo/equInfo.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/jsp/boss/user/userInfo.do?methodToCall=openQuery"></forward>
+			<forward name="chooseUserSuccess" path="/jsp/boss/user/corpUser.do?methodToCall=openQuery"></forward>
+			<forward name="corpUser" path="/jsp/boss/user/corpUser.do?methodToCall=openQuery"></forward>
+			<forward name="userInfo" path="/boss/user/userInfo/info.jsp"></forward>
+			<forward name="confirmSuccess" path="/boss/user/userInfo/infoWithRefresh.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/user/shortUserInfo" type="com.ovt.idtv.boss.web.user.userInfo.struts.ShortUserInfoAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="confirmSuccess" path="/boss/user/userInfo/infoWithRefresh.jsp"></forward>
+		</action>
+		<action name="userGroupForm" path="/jsp/boss/user/userGroup" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserGroupAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/user/userGroup.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/jsp/boss/user/userGroup.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+			<forward name="userGroup.submit.success" path="/jsp/boss/user/userGroup.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+		</action>
+		<action name="corpUserActionForm" path="/jsp/boss/user/corpUser" type="com.ovt.idtv.boss.web.user.corpUser.struts.CorpUserAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/corpUser.do?methodToCall=openQuery"></forward>
+			<forward name="userInfo" path="/jsp/boss/user/userInfo.do?methodToCall=openQuery"></forward>
+		</action>
+		<action path="/jsp/boss/user/userInfo/equInfo" type="com.ovt.idtv.boss.web.user.userInfo.equ.struts.EquInfoAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="userInfo" path="/jsp/boss/user/userInfo.do?methodToCall=openQuery"></forward>
+			<forward name="equCardUnbind" path="/boss/user/userInfo/equCardUnbind.jsp"></forward>
+			<forward name="equCardBind" path="/boss/user/userInfo/equCardBind.jsp"></forward>
+			<forward name="mainChildCardBind" path="/boss/user/userInfo/mainChildCardBind.jsp"></forward>
+			<forward name="mainChildCardUnbind" path="/boss/user/userInfo/mainChildCardUnbind.jsp"></forward>
+			<forward name="equInfo" path="/boss/user/userInfo/info.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/user/userInfo/equEncode" type="com.ovt.idtv.boss.web.user.userInfo.equ.struts.EquEncodeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="success" path="/boss/user/userInfo/infoWithRefresh.jsp"></forward>
+		</action>
+		<action name="userAccountForm" path="/jsp/boss/user/userAccount" type="com.ovt.idtv.boss.web.user.userAccount.struts.UserAccountAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/userAccount.do?methodToCall=openQuery"/>
+		</action>/boss/customer/register.jsp
+		<action path="/jsp/boss/user/userAccountHis" type="com.ovt.idtv.boss.web.user.userAccountHis.struts.UserAccountHisAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/userAccountHis.do?methodToCall=openQuery"/>
+		</action>/jsp/boss/customer/register/
+		 -->
+		<action name="updateRightsForm" path="/jsp/boss/customer/batchUpdateRights/updateRights" type="com.ovt.idtv.boss.web.batch.updaterights.struts.BatchUpdateRightsAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall"  scope="request">
+			<forward name="initdata.success" path="/boss/customer/batchUpdateRights.jsp"></forward>
+			<forward name="updateRights.success" path="/boss/customer/monitorUpdateRightsStatus.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/customer/userDInfoSearch" type="com.ovt.idtv.boss.web.user.userInfoM.struts.UserDInfoSearchAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		
+		<!-- 用户组管理  2012-5-7 ysm -->	
+		<action name="userGroupForm" path="/jsp/boss/user/userGroup" type="com.ovt.idtv.boss.web.user.userInfo.struts.UserGroupAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/userGroup.do?methodToCall=openQuery"/>
+			<forward name="select.success" path="/jsp/boss/user/userGroup.do?methodToCall=openQuery"></forward>
+			<forward name="select.service.success" path="/jsp/boss/user/service.do?methodToCall=openQuery"></forward>
+			<forward name="servtype.submit.success" path="/jsp/boss/user/ServType.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="servtype.delete.success" path="/jsp/boss/user/ServType.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="select.option" path="/boss/user/userInfo/chooseServTypeOrService.jsp"></forward>
+			<forward name="groupMember" path="/jsp/boss/user/groupMember.do?methodToCall=openQuery"/>
+			<forward name="updateRights.success" path="/boss/user/monitorUpdateDeleteStatus.jsp"></forward>
+			<forward name="userGroupStrategy.success" path="/boss/user/UserGroupStrategy.jsp"></forward>
+			<forward name="userGroup.strategy.success" path="/boss/user/UserGroupStrategy.jsp"></forward>
+			
+		</action>
+		<!--	用户组对应组成员管理 20120522 ysm	-->
+		<action name="groupMemberForm" path="/jsp/boss/user/groupMember" type="com.ovt.idtv.boss.web.user.groupMember.struts.GroupMemberAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			
+			<forward name="select.success" path="/jsp/boss/user/groupMember.do?methodToCall=openQuery"></forward>
+			<forward name="select.service.success" path="/jsp/boss/user/service.do?methodToCall=openQuery"></forward>
+			<forward name="servtype.submit.success" path="/jsp/boss/user/ervType.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			
+			<forward name="userGroup" path="/jsp/boss/user/userGroup.do?methodToCall=openQuery"/>
+			<forward name="batchMemberAdd" path="/jsp/boss/user/batchMemberAdd.do?methodToCall=openQuery"/>
+			<forward name="openQuery" path="/jsp/boss/user/groupMember.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 批量用户添加 2012-5-26 ysm -->
+		<action name="batchMemberAddForm" path="/jsp/boss/user/batchMemberAdd" type="com.ovt.idtv.boss.web.user.BatchMemberAdd.struts.BatchMemberAddAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall" >
+			<forward name="batchMemberAdd.userAdd.success" path="/jsp/boss/user/batchMemberAdd.do?methodToCall=openQuery"></forward>
+			<forward name="batchMemberAdd.userAddCondition.success" path="/jsp/boss/user/batchMemberAdd.do?methodToCall=openQuery"></forward>
+			<forward name="updateRights.success" path="/boss/user/monitorBatchMemberAddStatus.jsp"></forward>
+			<forward name="openQueryCancel" path="/jsp/boss/user/groupMember.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 订购限制管理  2013-06-04 jhg -->	
+		<action name="userOrderPermitForm" path="/jsp/boss/user/orderPermit" type="com.ovt.idtv.boss.web.user.userInfo.struts.OrderPermitAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/orderPermit.do?methodToCall=openQuery" />
+			<forward name="permitPolicy" path="/jsp/boss/user/permitPolicy.do?methodToCall=openQuery" />
+		</action>
+		<action path="/jsp/boss/user/permitPolicy" type="com.ovt.idtv.boss.web.user.orderProduct.struts.PermitProductAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/user/permitPolicy.do?methodToCall=openQuery" />
+			<forward name="userOrderPermit" path="/jsp/boss/user/orderPermit.do?methodToCall=openQuery" />
+		</action>
+		<action path="/jsp/boss/user/addPolicy" type="com.ovt.idtv.boss.web.user.orderProduct.struts.AddPolicyAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name ="openQuery" path="/jsp/boss/user/addPolicy.do?methodToCall=openQuery" />
+			<forward name ="success" path="/boss/user/success.jsp" />
+		</action>
+		<!-- 批量用户添加  -->
+		<action name="batchMemberAddForm" path="/jsp/boss/user/batchMemberAdd" type="com.ovt.idtv.boss.web.user.BatchMemberAdd.struts.BatchMemberAddAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall" >
+			<forward name="batchMemberAdd.userAdd.success" path="/jsp/boss/user/batchMemberAdd.do?methodToCall=openQuery"></forward>
+			<forward name="batchMemberAdd.userAddCondition.success" path="/jsp/boss/user/batchMemberAdd.do?methodToCall=openQuery"></forward>
+			<forward name="updateRights.success" path="/boss/user/monitorBatchMemberAddStatus.jsp"></forward>
+			<forward name="openQueryCancel" path="/jsp/boss/user/groupMember.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 下拉提示框控件2012-10-24 yzy -->
+		<action path="/jsp/boss/editType/popupSelectFrame/*" type="com.ovt.idtv.boss.web.editType.popupSelect.PopupSelectFrameAction"  scope="request" parameter="{1}">
+		</action>
+	</action-mappings>
+</struts-config>

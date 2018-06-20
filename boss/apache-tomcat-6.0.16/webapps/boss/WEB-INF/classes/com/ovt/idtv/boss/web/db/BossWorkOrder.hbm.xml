@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossWorkOrder" table="BOSS_WORKORDER">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_WORKORDER</param>
+			</generator>
+		</id>
+		<property name="woType" type="java.lang.Long">
+			<column name="WO_TYPE" precision="38" scale="0" />
+		</property>
+		<property name="woDesc" type="java.lang.String">
+			<column name="WO_DESC" length="4000" />
+		</property>
+		<property name="performTime" type="java.lang.String">
+			<column name="PERFORM_TIME" length="14" />
+		</property>
+		<property name="woStatus" type="java.lang.Long">
+			<column name="WO_STATUS" precision="38" scale="0" />
+		</property>
+		<property name="initQueueId" type="java.lang.Long">
+			<column name="INIT_QUEUEID" precision="38" scale="0" />
+		</property>
+		<property name="initQueueName" type="java.lang.String">
+			<column name="INIT_QUEUENAME" length="128" />
+		</property>
+		<property name="proQueueId" type="java.lang.Long">
+			<column name="PRO_QUEUEID" precision="38" scale="0" />
+		</property>
+		<property name="proQueueName" type="java.lang.String">
+			<column name="PRO_QUEUENAME" length="128" />
+		</property>
+		<property name="lastRespTime" type="java.lang.String">
+			<column name="LAST_RESP_TIME" length="14" />
+		</property>
+		<property name="lastRespOper" type="java.lang.String">
+			<column name="LAST_RESP_OPER" length="32" />
+		</property>
+		<property name="fulfillTime" type="java.lang.String">
+			<column name="FULFILL_TIME" length="14" />
+		</property>
+		<property name="fulfillWorker" type="java.lang.String">
+			<column name="FULFILL_WORKER" length="128" />
+		</property>
+		<property name="respDesc" type="java.lang.String">
+			<column name="RESP_DESC" length="4000" />
+		</property>
+		<property name="woOwner" type="java.lang.String">
+			<column name="WO_OWNER" length="32" />
+		</property>
+		<property name="userCoding" type="java.lang.String">
+			<column name="USER_CODING" length="32" />
+		</property>
+		<property name="userName" type="java.lang.String">
+			<column name="USER_NAME" length="64" />
+		</property>
+		<property name="userTel" type="java.lang.String">
+			<column name="USER_TEL" length="64" />
+		</property>
+		<property name="userAddr" type="java.lang.String">
+			<column name="USER_ADDR" length="256" />
+		</property>
+		<property name="userDemand" type="java.lang.String">
+			<column name="USER_DEMAND" length="512" />
+		</property>
+		<property name="userResponse" type="java.lang.String">
+			<column name="USER_RESPONSE" length="4000" />
+		</property>
+		<property name="modifyDate" type="java.lang.String">
+			<column name="MODIFY_DATE" length="14" />
+		</property>
+		<property name="modifyOper" type="java.lang.String">
+			<column name="MODIFY_OPER" length="16" />
+		</property>
+		<property name="createDate" type="java.lang.String">
+			<column name="CREATE_DATE" length="14" />
+		</property>
+		<property name="createOper" type="java.lang.String">
+			<column name="CREATE_OPER" length="16" />
+		</property>
+	</class>
+</hibernate-mapping>

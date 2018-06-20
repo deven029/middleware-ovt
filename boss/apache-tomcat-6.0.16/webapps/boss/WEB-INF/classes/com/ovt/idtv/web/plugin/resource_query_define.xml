@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+	<editType id="channel" className="com.ovt.rating.form.ChannelFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="suveyGroup" className="com.ovt.pm.survey.UserGroupFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="adverSuvey" className="com.ovt.pm.survey.AdSuveyFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="option" className="com.ovt.pm.survey.OptionFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="topic" className="com.ovt.pm.survey.TopicFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="provide" className="com.ovt.pm.survey.ProvideFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="areaName" className="com.ovt.pm.content.program.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType"
+		className="com.ovt.pm.content.program.edittype.PriceTypeFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType2"
+		className="com.ovt.pm.content.program.edittype.PriceTypeOldFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="qamName" className="com.ovt.concurrent2.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="timeinput"
+		className="com.ovt.common.web.taglib.table.util.TimeInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput2"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	
+	
+	<queryDefine id="iccardQuery" rowFields="2" version="1">
+		<queryField id="equNo" fieldId="-1" label="IC卡卡号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="status" fieldId="-2" label="状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="equStateSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="新入库" value="0" />
+					<item name="库存测试中" value="1" />
+					<item name="待售中" value="2" />
+					<item name="客户使用中" value="3" />
+					<item name="返修入库" value="4" />
+					<item name="退货入库" value="5" />
+					<item name="报损入库" value="6" />
+					<item name="返厂出库" value="7" />
+					<item name="厂修入库" value="8" />
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="menufacturer" fieldId="-3" label="生产厂家"
+			spanFields="1" dataType="string" oper="full like">
+			<editType id="menufacturerSelect"
+				className="com.ovt.idtv.boss.web.resource.editType.EquMenufacturerQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="busiDep" fieldId="-4" label="库存位置" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitBusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+		<queryField id="lastInTime" fieldId="-5" label="最后入库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="lastOutTime" fieldId="-6" label="最后出库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="priorRight" fieldId="-7" label="授权状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="priorRightSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="未预授权" value="0" />
+					<item name="预授权" value="1" />
+				</data>
+			</editType>
+		</queryField>
+		<!-- 设备类型 2012-7-2 yzy -->
+		<queryField id="deviceType" fieldId="-8" label="设备类型"
+			spanFields="1" dataType="string" oper="full like">
+			<editType id="deviceType"
+				className="com.ovt.idtv.boss.web.resource.editType.EquDeviceTypeQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+	</queryDefine>
+	
+	<!-- add by jhg start -->
+	<queryDefine id="bandWidthQuery" rowFields="2" version="1">
+		<queryField id="bandwidthNo" fieldId="-1" label="宽带帐号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="status" fieldId="-2" label="状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="equStateSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="待售中" value="0" />
+					<item name="客户使用中" value="1" />
+					<item name="客户销户" value="2" />
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="lastInTime" fieldId="-5" label="最后入库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="lastOutTime" fieldId="-6" label="最后出库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+	</queryDefine>
+	<!-- add by jhg end -->
+	
+	<queryDefine id="stbQuery" rowFields="2" version="1">
+		<queryField id="equNo" fieldId="-1" label="机顶盒编号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="status" fieldId="-2" label="状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="equtateSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="新入库" value="0" />
+					<item name="库存测试中" value="1" />
+					<item name="待售中" value="2" />
+					<item name="客户使用中" value="3" />
+					<item name="返修入库" value="4" />
+					<item name="退货入库" value="5" />
+					<item name="报损入库" value="6" />
+					<item name="返厂出库" value="7" />
+					<item name="厂修入库" value="8" />
+				</data>
+			</editType>
+		</queryField>
+		
+		<queryField id="lastInTime" fieldId="-3" label="最后入库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="lastOutTime" fieldId="-4" label="最后出库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="busiDep" fieldId="-5" label="库存位置" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitBusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+		<queryField id="menufacturer" fieldId="-6" label="生产厂家"
+			spanFields="1" dataType="string" oper="full like">
+			<editType id="menufacturerSelect"
+				className="com.ovt.idtv.boss.web.resource.editType.EquMenufacturerQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="model" fieldId="-7" label="型号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType id="model"
+				className="com.ovt.idtv.boss.web.resource.editType.EquModelQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+		<!-- 设备类型 2012-7-2 yzy -->
+		<queryField id="deviceType" fieldId="-8" label="设备类型"
+			spanFields="1" dataType="string" oper="full like">
+			<editType id="deviceType"
+				className="com.ovt.idtv.boss.web.resource.editType.EquDeviceTypeQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+	</queryDefine>
+	<queryDefine id="storeQuery" rowFields="1" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="otherQuery" rowFields="2" version="1">
+		<queryField id="equNo" fieldId="-1" label="编号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="status" fieldId="-2" label="状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="equtateSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="新入库" value="0" />
+					<item name="库存测试中" value="1" />
+					<item name="待售中" value="2" />
+					<item name="客户使用中" value="3" />
+					<item name="返修入库" value="4" />
+					<item name="退货入库" value="5" />
+					<item name="报损入库" value="6" />
+					<item name="返厂出库" value="7" />
+					<item name="厂修入库" value="8" />
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="lastInTime" fieldId="-5" label="最后入库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="lastOutTime" fieldId="-6" label="最后出库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="busiDep" fieldId="-4" label="库存位置" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitBusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	</queryDefine>
+	
+	<queryDefine id="iccardSelectQuery" rowFields="2" version="1">
+		<queryField id="equNo" fieldId="-1" label="IC卡卡号"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="status" fieldId="-2" label="状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="equStateSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="新入库" value="0" />
+					<item name="库存测试中" value="1" />
+					<item name="待售中" value="2" />
+					<item name="客户使用中" value="3" />
+					<item name="返修入库" value="4" />
+					<item name="退货入库" value="5" />
+					<item name="报损入库" value="6" />
+					<item name="返厂出库" value="7" />
+					<item name="厂修入库" value="8" />
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="menufacturer" fieldId="-3" label="生产厂家"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="busiDep" fieldId="-4" label="库存位置"
+			spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="lastInTime" fieldId="-5" label="最后入库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="lastOutTime" fieldId="-6" label="最后出库时间"
+			spanFields="1" dataType="date" oper="full like">
+			<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="priorRight" fieldId="-7" label="授权状态" spanFields="1"
+			dataType="string" oper="full like">
+			<editType id="priorRightSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="未预授权" value="0" />
+					<item name="预授权" value="1" />
+				</data>
+			</editType>
+		</queryField>
+	</queryDefine>
+	<queryDefine id="stbIccardBindQuery" rowFields="2" version="1">
+	    <queryField id="stbNo" fieldId="0" label="机顶盒号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	     <queryField id="iccardNo" fieldId="1" label="IC卡号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+</queryDefines>

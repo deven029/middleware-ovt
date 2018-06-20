@@ -1,0 +1,1169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://boss.ovt.com/ubi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ubi"
+	targetNamespace="http://boss.ovt.com/ubi/">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://boss.ovt.com/ubi/">
+            <xsd:element name="createSessionRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="oldSessionId"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="userName" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="createSessionResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="sessionId" type="xsd:long" />
+						<xsd:element name="responseCode" type="tns:ResponseCode" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="loginRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="userName" type="xsd:string" />
+						<xsd:element name="loginKey" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="loginResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="responseCode" type="tns:ResponseCode" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="logoutRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="userName" type="xsd:string" />
+						<xsd:element name="loginKey" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="logoutResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="responseCode" type="tns:ResponseCode" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="keepSessionRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="userName" type="xsd:string" />
+						<xsd:element name="loginKey" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="keepSessionResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="responseCode" type="tns:ResponseCode" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="sysApplyResponse" type="tns:SysApplyResponse">
+
+			</xsd:element>
+			<xsd:element name="sysApplyRequest" type="tns:SysApplyRequest"></xsd:element>
+
+			<xsd:complexType name="SysApplyRequest">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="provider" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:string"></xsd:element>
+					<xsd:element name="contactPerson"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="ip" type="xsd:string"></xsd:element>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+					<xsd:element name="wsUrl" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="SysApplyResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo"></xsd:element>
+					<xsd:element name="status" type="xsd:string"></xsd:element>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="querySysInfoResponse" type="tns:QuerySysInfoResponse">
+
+			</xsd:element>
+			<xsd:element name="querySysInfoRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			
+
+			<xsd:complexType name="QuerySysInfoResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo"></xsd:element>
+					<xsd:element name="sysInfos" type="tns:SysInfo"
+						minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="RequestCommonInfo">
+				<xsd:sequence>
+					<xsd:element name="loginKey" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ResponseCommonInfo">
+				<xsd:sequence>
+					<xsd:element name="responseCode"
+						type="tns:ResponseCode">
+					</xsd:element>
+					<xsd:element name="responseDesc" type="xsd:string"></xsd:element>
+					<xsd:element name="startRow" type="xsd:int"></xsd:element>
+					<xsd:element name="endRow" type="xsd:int"></xsd:element>
+					<xsd:element name="rowCount" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="SysInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="sysType" type="xsd:string"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="createDate" type="xsd:string"></xsd:element>
+					<xsd:element name="provider" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:string"></xsd:element>
+					<xsd:element name="contactPerson" type="xsd:string"></xsd:element>
+					<xsd:element name="ip" type="xsd:string"></xsd:element>
+					<xsd:element name="authUser" type="xsd:string"></xsd:element>
+					<xsd:element name="status" type="xsd:string"></xsd:element>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+					<xsd:element name="wsUrl" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ServiceType">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="createDate" type="xsd:string"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<xsd:element name="isLeaf" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ServiceInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="serviceId" type="xsd:string"></xsd:element>
+					<xsd:element name="servType" type="xsd:string"></xsd:element>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+					<xsd:element name="status" type="xsd:string"></xsd:element>
+					<xsd:element name="servCode" type="xsd:string"></xsd:element>
+					<xsd:element name="basicFlag" type="xsd:string"></xsd:element>
+					<xsd:element name="publishDate" type="xsd:string"></xsd:element>
+					<xsd:element name="exitDate" type="xsd:string"></xsd:element>
+					<xsd:element name="terminalDate" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="chargePriority" type="xsd:string"></xsd:element>
+					<xsd:element name="addType" type="xsd:string"></xsd:element>
+					<xsd:element name="propertyList" type="xsd:string"></xsd:element>
+					<xsd:element name="applyCause" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+					<xsd:element name="preAuthStatus" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="UserInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="userCoding" type="xsd:string"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="groupId" type="xsd:int"></xsd:element>
+					<xsd:element name="status" type="xsd:int"></xsd:element>
+					<xsd:element name="type" type="xsd:string"></xsd:element>
+					<xsd:element name="areaId" type="xsd:int"></xsd:element>
+					<xsd:element name="address" type="xsd:string"></xsd:element>
+					<xsd:element name="postcode" type="xsd:string"></xsd:element>
+					<xsd:element name="units" type="xsd:string"></xsd:element>
+					<xsd:element name="tel" type="xsd:string"></xsd:element>
+					<xsd:element name="mobile" type="xsd:string"></xsd:element>
+					<xsd:element name="email" type="xsd:string"></xsd:element>
+					<xsd:element name="identityCard" type="xsd:string"></xsd:element>
+					<xsd:element name="ticketId" type="xsd:string"></xsd:element>
+					<xsd:element name="remark" type="xsd:string"></xsd:element>
+					<xsd:element name="registerDate" type="xsd:string"></xsd:element>
+					<xsd:element name="areaSn" type="xsd:int"></xsd:element>
+					<xsd:element name="remark2" type="xsd:string"></xsd:element>
+					<xsd:element name="rebateType" type="xsd:int"></xsd:element>
+					<xsd:element name="gender" type="xsd:int"></xsd:element>
+					<xsd:element name="ownershipCertificateNo" type="xsd:string"></xsd:element>
+					<xsd:element name="messageAdr" type="xsd:string"></xsd:element>
+					<xsd:element name="addField1" type="xsd:string"></xsd:element>
+					<xsd:element name="messagePostcode" type="xsd:string"></xsd:element>
+					<xsd:element name="identityType" type="xsd:int"></xsd:element>
+					<xsd:element name="password" type="xsd:string"></xsd:element>
+					<xsd:element name="bankInfo" type="xsd:string"></xsd:element>
+					<xsd:element name="analog" type="xsd:int"></xsd:element>
+					<xsd:element name="corpId" type="xsd:int"></xsd:element>
+					<xsd:element name="validStatus" type="xsd:int"></xsd:element>
+					<xsd:element name="relateBank" type="xsd:int"></xsd:element>
+					<xsd:element name="contact" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<!-- add by jhg 2013-05-03 -->
+					<xsd:element name="firstArea" type="xsd:string"></xsd:element>
+					<xsd:element name="secondArea" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:simpleType name="EquStatus">
+				<xsd:restriction base="xsd:int">
+					<xsd:enumeration value="1" />
+					<xsd:enumeration value="2" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			
+			<xsd:simpleType name="EquRelationType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MAIN_IC-SUB-IC" />
+					<xsd:enumeration value="STB-IC_CARD" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			
+			<xsd:complexType name="EquInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="equNum" type="xsd:string"></xsd:element>
+					<xsd:element name="equCode" type="xsd:string"></xsd:element>
+					<xsd:element name="equType" type="xsd:string"></xsd:element>
+					<xsd:element name="areaId" type="xsd:int"></xsd:element>
+					<xsd:element name="status" type="tns:EquStatus"></xsd:element>
+					<xsd:element name="selfFlag" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="menufacturer"
+						type="xsd:string">
+					</xsd:element>
+					<xsd:element name="model" type="xsd:string"></xsd:element>
+					<xsd:element name="productDate" type="xsd:string"></xsd:element>
+					<xsd:element name="createDate" type="xsd:string"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<xsd:element name="storePlace" type="xsd:string"></xsd:element>
+					<xsd:element name="lastInTime" type="xsd:string"></xsd:element>
+					<xsd:element name="lastOutTime" type="xsd:string"></xsd:element>
+					<xsd:element name="caId" type="xsd:string"></xsd:element>
+					<xsd:element name="icCardId" type="xsd:string"></xsd:element>
+					<xsd:element name="preAuthStatus" type="xsd:int"></xsd:element>
+					<xsd:element name="password" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="UserEquRelationInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="userId" type="xsd:int"></xsd:element>
+					<xsd:element name="equId" type="xsd:int"></xsd:element>
+					<xsd:element name="label" type="xsd:string"></xsd:element>
+					<xsd:element name="equSlaveType" type="xsd:int"></xsd:element>
+					<xsd:element name="equStatus" type="xsd:int"></xsd:element>
+					<xsd:element name="equTypeid" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="EquRelation">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="leftEquId" type="xsd:int"></xsd:element>
+					<xsd:element name="rightEquId" type="xsd:int"></xsd:element>
+					<xsd:element name="equRelationType" type="tns:EquRelationType"></xsd:element>
+					<xsd:element name="seqNo" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="AreaInfo">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="name" type="xsd:string"></xsd:element>
+					<xsd:element name="description" type="xsd:string"></xsd:element>
+					<xsd:element name="parentId" type="xsd:int"></xsd:element>
+					<xsd:element name="no" type="xsd:int"></xsd:element>
+					<xsd:element name="areaLevel" type="xsd:int"></xsd:element>
+					<xsd:element name="isLeaf" type="xsd:int"></xsd:element>
+					<xsd:element name="areaCode" type="xsd:string"></xsd:element>
+                    <xsd:element name="netWorkId" type="xsd:string"/>
+                    <xsd:element name="seqNo" type="xsd:int"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<xsd:element name="areaId" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:complexType name="UserServiceOrder">
+				<xsd:sequence>
+					<xsd:element name="id" type="xsd:int"></xsd:element>
+					<xsd:element name="userId" type="xsd:int"></xsd:element>
+					<xsd:element name="equId" type="xsd:int"></xsd:element>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+					<xsd:element name="serviceId" type="xsd:string"></xsd:element>
+					<xsd:element name="orderTime" type="xsd:string"></xsd:element>
+					<xsd:element name="version" type="xsd:int"></xsd:element>
+					<xsd:element name="modifyDate" type="xsd:string"></xsd:element>
+					<xsd:element name="endTime" type="xsd:string"></xsd:element>
+					<xsd:element name="status" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<xsd:simpleType name="QueryItemRelation">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="and" />
+					<xsd:enumeration value="or" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:simpleType name="QueryOperType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="larger_equal" />
+					<xsd:enumeration value="equal" />
+					<xsd:enumeration value="larger" />
+					<xsd:enumeration value="smaller" />
+					<xsd:enumeration value="smaller_equal" />
+					<xsd:enumeration value="full_like" />
+					<xsd:enumeration value="left_like" />
+					<xsd:enumeration value="right_like" />
+					<xsd:enumeration value="in" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:simpleType name="QueryItemId">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="USER.id" />
+					<xsd:enumeration value="USER.userCoding" />
+					<xsd:enumeration value="USER.name" />
+					<xsd:enumeration value="USER.groupId" />
+					<xsd:enumeration value="USER.type" />
+					<xsd:enumeration value="USER.areaId" />
+					<xsd:enumeration value="EQU.userId" />
+					<xsd:enumeration value="EQU.id" />
+					<xsd:enumeration value="EQU.equCode" />
+					<xsd:enumeration value="EQU.equType" />
+					<xsd:enumeration value="EQU.areaId" />
+					<xsd:enumeration value="EQU.status" />
+					<xsd:enumeration value="EQU.preAuthStatus" />
+					<xsd:enumeration value="EQU_RELATION.userId" />
+					<xsd:enumeration value="EQU_RELATION.leftEquId" />
+					<xsd:enumeration value="EQU_RELATION.rightEquId" />
+					<xsd:enumeration value="EQU_RELATION.relationTypeId" />
+					<xsd:enumeration value="SERVICE_TYPE.name" />
+					<xsd:enumeration value="SERVICE_TYPE.parentId" />
+					<xsd:enumeration value="SERVICE.serviceId" />
+					<xsd:enumeration value="SERVICE.servType" />
+					<xsd:enumeration value="SERVICE.name" />
+					<xsd:enumeration value="SERVICE.sysId" />
+					<xsd:enumeration value="SERVICE.status" />
+					<xsd:enumeration value="SERVICE.servCode" />
+					<xsd:enumeration value="SERVICE.preAuthStatus" />
+					<xsd:enumeration value="SYS.sysType" />
+					<xsd:enumeration value="SYS.name" />
+					<xsd:enumeration value="SYS.description" />
+					<xsd:enumeration value="SYS.provider" />
+					<xsd:enumeration value="SYS.version" />
+					<xsd:enumeration value="SYS.contactPerson" />
+					<xsd:enumeration value="SYS.authUser" />
+					<xsd:enumeration value="SYS.ip" />
+					<xsd:enumeration value="SYS.sysId" />
+					<xsd:enumeration value="SERVICE_ORDER.sysId" />
+					<xsd:enumeration value="SERVICE_ORDER.serviceId" />
+					<xsd:enumeration value="SERVICE_ORDER.userId" />
+					<xsd:enumeration value="SERVICE_ORDER.orderEquId" />
+					<xsd:enumeration value="USER_EQU.id" />
+					<xsd:enumeration value="USER_EQU.equId" />
+					<xsd:enumeration value="USER_EQU.userId" />
+					<xsd:enumeration value="USER_EQU.label" />
+					<xsd:enumeration value="USER_EQU.equTypeId" />
+					<xsd:enumeration value="AREAINFO.id" />
+					<xsd:enumeration value="AREAINFO.name" />
+					<xsd:enumeration value="AREAINFO.parentId" />
+					<xsd:enumeration value="AREAINFO.no" />
+					<xsd:enumeration value="AREAINFO.areaCode" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			
+			<xsd:simpleType name="ExtendQueryItemId">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EQU.userId" />
+					<xsd:enumeration value="SERVICE_ORDER.userId" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:simpleType name="ResponseCode">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="success" />
+					<xsd:enumeration value="failure" />
+					<xsd:enumeration value="parameterError" />
+					<xsd:enumeration value="invalidUserName" />
+					<xsd:enumeration value="invalidPassword" />
+					<xsd:enumeration value="invalidSession" />
+					<xsd:enumeration value="notLogin" />
+					<xsd:enumeration value="noRight" />
+					<xsd:enumeration value="sysIdExist" />
+					<xsd:enumeration value="serviceIdExist" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			<xsd:complexType name="QueryItemGroup">
+				<xsd:sequence>
+					<xsd:element name="childrenGroup" minOccurs="0"
+						maxOccurs="unbounded" type="tns:QueryItemGroup"></xsd:element>
+					<xsd:element name="childrenItem" minOccurs="0"
+						maxOccurs="unbounded" type="tns:QueryItem"></xsd:element>
+					<xsd:element name="relation" type="tns:QueryItemRelation"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="QueryItem">
+				<xsd:sequence>
+					<xsd:element name="itemId" type="tns:QueryItemId"></xsd:element>
+					<xsd:element name="itemValue" type="xsd:string"></xsd:element>
+					<xsd:element name="operType" type="tns:QueryOperType"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ExtendQueryItem">
+				<xsd:sequence>
+					<xsd:element name="itemId" type="tns:ExtendQueryItemId"></xsd:element>
+					<xsd:element name="itemValue" type="xsd:string"></xsd:element>
+					<xsd:element name="operType" type="tns:QueryOperType"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="QueryCondition">
+				<xsd:sequence>
+					<xsd:element name="queryItemGroup" type="tns:QueryItemGroup"></xsd:element>
+					<xsd:element name="extendQueryItems" type="tns:ExtendQueryItem" minOccurs="0" maxOccurs="unbounded" ></xsd:element>
+					<xsd:element name="pageSize" type="xsd:int"></xsd:element>
+					<xsd:element name="startRow" type="xsd:int"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="CommonQueryRequest">
+				<xsd:sequence>
+					<xsd:element name="requestCommonInfo" type="tns:RequestCommonInfo">
+					</xsd:element>
+					<xsd:element name="queryCondition" type="tns:QueryCondition"></xsd:element>
+
+
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:element name="querySysApplyStatusResponse" type="tns:QuerySysApplyStatusResponse">
+
+			</xsd:element>
+			<xsd:element name="querySysApplyStatusRequest" type="tns:QuerySysApplyStatusRequest">
+			</xsd:element>
+
+			<xsd:complexType name="QuerySysApplyStatusRequest">
+				<xsd:sequence>
+					<xsd:element name="sysId" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="QuerySysApplyStatusResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="status" type="xsd:string"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryServiceTypeRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			<xsd:element name="queryServiceTypeResponse" type="tns:QueryServiceTypeResponse">
+			</xsd:element>
+
+
+			<xsd:complexType name="QueryServiceTypeResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="serviceTypeList" type="tns:ServiceType"
+						minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:element name="queryServiceInfoResponse" type="tns:QueryServiceInfoResponse">
+
+			</xsd:element>
+			<xsd:element name="queryServiceInfoRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			
+
+			<xsd:complexType name="QueryServiceInfoResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="serviceInfoList" type="tns:ServiceInfo"
+						minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="serviceApplyResponse" type="tns:ServiceApplyResponse">
+
+			</xsd:element>
+			<xsd:element name="serviceApplyRequest" type="tns:ServiceApplyRequest">
+			</xsd:element>
+
+			<xsd:complexType name="ServiceApplyRequest">
+				<xsd:sequence>
+					<xsd:element name="requestCommonInfo" type="tns:RequestCommonInfo">
+					</xsd:element>
+					<xsd:element name="serviceInfo" type="tns:ServiceInfo"
+						minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+
+			<xsd:complexType name="ServiceApplyResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo">
+					</xsd:element>
+
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryUsersRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			<xsd:element name="queryUsersResponse" type="tns:QueryUsersResponse">
+			</xsd:element>
+
+
+
+
+			<xsd:complexType name="QueryUsersResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo" type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="usersList" type="tns:UserInfo"
+						minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryEqusResponse"
+				type="tns:QueryEqusResponse">
+
+			</xsd:element>
+			<xsd:element name="queryEqusRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			
+		
+			<xsd:complexType name="QueryEqusResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo"
+						type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="equList" type="tns:EquInfo" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryEquRelationRequest"
+				type="tns:CommonQueryRequest">
+
+			</xsd:element>
+			<xsd:element name="queryEquRelationResponse"
+				type="tns:QueryEquRelationResponse">
+
+			</xsd:element>
+
+			<xsd:element name="queryServiceOrder">
+				<xsd:complexType>
+					<xsd:sequence>
+
+						<xsd:element name="in" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="queryServiceOrderResponse"
+				type="tns:QueryServiceOrderResponse">
+
+			</xsd:element>
+			<xsd:element name="queryServiceOrderRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+		
+			<xsd:complexType name="QueryServiceOrderResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo"
+						type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="serviceOrders" type="tns:UserServiceOrder" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		
+			<xsd:complexType name="QueryEquRelationResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo"
+						type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="equRelationList" type="tns:EquRelation" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryUserEquRelationsResponse"
+				type="tns:QueryUserEquRelationsResponse">
+
+			</xsd:element>
+			<xsd:element name="queryUserEquRelationsRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+			
+		
+			<xsd:complexType name="QueryUserEquRelationsResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo"
+						type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="userEquRelations" type="tns:UserEquRelationInfo" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="queryAreaInfosResponse"
+				type="tns:QueryAreaInfosResponse">
+
+			</xsd:element>
+			<xsd:element name="queryAreaInfosRequest"
+				type="tns:CommonQueryRequest">
+			</xsd:element>
+		
+			<xsd:complexType name="QueryAreaInfosResponse">
+				<xsd:sequence>
+					<xsd:element name="responseCommonInfo"
+						type="tns:ResponseCommonInfo">
+					</xsd:element>
+					<xsd:element name="areaInfoList" type="tns:AreaInfo" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+			<!-- 在线订购所需request、response定义 -->
+			<xsd:element name="onLineOrderRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="productId" type="xsd:string"></xsd:element>
+						<xsd:element name="orderDate" type="xsd:string"></xsd:element>
+						<xsd:element name="unit" type="xsd:string"></xsd:element>
+						<xsd:element name="password" type="xsd:string"></xsd:element>
+						<xsd:element name="cardId" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="onLineOrderResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="operResult" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+			<!-- 在互动页面中修改密码（智能卡密码、用户账户密码） -->
+			<xsd:element name="changePassword">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="cardNumber" type="xsd:string"></xsd:element>
+						<xsd:element name="oldPW" type="xsd:string"></xsd:element>
+						<xsd:element name="newPW" type="xsd:string"></xsd:element>
+						<xsd:element name="pwType" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="changePasswordResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="operResult" type="xsd:string"></xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="createSessionRequest">
+		<wsdl:part element="tns:createSessionRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="createSessionResponse">
+		<wsdl:part element="tns:createSessionResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="loginRequest">
+		<wsdl:part element="tns:loginRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="loginResponse">
+		<wsdl:part element="tns:loginResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="logoutRequest">
+		<wsdl:part element="tns:logoutRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="logoutResponse">
+		<wsdl:part element="tns:logoutResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="keepSessionRequest">
+		<wsdl:part element="tns:keepSessionRequest" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="keepSessionResponse">
+		<wsdl:part element="tns:keepSessionResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="sysApplyRequest">
+		<wsdl:part name="parameters" element="tns:sysApplyRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="sysApplyResponse">
+		<wsdl:part name="parameters" element="tns:sysApplyResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="querySysInfoRequest">
+		<wsdl:part name="parameters" element="tns:querySysInfoRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="querySysInfoResponse">
+		<wsdl:part name="parameters" element="tns:querySysInfoResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="querySysApplyStatusRequest">
+		<wsdl:part name="parameters" element="tns:querySysApplyStatusRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="querySysApplyStatusResponse">
+		<wsdl:part name="parameters" element="tns:querySysApplyStatusResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceTypeRequest">
+		<wsdl:part name="parameters" element="tns:queryServiceTypeRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceTypeResponse">
+		<wsdl:part name="parameters" element="tns:queryServiceTypeResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceInfoRequest">
+		<wsdl:part name="parameters" element="tns:queryServiceInfoRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceInfoResponse">
+		<wsdl:part name="parameters" element="tns:queryServiceInfoResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="serviceApplyRequest">
+		<wsdl:part name="parameters" element="tns:serviceApplyRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="serviceApplyResponse">
+		<wsdl:part name="parameters" element="tns:serviceApplyResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryUsersRequest">
+		<wsdl:part name="parameters" element="tns:queryUsersRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryUsersResponse">
+		<wsdl:part name="parameters" element="tns:queryUsersResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryEqusRequest">
+		<wsdl:part name="parameters" element="tns:queryEqusRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryEqusResponse">
+		<wsdl:part name="parameters" element="tns:queryEqusResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryEquRelationRequest">
+		<wsdl:part name="parameters" element="tns:queryEquRelationRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryEquRelationResponse">
+		<wsdl:part name="parameters" element="tns:queryEquRelationResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceOrderRequest">
+		<wsdl:part name="parameters" element="tns:queryServiceOrderRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryServiceOrderResponse">
+		<wsdl:part name="parameters" element="tns:queryServiceOrderResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryUserEquRelationsRequest">
+		<wsdl:part name="parameters" element="tns:queryUserEquRelationsRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryUserEquRelationsResponse">
+		<wsdl:part name="parameters" element="tns:queryUserEquRelationsResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryAreaInfosRequest">
+		<wsdl:part name="parameters" element="tns:queryAreaInfosRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="queryAreaInfosResponse">
+		<wsdl:part name="parameters" element="tns:queryAreaInfosResponse"></wsdl:part>
+	</wsdl:message>
+	
+	<wsdl:message name="onLineOrderRequest">
+		<wsdl:part name="parameters" element="tns:onLineOrderRequest"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="onLineOrderResponse">
+		<wsdl:part name="parameters" element="tns:onLineOrderResponse"></wsdl:part>
+	</wsdl:message>
+
+
+
+	<wsdl:message name="changePasswordRequest">
+		<wsdl:part name="parameters" element="tns:changePassword"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="changePasswordResponse">
+		<wsdl:part name="parameters" element="tns:changePasswordResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="SecurityAuth">
+		<wsdl:operation name="createSession">
+			<wsdl:input message="tns:createSessionRequest" />
+			<wsdl:output message="tns:createSessionResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="login">
+			<wsdl:input message="tns:loginRequest" />
+			<wsdl:output message="tns:loginResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="logout">
+			<wsdl:input message="tns:logoutRequest" />
+			<wsdl:output message="tns:logoutResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="keepSession">
+			<wsdl:input message="tns:keepSessionRequest" />
+			<wsdl:output message="tns:keepSessionResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="SysManage">
+		<wsdl:operation name="sysApply">
+			<wsdl:input message="tns:sysApplyRequest"></wsdl:input>
+			<wsdl:output message="tns:sysApplyResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="querySysInfo">
+			<wsdl:input message="tns:querySysInfoRequest"></wsdl:input>
+			<wsdl:output message="tns:querySysInfoResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="querySysApplyStatus">
+			<wsdl:input message="tns:querySysApplyStatusRequest"></wsdl:input>
+			<wsdl:output message="tns:querySysApplyStatusResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryAreaInfos">
+			<wsdl:input message="tns:queryAreaInfosRequest"></wsdl:input>
+			<wsdl:output message="tns:queryAreaInfosResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:portType name="ServiceManage">
+
+		<wsdl:operation name="queryServiceType">
+			<wsdl:input message="tns:queryServiceTypeRequest"></wsdl:input>
+			<wsdl:output message="tns:queryServiceTypeResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryServiceInfo">
+			<wsdl:input message="tns:queryServiceInfoRequest"></wsdl:input>
+			<wsdl:output message="tns:queryServiceInfoResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="serviceApply">
+			<wsdl:input message="tns:serviceApplyRequest"></wsdl:input>
+			<wsdl:output message="tns:serviceApplyResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="UserManage">
+
+		<wsdl:operation name="queryUsers">
+			<wsdl:input message="tns:queryUsersRequest"></wsdl:input>
+			<wsdl:output message="tns:queryUsersResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryServiceOrder">
+			<wsdl:input message="tns:queryServiceOrderRequest"></wsdl:input>
+			<wsdl:output message="tns:queryServiceOrderResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryUserEquRelations">
+			<wsdl:input message="tns:queryUserEquRelationsRequest"></wsdl:input>
+			<wsdl:output message="tns:queryUserEquRelationsResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="onLineOrder">
+			<wsdl:input message="tns:onLineOrderRequest"></wsdl:input>
+			<wsdl:output message="tns:onLineOrderResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="changePassword">
+			<wsdl:input message="tns:changePasswordRequest"></wsdl:input>
+			<wsdl:output message="tns:changePasswordResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="ResourceManage">
+		<wsdl:operation name="queryEqus">
+			<wsdl:input message="tns:queryEqusRequest"></wsdl:input>
+			<wsdl:output message="tns:queryEqusResponse"></wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryEquRelation">
+			<wsdl:input message="tns:queryEquRelationRequest"></wsdl:input>
+			<wsdl:output message="tns:queryEquRelationResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+
+	
+	<wsdl:binding name="SecurityAuthSOAP" type="tns:SecurityAuth">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="createSession">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/securityAuth/createSession" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="login">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/securityAuth/login" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="logout">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/securityAuth/logout" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="keepSession">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/securityAuth/keepSession" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="SysManageSOAP" type="tns:SysManage">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="sysApply">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/sysApply" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="querySysInfo">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/querySysInfo" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="querySysApplyStatus">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/querySysApplyStatus" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryAreaInfos">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryAreaInfos" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ServiceManageSOAP" type="tns:ServiceManage">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="queryServiceType">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/service/queryServiceType" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryServiceInfo">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/service/queryServiceInfo" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="serviceApply">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/service/serviceApply" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="UserManageSOAP" type="tns:UserManage">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="queryUsers">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryUsers" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryServiceOrder">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryServiceOrder" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryUserEquRelations">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryUserEquRelations" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="onLineOrder">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/onLineOrder" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		
+		<wsdl:operation name="changePassword">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/changePassword" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ResourceManageSOAP" type="tns:ResourceManage">
+
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="queryEqus">
+
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryEqus" />
+			<wsdl:input>
+
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryEquRelation">
+			<soap:operation
+				soapAction="http://boss.ovt.com/ubi/queryEquRelation" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	
+	
+	<wsdl:service name="SecurityAuth">
+		<wsdl:port binding="tns:SecurityAuthSOAP" name="SecurityAuthSOAP">
+			<soap:address location="http://boss.ovt.com/ubi/securityAuth/" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="SysManage">
+		<wsdl:port binding="tns:SysManageSOAP" name="SysManageSOAP">
+			<soap:address location="http://boss.ovt.com/ubi/sys/" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="ServiceManage">
+		<wsdl:port name="SerivceManageSOAP" binding="tns:ServiceManageSOAP">
+			<soap:address location="http://boss.ovt.com/ubi/service/" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="UserManage">
+		<wsdl:port name="UserManageSOAP" binding="tns:UserManageSOAP">
+			<soap:address location="http://boss.ovt.com/ubi/user/" />
+		</wsdl:port>
+	</wsdl:service>
+
+	<wsdl:service name="ResourceManage">
+		<wsdl:port name="ResourceManageSOAP" binding="tns:ResourceManageSOAP">
+			<soap:address location="http://boss.ovt.com/ubi/resource/" />
+		</wsdl:port>
+	</wsdl:service>
+
+
+</wsdl:definitions>

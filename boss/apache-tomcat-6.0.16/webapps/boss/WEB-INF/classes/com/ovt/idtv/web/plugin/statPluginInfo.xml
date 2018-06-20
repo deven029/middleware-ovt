@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossCoreStatWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>StatWebPlugin</name>
+	<description>BOSS统计管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.StatWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-21</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+		<func code="008" name="统计管理" srcFile=""  descInfo="统计管理" status="1" alias="" seqNo="2" funcType="0" developFlag="">
+			<func code="008101" name="设备统计" srcFile=""  descInfo="设备统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<func code="008101001" name="设备统计" srcFile="/jsp/boss/stat/equStatAction.do?methodToCall=openQuery" descInfo="设备统计" status="1" alias="pm.equStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008101001001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.equStat.export" seqNo="" funcType="2" developFlag="" />
+					<func code="008101001002" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.equStat.commonStat" seqNo="" funcType="2" developFlag="" />
+				</func>
+				<func code="008101002" name="设备按片区统计" srcFile="/jsp/boss/stat/statisticUserEquByAreaAction.do?methodToCall=openQuery" descInfo="设备按片区统计" status="1" alias="pm.equStatByArea.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008101002001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.equStatByArea.export" seqNo="" funcType="2" developFlag="" />
+				</func>
+			</func>
+			<func code="008102" name="用户统计" srcFile=""  descInfo="用户统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<func code="008102001" name="用户统计" srcFile="/jsp/boss/stat/userStatAction.do?methodToCall=openQuery" descInfo="用户统计" status="1" alias="pm.userStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008102001001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.userStat.export" seqNo="" funcType="2" developFlag="" />
+					<func code="008102001002" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.userStat.commonStat" seqNo="" funcType="2" developFlag="" />
+				</func>
+				<!-- 宽带到期用户统计 liuxu 2012-10-12 -->
+				<func code="008102002" name="宽带到期用户统计" srcFile="/jsp/boss/stat/bwExpireUserStatAction.do?methodToCall=openQuery" descInfo="宽带到期用户统计" status="1" alias="pm.bwExpireUserStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008102002001" name="用户数据导出" srcFile="" descInfo="用户数据导出" status="1" alias="pm.bwExpireUserStat.export" seqNo="" funcType="2" developFlag=""></func>
+				</func>
+			</func>
+			<func code="008103" name="服务统计" srcFile=""  descInfo="服务统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<func code="008103001" name="订购查询统计" srcFile="/jsp/boss/stat/orderStatAction.do?methodToCall=openQuery"  descInfo="订购查询统计" status="1" alias="pm.orderStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008103001001" name="导出" srcFile=""  descInfo="导出" status="1" alias="pm.orderStat.export" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			</func>
+			<func code="008104" name="营业收入统计" srcFile=""  descInfo="营业收入统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<func code="008104001" name="单位对账统计" srcFile="/jsp/boss/stat/busiVerifyAccount/unitVerifyAccountAction.do?methodToCall=openQuery"  descInfo="单位对账统计" status="1" alias="pm.unitVerifyAccount.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008104001001" name="打印营业对账表一" srcFile=""  descInfo="打印营业对账表一" status="1" alias="pm.unitVerifyAccount.printReportFirst" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104001002" name="打印营业对账表二" srcFile=""  descInfo="打印营业对账表二" status="1" alias="pm.unitVerifyAccount.printReportSecond" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104001003" name="打印营业对账表三" srcFile=""  descInfo="打印营业对账表三" status="1" alias="pm.unitVerifyAccount.printReportThird" seqNo="" funcType="2" developFlag=""/>
+					<!-- 2012-7-23 yzy -->
+					<func code="008104001004" name="导出营业对账表四到EXCEL" srcFile=""  descInfo="导出营业对账表四到EXCEL" status="1" alias="pm.unitVerifyAccount.exportVerifyAccountFourth" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104001005" name="导出营业对账表五到EXCEL" srcFile=""  descInfo="导出营业对账表五到EXCEL" status="1" alias="pm.unitVerifyAccount.exportVerifyAccountFifth" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104001006" name="营业对账统计表" srcFile=""  descInfo="营业对账统计表" status="1" alias="pm.unitVerifyAccount.verifySummary" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="008104002" name="操作员对账统计" srcFile="/jsp/boss/stat/busiVerifyAccount/operatorVerifyAccountAction.do?methodToCall=openQuery"  descInfo="操作员对账统计" status="1" alias="pm.operatorVerifyAccount.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008104002001" name="打印营业对账表一" srcFile=""  descInfo="打印营业对账表一" status="1" alias="pm.operatorVerifyAccount.printReportFirst" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104002002" name="打印营业对账表二" srcFile=""  descInfo="打印营业对账表二" status="1" alias="pm.operatorVerifyAccount.printReportSecond" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104002003" name="打印营业对账表三" srcFile=""  descInfo="打印营业对账表三" status="1" alias="pm.operatorVerifyAccount.printReportThird" seqNo="" funcType="2" developFlag=""/>
+					<!-- 2012-7-23 yzy -->
+					<func code="008104002004" name="导出营业对账表四到EXCEL" srcFile=""  descInfo="导出营业对账表四到EXCEL" status="1" alias="pm.operatorVerifyAccount.exportVerifyAccountFourth" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104002005" name="导出营业对账表五到EXCEL" srcFile=""  descInfo="导出营业对账表五到EXCEL" status="1" alias="pm.operatorVerifyAccount.exportVerifyAccountFifth" seqNo="" funcType="2" developFlag=""/>
+					<func code="008104002006" name="营业对账统计表" srcFile=""  descInfo="营业对账统计表" status="1" alias="pm.operatorVerifyAccount.verifySummary" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="008104003" name="销售收入统计" srcFile="/jsp/boss/stat/saleIncomeStatAction.do?methodToCall=openQuery" descInfo="销售收入统计" status="1" alias="pm.saleIncomeStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008104003001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.saleIncomeStat.export" seqNo="" funcType="2" developFlag="" />
+					<func code="008104003002" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.saleIncomeStat.commonStat" seqNo="" funcType="2" developFlag="" />
+				</func>
+				<!-- 账户收入统计 liuxu 2012-12-17 -->
+				<func code="008104004" name="账户收入统计" srcFile="/jsp/boss/stat/accountIncomeStat.do?methodToCall=initData" descInfo="账户收入统计" status="1" alias="pm.accountIncomeStat.initData" seqNo="" funcType="1" developFlag="">
+					<func code="008104004001" name="查询" srcFile="" descInfo="查询" status="1" alias="pm.accountIncomeStat.query" seqNo="" funcType="2" developFlag=""  />
+					<func code="008104004002" name="明细数据" srcFile="/jsp/boss/stat/accountIncomeStat.do?methodToCall=openQuery" descInfo="明细数据" status="1" alias="pm.accountIncomeStat.openQuery" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<!-- 
+				<func code="008104005" name="产品订购预收款统计" srcFile="/jsp/boss/stat/orderPreReceivablesStatAction.do?methodToCall=openQuery" descInfo="产品订购预收款统计" status="1" alias="pm.orderPreReceivablesStat.openQuery" seqNo="" funcType="1" developFlag="">	
+					<func code="008104005001" name="汇总导出" srcFile="" descInfo="汇总导出" status="1" alias="pm.orderPreReceivablesStat.exportTotal" seqNo="" funcType="2" developFlag=""  />	
+					<func code="008104005002" name="明细导出" srcFile="" descInfo="明细导出" status="1" alias="pm.orderPreReceivablesStat.exportDetail" seqNo="" funcType="2" developFlag=""  />
+					<func code="008104005003" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.orderPreReceivablesStat.commonStat" seqNo="" funcType="2" developFlag="" />
+				</func>
+				-->
+				<func code="008104006" name="产品订购收款统计" srcFile="/jsp/boss/stat/orderRealReceivablesStatAction.do?methodToCall=openQuery" descInfo="产品订购收款统计" status="1" alias="pm.orderRealReceivablesStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<!-- <func code="008104006001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.orderRealReceivablesStat.exportTotal" seqNo="" funcType="2" developFlag=""  />	 -->
+					<func code="008104006002" name="明细导出" srcFile="" descInfo="明细导出" status="1" alias="pm.orderRealReceivablesStat.exportDetail" seqNo="" funcType="2" developFlag=""  /> 
+					<func code="008104006003" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.orderRealReceivablesStat.commonStat" seqNo="" funcType="2" developFlag="" />
+				</func>
+				<!-- 营业自动收入统计 yzy 2013-2-26 -->
+				<func code="008104007" name="营业收入自动对账统计" srcFile="/jsp/boss/stat/autoVerifyAccount/autoVerifyAccount.do?methodToCall=initData" descInfo="营业收入自动对账统计" status="1" alias="pm.verifyAccount.autoVerify" seqNo="" funcType="1" developFlag="">
+					<func code="008104007001" name="单位自动对账统计" srcFile="" descInfo="单位自动对账统计" status="1" alias="pm.verifyAccount.dept" seqNo="" funcType="2" developFlag="">
+					</func>
+					<func code="008104007002" name="操作员自动对账统计" srcFile="" descInfo="操作员自动对账统计" status="1" alias="pm.verifyAccount.oper" seqNo="" funcType="2" developFlag="">
+					</func>
+				</func>
+				<func code="008104008" name="营业操作统计" srcFile="/jsp/boss/stat/busi/busiNonReceiptStat.do?methodToCall=openQuery" descInfo="营业操作统计" status="1" alias="pm.busiStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008104008001" name="营业操作统计" srcFile="" descInfo="营业操作统计" status="1" alias="pm.busiStat.busiNonReceiptStat" seqNo="" funcType="2" developFlag="">
+					</func>
+				</func>
+				<func code="008104009" name="营业收费项目统计" srcFile="/jsp/boss/stat/busi/busiFeeReceiptStat.do?methodToCall=openQuery" descInfo="营业收费项目统计" status="1" alias="pm.busiFeeStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008104009001" name="营业收费项目统计" srcFile="" descInfo="营业收费项目统计" status="1" alias="pm.busiFeeStat.busiFeeReceiptStat" seqNo="" funcType="2" developFlag="">
+					</func>
+				</func>
+			</func>
+			<func code="008105" name="消费账目统计" srcFile=""  descInfo="消费账目统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<func code="008105001" name="互动消费信息统计" srcFile="/jsp/boss/stat/cityAreaStat.do?methodToCall=openQuery"  descInfo="互动消费信息统计" status="1" alias="pm.cityAreaStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008105001001" name="导出" srcFile=""  descInfo="导出" status="1" alias="pm.cityAreaStat.export" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="008105002" name="互动消费统计" srcFile="/jsp/boss/stat/vodConsumeStatAction.do?methodToCall=openQuery" descInfo="互动消费统计" status="1" alias="pm.vodConsumeStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008105002001" name="导出" srcFile="" descInfo="导出" status="1" alias="pm.vodConsumeStat.export" seqNo="" funcType="2" developFlag="" />
+				</func>
+				<func code="008105003" name="用户消费明细" srcFile="/jsp/boss/stat/orderIncomeStatAction.do?methodToCall=openQuery" descInfo="用户消费明细" status="1" alias="pm.orderIncomeStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008105003001" name="明细导出" srcFile="" descInfo="明细导出" status="1" alias="pm.orderIncomeStat.export" seqNo="" funcType="2" developFlag="" />
+					<!--<func code="008105003002" name="查看曲线图" srcFile="" descInfo="查看曲线图" status="1" alias="pm.orderIncomeStat.commonStat" equNo="" funcType="2" developFlag="" />-->
+				</func>
+			</func>
+			<func code="008106" name="自定义统计" srcFile=""  descInfo="自定义统计" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+				<!-- liuxu 2012-8-22 -->
+				<func code="008106001" name="自定义统计" srcFile="/jsp/boss/stat/customStat.do?methodToCall=openQuery"  descInfo="自定义统计" status="1" alias="pm.customStat.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="008106001001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.customStat.addView" seqNo="" funcType="2" developFlag="">
+						<func code="008106001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.customStat.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="008106001002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.customStat.modifyView" seqNo="" funcType="2" developFlag="">
+						<func code="008106001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.customStat.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="008106001003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.customStat.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="008106001004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.customStat.view" seqNo="" funcType="2" developFlag=""/>
+					<func code="008106001005" name="按条件统计" srcFile=""  descInfo="按条件统计" status="1" alias="pm.customStat.execute" seqNo="" funcType="2" developFlag="">
+						<func code="008106001005001" name="确认统计" srcFile="ajaxCustomStatExecute" descInfo="确认统计" status="1" alias="pm.customStatService.openQuery" seqNo="" funcType="2" developFlag=""/>
+						<func code="008106001005002" name="检查统计" srcFile="ajaxCustomStatCheck" descInfo="检查统计" status="1" alias="pm.customStatService.checkQuery" seqNo="" funcType="2" developFlag="" />
+					</func>
+					<func code="008106001006" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.customStat.openQuery" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			</func>
+		
+		</func>
+	</func_tree>
+</plugin>

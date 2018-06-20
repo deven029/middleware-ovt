@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<plugin>
+	<id>OvtBossCoreResourceImpl</id>
+	<name>资源服务</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>资源服务实现</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCoreResourceImplPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/boss_resource.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.web.db.BossEquInfo" />
+			<class name="com.ovt.idtv.boss.web.db.BossEquRela" />
+			<class name="com.ovt.idtv.boss.web.db.BossEquType" />
+			<class name="com.ovt.idtv.boss.web.db.BossEquTypeRela" />
+			<!-- add by jhg 2011-12-05 -->
+			<class name="com.ovt.idtv.boss.web.db.BossBandWidthAccountInfo" />
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

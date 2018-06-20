@@ -1,0 +1,41 @@
+<?xml version = "1.0"?>
+<endpoints version="2.0"
+	xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+	
+	<endpoint name="SecurityAuthSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.SecurityAuthSOAPImpl"
+		url-pattern="/SecurityAuthSOAP">
+	</endpoint>
+	<!-- <endpoint name="UBISOAP"
+		implementation="com.ovt.idtv.boss.ubi.ws.UBISOAPImpl"
+		url-pattern="/UBISOAP">
+	</endpoint> -->
+	<endpoint name="SerivceManageSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.SerivceManageSOAPImpl"
+		url-pattern="/SerivceManageSOAP">
+	</endpoint>
+	<!-- <endpoint name="SysServiceSOAP"
+		implementation="com.ovt.boss.securityauth.SysServiceSOAPImpl"
+		url-pattern="/SysServiceSOAP">
+	</endpoint> -->
+	<endpoint name="UserManageSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.UserManageSOAPImpl"
+		url-pattern="/UserManageSOAP">
+	</endpoint>
+	<endpoint name="SysManageSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.SysManageSOAPImpl"
+		url-pattern="/SysManageSOAP">
+	</endpoint>
+	<endpoint name="ResourceManageSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.ResourceManageSOAPImpl"
+		url-pattern="/ResourceManageSOAP">
+	</endpoint>
+	<!-- <endpoint name="NotifySOAP"
+		implementation="com.ovt.boss.ubi.ws.service.NotifySOAPImpl"
+		url-pattern="/NotifySOAP">
+	</endpoint> 
+	<endpoint name="OnLineOrderManageSOAP"
+		implementation="com.ovt.boss.ubi.ws.service.OnLineOrderManageSOAPImpl"
+		url-pattern="/OnLineOrderManageSOAP">
+	</endpoint>-->
+</endpoints>

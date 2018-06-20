@@ -1,0 +1,123 @@
+
+div.tableContainer {  
+clear: both;  
+border: 0px solid #963;  
+height: 320px;  
+overflow: auto;  
+width: 100%;  
+}  
+
+/* WinIE 6.x needs to re-account for it’’s scrollbar. Give it some padding */  
+\html div.tableContainer/* */ {  
+padding: 0 0px 0 0  
+}  
+
+/* clean up for allowing display Opera 5.x/6.x and MacIE 5.x */  
+html>body div.tableContainer {  
+height: auto;  
+padding: 0;  
+width: 100%  
+}  
+
+/* Reset overflow value to hidden for all non-IE browsers. */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body div[class].tableContainer {  
+height: 285px;  
+overflow: hidden;  
+width: 100%  
+}  
+
+/* define width of table. Opera 5.x/6.x and MacIE 5.x */  
+html>body div.tableContainer table {  
+float: none;  
+margin: 0;  
+width: 100% 
+}  
+
+/* define width of table. Add 16px to width for scrollbar. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body div[class].tableContainer table {  
+width: 100%  
+}  
+
+/* set table header to a fixed position. WinIE 6.x only */  
+/* In WinIE 6.x, any element with a position property set to relative and is a child of */  
+/* an element that has an overflow property set, the relative value translates into fixed. */  
+/* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */  
+thead.fixedHeader tr {  
+position: relative;  
+/* expression is for WinIE 5.x only. Remove to validate and for pure CSS solution */  
+top: expression(document.getElementById("tableContainer").scrollTop)  
+}  
+
+
+/* set THEAD element to have block level attributes. All other non-IE browsers */  
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body thead[class].fixedHeader tr {  
+display: block  
+}  
+
+/* make the TH elements pretty */  
+thead.fixedHeader th {  
+background: #C96;  
+border-left: 0px solid #EB8;  
+border-right: 0px solid #B74;  
+border-top: 0px solid #EB8;  
+font-weight: normal;  
+padding: 0px 0px;  
+text-align: center  
+}  
+
+
+/* define the table content to be scrollable */  
+/* set TBODY element to have block level attributes. All other non-IE browsers */  
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */  
+/* induced side effect is that child TDs no longer accept width: auto */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body tbody[class].scrollContent {  
+display: block;  
+height: 262px;  
+overflow: auto;  
+width: 100%  
+}  
+
+
+/* define width of TH elements: 1st, 2nd, and 3rd respectively. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+/* Add 16px to last TH for scrollbar padding */  
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors */  
+head:first-child+body thead[class].fixedHeader th {  
+width: 200px  
+}  
+
+head:first-child+body thead[class].fixedHeader th + th {  
+width: 250px  
+}  
+
+head:first-child+body thead[class].fixedHeader th + th + th {  
+border-right: none;  
+padding: 4px 4px 4px 3px;  
+width: 316px  
+}  
+
+/* define width of TH elements: 1st, 2nd, and 3rd respectively. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+/* Add 16px to last TH for scrollbar padding */  
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors */  
+head:first-child+body tbody[class].scrollContent td {  
+width: 200px  
+}  
+
+head:first-child+body tbody[class].scrollContent td + td {  
+width: 250px  
+}  
+
+head:first-child+body tbody[class].scrollContent td + td + td {  
+border-right: none;  
+padding: 2px 4px 2px 3px;  
+width: 300px  
+
+/* expression is for WinIE 5.x only. Remove to validate and for pure CSS solution */  
+top: expression(document.getElementById("tableContainer").scrollTop)  
+}  

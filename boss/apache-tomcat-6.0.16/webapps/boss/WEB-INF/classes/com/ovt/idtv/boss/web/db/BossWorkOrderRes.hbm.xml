@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossWorkOrderRes" table="BOSS_WORKORDER_RES">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_WORKORDER_RES</param>
+			</generator>
+		</id>
+		<property name="workId" type="java.lang.Long">
+			<column name="WORK_ID"/>
+		</property>
+		<property name="resTime" type="java.lang.String">
+			<column name="RES_TIME" length="14" />
+		</property>
+		<property name="resOper" type="java.lang.String">
+			<column name="RES_OPER" length="32" />
+		</property>
+		<property name="resDesc" type="java.lang.String">
+			<column name="RES_DESC" length="4000" />
+		</property>
+		<property name="userRes" type="java.lang.String">
+			<column name="USER_RES" length="4000" />
+		</property>
+		<property name="finshOper" type="java.lang.String">
+			<column name="FINSH_OPER" length="32" />
+		</property>
+		<property name="finshTime" type="java.lang.String">
+			<column name="FINSH_TIME" length="14" />
+		</property>
+	</class>
+</hibernate-mapping>

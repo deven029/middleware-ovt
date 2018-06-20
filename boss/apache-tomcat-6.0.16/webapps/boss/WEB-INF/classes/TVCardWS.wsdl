@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.ovt.boss/TVCardWS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TVCardWS" targetNamespace="http://www.ovt.boss/TVCardWS/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ovt.boss/TVCardWS/">
+      <xsd:element name="yonghu_jibenXX_ka"
+      	type="tns:yonghu_jibenXX_ka">
+
+      </xsd:element>
+      <xsd:element name="yonghu_jibenXX_kaResponse"
+      	type="tns:yonghu_jibenXX_kaResponse">
+
+      </xsd:element>
+
+      <xsd:complexType name="yonghu_jibenXX_ka">
+      	<xsd:sequence>
+      		<xsd:element name="kahao" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="yonghu_jibenXX_kaResponse">
+      	<xsd:sequence>
+      		<xsd:element name="returns" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="yonghu_chongzhi_ka"
+      	type="tns:yonghu_chongzhi_ka">
+
+      </xsd:element>
+      <xsd:element name="yonghu_chongzhi_kaResponse"
+      	type="tns:yonghu_chongzhi_kaResponse">
+
+      </xsd:element>
+
+      <xsd:complexType name="yonghu_chongzhi_ka">
+      	<xsd:sequence>
+      		<xsd:element name="kahao" type="xsd:string"></xsd:element>
+      		<xsd:element name="jiner" type="xsd:string"></xsd:element>
+      		<xsd:element name="shijian" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="yonghu_chongzhi_kaResponse">
+      	<xsd:sequence>
+      		<xsd:element name="returns" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="check_yonghu" type="tns:check_yonghu">
+
+      </xsd:element>
+      <xsd:element name="check_yonghuResponse"
+      	type="tns:check_yonghuResponse">
+
+      </xsd:element>
+
+      <xsd:complexType name="check_yonghu">
+      	<xsd:sequence>
+      		<xsd:element name="kahao" type="xsd:string"></xsd:element>
+      		<xsd:element name="mima" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      
+            <xsd:complexType name="check_yonghuResponse">
+            	<xsd:sequence>
+            		<xsd:element name="returns" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="getyonghu_jibenbao_shijian"
+            	type="tns:getyonghu_jibenbao_shijian">
+            </xsd:element>
+            <xsd:element name="getyonghu_jibenbao_shijianResponse"
+            	type="tns:getyonghu_jibenbao_shijianResponse">
+
+            </xsd:element>
+            
+            <xsd:complexType name="getyonghu_jibenbao_shijian">
+            	<xsd:sequence>
+            		<xsd:element name="kahao" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+            
+            <xsd:complexType
+            	name="getyonghu_jibenbao_shijianResponse">
+            	<xsd:sequence>
+            		<xsd:element name="returns" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="yonghu_jibenXX_kaRequest">
+    <wsdl:part element="tns:yonghu_jibenXX_ka" name="yonghu_jibenXX_ka"/>
+  </wsdl:message>
+  <wsdl:message name="yonghu_jibenXX_kaResponse">
+    <wsdl:part element="tns:yonghu_jibenXX_kaResponse" name="yonghu_jibenXX_kaResponse"/>
+  </wsdl:message>
+  <wsdl:message name="yonghu_chongzhi_kaRequest">
+  	<wsdl:part name="yonghu_chongzhi_ka" element="tns:yonghu_chongzhi_ka"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="yonghu_chongzhi_kaResponse">
+  	<wsdl:part name="yonghu_chongzhi_kaResponse" element="tns:yonghu_chongzhi_kaResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="check_yonghuRequest">
+  	<wsdl:part name="check_yonghu" element="tns:check_yonghu"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="check_yonghuResponse">
+  	<wsdl:part name="check_yonghuResponse" element="tns:check_yonghuResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getyonghu_jibenbao_shijianRequest">
+  	<wsdl:part name="getyonghu_jibenbao_shijian" element="tns:getyonghu_jibenbao_shijian"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getyonghu_jibenbao_shijianResponse">
+  	<wsdl:part name="getyonghu_jibenbao_shijianResponse" element="tns:getyonghu_jibenbao_shijianResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TVCardWS">
+    <wsdl:operation name="yonghu_jibenXX_ka">
+      <wsdl:input message="tns:yonghu_jibenXX_kaRequest"/>
+      <wsdl:output message="tns:yonghu_jibenXX_kaResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="yonghu_chongzhi_ka">
+    	<wsdl:input message="tns:yonghu_chongzhi_kaRequest"></wsdl:input>
+    	<wsdl:output message="tns:yonghu_chongzhi_kaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_yonghu">
+    	<wsdl:input message="tns:check_yonghuRequest"></wsdl:input>
+    	<wsdl:output message="tns:check_yonghuResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getyonghu_jibenbao_shijian">
+    	<wsdl:input message="tns:getyonghu_jibenbao_shijianRequest"></wsdl:input>
+    	<wsdl:output message="tns:getyonghu_jibenbao_shijianResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TVCardWSSOAP" type="tns:TVCardWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="yonghu_jibenXX_ka">
+      <soap:operation soapAction="http://www.ovt.boss/TVCardWS/yonghu_jibenXX_ka"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="yonghu_chongzhi_ka">
+      <soap:operation soapAction="http://www.ovt.boss/TVCardWS/yonghu_chongzhi_ka"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+	<wsdl:operation name="check_yonghu">
+      <soap:operation soapAction="http://www.ovt.boss/TVCardWS/check_yonghu"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getyonghu_jibenbao_shijian">
+      <soap:operation soapAction="http://www.ovt.boss/TVCardWS/getyonghu_jibenbao_shijian"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TVCardWS">
+    <wsdl:port binding="tns:TVCardWSSOAP" name="TVCardWSSOAP">
+      <soap:address location="http://www.ovt.boss/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

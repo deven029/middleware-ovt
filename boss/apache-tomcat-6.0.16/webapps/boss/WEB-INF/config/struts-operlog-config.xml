@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action path="/jsp/pm/operlog/operlog" type="com.ovt.idtv.boss.web.operlog.struts.UserOperLogAction"
+			unknown="false" validate="false" parameter="methodToCall">
+			<forward name="select.success"
+				path="/jsp/pm/operlog/operlog.do?methodToCall=openQuery"></forward>
+		</action>
+	</action-mappings>
+</struts-config>

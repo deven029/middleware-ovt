@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+	<editType id="timeinput"
+		className="com.ovt.common.web.taglib.table.util.TimeInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput3"
+		className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput4"
+		className="com.ovt.common.web.taglib.table.util.DefaultNullDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput2"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="boss.userInfo" rowFields="2" version="1">
+	    <queryField id="userCoding" fieldId="-1" label="用户编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="name" fieldId="-2" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	       <editType refid="input"/>
+	    </queryField><!-- 
+	    <queryField id="status" fieldId="-3" label="用户状态" spanFields="1" dataType="string" oper="full like">
+	        <editType id="userStatus"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="启用" value="0" />
+					<item name="注销" value="1" />
+					<item name="停机" value="2" />
+				</data>
+			</editType>
+	    </queryField>
+	    --><queryField id="type" fieldId="-4" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	       <editType id="userType"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="个人用户" value="0" />
+					<item name="企业用户" value="1" />
+				</data>
+			</editType>
+	    </queryField> 
+	    <queryField id="groupId" fieldId="-5" label="用户组" spanFields="1" dataType="string" oper="full like">
+	       <editType id="groupId" className="com.ovt.idtv.boss.web.user.userInfo.struts.UserGroupQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>           
+	</queryDefine>
+	<queryDefine id="boss.shortUserInfo" rowFields="2" version="1">
+	    <queryField id="userCoding" fieldId="-1" label="用户编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="name" fieldId="-2" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	       <editType refid="input"/>
+	    </queryField>
+	     <queryField id="address" fieldId="-3" label="注册地址" spanFields="1" dataType="string" oper="full like">
+	       <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	<queryDefine id="boss.userLogout" rowFields="2" version="1">
+	    <queryField id="userCoding" fieldId="-1" label="用户编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="name" fieldId="-2" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	       <editType refid="input"/>
+	    </queryField> 
+	    <queryField id="type" fieldId="-3" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	       <editType id="userType"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="个人用户" value="0" />
+					<item name="企业用户" value="1" />
+				</data>
+			</editType>
+	    </queryField> 
+	    <queryField id="groupId" fieldId="-4" label="用户组" spanFields="1" dataType="string" oper="full like">
+	       <editType id="groupId" className="com.ovt.idtv.boss.web.user.userInfo.struts.UserGroupQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>           
+	</queryDefine>			
+	<queryDefine id="boss.equInfo" rowFields="2" version="1">
+	    <queryField id="equCode" fieldId="0" label="设备编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	     <queryField id="equType" fieldId="1" label="设备类型" spanFields="1" dataType="string" oper="full like">
+	        <editType id="equTypeSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="IC卡" value="IC卡" />
+					<item name="机顶盒" value="机顶盒" />
+				</data>
+			</editType>
+	    </queryField>
+	     <queryField id="status" fieldId="2" label="状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="statusSelect"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="库存" value="库存" />
+					<item name="可以使用" value="可以使用" />
+					<item name="在用" value="在用" />
+					<item name="损坏" value="损坏" />
+					<item name="报废" value="报废" />
+					<item name="已注销" value="已注销" />
+					<item name="退厂" value="退厂" />
+					<item name="待用" value="待用" />
+					<item name="冻结" value="冻结" />
+				</data>
+			</editType>
+	    </queryField>
+	     <queryField id="model" fieldId="3" label="型号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	     <queryField id="equCode" fieldId="4" label="生产厂家" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	<queryDefine id="boss.equEncode" rowFields="2" version="1">
+	    <queryField id="equCode" fieldId="-1" label="设备编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.corpUser" rowFields="2" version="1">
+	     <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	       <editType refid="input"/>
+	    </queryField> 
+	</queryDefine>	
+	<!--	2012-05-21 ysm 修改条件查询的名称	-->
+	<queryDefine id="boss.userGroup" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="用户组名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="description" fieldId="1" label="用户组描述" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>	
+	
+	<!--	2012-05-24 ysm 用户组用户条件查询	-->
+	<queryDefine id="boss.userGroupRela" rowFields="2" version="1">
+	    <queryField id="userId" fieldId="0" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="userName" fieldId="-1" label="用户姓名" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>  
+	    <queryField id="userType" fieldId="-2" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	       <editType id="type"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="--请选择--" value="" />
+					<item name="个人用户" value="0" />
+					<item name="企业用户" value="1" />
+				</data>
+			</editType>
+	    </queryField>    
+	    <queryField id="userAddress" fieldId="-3" label="用户地址" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	
+	<!-- 批量添加  2012-5-28 ysm -->
+	<queryDefine id="user.batchUserAdd" rowFields="2" version="1">
+	    <queryField id="userType" fieldId="-1" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	        <editType id="userType" className="com.ovt.idtv.boss.web.user.userInfoM.UserTypeFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="areaInfoThree" fieldId="-2" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	        <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="userCoding" fieldId="-3" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="equNo" fieldId="-4" label="终端卡号" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+	</queryDefine>	
+	
+	
+	<queryDefine id="boss.userAccount" rowFields="2" version="1">
+	    <queryField id="userName" fieldId="-1" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="userCode" fieldId="-2" label="用户编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="accountName" fieldId="-3" label="帐户名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.userAccountHis" rowFields="2" version="1">
+	    <queryField id="userName" fieldId="-1" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="userCode" fieldId="-2" label="用户编码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	<queryDefine id="boss.verifyAccount" rowFields="2" version="1">
+	   <queryField id="busiDep" fieldId="-1" label="营业单位" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.customer.verifyAccount.BusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>  
+	    <queryField id="loginNo" fieldId="-2" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNoSelect" className="com.ovt.idtv.boss.web.customer.verifyAccount.OperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-3" label="开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput3" />
+		</queryField>
+		<queryField id="end" fieldId="-4" label="结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput3" />
+		</queryField>
+	</queryDefine>			
+	<queryDefine id="boss.userDInfoSearch" rowFields="2" version="1">
+	    <queryField id="userCoding" fieldId="-1" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	   <queryField id="userName" fieldId="-2" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	   </queryField>
+	   <!-- 增加三级片区查询框，去除原单一级的查询框
+	   <queryField id="areaInfoL1" fieldId="-3" label="一级片区" spanFields="1" dataType="string" oper="full like">
+	         <editType id="areaInfoL1" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoL1FieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	     -->
+	    <!-- 三级片区联动  2012-3-21 yzy -->
+	    <queryField id="areaInfoThree" fieldId="-21" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	         <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	   <queryField id="userAddress" fieldId="-4" label="安装地址" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	   </queryField>
+	   <queryField id="userType" fieldId="-5" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	         <editType id="userType" className="com.ovt.idtv.boss.web.user.userInfoM.UserTypeFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="businessTypes" fieldId="-24" label="业务类型" spanFields="1" dataType="string" oper="full like">
+	       <editType id="businessTypes"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="--请选择--" value="" />
+					<item name="模拟电视用户" value="0" />
+					<item name="数字电视用户" value="1" />
+				</data>
+			</editType>
+	    </queryField>
+	    <queryField id="userRegisterStart" fieldId="-6" label="用户注册开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="userRegisterEnd" fieldId="-7" label="用户注册结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="bankCheckFlag" fieldId="-8" label="代扣审核" spanFields="1" dataType="string" oper="full like">
+	         <editType id="bankCheckFlag"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="--请选择--" value="" />
+					<item name="未审核" value="0" />
+					<item name="审核通过" value="1" />
+				</data>
+			</editType>
+	    </queryField>
+	     <queryField id="bankInfo" fieldId="-9" label="委托银行" spanFields="1" dataType="string" oper="full like">
+	         <editType id="bankInfo" className="com.ovt.idtv.boss.web.user.userInfoM.BankInfoFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="bankCheckDateStart" fieldId="-10" label="委托开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="bankCheckDateEnd" fieldId="-11" label="委托结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="equType" fieldId="-12" label="终端类型" spanFields="1" dataType="string" oper="full like">
+	         <editType id="equType"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="--请选择--" value=""/>
+					<item name="智能卡" value="IC_CARD" />
+					<item name="机顶盒" value="STB" />
+				</data>
+			</editType>
+	    </queryField>
+	    <queryField id="equNo" fieldId="-13" label="终端卡号" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+	    <!-- 2012-6-18 yzy -->
+	    <queryField id="equRegisterStartDate" fieldId="-22" label="终端注册开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="equRegisterEndDate" fieldId="-23" label="终端注册结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="userEquCount" fieldId="-14" label="终端数大于等于(个)" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="userEquCountLess" fieldId="-15" label="终端数小于等于(个)" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	   <queryField id="userAccountMoney" fieldId="-16" label="账户可用余额大于(元)" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	   </queryField>
+	    <queryField id="userAccountMoneyLess" fieldId="-17" label="账户可用余额小于(元)" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	   </queryField>
+	   <queryField id="servList" fieldId="-18" label="订购服务" spanFields="1" dataType="string" oper="full like">
+	         <editType id="servList" className="com.ovt.idtv.boss.web.stat.order.ServListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="orderExpiryStartDate" fieldId="-19" label="服务截止开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="orderExpiryEndDate" fieldId="-20" label="服务截止结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<!-- 增加模拟电视业务截止日期查询条件	liuxu 2012/5/7 -->
+		<queryField id="businessTypesStartDate" fieldId="-1000" label="模拟电视业务截止开始日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="businessTypesEndDate" fieldId="-1001" label="模拟电视业务截止结束日期"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>		
+	<queryDefine id="boss.orderPermit" rowFields="2" version="1">
+	    <queryField id="permitsName" fieldId="1" label="限制名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="permitsDesc" fieldId="9" label="描述" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>
+	<queryDefine id="boss.permitPolicySelect" rowFields="2" version="1">
+	    <queryField id="name" fieldId="1" label="产品名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="commonName" fieldId="2" label="策略名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>	
+	<queryDefine id="boss.permitPolicyNoSelect" rowFields="2" version="1">
+	    <queryField id="name" fieldId="1" label="产品名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="commonName" fieldId="2" label="策略名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>    
+	</queryDefine>			
+</queryDefines>

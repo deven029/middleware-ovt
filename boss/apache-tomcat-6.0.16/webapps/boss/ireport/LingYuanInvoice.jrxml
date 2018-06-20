@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="LingYuanInvoice"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="262"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="IS_PRINT" isForPrompting="false" class="java.lang.String"/>
+
+	<field name="FIELD_TRAN_NO" class="java.lang.String"/>
+	<field name="FIELD_PAYER_NAME" class="java.lang.String"/>
+	<field name="FIELD_PAYER_CODING" class="java.lang.String"/>
+	<field name="FIELD_PAYER_ADDRESS" class="java.lang.String"/>
+	<field name="FIELD_PAYEE_UNIT" class="java.lang.String"/>
+	<field name="FIELD_OPER" class="java.lang.String"/>
+	<field name="FIELD_INDUSTRY_TYPE" class="java.lang.String"/>
+	<field name="TOTALRMB" class="java.lang.String"/>
+	<field name="TOTALMONEY" class="java.lang.String"/>
+	<field name="FIELD_YYYY" class="java.lang.String"/>
+	<field name="FIELD_MM" class="java.lang.String"/>
+	<field name="FIELD_DD" class="java.lang.String"/>
+	<field name="FIELD_NAME0" class="java.lang.String"/>
+	<field name="FIELD_NAME1" class="java.lang.String"/>
+	<field name="FIELD_NAME2" class="java.lang.String"/>
+	<field name="FIELD_NAME3" class="java.lang.String"/>
+	<field name="FIELD_NAME4" class="java.lang.String"/>
+	<field name="FIELD_NAME5" class="java.lang.String"/>
+	<field name="FIELD_MONEY0" class="java.lang.String"/>
+	<field name="FIELD_MONEY1" class="java.lang.String"/>
+	<field name="FIELD_MONEY2" class="java.lang.String"/>
+	<field name="FIELD_MONEY3" class="java.lang.String"/>
+	<field name="FIELD_MONEY4" class="java.lang.String"/>
+	<field name="FIELD_MONEY5" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="262"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="67"
+						y="8"
+						width="460"
+						height="22"
+						forecolor="#FF6633"
+						key="staticText-1">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="14"/>
+					</textElement>
+				<text><![CDATA[辽宁省朝阳市凌源有线数字电视服务费专用发票]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="213"
+						y="74"
+						width="30"
+						height="14"
+						forecolor="#000000"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_YYYY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="43"
+						y="60"
+						width="57"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-3">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[流水号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="43"
+						y="74"
+						width="108"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-4">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[付款单位（个人）：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="387"
+						y="95"
+						width="53"
+						height="13"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[行业分类：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="68"
+						y="94"
+						width="66"
+						height="13"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[用户编号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="68"
+						y="108"
+						width="33"
+						height="13"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[地址：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="70"
+						y="122"
+						width="90"
+						height="13"
+						key="staticText-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[项目名称]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="435"
+						y="122"
+						width="82"
+						height="13"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[金额]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="43"
+						y="88"
+						width="1"
+						height="146"
+						forecolor="#FF6633"
+						key="line-3">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="528"
+						y="88"
+						width="1"
+						height="146"
+						forecolor="#FF6633"
+						key="line-4">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="100"
+						y="60"
+						width="100"
+						height="14"
+						forecolor="#000000"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_TRAN_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="95"
+						width="82"
+						height="13"
+						forecolor="#000000"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_INDUSTRY_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="115"
+						y="94"
+						width="125"
+						height="13"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_CODING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="100"
+						y="108"
+						width="269"
+						height="13"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="144"
+						y="75"
+						width="80"
+						height="24"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_NAME}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="43"
+						y="88"
+						width="485"
+						height="1"
+						forecolor="#FF6633"
+						key="line-6">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="43"
+						y="238"
+						width="118"
+						height="13"
+						forecolor="#FF6633"
+						key="staticText-23">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 收款单位（盖章有效）：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="320"
+						y="235"
+						width="53"
+						height="13"
+						forecolor="#FF6633"
+						key="staticText-24">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[收款人：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="160"
+						y="232"
+						width="148"
+						height="24"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYEE_UNIT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="362"
+						y="235"
+						width="91"
+						height="13"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_OPER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="55"
+						y="219"
+						width="98"
+						height="12"
+						key="staticText-25">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[合计金额（大写）：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="425"
+						y="219"
+						width="82"
+						height="12"
+						key="textField-12"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TOTALMONEY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="153"
+						y="219"
+						width="101"
+						height="12"
+						key="textField-13"/>
+					<box></box>
+					<textElement verticalAlignment="Top">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TOTALRMB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="136"
+						width="360"
+						height="13"
+						key="textField-14"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME0}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="136"
+						width="82"
+						height="13"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY0}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="43"
+						y="234"
+						width="485"
+						height="1"
+						forecolor="#FF6633"
+						key="line-7">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="244"
+						y="74"
+						width="15"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-26">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[年]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="282"
+						y="74"
+						width="15"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-27">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[月]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="320"
+						y="74"
+						width="15"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-28">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[日]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="257"
+						y="74"
+						width="25"
+						height="14"
+						forecolor="#000000"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="293"
+						y="74"
+						width="25"
+						height="14"
+						forecolor="#000000"
+						key="textField-18"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_DD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="150"
+						width="360"
+						height="13"
+						key="textField-19"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="150"
+						width="82"
+						height="13"
+						key="textField-20"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="164"
+						width="360"
+						height="13"
+						key="textField-21"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="164"
+						width="82"
+						height="13"
+						key="textField-22"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="178"
+						width="360"
+						height="13"
+						key="textField-23"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="178"
+						width="82"
+						height="13"
+						key="textField-24"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="192"
+						width="360"
+						height="13"
+						key="textField-25"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="192"
+						width="82"
+						height="13"
+						key="textField-26"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY4}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="70"
+						y="206"
+						width="360"
+						height="13"
+						key="textField-27"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_NAME5}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="206"
+						width="82"
+						height="13"
+						key="textField-28"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_MONEY5}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="463"
+						y="235"
+						width="69"
+						height="13"
+						forecolor="#FF6633"
+						key="staticText-29">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[（手写无效）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="412"
+						y="54"
+						width="115"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-30">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 代码：221131257231]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="412"
+						y="68"
+						width="115"
+						height="14"
+						forecolor="#FF6633"
+						key="staticText-31">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[NO：10000001]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="167"
+						y="29"
+						width="260"
+						height="22"
+						forecolor="#FF6633"
+						key="staticText-32">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="14"/>
+					</textElement>
+				<text><![CDATA[发 票 联]]></text>
+				</staticText>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="92"
+						y="-723"
+						width="409"
+						height="1"
+						forecolor="#FF6633"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

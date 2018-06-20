@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+	<editType id="channel"
+		className="com.ovt.rating.form.ChannelFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="suveyGroup"
+		className="com.ovt.pm.survey.UserGroupFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="adverSuvey"
+		className="com.ovt.pm.survey.AdSuveyFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="option"
+		className="com.ovt.pm.survey.OptionFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="topic"
+		className="com.ovt.pm.survey.TopicFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="customer"
+		className="com.ovt.idtv.adm.web.order.orderinfo.CustomerFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="provide"
+		className="com.ovt.pm.survey.ProvideFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="areaName"
+		className="com.ovt.pm.content.program.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType"
+		className="com.ovt.pm.content.program.edittype.PriceTypeFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType2"
+		className="com.ovt.pm.content.program.edittype.PriceTypeOldFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+   <editType id="qamName"
+		className="com.ovt.concurrent2.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+		<editType id="timeinput"
+		className="com.ovt.common.web.taglib.table.util.TimeInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput2"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="pm.useroperlog" rowFields="2" version="1">
+	    <queryField id="startTime" fieldId="-1" label="开始日期" spanFields="1" dataType="string" oper="full like">
+	        <editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="endTime" fieldId="-2" label="结束日期" spanFields="1" dataType="string" oper="full like">
+	        <editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField> 
+	    <queryField id="loginNo" fieldId="-3" label="登录用户" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="operContent" fieldId="-5" label="操作内容" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>																			
+</queryDefines>

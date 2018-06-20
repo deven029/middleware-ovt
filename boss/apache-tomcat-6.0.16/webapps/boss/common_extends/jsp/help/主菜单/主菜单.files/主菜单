@@ -1,0 +1,437 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:华文中宋;}
+@font-face
+	{font-family:"\@华文中宋";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+h1
+	{mso-style-link:"标题 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:"Calibri","sans-serif";
+	font-weight:bold;}
+h2
+	{mso-style-link:"标题 2 Char";
+	margin-top:13.0pt;
+	margin-right:0cm;
+	margin-bottom:13.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:173%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+h3
+	{mso-style-link:"标题 3 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:13.5pt;
+	font-family:宋体;
+	font-weight:bold;}
+h4
+	{mso-style-link:"标题 4 Char";
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:14.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:156%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+h5
+	{mso-style-link:"标题 5 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:宋体;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+span.3Char
+	{mso-style-name:"标题 3 Char";
+	mso-style-link:"标题 3";
+	font-family:宋体;
+	font-weight:bold;}
+span.5Char
+	{mso-style-name:"标题 5 Char";
+	mso-style-link:"标题 5";
+	font-family:宋体;
+	font-weight:bold;}
+span.Char
+	{mso-style-name:"批注框文本 Char";
+	mso-style-link:批注框文本;
+	font-family:"Calibri","sans-serif";}
+span.dialog-label
+	{mso-style-name:dialog-label;}
+span.1Char
+	{mso-style-name:"标题 1 Char";
+	mso-style-link:"标题 1";
+	font-family:"Calibri","sans-serif";
+	font-weight:bold;}
+span.2Char
+	{mso-style-name:"标题 2 Char";
+	mso-style-link:"标题 2";
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+span.4Char
+	{mso-style-name:"标题 4 Char";
+	mso-style-link:"标题 4";
+	font-family:"Cambria","serif";
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:26.0pt;font-family:华文中宋'>东方广视业务运营支撑系统</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:26.0pt;font-family:华文中宋'>（<span lang=EN-US>BOSS</span>）<span
+lang=EN-US>V1.1</span>用户操作手册</span></b></p>
+
+<h1 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+line-height:150%;vertical-align:baseline'><span lang=EN-US style='font-size:
+14.0pt;line-height:150%'>.</span><span style='font-size:14.0pt;line-height:
+150%;font-family:宋体'>引言</span></h1>
+
+<h2 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:24.05pt;line-height:150%;vertical-align:baseline'><a
+name="_Toc292868903"></a><a name="_Toc98055655"><span style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>编写目的</span></a></h2>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>本文档主要阐述东方广视业务运营支撑系统（<span lang=EN-US>BOSS</span>）<span
+lang=EN-US>V1.1</span>的使用方法，为相关工作人员操作本系统提供参考依据。<a name="_Toc292868904"></a><a
+name="_Toc98055658"></a></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>软件概述</span></p>
+
+<h2 align=left style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:28.1pt;margin-bottom:.0001pt;text-align:left;line-height:150%;
+vertical-align:baseline'><a name="_Toc292868905"><span style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>系统总体说明</span></a></h2>
+
+<h3 style='margin-left:28.1pt;line-height:150%'><a name="_Toc292868906">背景</a></h3>
+
+<p class=MsoNormal style='text-indent:28.0pt'><span style='font-size:14.0pt;
+font-family:宋体'>随着公司规模的不断壮大，我们的客户越来越多，如何有效的对各种各样的设备（包括硬件和软件）进行有效的管理、实时监控告警成为非常迫切的问题。在没有网管系统之前存在的问题：</span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;line-height:
+150%'><span lang=EN-US style='font-size:14.0pt;line-height:150%'>1、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>无法及时发现设备的异常情况；</span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;line-height:
+150%'><span lang=EN-US style='font-size:14.0pt;line-height:150%'>2、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>发现问题之后无法方便的对设备进行检查，必须人工干预；</span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;line-height:
+150%'><span lang=EN-US style='font-size:14.0pt;line-height:150%'>3、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>无法非常直观的知道当前运行的设备的总体的结构图；</span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;line-height:
+150%'><span lang=EN-US style='font-size:14.0pt;line-height:150%'>4、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>除了直接对设备进行操作以外，没有办法直接对设备的配置进行修改；即使有某些设备存在一些远程控制的功能，但还是缺乏公司统一的设备管理机制；</span></p>
+
+<p class=MsoNormal style='margin-left:42.0pt;text-indent:-18.0pt;line-height:
+150%'><span lang=EN-US style='font-size:14.0pt;line-height:150%'>5、<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>无法对设备的各种历史的监控数据进行查询统计；</span></p>
+
+<p class=MsoNormal style='text-indent:28.0pt'><span style='font-size:14.0pt;
+font-family:宋体'>其实还可以列出很多存在的问题。网管系统将最终解决上述的问题。</span></p>
+
+<p class=MsoNormal style='text-indent:28.0pt'><span style='font-size:14.0pt;
+font-family:宋体'>网管系统的最终目标是能够对现有或将来有的各种硬件和软件的设备进行统一的管理和监控及告警。</span></p>
+
+<h2 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%;vertical-align:baseline'><a
+name="_Toc292868907"></a><a name="_Toc48450251"></a><a name="_Toc98055660"><span
+style='font-size:14.0pt;line-height:150%;font-family:宋体'>功能</span></a></h2>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>业务运营支撑系统包含客服管理、消息管理、资源管理、产品管理、账单管理、系统配置和系统管理七大部分。各部分包含的主要功能模块如下</span></p>
+
+<h1 align=left style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:28.1pt;margin-bottom:.0001pt;text-align:left;line-height:150%'><a
+name="_Toc98055664"></a><a name="_Toc292868915"><span style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>运行环境</span></a></h1>
+
+<h2 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%'><a name="_Toc292868916"><span
+style='font-size:14.0pt;line-height:150%;font-family:宋体'>硬件</span></a></h2>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>&nbsp;</span><span
+style='font-size:14.0pt;font-family:宋体'>内存要求：<span lang=EN-US>1GB</span>以上<span
+lang=EN-US>.</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:35.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>CPU</span><span
+style='font-size:14.0pt;font-family:宋体'>要求：<span lang=EN-US>1.0GHZ</span>以上</span></p>
+
+<h2 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%'><a name="_Toc292868917"><span
+style='font-size:14.0pt;line-height:150%;font-family:宋体'>支持软件</span></a></h2>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>数据库软件：<span lang=EN-US>oracle9i</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>WEB SERVER</span><span
+style='font-size:14.0pt;font-family:宋体'>：<span lang=EN-US>Tomcat5.5</span>以上</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>操作系统：<span lang=EN-US>windows
+xp/windows 2003</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>编程语言：<span lang=EN-US>JAVA</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>JDK</span><span
+style='font-size:14.0pt;font-family:宋体'>版本：<span lang=EN-US>5.0</span>以上</span></p>
+
+<h1 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%;page-break-before:always'><a
+name="_Toc292868918"></a><a name="_Toc98055667"><span style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>使用说明</span></a></h1>
+
+<h2 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%'><a name="_Toc292868919"></a><a
+name="_Toc98055668"><span style='font-size:14.0pt;line-height:150%;font-family:
+宋体'>登录模块</span></a></h2>
+
+<h3 style='margin:0cm;margin-bottom:.0001pt;text-indent:27.1pt;line-height:
+150%;page-break-after:avoid'><a name="_Toc292868920"></a><a name="_Toc98055669">登录</a></h3>
+
+<h4 align=left style='margin:0cm;margin-bottom:.0001pt;text-align:left;
+text-indent:28.1pt;line-height:150%'><span style='font-family:宋体'>功能说明</span></h4>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【模块位置】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>打开浏览器，输入主页网址</span><a href="http://IP"><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体;color:black'>http://IP</span></a><span
+style='font-size:14.0pt;font-family:宋体;color:black'>地址<span lang=EN-US>/admin</span></span><span
+style='font-size:14.0pt;font-family:宋体'>可进入系统登录页面。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【功能介绍】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>各类用户通过登录页面进入系统主页，并显示各类用户拥有的功能。<a
+name="_Toc12204000"></a><a name="_Toc12176458"></a></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.1pt'><b><span
+style='font-size:14.0pt;font-family:宋体'>使用说明</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【参考界面】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt'><span
+lang=EN-US style='font-family:宋体'><img border=0 width=622 height=334
+src="主菜单.files/image001.jpg"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【界面字段域说明】</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>用户名：手工输入用户名称。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>密<span
+lang=EN-US>&nbsp; </span>码：手工输入用户密码。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【操作说明】</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>进入界面。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>输入用户名，不可为空值。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>输入密码，不可为空值。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>点击登录按钮。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>e)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>系统进行处理。如果用户名密码合法，进入系统主页面。<a
+name="_Toc292868921"></a><a name="_Toc98055670"></a></span></p>
+
+<p class=MsoNormal align=left style='margin-left:28.0pt;text-align:left'><b><span
+style='font-size:14.0pt;font-family:宋体'>功能说明</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【模块位置】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>用户登录成功后进入系统框架页面（系统主页面）。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【功能介绍】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>各类用户登录成功系框架页面，框架页面显示用户拥有的功能，并支持用户功能导航。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.1pt'><b><span
+style='font-size:14.0pt;font-family:宋体'>使用说明</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【参考界面】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:24.0pt'><span
+lang=EN-US style='font-family:宋体'><img border=0 width=559 height=300 id="图片 40"
+src="主菜单.files/image002.jpg"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【界面组成】</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>系统框架页面有三部分组成：标题区，功能树，内容显示区域</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>标题区：显示系统标题。提供“帮助”和“退出”按钮。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>功能树：以树形结构显示当前用户拥有的功能。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>内容显示区域：显示系统菜单或各功能模块运行界面。该界面由“当前位置”和“当前操作内容”两部分。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+style='font-size:14.0pt;font-family:宋体'>【操作说明】</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span lang=EN-US style='font-size:14.0pt;line-height:150%;
+font-family:宋体'>&nbsp;</span><span style='font-size:14.0pt;line-height:150%;
+font-family:宋体'>进入主页面。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>点击标题区“退出”按钮返回登录页面；点击帮助显示帮助说明，给用户介绍如何操作。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>功能树上的各节点。如果节点为功能，在内容显示区显示系统功能页面。如果节点为菜单在内容显示区显示该节点的下级节点列表。</span></p>
+
+<p class=MsoNormal align=left style='margin-left:0cm;text-align:left;
+text-indent:28.0pt;line-height:150%'><span lang=EN-US style='font-size:14.0pt;
+line-height:150%;font-family:宋体'>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span><span style='font-size:14.0pt;line-height:150%;font-family:宋体'>内容显示区域显示系统菜单时，点击菜单列表可进入下级功能或菜单。内容显示区域显示系统功能时，可操作系统具体功能。<a
+name="_Toc292868922"></a><a name="_Toc98055671">系统管理模块</a></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;text-indent:28.0pt'><span
+lang=EN-US style='font-size:14.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
+

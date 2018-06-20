@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project basedir="." default="war" name="OvtBossAdminWeb">
+	<property name="app-name" value="OvtBossAdminWeb" />
+	<property name="release-version" value="2010-08-10" />
+	<property name="src" value="." />
+	<property name="WebRoot" value="WebRoot" />
+	<property name="dist" value="../dist" />
+	<property name="classes" value="../WebRoot/WEB-INF/classes" />
+	<property name="lib" value="../WebRoot/WEB-INF/lib" />
+	<property name="ext-lib" value="ext-lib" />
+	<property name="charset" value="utf-8" />
+
+	<patternset id="resources">
+		<include name="**/*.xml" />
+		<include name="**/*.java" />
+		<include name="**/*.properties" />
+		<include name="**/*.jsp" />
+	</patternset>
+
+	<patternset id="resourcesXML">
+		<include name="**/*.xml" />
+	</patternset>
+	<patternset id="ovtResources">
+		<include name="**/ovt-web.xml" />
+	</patternset>
+
+
+	<path id="classpath">
+		<pathelement location="../WebRoot/WEB-INF/classes" />
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${dist}/classes" />
+	</target>
+
+	<target name="resource">
+		<copy todir="${dist}/boss">
+			<fileset dir="../${WebRoot}/boss">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/common_extends">
+			<fileset dir="../${WebRoot}/common_extends">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/css">
+			<fileset dir="../${WebRoot}/css">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/datepicker">
+			<fileset dir="../${WebRoot}/datepicker">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/global">
+			<fileset dir="../${WebRoot}/global">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/images">
+			<fileset dir="../${WebRoot}/images">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/js">
+			<fileset dir="../${WebRoot}/js">
+			</fileset>
+		</copy>
+		<copy todir="${dist}/WEB-INF/">
+			<fileset dir="../${WebRoot}/WEB-INF/">
+				<patternset refid="ovtResources" />
+			</fileset>
+		</copy>
+		<copy todir="${dist}/WEB-INF/classes">
+			<fileset dir="../dist_props">
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile">
+		<javac destdir="${dist}/classes" encoding="utf-8" optimize="true" debug="on">
+			<src path="${src}" />
+			<classpath refid="classpath" />
+		</javac>
+		<copy todir="${dist}/classes">
+			<fileset dir="${src}">
+				<patternset refid="resourcesXML" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="${dist}/WEB-INF/classes/" />
+		<mkdir dir="${dist}/WEB-INF/classes/" />
+	</target>
+
+	<target name="jar" depends="resource, init,compile">
+		<zip compress="false" destfile="${dist}/${app-name}.jar">
+			<zipfileset dir="${dist}/classes/com" prefix="com" />
+		</zip>
+	</target>
+
+
+	<target name="war" depends="resource, jar">
+		<delete dir="${dist}/classes" />
+		<copy todir="${dist}/WEB-INF/lib/" file="${dist}/${app-name}.jar" />
+		<zip compress="true" destfile="${dist}/${app-name}.plu">
+			<zipfileset dir="${dist}/boss/" prefix="boss" />
+			<zipfileset dir="${dist}/common_extends/" prefix="common_extends" />
+			<zipfileset dir="${dist}/css/" prefix="css" />
+			<zipfileset dir="${dist}/datepicker/" prefix="datepicker" />
+			<zipfileset dir="${dist}/global/" prefix="global" />
+			<zipfileset dir="${dist}/images/" prefix="images" />
+			<zipfileset dir="${dist}/js/" prefix="js" />
+			<zipfileset dir="${dist}/WEB-INF/" prefix="WEB-INF" />
+		</zip>
+
+		<copy todir="D:\PROJECTS\BOSS\plus" file="${dist}/${app-name}.plu" />
+
+		<delete dir="${dist}" />
+
+	</target>
+	<target name="rejar" depends="clean, jar" />
+
+	<target name="ear" depends="war">
+		<ear destfile="${dist}/${app-name}-${release-version}.ear" appxml="META-INF/application-j1.3.xml">
+			<fileset dir="${dist}" includes="${app-name}-${release-version}.war" />
+		</ear>
+	</target>
+
+	<target name="release" depends="war">
+		<zip destfile="${dist}/${app-name}-${release-version}.zip">
+			<zipfileset dir="${dist}" includes="${app-name}-${release-version}.war" prefix="." />
+			<zipfileset dir="db" includes="*.*" prefix="db" />
+			<zipfileset dir="doc" includes="*.*" prefix="doc" />
+		</zip>
+	</target>
+
+</project>

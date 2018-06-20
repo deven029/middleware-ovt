@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans >
+	<form-bean name="equInfoForm" type="com.ovt.idtv.boss.web.resource.form.EquInfoForm"></form-bean>
+	<form-bean name="equTypeForm" type="com.ovt.idtv.boss.web.resource.form.EquTypeForm"></form-bean>
+	<form-bean name="equRelationForm" type="com.ovt.idtv.boss.web.resource.form.EquRelationForm"></form-bean>
+	<!-- add by jhg -->
+	<form-bean name="bwInfoForm" type="com.ovt.idtv.boss.web.resource.form.BandWidthInfoForm"></form-bean>
+	
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="equInfoForm" path="/bossCoreResource/iccard"
+			type="com.ovt.idtv.boss.web.resource.struts.IccardAction"
+			unknown="false" validate="false" scope="request"   parameter="methodToCall">
+			<forward name="addSubmitSuccess" path="/bossCoreResource/iccard.do?methodToCall=openQuery" redirect="true"></forward>
+			<forward name="iccardImpResult" path="/boss/resource/icCardImpResult.jsp" redirect="false"></forward>
+		</action>
+		<!-- add by jhg -->
+		<action name="bwInfoForm" path="/bossCoreResource/bandWidth"
+			type="com.ovt.idtv.boss.web.resource.struts.BandWidthAccountAction"
+			unknown="false" validate="false" scope="request"   parameter="methodToCall">
+			<forward name="addSubmitSuccess" path="/bossCoreResource/bandWidth.do?methodToCall=openQuery" redirect="true"></forward>
+			<forward name="selectSubmitSuccess" path="/bossCoreResource/bandWidth.do?methodToCall=getQuery" redirect="true"></forward>
+			<forward name="bandWidthImpResult" path="/boss/resource/bandWidthImpResult.jsp" redirect="false"></forward>
+		</action>
+		<action name="equInfoForm" path="/bossCoreResource/stb"
+			type="com.ovt.idtv.boss.web.resource.struts.StbAction"
+			unknown="false" validate="false" scope="request"  parameter="methodToCall">
+			<forward name="addSubmitSuccess" path="/bossCoreResource/stb.do?methodToCall=openQuery" redirect="true"></forward>
+			<forward name="stbCardImpResult" path="/boss/resource/stbCardImpResult.jsp" redirect="false"></forward>
+		</action>
+		<action  path="/bossCoreResource/iccardSelect"
+			type="com.ovt.idtv.boss.web.resource.struts.IccardSelectAction"
+			unknown="false" validate="false" parameter="methodToCall">
+		</action>
+		
+		<action name="equTypeForm" path="/bossCoreResource/store"
+			type="com.ovt.idtv.boss.web.resource.struts.StoreAction"
+			unknown="false" validate="false" parameter="methodToCall">
+			<forward name="select.success" path="/bossCoreResource/store.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/bossCoreResource/store.do?methodToCall=select&amp;refreshTreeFlag=true" redirect="true"></forward>
+			<forward name="resource.store.submit.success" path="/bossCoreResource/store.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="resource.store.delete.success" path="/bossCoreResource/store.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+		</action>
+		<action name="equInfoForm" path="/bossCoreResource/otherResource"
+			type="com.ovt.idtv.boss.web.resource.struts.OtherResourceAction"
+			unknown="false" validate="false" parameter="methodToCall">
+			<forward name="addSubmitSuccess" path="/bossCoreResource/otherResource.do?methodToCall=openQuery" redirect="true"></forward>
+			<forward name="select.success" path="/bossCoreResource/otherResource.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/bossCoreResource/otherResource.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+		</action>
+		<action name="equRelationForm" path="/bossCoreResource/stbIccardBind"  unknown="false" validate="false" parameter="methodToCall" type="com.ovt.idtv.boss.web.resource.struts.StbIccardBindAction">
+		<forward name="stbIccardBind.success" path="/bossCoreResource/stbIccardBind.do?methodToCall=openQuery"></forward>
+		</action>
+	</action-mappings>
+</struts-config>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ovt.idtv.boss.web.db.BossPermitsProduct" table="BOSS_PERMITS_PRODUCT" >
+         <id name="id" type="java.lang.Integer">
+            <column name="ID" precision="10" scale="0" />
+ 			<generator class="sequence">  
+    			 <param name="sequence">SEQ_BOSS_PERMITS_PRODUCT</param> 
+   			</generator> 
+  		 </id>
+        <property name="permitsId" type="java.lang.Integer">
+            <column name="PERMITS_ID" />
+        </property>
+        <property name="productType" type="java.lang.Integer">
+            <column name="PRODUCT_TYPE"/>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="PRODUCT_ID" />
+        </property>
+        <property name="policyId" type="java.lang.Long">
+            <column name="POLICY_ID"/>
+        </property>
+    </class>
+</hibernate-mapping>

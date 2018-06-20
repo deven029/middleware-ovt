@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+    <editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="servType"
+		className="com.ovt.idtv.boss.web.charge.edittype.ServTypeEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="deviceType"
+		className="com.ovt.idtv.boss.web.charge.edittype.DeviceTypeEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="sysName"
+		className="com.ovt.idtv.boss.web.charge.edittype.SysQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	
+	<editType id="productName"
+		className="com.ovt.idtv.boss.web.charge.edittype.ProductNameQueryEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	
+	<queryDefine id="boss.charge.product" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="套餐名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="code" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-3" label="状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="----" value=""/>
+		 			<!-- 
+		 				<item name="定义中" value="0"/>
+		 				<item name="升级定义中" value="1"/>
+		 			 -->
+		 			<item name="定义完成" value="2"/>
+		 			<item name="审核通过" value="3"/>
+		 			<item name="审核不通过" value="4"/>
+		 			<item name="发布" value="5"/>
+		 			<item name="上架" value="6"/>
+		 			<item name="撤货下架" value="7"/>
+		 			<item name="升级下架" value="8"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	     
+	</queryDefine>
+	
+	<queryDefine id="boss.charge.product.promote" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="套餐名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="code" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-3" label="状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="上架" value="6"/>
+		 			<item name="发布" value="5"/>
+		 			<item name="撤货下架" value="7"/>
+		 			<item name="升级下架" value="8"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	     
+	</queryDefine>
+	
+	
+	<queryDefine id="boss.charge.product.verify" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="套餐名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="code" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.charge.servtype" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	
+	<queryDefine id="boss.charge.feetype" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="feeTypeClass" fieldId="1" label="策略类型" spanFields="1" dataType="string" oper="full like">
+	         <editType id="feeTypeClass" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="----------" value=""/>
+		 			<item name="服务计费模式" value="服务计费模式"/>
+		 			<item name="套餐计费模式" value="套餐计费模式"/>
+		 			<item name="服务和套餐均可使用" value="服务和套餐均可使用"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.charge.product.service" rowFields="2" version="2" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="服务名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <!--  
+	    <queryField id="serviceType" fieldId="-4" label="服务分类" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="servType"/>
+	    </queryField>
+	   --> 
+	</queryDefine>
+	
+	
+	<queryDefine id="boss.charge.service" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="服务名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="serviceCode" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	      <queryField id="sysName" fieldId="-3" label="所属业务系统" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="sysName"/>
+	    </queryField>
+	    <queryField id="serviceType" fieldId="-4" label="服务分类" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="servType"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-5" label="服务状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="----" value=""/>
+		 			<item name="定义中" value="0"/>
+		 			<item name="升级定义中" value="1"/>
+		 			<item name="定义完成" value="2"/>
+		 			<item name="审核通过" value="3"/>
+		 			<item name="审核不通过" value="4"/>
+		 			<item name="已发布" value="5"/>
+		 			<item name="上架" value="6"/>
+		 			<item name="撤货下架" value="7"/>
+		 			<item name="升级下架" value="8"/>
+		 			<item name="服务退出" value="9"/>
+		 		</data>
+		 	</editType>
+		 	
+	    </queryField>
+	    <queryField id="deviceType" fieldId="-6" label="支持设备类型" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="deviceType"/>
+	    </queryField>
+	     <queryField id="basicFlag" fieldId="-7" label="基本服务" spanFields="1" dataType="string" oper="full like">
+	         <editType id="basicFlag" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="----" value=""/>
+		 			 <item name="是" value="1"/>
+		 			<item name="否" value="0"/>
+		 		</data>
+		 	</editType>
+		 	
+	    </queryField>
+	    
+	    
+	</queryDefine>
+	
+	<queryDefine id="boss.charge.service.verify" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="服务名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="serviceCode" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	      <queryField id="sysName" fieldId="-3" label="所属业务系统" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="sysName"/>
+	    </queryField>
+	    <queryField id="serviceType" fieldId="-4" label="服务分类" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="servType"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.charge.service.promote" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="服务名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="serviceCode" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	      <queryField id="sysName" fieldId="-3" label="所属业务系统" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="sysName"/>
+	    </queryField>
+	    <queryField id="serviceType" fieldId="-4" label="服务分类" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="servType"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-5" label="服务状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+	    			<item name="上架" value="6"/>
+		 			<item name="已发布" value="5"/>
+		 			<item name="撤货下架" value="7"/>
+		 			<item name="升级下架" value="8"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	</queryDefine>
+	 <queryDefine id="boss.charge.service.exit" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="name" fieldId="-1" label="服务名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="serviceCode" fieldId="-2" label="产品简称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	      <queryField id="sysName" fieldId="-3" label="所属业务系统" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="sysName"/>
+	    </queryField>
+	    <queryField id="serviceType" fieldId="-4" label="服务分类" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="servType"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-5" label="服务状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="上架" value="6"/>
+		 			<item name="已发布" value="5"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	</queryDefine>
+	
+	<queryDefine id="boss.charge.order" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="userCoding" fieldId="-1" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	   	  <queryField id="equCode" fieldId="-2" label="设备编号" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="status" fieldId="-4" label="状态" spanFields="1" dataType="string" oper="full like">
+	         <editType id="status" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+	    		<data default="" size="1" maxLength="50">
+		 			<item name="----" value=""/>
+		 			<item name="申请中" value="0"/>
+		 			<item name="正常" value="1"/>
+		 			<item name="失效" value="2"/>
+		 			<item name="删除" value="3"/>
+		 			<item name="欠费停用" value="4"/>
+		 			<item name="正常暂停" value="5"/>
+		 		</data>
+		 	</editType>
+	    </queryField>
+	   	 <queryField id="productId" fieldId="-3" label="套餐名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="productName"/>
+	    </queryField>
+	     <queryField id="startDate" fieldId="-5" label="订购开始日期" spanFields="1" dataType="string" oper="full like">
+	        		<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+						<data default="" size="30" maxLength="50" />
+					</editType>
+	    </queryField> 
+	     <queryField id="endDate" fieldId="-6" label="订购结束日期" spanFields="1" dataType="string" oper="full like">
+	        		<editType id="dateinput" className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+						<data default="" size="30" maxLength="50" />
+					</editType>
+	    </queryField> 
+	</queryDefine>
+
+</queryDefines>

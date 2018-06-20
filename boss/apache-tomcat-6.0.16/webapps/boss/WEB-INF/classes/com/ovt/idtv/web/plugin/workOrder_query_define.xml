@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queryDefines>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="boss.queueManage" rowFields="2" version="1">
+		<queryField id="queueName" fieldId="-1" label="队列名称" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input"></editType>
+		</queryField>
+	</queryDefine>	
+	<queryDefine id="boss.workOrderInfo" rowFields="2" version="1">
+		<queryField id="woType" fieldId="-1" label="工单分类" spanFields="1" dataType="string" oper="full like">
+			<editType id="woType"
+				className="com.ovt.idtv.boss.web.workOrder.struts.edittype.WorkOrderTypeQueryEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="woStatus" fieldId="-2" label="工单状态" spanFields="1" dataType="string" oper="full like">
+			<editType id="woStatus"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="选择状态" value="" />
+					<item name="未处理 " value="0" />
+					<item name="待分配" value="1" />
+					<item name="处理中" value="2" />
+					<item name="处理完成" value="3" />
+					<item name="关闭" value="9" />
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="initQueueId" fieldId="-3" label="发起人工单队列" spanFields="1" dataType="string" oper="full like">
+			<editType id="woType"
+				className="com.ovt.idtv.boss.web.workOrder.struts.edittype.WorkOrderQueueQueryEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+		<queryField id="proQueueId" fieldId="-4" label="处理人工单队列" spanFields="1" dataType="string" oper="full like">
+			<editType id="woType"
+				className="com.ovt.idtv.boss.web.workOrder.struts.edittype.WorkOrderQueueQueryEditType">
+				<data default="" size="1" maxLength="50">
+				</data>
+			</editType>
+		</queryField>
+	</queryDefine>
+</queryDefines>

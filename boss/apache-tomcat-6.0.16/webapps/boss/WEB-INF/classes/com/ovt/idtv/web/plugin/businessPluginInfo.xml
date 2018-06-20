@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossBusinessWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>BusinessWebPlugin</name>
+	<description>BOSS营业日志管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BusinessWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>营业日志版本</description>
+			<publishDate>2013-09-06</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+	
+	</rights>
+	<func_tree>
+	    <extendFunc parentCode="005">
+			<func code="005005" name="营业日志管理" srcFile="/jsp/boss/business.do?methodToCall=openQuery"  descInfo="营业日志管理" status="1" alias="pm.business.openQuery" seqNo="1" funcType="1" >
+				<func code="005005001" name="查看" srcFile=""  descInfo="" status="1" alias="pm.business.view" seqNo="0" funcType="2" />
+				<func code="005005002" name="删除" srcFile=""  descInfo="" status="1" alias="pm.business.delete" seqNo="0" funcType="2" />
+				<func code="005005003" name="导出到Excel" srcFile=""  descInfo="" status="1" alias="pm.business.exportexcel" seqNo="0" funcType="2" />
+				<func code="005005004" name="营业日志按类别导出Excel" srcFile=""  descInfo="" status="1" alias="pm.business.exportDealLog" seqNo="0" funcType="2" />
+			</func>
+			<!-- 2012-3-28 yzy -->
+			<func code="005006" name="批量订购" srcFile="/jsp/boss/business/batchUserOrder/batchUserOrder.do?methodToCall=openQuery"  descInfo="批量订购" status="1" alias="pm.batchUserOrder.openQuery" seqNo="1" funcType="1" >
+				<func code="005006001" name="按勾选用户订购" srcFile=""  descInfo="按勾选用户订购" status="1" alias="pm.batchUserOrder.userOrder" seqNo="1" funcType="2" developFlag=""/>
+				<func code="005006002" name="按搜索条件订购" srcFile=""  descInfo="按搜索条件订购" status="1" alias="pm.batchUserOrder.userOrderCondition" seqNo="2" funcType="2" developFlag=""/>
+				<func code="005006003" name="批量按文件订购" srcFile=""  descInfo="批量按文件订购" status="1" alias="pm.batchUserOrder.userOrderByFile" seqNo="2" funcType="2" developFlag="">
+					<func code="005006003001" name="批量提交" srcFile=""  descInfo="提交" status="1" alias="pm.batchUserOrder.userOrderByFile.submit" seqNo="1" funcType="1"/>
+				</func>
+			</func>
+			<!-- 2012-11-15 liuxu -->
+			<func code="005007" name="同步日志管理" srcFile="/jsp/boss/business/syncBusiLog/syncBusiLog.do?methodToCall=openQuery" descInfo="同步日志管理" status="1" alias="pm.syncBusiLog.openQuery" seqNo="1" funcType="1">
+				<func code="005007001" name="重新发送" srcFile="" descInfo="重新发送" status="1" alias="pm.syncBusiLog.resend" seqNo="1" funcType="2" developFlag="" /> 
+			</func>
+			<func code="005008" name="数据备份" srcFile="/jsp/boss/databackup/databackup.do?methodToCall=openQuery"  descInfo="数据备份导出管理" status="1" alias="pm.databackup.openQuery" seqNo="1" funcType="1" >
+				<func code="005008001" name="营业日志备份" srcFile=""  descInfo="" status="1" alias="pm.databackup.dealLogBackup" seqNo="0" funcType="2" />
+				<func code="005008002" name="订购信息备份" srcFile=""  descInfo="" status="1" alias="pm.databackup.userOrderBackup" seqNo="0" funcType="2" />
+				<func code="005008003" name="账单信息备份" srcFile=""  descInfo="" status="1" alias="pm.databackup.billDetailBackup" seqNo="0" funcType="2" />
+			</func>
+		</extendFunc>
+	</func_tree>
+</plugin>

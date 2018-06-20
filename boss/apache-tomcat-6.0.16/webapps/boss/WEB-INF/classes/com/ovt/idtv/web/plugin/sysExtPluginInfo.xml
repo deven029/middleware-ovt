@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossSysExtWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>SysExtWebPlugin</name>
+	<description>BOSS公共管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.SysExtWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>增加宽带业务操作项</description>
+			<publishDate>2012-04-01</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.5</versionNo>
+			<description>收款单位名称字段长度修改</description>
+			<publishDate>2012-04-07</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+		<version> <!-- add by LIUXU -->
+			<versionNo>1.0.6</versionNo>
+			<description>增加智能卡收回和注销用户开通</description>
+			<publishDate>2012-04-09</publishDate>
+			<seqNo>4</seqNo>
+		</version>
+		<version> <!-- add by yzy -->
+			<versionNo>1.0.7</versionNo>
+			<description>增加批量订购类型定义</description>
+			<publishDate>2012-04-23</publishDate>
+			<seqNo>5</seqNo>
+		</version>
+		<version> <!-- add by yzy -->
+			<versionNo>1.0.8</versionNo>
+			<description>增加模拟电视服务费</description>
+			<publishDate>2012-05-26</publishDate>
+			<seqNo>6</seqNo>
+		</version>
+		<version> <!-- add by jhg -->
+			<versionNo>1.0.9</versionNo>
+			<description>增加套餐操作类型</description>
+			<publishDate>2012-06-18</publishDate>
+			<seqNo>7</seqNo>
+		</version>
+		<version> <!-- add by yzy -->
+			<versionNo>1.1.0</versionNo>
+			<description>费用类型</description>
+			<publishDate>2012-07-06</publishDate>
+			<seqNo>8</seqNo>
+		</version>
+		<version> <!-- add by lw -->
+			<versionNo>1.1.1</versionNo>
+			<description>异常控制</description>
+			<publishDate>2012-10-16</publishDate>
+			<seqNo>9</seqNo>
+		</version>
+		<version> <!-- add by lw -->
+			<versionNo>1.1.2</versionNo>
+			<description>修改视图</description>
+			<publishDate>2013-4-11</publishDate>
+			<seqNo>10</seqNo>
+		</version>
+		<version> <!-- add by jhg -->
+			<versionNo>1.1.3</versionNo>
+			<description>增加设备服务升级操作类型</description>
+			<publishDate>2013-08-10</publishDate>
+			<seqNo>11</seqNo>
+		</version>
+		<version> <!-- add by jhg -->
+			<versionNo>1.1.4</versionNo>
+			<description>增加费用补交操作类型</description>
+			<publishDate>2013-09-11</publishDate>
+			<seqNo>12</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>	
+		<func code="003" name="运营配置" srcFile=""  descInfo="运营配置" status="1" alias="" seqNo="7" funcType="0" developFlag="" >
+			<func code="003001" name="片区管理" srcFile="/jsp/boss/sysext/areaInfo.do?methodToCall=select"  descInfo="片区管理" status="1" alias="pm.areaInfo.select" seqNo="1" funcType="1" developFlag="" >
+				<func code="003001001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.areaInfo.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.areaInfo.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003001002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.areaInfo.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.areaInfo.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003001003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.areaInfo.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003001004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.areaInfo.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="003001005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.areaInfo.openQuery" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="003002" name="营业类别管理" srcFile="/jsp/boss/sysext/businessType.do?methodToCall=openQuery"  descInfo="营业类别管理" status="1" alias="pm.businessType.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="003002001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.businessType.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003002001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.businessType.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003002002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.businessType.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003002002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.businessType.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003002003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.businessType.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003002004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.businessType.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="003002005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.businessType.openQuery" seqNo="" funcType="2" developFlag=""/>
+				<func code="003002006" name="对应收费项" srcFile=""  descInfo="对应收费项" status="1" alias="pm.businessType.manageFeeItem" seqNo="" funcType="2" developFlag="">
+					<func code="003002006001" name="营业类别对应收费项" srcFile=""  descInfo="营业类别对应收费项" status="1" alias="pm.businessTypeFee.openQuery" seqNo="" funcType="2" developFlag="">
+						<func code="003002006001001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.businessTypeFee.addView" seqNo="" funcType="2" developFlag="">
+							<func code="003002006001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.businessTypeFee.addView.submit" seqNo="" funcType="2" developFlag=""/>
+						</func>
+						<func code="003002006001002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.businessTypeFee.modifyView" seqNo="" funcType="2" developFlag="">
+							<func code="003002006001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.businessTypeFee.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+						</func>
+						<func code="003002006001003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.businessTypeFee.delete" seqNo="" funcType="2" developFlag=""/>
+						<func code="003002006001004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.businessTypeFee.view" seqNo="" funcType="2" developFlag=""/>
+						<func code="003002006001005" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.businessTypeFee.back" seqNo="" funcType="2" developFlag=""/>
+					</func>
+				</func>
+			</func>
+			<func code="003003" name="收费项管理" srcFile="/jsp/boss/sysext/feeItems.do?methodToCall=select"  descInfo="收费项管理" status="1" alias="pm.feeItems.select" seqNo="" funcType="1" developFlag="">
+				<func code="003003001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.feeItems.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003003001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.feeItems.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003003002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.feeItems.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003003002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.feeItems.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003003003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.feeItems.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003003004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.feeItems.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="003003005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.feeItems.openQuery" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="003004" name="业务系统配置管理" srcFile=""  descInfo="业务系统配置管理" status="1" alias="" seqNo="" funcType="0" developFlag="">
+				<func code="003004001" name="业务权限接口管理" srcFile="/jsp/boss/sysext/thirdPartySysPower.do?methodToCall=openQuery"  descInfo="业务权限接口管理" status="1" alias="pm.thirdPartySysPower.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="003004001001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.thirdPartySysPower.addView" seqNo="" funcType="2" developFlag="">
+						<func code="003004001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.thirdPartySysPower.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="003004001002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.thirdPartySysPower.modifyView" seqNo="" funcType="2" developFlag="">
+						<func code="003004001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.thirdPartySysPower.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="003004001003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.thirdPartySysPower.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="003004001004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.thirdPartySysPower.view" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003004002" name="业务系统管理" srcFile="/jsp/boss/sysext/thirdPartySys.do?methodToCall=openQuery"  descInfo="业务系统管理" status="1" alias="pm.thirdPartySys.openQuery" seqNo="" funcType="1" developFlag="">
+					<func code="003004002001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.thirdPartySys.addView" seqNo="" funcType="2" developFlag="">
+						<func code="003004002001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.thirdPartySys.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="003004002002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.thirdPartySys.modifyView" seqNo="" funcType="2" developFlag="">
+						<func code="003004002002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.thirdPartySys.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="003004002003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.thirdPartySys.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="003004002004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.thirdPartySys.view" seqNo="" funcType="2" developFlag=""/>
+					<func code="003004002005" name="功能接口授权" srcFile=""  descInfo="功能接口授权" status="1" alias="pm.thirdPartySys.setPower" seqNo="" funcType="2" developFlag="">
+						<func code="003004002005001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.thirdPartySys.setPower.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+				</func>
+			</func>
+			<func code="003005" name="营业单位管理" srcFile="/jsp/boss/sysext/busiDep.do?methodToCall=select"  descInfo="营业单位管理" status="1" alias="pm.busiDep.select" seqNo="1" funcType="1" developFlag="" >
+				<func code="003005001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.busiDep.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003005001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.busiDep.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003005002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.busiDep.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003005002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.busiDep.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003005003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.busiDep.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003005004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.busiDep.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="003005005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.busiDep.openQuery" seqNo="" funcType="2" developFlag=""/>
+				<func code="003005006" name="关联操作员" srcFile=""  descInfo="关联操作员" status="1" alias="pm.busiDep.relOperator" seqNo="" funcType="2" developFlag=""/>
+				<func code="003005007" name="营业单位对应管理员" srcFile=""  descInfo="营业单位对应管理员" status="1" alias="pm.relOperInfo.openQuery" seqNo="1" funcType="1" developFlag="" >
+					<func code="003005007001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.relOperInfo.add" seqNo="" funcType="2" developFlag=""/>
+					<func code="003005007002" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.relOperInfo.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="003005007003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.relOperInfo.back" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003005008" name="未关联管理员" srcFile=""  descInfo="未关联管理员" status="1" alias="pm.otherOperInfo.openQuery" seqNo="1" funcType="1" developFlag="" >
+					<func code="003005008001" name="确认" srcFile=""  descInfo="确认" status="1" alias="pm.otherOperInfo.confirm" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			</func>
+			<func code="003006" name="设备对应收费管理" srcFile="/jsp/boss/sysext/equFeeItem.do?methodToCall=openQuery"  descInfo="设备对应收费管理" status="1" alias="pm.equFeeItem.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="003006001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.equFeeItem.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003006001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.equFeeItem.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003006002" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.equFeeItem.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003006003" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.equFeeItem.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003006003001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.equFeeItem.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			</func>
+			<!-- 配置收款单位和营业员的对应关系  2012-1-10 yzy -->
+			<func code="003007" name="收款单位及营业员管理" srcFile="/jsp/boss/sysext/payOrgan.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.payOrgan.openQuery" seqNo="7" funcType="1" developFlag="">
+				<func code="003007001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.payOrgan.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003007001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.payOrgan.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003007002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.payOrgan.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003007002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.payOrgan.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003007003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.payOrgan.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003007004" name="所属营业员" srcFile=""  descInfo="所属营业员" status="1" alias="pm.payOrgan.organOper" seqNo="" funcType="2" developFlag="">
+					<func code="003007004001" name="关联营业员" srcFile="/jsp/boss/sysext/organOper.do?methodToCall=openQuery"  descInfo="关联营业员" status="1" alias="pm.organOper.openQuery" seqNo="" funcType="2" developFlag="">
+						<func code="003007004001001" name="添加营业员" srcFile=""  descInfo="添加营业员" status="1" alias="pm.organOper.addOper" seqNo="" funcType="2" developFlag="">
+							<func code="003007004001001001" name="选择营业员"  srcFile="/jsp/boss/sysext/otherOrganOper.do?methodToCall=openQuery"    descInfo="选择营业员" status="1" alias="pm.otherOrganOper.openQuery" seqNo="" funcType="2" developFlag="">
+								<func code="003007004001001001001" name="确认" srcFile=""  descInfo="确认" status="1" alias="pm.otherOrganOper.confirm" seqNo="" funcType="2" developFlag=""/>
+								<func code="003007004001001001002" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.otherOrganOper.back" seqNo="" funcType="2" developFlag=""/>
+							</func>
+						</func>
+						<func code="003007004001002" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.organOper.delete" seqNo="" funcType="2" developFlag=""/>
+						<func code="003007004001003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.organOper.back" seqNo="" funcType="2" developFlag=""/>
+					</func>
+				</func>
+			</func>
+			<!-- 自动订购产品策略管理 2013-7-10 yzy -->
+			<func code="003008" name="自动订购产品策略管理" srcFile="/jsp/boss/sysext/chargeOrderParam.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.chargeOrderParam.openQuery" seqNo="7" funcType="1" developFlag="">
+				<func code="003008001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.chargeOrderParam.addView" seqNo="" funcType="2" developFlag="">
+					<func code="003008001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.chargeOrderParam.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003008002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.chargeOrderParam.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="003008002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.chargeOrderParam.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="003008003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.chargeOrderParam.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="003008004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.chargeOrderParam.view" seqNo="" funcType="2" developFlag=""/>
+			</func>
+		</func>
+	</func_tree>
+</plugin>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossUBI</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>UbiWebPlugin</name>
+	<description>BOSS统一业务接口插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.UbiWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+	</func_tree>
+</plugin>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossStatVodConsume" table="BOSS_STAT_VODCONSUME">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_STAT_VODCONSUME</param>
+			</generator>
+		</id>
+		<property name="statDate" type="java.util.Date">
+			<column name="STAT_DATE" />
+		</property>
+		<property name="areaId" type="java.lang.Long">
+			<column name="AREA_ID"/>
+		</property>
+		<property name="areaName" type="java.lang.String">
+			<column name="AREA_NAME" length="20"/>
+		</property>
+		<property name="terminalTotal" type="java.lang.Long">
+			<column name="TERMINAL_TOTAL"/>
+		</property>
+		<property name="vodTotal" type="java.lang.Long">
+			<column name="VOD_TOTAL"/>
+		</property>
+		<property name="vodUsedTotal" type="java.lang.Long">
+			<column name="VOD_USED_TOTAL"/>
+		</property>
+		<property name="usedDivideVod" type="java.lang.Double">
+			<column name="USED_DIVIDE_VOD"/>
+		</property>
+		<property name="timeshiftUsedTotal" type="java.lang.Long">
+			<column name="TIMESHIFT_USED_TOTAL"/>
+		</property>
+		<property name="timeshiftUsedLen" type="java.lang.Double">
+			<column name="TIMESHIFT_USED_LEN" />
+		</property>
+		<property name="movieUsedTotal" type="java.lang.Long">
+			<column name="MOVIE_USED_TOTAL"/>
+		</property>
+		<property name="movieUsedLen" type="java.lang.Double">
+			<column name="MOVIE_USED_LEN" />
+		</property>
+		<property name="tvdramaUsedTotal" type="java.lang.Long">
+			<column name="TVDRAMA_USED_TOTAL"/>
+		</property>
+		<property name="tvdramaUsedLen" type="java.lang.Double">
+			<column name="TVDRAMA_USED_LEN" />
+		</property>
+		<property name="lt10TimesTotal" type="java.lang.Long">
+			<column name="LT10TIMES_TOTAL"/>
+		</property>
+		<property name="in11_30TimesTotal" type="java.lang.Long">
+			<column name="IN11_30TIMES_TOTAL"/>
+		</property>
+		<property name="gt30TimesTotal" type="java.lang.Long">
+			<column name="GT30TIMES_TOTAL"/>
+		</property>
+		<property name="lt2hTotal" type="java.lang.Long">
+			<column name="LT2H_TOTAL"/>
+		</property>
+		<property name="in2_15hTotal" type="java.lang.Long">
+			<column name="IN2_15H_TOTAL"/>
+		</property>
+		<property name="gt15hTotal" type="java.lang.Long">
+			<column name="GT15H_TOTAL"/>
+		</property>
+	</class>
+</hibernate-mapping>

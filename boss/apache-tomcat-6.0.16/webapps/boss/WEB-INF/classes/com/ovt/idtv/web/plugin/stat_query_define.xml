@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+	<editType id="timeinput"
+		className="com.ovt.common.web.taglib.table.util.TimeInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput4"
+		className="com.ovt.idtv.boss.web.stat.order.DefaultEndDate2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput3"
+		className="com.ovt.common.web.taglib.table.util.DefaultEndDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="cityAreaStatStartDate"
+		className="com.ovt.idtv.boss.web.stat.cityArea.command.CityAreaStatStartDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="verifyAccountEndDate"
+		className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.verifyAccountEndDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="verifyAccountStartDate"
+		className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.verifyAccountStartDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput2"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="boss.cityAreaStat" rowFields="2" version="1">
+	    <queryField id="start" fieldId="-1" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="cityAreaStatStartDate" />
+		</queryField>
+		<queryField id="end" fieldId="-2" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="cityAreaStatStartDate" />
+		</queryField>
+	</queryDefine>		
+	<queryDefine id="boss.verifyAccount.unit" rowFields="2" version="1">
+	   <queryField id="busiDep" fieldId="-1" label="营业单位" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitBusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>  
+	    <queryField id="loginNo" fieldId="-2" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNoSelect" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-3" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountStartDate" />
+		</queryField>
+		<queryField id="end" fieldId="-4" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountEndDate" />
+		</queryField>
+	<!--     <queryField id="end" fieldId="-3" label="截止时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput2" />
+		</queryField>
+		<queryField id="distance" fieldId="-4" label="最近天数(天)"
+			spanFields="1" dataType="string" oper="==">
+			<editType id="dateDistance"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="1" value="1" />
+					<item name="2" value="2" />
+					<item name="3" value="3" />
+					<item name="4" value="4" />
+					<item name="5" value="5" />
+					<item name="6" value="6" />
+					<item name="7" value="7" />
+					<item name="8" value="8" />
+					<item name="9" value="9" />
+					<item name="10" value="10" />
+				</data>
+			</editType>
+		</queryField>
+		-->
+	</queryDefine>	
+	<queryDefine id="boss.verifyAccount.operator" rowFields="2" version="1">
+	   <queryField id="busiDep" fieldId="-1" label="营业单位" spanFields="1" dataType="string" oper="full like">
+	       <editType id="busiDepEditType" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.OperatorBusiDepQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>  
+	    <queryField id="loginNo" fieldId="-2" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNoSelect" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.OperatorOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-3" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountStartDate" />
+		</queryField>
+		<queryField id="end" fieldId="-4" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountEndDate" />
+		</queryField>
+	</queryDefine>	
+	<queryDefine id="boss.orderStat" rowFields="2" version="1">
+	    <queryField id="servList" fieldId="-1" label="服务列表" spanFields="1" dataType="string" oper="full like">
+	         <editType id="servListSelect" className="com.ovt.idtv.boss.web.stat.order.ServListFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-2" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="end" fieldId="-3" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		 <queryField id="loginNo" fieldId="-4" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNo" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	</queryDefine>	
+	<!-- 增加产品订购明细收入统计功能  LiuYanxu 2012/04/06 -->		
+	<queryDefine id="boss.orderIncomeStat" rowFields="2" version="1">
+		<queryField id="areaInfoThree" fieldId="-1" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	         <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+		<queryField id="address" fieldId="-2" label="地址" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="loginNo" fieldId="-3" label="操作员" spanFields="1" dataType="string" oper="full like">
+	        <editType id="loginNo" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	<data default="" size="30" maxLength="50" />
+	        </editType>
+	    </queryField>
+		<queryField id="productFeeType" fieldId="-4" label="产品及策略" spanFields="1" dataType="string" oper="full like">
+			<editType id="productFeeType" className="com.ovt.idtv.boss.web.stat.order.ProductFeeTypeListFieldEditType">
+				<data default="" size="200" maxLength="200" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-5" label="开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-6" label="结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>		
+	<!-- 增加产品订购收款统计功能  LiuYanxu 2012/04/11 -->	
+	<!-- 修改产品订购收款统计功能  ysm 2013/07/10 -->	
+	<queryDefine id="boss.orderReceivablesStat" rowFields="2" version="1">
+		<queryField id="areaName" fieldId="-1" label="片区名称" spanFields="1" dataType="string" oper="full like">
+			<editType id="areaList" className="com.ovt.idtv.boss.web.stat.order.AreaListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="productName" fieldId="-2" label="产品名称" spanFields="1" dataType="string" oper="full like">
+			<editType id="productList" className="com.ovt.idtv.boss.web.stat.order.ProductListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-3" label="帐期月开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-4" label="帐期月结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="realBeginDate" fieldId="-5" label="实收日期开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="realEndDate" fieldId="-6" label="实收日期结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="collectMode" fieldId="-7" label="汇总方式" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="collectMode" className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="--请选择--" value=""/>
+					<item name="按帐期月汇总" value="1" />
+					<item name="按实收日期汇总" value="2" />
+					<item name="按产品汇总" value="3" />
+					<item name="按片区汇总" value="4" />
+				</data>
+			</editType>
+	    </queryField>
+	    
+	</queryDefine>	
+	<!-- 增加用户统计功能  liuxu 2012/04/16 -->		
+	<queryDefine id="boss.userStat" rowFields="2" version="1">
+		<queryField id="areaName" fieldId="-1" label="片区名称" spanFields="1" dataType="string" oper="full like">
+			<editType id="areaList" className="com.ovt.idtv.boss.web.stat.order.AreaListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-2" label="开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-3" label="结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>		
+	<!-- liuxu 2012/4/20 -->
+	<queryDefine id="boss.equStat" rowFields="2" version="1">
+		<queryField id="model" fieldId="-1" label="设备型号" spanFields="1" dataType="string" oper="full like">
+			<editType id="equModelList" className="com.ovt.idtv.boss.web.stat.order.EquModelListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-2" label="开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-3" label="结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>
+	<queryDefine id="boss.saleIncomeStat" rowFields="2" version="1">
+		<queryField id="areaName" fieldId="-1" label="片区名称" spanFields="1" dataType="string" oper="full like">
+			<editType id="areaList" className="com.ovt.idtv.boss.web.stat.order.AreaListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-2" label="开始日期" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-3" label="结束日期" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>		
+	<queryDefine id="boss.vodConsumeStat" rowFields="2" version="1">
+		<queryField id="areaName" fieldId="-1" label="片区名称" spanFields="1" dataType="string" oper="full like">
+			<editType id="areaList" className="com.ovt.idtv.boss.web.stat.order.AreaListFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+		</queryField>
+		<queryField id="beginDate" fieldId="-2" label="开始时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+		<queryField id="endDate" fieldId="-3" label="结束时间" spanFields="1" dataType="string" oper="==">
+			<editType refid="dateinput4" />
+		</queryField>
+	</queryDefine>
+	<queryDefine id="boss.customStat" rowFields="2" version="1">
+		<queryField id="keyword" fieldId="-1" label="搜索条件" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+	</queryDefine>
+	
+	<!-- liuxu 2012-10-12 宽带到期用户统计 -->
+	<queryDefine id="boss.bwExpireUserStat" rowFields="2" version="1">
+		<queryField id="areaInfoThree" fieldId="-1" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	         <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="expireBeginDate" fieldId="-2" label="开始时间" spanFields="1" dataType="string" oper="==">
+	    	<editType refid="dateinput3" />
+	    </queryField>
+	    <queryField id="expireEndDate" fieldId="-3" label="结束时间" spanFields="1" dataType="string" oper="==">
+	    	<editType refid="dateinput3" />
+	    </queryField>
+	</queryDefine>	
+	<!-- 按片区设备统计 2013-4-8 yzy -->
+	<queryDefine id="boss.equStatByArea" rowFields="2" version="1">
+		<queryField id="areaInfoThree" fieldId="-1" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	         <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="equType" fieldId="-2" label="终端类型 " spanFields="1" dataType="string" oper="full like">
+	    	<editType id="equType" className="com.ovt.idtv.boss.web.resource.editType.EquTypeQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="equModel" fieldId="-3" label="设备型号" spanFields="1" dataType="string" oper="full like">
+	    	<editType id="equModel" className="com.ovt.idtv.boss.web.resource.editType.EquModelQueryFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	</queryDefine>				
+	<!-- 营收业务统计  2013-9-11 yzy -->
+	<queryDefine id="boss.busiStat" rowFields="2" version="1">
+	    <queryField id="busiType" fieldId="-1" label="营业操作类型" spanFields="2" dataType="string" oper="full like">
+	        <editType id="busiType" className="com.ovt.idtv.boss.web.stat.busi.edittype.BusiTypeQueryEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="areaInfoThree" fieldId="-2" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	        <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+		<queryField id="loginNo" fieldId="-3" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNoSelect" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-4" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountStartDate" />
+		</queryField>
+		<queryField id="end" fieldId="-5" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountEndDate" />
+		</queryField>
+	</queryDefine>
+	<queryDefine id="boss.busiFeeStat" rowFields="2" version="1">
+	    <queryField id="feeType" fieldId="-1" label="收费项目" spanFields="2" dataType="string" oper="full like">
+	        <editType id="feeType" className="com.ovt.idtv.boss.web.stat.busi.edittype.FeeItemsQueryEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="areaInfoThree" fieldId="-2" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	        <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+		<queryField id="loginNo" fieldId="-3" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNoSelect" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="start" fieldId="-4" label="开始时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountStartDate" />
+		</queryField>
+		<queryField id="end" fieldId="-5" label="结束时间"
+			spanFields="1" dataType="string" oper="==">
+			<editType refid="verifyAccountEndDate" />
+		</queryField>
+	</queryDefine>							
+</queryDefines>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossStatSaleIncome" table="BOSS_STAT_SALEINCOME">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_STAT_SALEINCOME</param>
+			</generator>
+		</id>
+		<property name="statDate" type="java.util.Date">
+			<column name="STAT_DATE" />
+		</property>
+		<property name="areaId" type="java.lang.Long">
+			<column name="AREA_ID"/>
+		</property>
+		<property name="areaName" type="java.lang.String">
+			<column name="AREA_NAME" length="20"/>
+		</property>
+		<property name="userRegTotal" type="java.lang.Long">
+			<column name="USER_REG_TOTAL"/>
+		</property>
+		<property name="terRegTotal" type="java.lang.Long">
+			<column name="TER_REG_TOTAL"/>
+		</property>
+		<property name="terRecoverTotal" type="java.lang.Long">
+			<column name="TER_RECOVER_TOTAL"/>
+		</property>
+		<property name="cashIncome" type="java.lang.Double">
+			<column name="CASH_INCOME"/>
+		</property>
+		<property name="couponIncome" type="java.lang.Double">
+			<column name="COUPON_INCOME"/>
+		</property>
+		<property name="persentIncome" type="java.lang.Double">
+			<column name="PERSENT_INCOME"/>
+		</property>
+		<property name="invoiceTotal" type="java.lang.Long">
+			<column name="INVOICE_TOTAL"/>
+		</property>
+		<property name="invoiceMoney" type="java.lang.Double">
+			<column name="INVOICE_MONEY"/>
+		</property>
+	</class>
+</hibernate-mapping>

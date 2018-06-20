@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<plugin>
+	<id>OvtBossCoreFinanceImpl</id>
+	<name>账务管理</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>账务管理实现</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCoreFinanceImplPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/ovt_boss_finance.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.finance.db.BossBill"/>
+			<class name="com.ovt.idtv.boss.finance.db.BossBillD"/>
+			<class name="com.ovt.idtv.boss.finance.db.BossOperFee"/>
+			<class name="com.ovt.idtv.boss.finance.db.BossOperFeeD"/>
+			<class name="com.ovt.idtv.boss.finance.db.BossFinancialLog"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossReminder"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossReminderFormula"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossReminderFormulaDefine"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossFinancialTask"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossFinancialTaskLog"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossUserVodLog"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceipt"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceiptTask"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceiptCharge"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceiptDelegate"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankChargeTask"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceiptUser"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankChargeRecon"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossVoucher"></class>
+			<class name="com.ovt.idtv.boss.finance.db.BossBankReceiptStat"></class>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

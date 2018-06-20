@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossFinanceWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>FinanceWebPlugin</name>
+	<description>BOSS账务管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.FinanceWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	 
+		 <version>
+			<versionNo>1.0.4</versionNo>
+			<description>更新初始任务类型SQl语句</description>
+			<publishDate>2011-10-12</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		 <version>
+			<versionNo>1.1.0</versionNo>
+			<description>增加插入银行代扣委托关系建立/取消SQL初始化语句</description>
+			<publishDate>2011-11-18</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+		 <version>
+			<versionNo>1.1.1</versionNo>
+			<description>增加插入银行对账任务SQL初始化语句</description>
+			<publishDate>2011-12-23</publishDate>
+			<seqNo>4</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.2</versionNo>
+			<description>增加银行实时充值任务启动开关SQL语句</description>
+			<publishDate>2012-01-12</publishDate>
+			<seqNo>5</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.3</versionNo>
+			<description>删除银行代扣消息管理</description>
+			<publishDate>2012-01-10</publishDate>
+			<seqNo>6</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.4</versionNo>
+			<description>增加用户订购收入统计线程</description>
+			<publishDate>2012-04-10</publishDate>
+			<seqNo>7</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.5</versionNo>
+			<description>增加用户设备销售收入互动消费统计线程</description>
+			<publishDate>2012-05-24</publishDate>
+			<seqNo>8</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.6</versionNo>
+			<description>对延期授权和长授权类型的授权，增加自动反授权任务</description>
+			<publishDate>2012-08-22</publishDate>
+			<seqNo>9</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.7</versionNo>
+			<description>增加银行代扣自动统计任务</description>
+			<publishDate>2013-06-4</publishDate>
+			<seqNo>10</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+			<func code="009" name="账务管理" srcFile=""  descInfo="账务管理" status="1" alias="" seqNo="6" funcType="0" >
+				<func code="009001" name="用户账单管理" srcFile="/jsp/boss/finance/bill.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.bill.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009001001" name="手工调账" srcFile="" descInfo="手工调账" status="1" alias="pm.bill.adjust" seqNo="" funcType="2" developFlag="">
+						<func code="009001001001" name="提交" srcFile=""  descInfo="手动调账功能提交" status="1" alias="pm.bill.adjust.submit" seqNo="5" funcType="1"/>
+					</func>
+					<func code="009001002" name="出账" srcFile=""  descInfo="出账操作" status="1" alias="pm.bill.decaissement" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001003" name="设置呆账" srcFile=""  descInfo="设置呆账" status="1" alias="pm.bill.badloan" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001004" name="设置坏账" srcFile=""  descInfo="设置坏账" status="1" alias="pm.bill.baddebt" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001005" name="销账" srcFile="" descInfo="销账" status="1" alias="pm.bill.writeoff" seqNo="" funcType="2" developFlag="">
+						<func code="009001005001" name="提交" srcFile=""  descInfo="销账功能提交" status="1" alias="pm.bill.writeoff.submit" seqNo="5" funcType="1"/>
+					</func>
+					<func code="009001006" name="查看账单明细" srcFile="" descInfo="查看账单明细" status="1" alias="pm.bill.billD.openQuery" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001007" name="导出账单+明细到Excel" srcFile="" descInfo="导出账单+明细到Excel" status="1" alias="pm.bill.export1" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001008" name="用户账单打印" srcFile=""  descInfo="用户账单打印" status="1" alias="pm.bill.printbill" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001009" name="打印账单" srcFile=""  descInfo="账单打印" status="1" alias="pm.bill.print" seqNo="" funcType="2" developFlag=""/>
+					<func code="009001010" name="导出用户账单" srcFile="" descInfo="导出用户账单" status="1" alias="pm.bill.exportbill" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<!-- 
+				<func code="009002" name="催缴单管理" srcFile="/jsp/boss/finance/reminder.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.reminder.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009002001" name="手动生成催缴单" srcFile="" descInfo="手动生成催缴单" status="1" alias="pm.reminder.manuallyCreate" seqNo="" funcType="2" developFlag="">
+						<func code="009002001001" name="选择用户" srcFile="/jsp/boss/finance/reminderUser.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.reminder.manuallyCreate.openQuery" seqNo="5" funcType="1" developFlag="1">
+							<func code="009002001001001" name="生成催缴单" srcFile=""  descInfo="生成催缴单" status="1" alias="pm.reminder.manuallyCreate.submit" seqNo="" funcType="2" developFlag=""/>
+							<func code="009002001001002" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.reminder.manuallyCreate.back" seqNo="" funcType="2" developFlag=""/>
+						</func>
+					</func>
+					<func code="009002002" name="手动催缴" srcFile=""  descInfo="手动催缴" status="1" alias="pm.reminder.manualSend" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				
+				<func code="009003" name="用户类型催缴规则管理" srcFile="/jsp/boss/finance/rfUserType.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.reminderFormulaByUser.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009003001" name="催缴规则定义" srcFile="" descInfo="催缴规则定义" status="1" alias="pm.reminderFormulaByUser.UserType" seqNo="" funcType="2" developFlag="">
+						<func code="009003001001" name="提交" srcFile=""  descInfo="催缴规则定义提交" status="1" alias="pm.reminderFormulaByUser.define.submit" seqNo="5" funcType="1"/>
+					</func>
+					<func code="009003002" name="设置失效" srcFile=""  descInfo="设置失效" status="1" alias="pm.reminderFormulaByUser.failure" seqNo="" funcType="2" developFlag=""/>
+					<func code="009003003" name="设置生效" srcFile=""  descInfo="设置生效" status="1" alias="pm.reminderFormulaByUser.valid" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				-->
+				<func code="009004" name="任务类型管理" srcFile="/jsp/boss/finance/task.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.task.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<!--<func code="009004001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.task.addView" seqNo="" funcType="2" developFlag="">
+						<func code="009004001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.task.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					--><func code="009004002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.task.modifyView" seqNo="" funcType="2" developFlag="">
+						<func code="009004002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.task.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<!--<func code="009004003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.task.delete" seqNo="" funcType="2" developFlag=""/>
+				--></func>
+				
+				<func code="009005" name="账务任务管理" srcFile="/jsp/boss/finance/taskLog.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.taskLog.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009005001" name="创建任务" srcFile=""  descInfo="创建任务" status="1" alias="pm.taskLog.addView" seqNo="" funcType="2" developFlag="">
+						<func code="009005001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.taskLog.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="009005002" name="任务重启" srcFile=""  descInfo="任务重启" status="1" alias="pm.taskLog.restart" seqNo="" funcType="2" developFlag=""/>
+					<func code="009005003" name="任务停止" srcFile=""  descInfo="任务停止" status="1" alias="pm.taskLog.stop" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<!-- 
+				<func code="009006" name="银行代扣管理" srcFile="/jsp/boss/finance/withhold.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.withhold.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009006001" name="导出代扣信息到Excel" srcFile=""  descInfo="" status="1" alias="pm.withhold.exportBankHoldInfoexcel" seqNo="0" funcType="2" />
+					<func code="009006002" name="导出审核资料到Excel" srcFile=""  descInfo="" status="1" alias="pm.withhold.exportBankCheckInfoexcel" seqNo="0" funcType="2" />
+					<func code="009006003" name="导入扣款明细" srcFile=""  descInfo="导入扣款明细" status="1" alias="pm.withhold.addView" seqNo="" funcType="2" developFlag="">
+						<func code="009006004001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.withhold.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+				</func>
+				-->
+				<func code="009010" name="银行代扣委托信息管理" srcFile="/jsp/boss/finance/bankReceiptDelegate.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankReceiptDelegate.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009010001" name="导出" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptDelegate.export" seqNo="0" funcType="2" />
+				</func>
+				<func code="009007" name="银行代扣代缴任务管理" srcFile="/jsp/boss/finance/bankReceiptTask.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankReceiptTask.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009007001" name="强制结束任务" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptTask.forceEnd" seqNo="0" funcType="2" />
+					<func code="009007002" name="手动创建任务" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptTask.manualCreate" seqNo="0" funcType="2" />
+				</func>
+<!-- 				<func code="009008" name="银行代扣扣款记录查询" srcFile="/jsp/boss/finance/bankReceipt.do?methodToCall=openQuery" descInfo="银行代扣扣款记录查询" status="1" alias="pm.bankReceipt.openQuery" seqNo="5" funcType="1" developFlag="1">
+				</func>  --> 
+				<func code="009009" name="银行代扣充值记录管理" srcFile="/jsp/boss/finance/bankReceiptCharge.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankReceiptCharge.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009009001" name="导出" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptCharge.export" seqNo="0" funcType="2" />
+					<func code="009009002" name="手动更新充值状态" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptCharge.manualUpdate" seqNo="0" funcType="2" />
+					<func code="009009003" name="增加手动充值" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptCharge.addView" seqNo="0" funcType="2" >
+						<func code="009009003001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptCharge.addView.submit" seqNo="0" funcType="2" />
+					</func>
+					<func code="009009004" name="删除手动充值" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptCharge.delete" seqNo="0" funcType="2" />
+				</func>
+				<func code="009011" name="银行代扣对账统计" srcFile="/jsp/boss/finance/bankReceiptStat.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankReceiptStat.openQuery" seqNo="5" funcType="1" developFlag="1">
+					<func code="009011001" name="导出" srcFile=""  descInfo="" status="1" alias="pm.bankReceiptStat.export" seqNo="0" funcType="2" />
+				</func>
+				<!-- 银行对账管理  yzy 11-12-24-->
+				<func code="009012" name="银行实时缴费对账管理" srcFile="/jsp/boss/finance/bankChargeReconcile.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankChargeReconcile.openQuery" seqNo="11" funcType="1" developFlag="1">
+					<func code="009012001" name="导出主账单和明细" srcFile=""  descInfo="" status="1" alias="pm.bankChargeReconcile.export" seqNo="0" funcType="2" />
+					<func code="009012002" name="对账明细" srcFile=""  descInfo="" status="1" alias="pm.bankChargeReconcile.reconDetail" seqNo="1" funcType="2" developFlag="1">
+						<func code="009012002001" name="对账明细"  srcFile="/jsp/boss/finance/bankChargeReconcileDetail.do?methodToCall=openQuery" descInfo="" status="1" alias="pm.bankChargeReconcileDetail.openQuery" seqNo="11" funcType="1" developFlag="1">
+							<func code="009012002001001" name="导出银行对帐明细帐单" srcFile=""  descInfo="" status="1" alias="pm.bankChargeReconcileDetail.export" seqNo="1" funcType="2" />
+							<func code="009012002001002" name="返回" srcFile=""  descInfo="" status="1" alias="pm.bankChargeReconcileDetail.return" seqNo="2" funcType="2" developFlag="1">
+							</func>
+						</func>						
+					</func>
+					<func code="009012003" name="导出银行对帐主账单" srcFile=""  descInfo="" status="1" alias="pm.bankChargeReconcile.exportMain" seqNo="2" funcType="2" />
+				</func>
+				
+				<!-- 代金券管理 ysm 2013-01-30 -->
+				<func code="009013" name="代金券管理" srcFile="/jsp/boss/finance/bossVoucher.do?methodToCall=openQuery"  descInfo="代金券管理" status="1" alias="pm.bossVoucher.openQuery" seqNo="0" funcType="1" >
+					<func code="009013001" name="增加" srcFile=""  descInfo="" status="1" alias="pm.bossVoucher.addView" seqNo="" funcType="2" >
+						<func code="009013001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.bossVoucher.addView.submit" seqNo="" funcType="2" />
+					</func>
+					<func code="009013002" name="修改" srcFile=""  descInfo="" status="1" alias="pm.bossVoucher.modifyView" seqNo="0" funcType="2" >
+						<func code="009013002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.bossVoucher.modifyView.submit" seqNo="0" funcType="2" />
+					</func>
+					<func code="009013003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.bossVoucher.delete" seqNo="0" funcType="2" />
+					<func code="009013004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.bossVoucher.view" seqNo="0" funcType="2" />
+					<func code="009013005" name="审核通过" srcFile=""  descInfo="审核通过" status="1" alias="pm.bossVoucher.check" seqNo="0" funcType="2"/>
+					<func code="009013006" name="审核不通过" srcFile=""  descInfo="审核不通过" status="1" alias="pm.bossVoucher.nocheck" seqNo="0" funcType="2"/>
+					<func code="009013007" name="作废" srcFile=""  descInfo="作废" status="1" alias="pm.bossVoucher.blankOut" seqNo="0" funcType="2"/>
+					<func code="009013008" name="批量录入" srcFile=""  descInfo="批量录入" status="1" alias="pm.bossVoucher.batchWrite" seqNo="0" funcType="2"/>
+					<func code="009013009" name="批量导入" srcFile=""  descInfo="批量导入" status="1" alias="pm.bossVoucher.batchAdd" seqNo="0" funcType="2">
+						<func code="009013009001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.bossVoucher.batchAdd.submit" seqNo="0" funcType="2" />
+					</func>
+				</func>
+				<!-- 自动对账信息管理 2013-3-15yzy -->
+				<func code="009014" name="自动对账信息管理" srcFile="/jsp/boss/finance/autoVerifyAccountManage/autoVerifyAccountManage.do?methodToCall=openQuery"  descInfo="自动对账信息管理" status="1" alias="pm.autoVerifyAccountManage.openQuery" seqNo="0" funcType="1" >
+					<func code="009014001" name="对账" srcFile=""  descInfo="" status="1" alias="pm.autoVerifyAccountManage.verifyAccount" seqNo="" funcType="2" >
+					</func>
+					<func code="009014002" name="调账" srcFile=""  descInfo="" status="1" alias="pm.autoVerifyAccountManage.adjustAccount" seqNo="" funcType="2" >
+						<func code="009014002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.autoVerifyAccountManage.adjustAccount.submit" seqNo="" funcType="2" />
+					</func>
+				</func>
+			</func>
+			
+	</func_tree>
+</plugin>

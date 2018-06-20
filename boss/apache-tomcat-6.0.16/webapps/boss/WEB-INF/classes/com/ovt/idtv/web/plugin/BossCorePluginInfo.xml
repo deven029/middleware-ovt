@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<plugin>
+	<id>OvtBossCore</id>
+	<name>BossCore插件</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>Boss核心插件</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCorePlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

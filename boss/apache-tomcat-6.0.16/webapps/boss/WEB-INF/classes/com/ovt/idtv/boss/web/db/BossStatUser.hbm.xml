@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossStatUser" table="BOSS_STAT_USER">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_STAT_USER</param>
+			</generator>
+		</id>
+		<property name="statDate" type="java.util.Date">
+			<column name="STAT_DATE" length="7"/>
+		</property>
+		<property name="areaId" type="java.lang.Long">
+			<column name="AREA_ID"/>
+		</property>
+		<property name="areaName" type="java.lang.String">
+			<column name="AREA_NAME" length="20"/>
+		</property>
+		<property name="userTotal" type="java.lang.Long">
+			<column name="USER_TOTAL"/>
+		</property>
+		<property name="familyUser" type="java.lang.Long">
+			<column name="FAMILY_USER"/>
+		</property>
+		<property name="groupUser" type="java.lang.Long">
+			<column name="GROUP_USER"/>
+		</property>
+		<property name="otherUser" type="java.lang.Long">
+			<column name="OTHER_USER"/>
+		</property>
+		<property name="terminalTotal" type="java.lang.Long">
+			<column name="TERMINAL_TOTAL"/>
+		</property>
+		<property name="terDivideUser" type="java.lang.Long">
+			<column name="TER_DIVIDE_USER"/>
+		</property>
+		<property name="vodTotal" type="java.lang.Long">
+			<column name="VOD_TOTAL"/>
+		</property>
+		<property name="timeShiftTotal" type="java.lang.Long">
+			<column name="TIMESHIFT_TOTAL"/>
+		</property>
+		<property name="mainTerminal" type="java.lang.Long">
+			<column name="MAIN_TERMINAL"/>
+		</property>
+		<property name="viceTerminal" type="java.lang.Long">
+			<column name="VICE_TERMINAL" />
+		</property>
+		<property name="have_1Terminal" type="java.lang.Long">
+			<column name="HAVE_1TERMINAL"/>
+		</property>
+		<property name="have_2_3Terminal" type="java.lang.Long">
+			<column name="HAVE_2_3TERMINAL"/>
+		</property>
+		<property name="have_4_10Terminal" type="java.lang.Long">
+			<column name="HAVE_4_10TERMINAL"/>
+		</property>
+		<property name="have_gt11Terminal" type="java.lang.Long">
+			<column name="HAVE_GT11TERMINAL"/>
+		</property>
+		<property name="cashMoney" type="java.lang.Double">
+			<column name="CASH_MONEY"/>
+		</property>
+		<property name="couponMoney" type="java.lang.Double">
+			<column name="COUPON_MONEY"/>
+		</property>
+		<property name="presentMoney" type="java.lang.Double">
+			<column name="PRESENT_MONEY"/>
+		</property>
+	</class>
+</hibernate-mapping>

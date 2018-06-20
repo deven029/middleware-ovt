@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.boss.ovt/BossRealTime/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BossRealTime" targetNamespace="http://www.boss.ovt/BossRealTime/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.boss.ovt/BossRealTime/">
+
+
+      <xsd:element name="PlayAuthenticateRequest"
+      	type="tns:PlayAuthenticateRequest">
+      </xsd:element>
+
+      <xsd:complexType name="PlayAuthenticateRequest">
+      	<xsd:sequence>
+      		<xsd:element name="messageID" type="xsd:string"></xsd:element>
+      		<xsd:element name="productID" type="xsd:string"></xsd:element>
+      		<xsd:element name="chargeType" type="xsd:string"></xsd:element>
+      		<xsd:element name="cardNumber" type="xsd:string"></xsd:element>
+      		<xsd:element name="fee" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="MessageResponse" type="tns:MessageResponse"></xsd:element>
+
+      <xsd:complexType name="MessageResponse">
+      	<xsd:sequence>
+      		<xsd:element name="messageTD" type="xsd:string"></xsd:element>
+      		<xsd:element name="sessionID" type="xsd:string"></xsd:element>
+      		<xsd:element name="statusCode" type="xsd:string"></xsd:element>
+      		<xsd:element name="fee" type="xsd:string"></xsd:element>
+      		<xsd:element name="limit" type="xsd:string"></xsd:element>
+      		<xsd:element name="description" type="xsd:string"></xsd:element>
+      		<xsd:element name="userPassword" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+
+      </xsd:complexType>
+      <xsd:element name="PlayChargeRequest"
+            	type="tns:playChargeRequest">
+            </xsd:element>
+
+      <xsd:complexType name="playChargeRequest">
+
+      	<xsd:sequence>
+      		<xsd:element name="messageID" type="xsd:string"></xsd:element>
+      		<xsd:element name="sessionID" type="xsd:string"></xsd:element>
+      		<xsd:element name="logID" type="xsd:string"></xsd:element>
+      		<xsd:element name="cardNumber" type="xsd:string"></xsd:element>
+      		<xsd:element name="productID" type="xsd:string"></xsd:element>
+      		<xsd:element name="playStatus" type="xsd:string"></xsd:element>
+      		<xsd:element name="playMessage" type="xsd:string"></xsd:element>
+      		<xsd:element name="contentID" type="xsd:string"></xsd:element>
+      		<xsd:element name="contentName" type="xsd:string"></xsd:element>
+      		<xsd:element name="startTime" type="xsd:string"></xsd:element>
+      		<xsd:element name="endTime" type="xsd:string"></xsd:element>
+      		<xsd:element name="fee" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+     
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="PlayAuthenticateRequest">
+    <wsdl:part element="tns:PlayAuthenticateRequest" name="playAuthenticateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="PlayAuthenticateResponse">
+    <wsdl:part element="tns:MessageResponse" name="messageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="PlayChargeRequest">
+  	<wsdl:part name="playChargeRequest" element="tns:PlayChargeRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PlayChargeResponse">
+  	<wsdl:part name="playChargeResponse" element="tns:MessageResponse"></wsdl:part>
+  </wsdl:message>
+
+  <wsdl:portType name="BossRealTime">
+    <wsdl:operation name="PlayAuthenticate">
+      <wsdl:input message="tns:PlayAuthenticateRequest"/>
+      <wsdl:output message="tns:PlayAuthenticateResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="PlayCharge">
+    	<wsdl:input message="tns:PlayChargeRequest"></wsdl:input>
+    	<wsdl:output message="tns:PlayChargeResponse"></wsdl:output>
+    </wsdl:operation>
+      </wsdl:portType>
+  <wsdl:binding name="BossRealTimeSOAP" type="tns:BossRealTime">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="PlayAuthenticate">
+
+  		<soap:operation
+  			soapAction="http://www.boss.ovt/BossRealTime/PlayAuthenticate" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="PlayCharge">
+
+  		<soap:operation
+  			soapAction="http://www.boss.ovt/BossRealTime/PlayCharge" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BossRealTime">
+    <wsdl:port binding="tns:BossRealTimeSOAP" name="BossRealTimeSOAP">
+      <soap:address location="http://www.boss.ovt"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

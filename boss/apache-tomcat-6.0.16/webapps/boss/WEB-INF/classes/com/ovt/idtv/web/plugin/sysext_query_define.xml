@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+	<editType id="channel"
+		className="com.ovt.rating.form.ChannelFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="suveyGroup"
+		className="com.ovt.pm.survey.UserGroupFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="adverSuvey"
+		className="com.ovt.pm.survey.AdSuveyFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="option"
+		className="com.ovt.pm.survey.OptionFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="topic"
+		className="com.ovt.pm.survey.TopicFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="customer"
+		className="com.ovt.idtv.adm.web.order.orderinfo.CustomerFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="provide"
+		className="com.ovt.pm.survey.ProvideFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="areaName"
+		className="com.ovt.pm.content.program.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType"
+		className="com.ovt.pm.content.program.edittype.PriceTypeFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="priceType2"
+		className="com.ovt.pm.content.program.edittype.PriceTypeOldFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+   <editType id="qamName"
+		className="com.ovt.concurrent2.AreaFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+		<editType id="timeinput"
+		className="com.ovt.common.web.taglib.table.util.TimeInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput2"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType2">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="dateinput"
+		className="com.ovt.common.web.taglib.table.util.DateInputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="boss.areaInfo" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="description" fieldId="2" label="描述" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>
+	<queryDefine id="boss.busiDep" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="description" fieldId="2" label="描述" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>       
+	</queryDefine>
+	<queryDefine id="boss.feeType" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	<queryDefine id="boss.feeItems" rowFields="2" version="1">
+	    <queryField id="feeCode" fieldId="0" label="费用代码" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="name" fieldId="1" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.thirdPartySysPower" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="key" fieldId="1" label="键值" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.thirdPartySys" rowFields="2" version="1">
+	    <queryField id="sysType" fieldId="0" label="系统类别" spanFields="1" dataType="string" oper="full like">
+	        <editType id="sysTypeEditType"
+				className="com.ovt.common.web.taglib.table.util.SelectQueryFieldEditType">
+				<data default="" size="1" maxLength="50">
+					<item name="BMS" value="BMS" />
+					<item name="CA" value="CA" />
+					<item name="CALLCENTER" value="CALLCENTER" />
+					<item name="BANK" value="BANK" />
+					<item name="CAMS" value="CAMS" />
+					<item name="BRAS" value="BRAS" />
+					<item name="OVTBO" value="OVTBO" />
+					<item name="MSIPTV" value="MSIPTV" />
+				</data>
+			</editType>
+	    </queryField>
+	    <queryField id="name" fieldId="1" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="provider" fieldId="3" label="厂商" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="version" fieldId="4" label="版本" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="contactMan" fieldId="5" label="联系人" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="ip" fieldId="6" label="IP" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>	
+	<queryDefine id="boss.businessType" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.businessTypeFee" rowFields="2" version="1">
+	    <queryField id="name" fieldId="0" label="收费项名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.equFeeItem" rowFields="2" version="1">
+	    <queryField id="equType" fieldId="0" label="设备类型" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="model" fieldId="1" label="设备型号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="menufacturer" fieldId="2" label="设备厂家" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+	<queryDefine id="boss.payOrgan" rowFields="2" version="1">
+	    <queryField id="payName" fieldId="-1" label="单位名称" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	</queryDefine>
+</queryDefines>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<queryDefines>
+    <editType id="input"
+		className="com.ovt.common.web.taglib.table.util.InputQueryFieldEditType">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="busiTypeEditType"
+		className="com.ovt.idtv.boss.web.business.struts.BusiTypeFieldEditType">
+		<data default="" size="1" maxLength="50"></data>
+	</editType>
+	<editType id="verifyAccountEndDate"
+		className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.verifyAccountEndDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<editType id="verifyAccountStartDate"
+		className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.verifyAccountStartDate">
+		<data default="" size="30" maxLength="50" />
+	</editType>
+	<queryDefine id="boss.business.query" rowFields="2" version="1" hideAfterQuery="true" supportQueryHide="true">
+	    <queryField id="userCoding" fieldId="-1" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="userName" fieldId="-2" label="用户名称" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <queryField id="loginNo" fieldId="-3" label="操作员" spanFields="1" dataType="string" oper="full like">
+	         <editType id="loginNo" className="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitOperatorFieldEditType">
+	        	 <data default="" size="30" maxLength="50" />
+	         </editType>
+	    </queryField>
+	    <queryField id="busiType" fieldId="-4" label="业务类型" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="busiTypeEditType"/>
+	    </queryField>
+	    <queryField id="start" fieldId="-5" label="开始时间" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="verifyAccountStartDate"/>
+	    </queryField>
+	    <queryField id="end" fieldId="-6" label="结束时间" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="verifyAccountEndDate"/>
+	    </queryField>
+	    <queryField id="transContent" fieldId="-7" label="(!)业务内容" spanFields="1" dataType="string" oper="full like">
+	         <editType refid="input"/>
+	    </queryField>
+	    <!-- 营业日志管理中增加3个查询条件  add by liuxu 2012-12-10 -->
+	    <queryField id="areaInfoThree" fieldId="-8" label="多级片区" spanFields="2" dataType="string" oper="full like">
+	         <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="userAgent" fieldId="-9" label="经办人姓名" spanFields="1" dataType="string" oper="full like">
+	   		<editType refid="input"></editType>
+	    </queryField>
+	    <queryField id="address" fieldId="-10" label="地址" spanFields="1" dataType="string" oper="full like">
+	    	<editType refid="input"></editType>
+	    </queryField>
+	</queryDefine>
+	<!-- 批量订购  2012-3-29 yzy -->
+	<queryDefine id="business.batchUserOrder" rowFields="2" version="1">
+	    <queryField id="userType" fieldId="-1" label="用户类型" spanFields="1" dataType="string" oper="full like">
+	        <editType id="userType" className="com.ovt.idtv.boss.web.user.userInfoM.UserTypeFieldEditType">
+				<data default="" size="30" maxLength="50" />
+			</editType>
+	    </queryField>
+	    <queryField id="areaInfoThree" fieldId="-2" label="多级片区" spanFields="1" dataType="string" oper="full like">
+	        <editType id="areaInfoThree" className="com.ovt.idtv.boss.web.user.userInfoM.AreaInfoThreeFieldEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+	    </queryField>
+	    <queryField id="userCoding" fieldId="-3" label="用户编号" spanFields="1" dataType="string" oper="full like">
+	        <editType refid="input"/>
+	    </queryField>
+	    <queryField id="equNo" fieldId="-4" label="终端卡号" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+	</queryDefine>		
+	<!-- 同步日志管理 2012-11-15 liuxu -->
+	<queryDefine id="business.syncBusiLog" rowFields="2" version="1">
+		<queryField id="userCoding" fieldId="-1" label="用户编号" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="equNo" fieldId="-2" label="终端号" spanFields="1" dataType="string" oper="full like">
+			<editType refid="input" />
+		</queryField>
+		<queryField id="logStatus" fieldId="-3" label="日志状态" spanFields="1" dataType="string" oper="full like">
+			<editType id="logStatus" className="com.ovt.idtv.boss.web.business.syncBusiLog.BusiLogStatusEditType">
+				<data default="" size="400" maxLength="400" />
+			</editType>
+		</queryField>
+		<queryField id="busiType" fieldId="-4" label="业务类型" spanFields="1" dataType="string" oper="full like">
+			<editType refid="busiTypeEditType"/>
+		</queryField>
+		<queryField id="operBeginDate" fieldId="-5" label="操作开始时间" spanFields="1" dataType="string" oper="full like">
+			<editType refid="verifyAccountStartDate"/>
+		</queryField>
+		<queryField id="operEndDate" fieldId="-6" label="操作结束时间" spanFields="1" dataType="string" oper="full like">
+			<editType refid="verifyAccountEndDate"/>
+		</queryField>
+	</queryDefine>
+</queryDefines>

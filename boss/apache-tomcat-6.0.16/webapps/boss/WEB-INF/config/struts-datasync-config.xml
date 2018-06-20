@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="SmsSyncBossForm" type="com.ovt.idtv.boss.datasync.form.SmsSyncBossForm" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="SmsSyncBossForm" path="/jsp/boss/dataSync/smsSyncBoss" type="com.ovt.idtv.boss.datasync.struts.SmsSyncBossAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="smsSyncBoss.modifyView.submit.success" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeTableCommand&amp;commandId=modifyView&amp;OPER=modifyView"></forward>
+			<forward name="start.import" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeImport"></forward>
+			<forward name="import.status" path="/boss/dataSync/smsSyncBossStatus.jsp"></forward>
+			<forward name="start.importUserOrder" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeUserOrderImport"></forward>
+			<forward name="start.importArea" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeAreaInfoImport"></forward>
+			<forward name="start.imporCms" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeCmsImport"></forward>
+			<forward name="end.imporCms" path="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeCmsImport&amp;type=stop"></forward>
+		</action>
+	</action-mappings>
+</struts-config>

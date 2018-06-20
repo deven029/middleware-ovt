@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="ServiceTypeForm" type="com.ovt.idtv.boss.web.charge.form.ServiceTypeForm" />
+		<form-bean name="ProductForm" type="com.ovt.idtv.boss.web.charge.form.ProductSourceForm" />
+		<form-bean name="ServiceForm" type="com.ovt.idtv.boss.web.charge.form.SourceServiceForm" />
+		<form-bean name="UserOrderForm" type="com.ovt.idtv.boss.web.charge.form.UserOrderForm" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="ServiceTypeForm" path="/jsp/boss/charge/servType" type="com.ovt.idtv.boss.web.charge.service.struts.ServTypeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/servType.do?methodToCall=openQuery"></forward>
+			<forward name="select.service.success" path="/jsp/boss/charge/service.do?methodToCall=openQuery"></forward>
+			<forward name="servtype.submit.success" path="/jsp/boss/charge/servType.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="servtype.delete.success" path="/jsp/boss/charge/servType.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="select.option" path="/boss/charge/chooseServTypeOrService.jsp"></forward>
+		</action>
+		<action name="ServiceForm" path="/jsp/boss/charge/servType/service" type="com.ovt.idtv.boss.web.charge.service.struts.ServTypeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/servType/service.do?methodToCall=openQuery"></forward>
+			<forward name="delete.service" path="/jsp/boss/charge/servType.do?methodToCall=select"></forward>
+		</action>
+		<action name="ProductForm" path="/jsp/boss/charge/product" type="com.ovt.idtv.boss.web.charge.product.struts.ProductDefineAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall" scope="request" >
+			<forward name="select.success" path="/jsp/boss/charge/product.do?methodToCall=openQuery"></forward>
+			<forward name="select.productServ" path="/jsp/boss/charge/productRelServ.do?methodToCall=openQuery"></forward>
+		</action>
+		 <action  name="ProductForm" path="/jsp/boss/charge/product/verify" type="com.ovt.idtv.boss.web.charge.product.struts.ProductVerifyAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/product/verify.do?methodToCall=openQuery"></forward>
+			<forward name="verify.success" path="/jsp/boss/charge/product.do?methodToCall=openQuery"></forward>
+		</action>
+		 <action  name="ProductForm" path="/jsp/boss/charge/product/promote" type="com.ovt.idtv.boss.web.charge.product.struts.ProductPromoteAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/product/promote.do?methodToCall=openQuery"></forward>
+			<forward name="product.history" path="/jsp/boss/charge/product/history.do?methodToCall=openQuery"></forward>
+		</action>
+        <action  name="ProductForm" path="/jsp/boss/charge/product/history" type="com.ovt.idtv.boss.web.charge.product.struts.ProductHistoryActioin" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/product/history.do?methodToCall=openQuery"></forward>
+			<forward name="return.back" path="/jsp/boss/charge/product/promote.do?methodToCall=openQuery"></forward>
+		</action>
+	  <action  name="ProductForm" path="/jsp/boss/charge/product/shelves" type="com.ovt.idtv.boss.web.charge.product.struts.ProductShelvesAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/product/shelves.do?methodToCall=openQuery"></forward>
+			<forward name="select.product.shelves" path="/boss/charge/ProductShelves.jsp"></forward>
+		</action>
+		
+		
+		
+		<action   path="/jsp/boss/charge/feeType" type="com.ovt.idtv.boss.web.charge.product.struts.FeeTypeDefineAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/feeType.do?methodToCall=openQuery"></forward>
+		</action>
+		<action   path="/jsp/boss/charge/productRelServ" type="com.ovt.idtv.boss.web.charge.product.struts.ProductRelServAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/productRelServ.do?methodToCall=openQuery"></forward>
+			<forward name="return.back" path="/jsp/boss/charge/product.do?methodToCall=openQuery"></forward>
+		</action>
+		<action  name="ServiceForm" path="/jsp/boss/charge/service" type="com.ovt.idtv.boss.web.charge.service.struts.ServAction" 
+			unknown="false"
+			validate="false" scope="request" 
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service.do?methodToCall=openQuery"></forward>
+			<forward name="service.modifyMonthFeeType" path="/jsp/boss/charge/addMonthFeeType.jsp"></forward>
+			<forward name="service.modifyMultiMonthFeeType" path="/jsp/boss/charge/addMultiMonthFeeType.jsp"></forward>
+			<forward name="service.modifyTimesFeeType" path="/jsp/boss/charge/addTimeFeeType.jsp"></forward>
+		</action>
+		<action  name="ServiceForm" path="/jsp/boss/charge/service/verify" type="com.ovt.idtv.boss.web.charge.service.struts.ServVerifyAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service/verify.do?methodToCall=openQuery"></forward>
+			<forward name="verify.success" path="/jsp/boss/charge/service.do?methodToCall=openQuery"></forward>
+		</action>
+	   <action  name="ServiceForm" path="/jsp/boss/charge/service/exit" type="com.ovt.idtv.boss.web.charge.service.struts.ServExitAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service/exit.do?methodToCall=openQuery"></forward>
+			<forward name="select.service.exit" path="/boss/charge/ServiceExit.jsp"></forward>
+		</action>
+	 <action  name="ServiceForm" path="/jsp/boss/charge/service/shelves" type="com.ovt.idtv.boss.web.charge.service.struts.ServShelvesAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service/shelves.do?methodToCall=openQuery"></forward>
+			<forward name="select.service.exit" path="/boss/charge/ServiceShelves.jsp"></forward>
+		</action>
+	    <action  name="ServiceForm" path="/jsp/boss/charge/service/promote" type="com.ovt.idtv.boss.web.charge.service.struts.ServPromoteAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service/promote.do?methodToCall=openQuery"></forward>
+			<forward name="service.history" path="/jsp/boss/charge/service/history.do?methodToCall=openQuery"></forward>
+		</action>
+		<action  name="ServiceForm" path="/jsp/boss/charge/service/history" type="com.ovt.idtv.boss.web.charge.service.struts.ServHistoryAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/charge/service/history.do?methodToCall=openQuery"></forward>
+			<forward name="return.back" path="/jsp/boss/charge/service/promote.do?methodToCall=openQuery"></forward>
+		</action>
+		<action    path="/common/jsp/sys/datapowerinfo" type="com.ovt.idtv.boss.web.charge.service.struts.ServicePowerAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			
+			<forward name="select.success" path="/common/jsp/rights/dataPower_group_datapowerdetail.jsp"></forward>
+		    <forward name="pageChoose.success" path="/common/jsp/rights/choosePageSuccess.jsp"></forward>
+			
+		</action>
+	</action-mappings>
+</struts-config>

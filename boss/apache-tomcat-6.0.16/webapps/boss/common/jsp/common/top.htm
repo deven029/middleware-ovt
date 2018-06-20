@@ -1,0 +1,223 @@
+
+
+
+
+
+
+
+
+
+
+<html lang="zh">
+<head>
+    <title>top.jsp</title>
+    
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">    
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="This is my page">
+    <link href="zi.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+function showhide() {
+  var i, ss, cc, rr;
+  cc = showhide.arguments;
+  for (i=0; i<(cc.length-2); i+=3) 
+     {  ss   = cc[i+2];
+       if (navigator.appName == 'Netscape' && document.layers != null)
+        { rr = eval(cc[i]);
+          if (rr) rr.visibility = ss;
+        } else if (document.all != null) 
+              { if (ss == 'show') ss = 'visible'; 
+                if (ss == 'hide') ss = 'hidden'; rr = eval(cc[i+1]);
+                if (rr) rr.style.visibility = ss;
+              }
+     }}
+function keepIE(WinName,WinTop,WinLeft) {
+document.all[WinName].style.top=WinTop
+document.all[WinName].style.left=WinLeft
+}
+function keepNN(WinName,WinTop,WinLeft) {
+document.layers[WinName].moveTo(self.pageXOffset+WinLeft+window.innerWidth-80,self.pageYOffset+WinTop+window.innerHeight-90)}
+</script>
+</head>
+<form name="frmtabhead">
+  <input type="hidden" name="tabnums" value="3">
+	<input type="hidden" name="tabnow" value="1">
+</form>
+<body leftmargin="0" topmargin="0">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="300"><img src="../../images/title_01.gif" width="300" height="50"></td>
+    <td width="300"><img src="../../images/title_02.gif" width="300" height="50"></td>
+    <td valign="bottom" bgcolor="418DDA"><table width="100%" height="50" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td align="right" valign="top"><table height="16"  border="0" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td bgcolor="003878"><img src="../../images/top_arc.gif" width="16" height="16"></td>
+                <td align="center" height="16" bgcolor="003878" class="G"> Hello, 
+                  admin,
+                  2004-12-31
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+           <td align="right" valign="bottom"><img src="../../images/img_help.gif" width="17" height="17"><span class="G">帮助　　</span><img src="../../images/favorite.gif" width="17" height="17">
+           <span class="G">
+          <a onclick="javascript:window.external.addFavorite('http://172.16.9.39:7031/vboss-manager-test/','增值业务管理平台');" href="http://172.16.9.39:7031/vboss-manager-test/">加入收藏</a>
+          　　</span><img src="../../images/img_logout.gif" width="17" height="17"><span class="G"><a href="/vboss-manager-test/vboss_page/system/logout.do">注销</a></span></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td height="1" bgcolor="#909090"></td>
+        </tr>
+      </table>
+ 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td height="5"></td>
+  </tr>
+  <tr>
+  <td height=18> 
+<div id="Win0" style="position:absolute; width:1px; height:0px; z-index:2; visibility: show; border: 1px none #000000; left: 2px; top: 58px;" > 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip_over1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip_over3.gif"><div align="center"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a onMouseOver="showhide('document.layers[\'Win1\']','document.all[\'Win1\']','hide'),showhide('document.layers[\'Win2\']','document.all[\'Win2\']','hide'),showhide('document.layers[\'Win3\']','document.all[\'Win3\']','hide'),showhide('document.layers[\'Win4\']','document.all[\'Win4\']','hide'),showhide('document.layers[\'Win5\']','document.all[\'Win5\']','hide'),showhide('document.layers[\'Win6\']','document.all[\'Win6\']','hide'),showhide('document.layers[\'Win7\']','document.all[\'Win7\']','hide')"><font color="#FFFFFF">一般功能</font></a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip_over2.gif"></td>
+    </tr>
+  </table>
+</div>
+<div id="Silversand" style="position:absolute; left:2px; top:58px; z-index:1; width: 2px; height: 22px;"> 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip3.gif"><div align="center"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a href="javascript:void(null)" onClick="tabclick(this), showhide('document.layers[\'Win0\']','document.all[\'Win0\']','show')" id="tabhead1" class="tabdisp" value="1">一般功能</a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip2.gif"></td>
+    </tr>
+  </table>
+</div>
+<!--
+<div id="Win1" style="position:absolute; width:1px; height:0px; z-index:2; visibility: hidden; border: 1px none #000000; left: 62px; top: 58px;" > 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip_over1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip_over3.gif"><div align="center"> 
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a onMouseOver="showhide('document.layers[\'Win0\']','document.all[\'Win0\']','hide'),showhide('document.layers[\'Win2\']','document.all[\'Win2\']','hide'),showhide('document.layers[\'Win3\']','document.all[\'Win3\']','hide'),showhide('document.layers[\'Win4\']','document.all[\'Win4\']','hide'),showhide('document.layers[\'Win5\']','document.all[\'Win5\']','hide'),showhide('document.layers[\'Win6\']','document.all[\'Win6\']','hide'),showhide('document.layers[\'Win7\']','document.all[\'Win7\']','hide')"><font color="#FFFFFF">一般功能</font></a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip_over2.gif"></td>
+    </tr>
+  </table>
+</div>
+<div id="Silversand" style="position:absolute; left:62px; top:58px; z-index:1; width: 2px; height: 22px;"> 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip3.gif"><div align="center"> 
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a href= "javascript:void(null)" onClick="tabclick(this),showhide('document.layers[\'Win1\']','document.all[\'Win1\']','show')"  id="tabhead2" class="tabnodisp" value="2">一般功能</a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip2.gif"></td>
+    </tr>
+  </table>
+</div>
+<div id="Win2" style="position:absolute; width:1px; height:0px; z-index:2; visibility: hidden;border: 1px none #000000; left: 122px; top: 58px;" > 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip_over1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip_over3.gif"><div align="center"> 
+          <table border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a onMouseOver="showhide('document.layers[\'Win1\']','document.all[\'Win1\']','hide'),showhide('document.layers[\'Win0\']','document.all[\'Win0\']','hide'),showhide('document.layers[\'Win3\']','document.all[\'Win3\']','hide'),showhide('document.layers[\'Win4\']','document.all[\'Win4\']','hide'),showhide('document.layers[\'Win5\']','document.all[\'Win5\']','hide'),showhide('document.layers[\'Win6\']','document.all[\'Win6\']','hide'),showhide('document.layers[\'Win7\']','document.all[\'Win7\']','hide')"><font color="#FFFFFF">位置规机</font></a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip_over2.gif"></td>
+    </tr>
+  </table>
+</div>
+<div id="Silversand" style="position:absolute; left:122px; top:58px; z-index:1; width: 2px; height: 22px;"> 
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td><img src="../../images/tip1.gif"></td>
+      <td align="center" valign="bottom" background="../../images/tip3.gif"><div align="center"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td nowrap><a href= "javascript:void(null)" onClick="tabclick(this),showhide('document.layers[\'Win2\']','document.all[\'Win2\']','show')" id="tabhead3" class="tabnodisp" value="3">位置规机</a></td>
+            </tr>
+          </table>
+        </div></td>
+      <td><img src="../../images/tip2.gif"></td>
+    </tr>
+  </table>
+</div>
+-->
+
+      </td>
+      
+  </tr>
+  <tr>
+    <td bgcolor="0A6CCF" height="2"></td>
+  </tr>
+</table>
+</body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="100%" colspan="19"> 
+	<form name="frmtabcontent">
+        <div id="tabcontent1" style="display:block"></div>
+        <div id="tabcontent2" style="display:none"></div>
+        <div id="tabcontent3" style="display:none"></div>
+      </form></td>
+  
+</table>
+</html>
+<script language="javascript">
+function tabclick(node){
+	window.focus();
+	var tabnow = parseInt(document.frmtabhead.tabnow.value);
+	var tabclicked = parseInt(node.value);
+	if(tabnow == tabclicked) return;
+	
+	var tabnums = parseInt(document.frmtabhead.tabnums.value);	
+	for(i=1;i<=tabnums;i++){
+		var obj = eval("tabhead" + i);
+		if(obj.className == "tabdisp"){
+			obj.className = "tabnodisp";
+			eval("tabcontent" + i + ".style").display = "none";
+			break;
+		}
+	}
+	
+	node.className = "tabdisp";
+	eval("tabcontent" + tabclicked + ".style").display = "block";
+	document.frmtabhead.tabnow.value = tabclicked;
+}
+</script>
+
+          

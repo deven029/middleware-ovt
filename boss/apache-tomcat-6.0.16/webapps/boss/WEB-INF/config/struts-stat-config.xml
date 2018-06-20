@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="customStatForm" type="com.ovt.idtv.boss.web.stat.customStat.CustomStatActionForm" />
+		<form-bean name="verifyConditionForm" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.query.AutoAccountDefaultCondition" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action path="/jsp/boss/stat/cityAreaStat" type="com.ovt.idtv.boss.web.stat.cityArea.struts.CityAreaStatAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/cityAreaStat.do?methodToCall=openQuery"></forward>
+		</action>
+		<action path="/jsp/boss/stat/busiVerifyAccount/unitVerifyAccountAction" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.UnitVerifyAccountAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/busiVerifyAccount/unitVerifyAccountAction.do?methodToCall=openQuery"></forward>
+			<forward name="summary" path="/boss/stat/receipt/receiptSummaryForm.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/stat/busiVerifyAccount/operatorVerifyAccountAction" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.OperatorVerifyAccountAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/busiVerifyAccount/operatorVerifyAccountAction.do?methodToCall=openQuery"></forward>
+			<forward name="summary" path="/boss/stat/receipt/receiptSummaryForm.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/stat/busiVerifyAccount/print/*" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.print.{1}"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/stat/orderStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.OrderStatAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/orderStatAction.do?methodToCall=openQuery"></forward>
+		</action>
+		<action path="/jsp/boss/stat/orderIncomeStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.OrderIncomeStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/orderIncomeStatAction.do?methodToCall=openQuery"></forward>
+			<!--<forward name="orderIncomeStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=orderIncomeStat" />-->
+		</action>
+		<action path="/jsp/boss/stat/orderPreReceivablesStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.OrderPreReceivablesStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/orderPreReceivablesStatAction.do?methodToCall=openQuery"></forward>
+			<forward name="preReceiStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=preReceiStat" />
+		</action>
+		<action path="/jsp/boss/stat/orderRealReceivablesStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.OrderRealReceivablesStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/orderRealReceivablesStatAction.do?methodToCall=openQuery"></forward>
+			<forward name="realReceiStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=realReceiStat" />
+		</action>
+		<action path="/jsp/boss/stat/userStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.UserStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/userStatAction.do?methodToCall=openQuery"></forward>
+			<forward name="userStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=userStat" />
+		</action>
+		<action path="/jsp/boss/stat/equStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.EquStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/equStatAction.do?methodToCall=openQuery"></forward>
+			<forward name="equStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=equStat" />
+		</action>
+		<action path="/jsp/boss/stat/saleIncomeStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.SaleIncomeStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/saleIncomeStatAction.do?methodToCall=openQuery"></forward>
+			<forward name="saleIncomeStatChart" path="/jsp/boss/stat/statChart.do?methodToCall=commonStat&amp;statTag=saleIncomeStat" />
+		</action>
+		<action path="/jsp/boss/stat/vodConsumeStatAction" type="com.ovt.idtv.boss.web.stat.order.struts.VodConsumeStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/vodConsumeStatAction.do?methodToCall=openQuery"></forward>
+		</action>
+		<action name="customStatForm" path="/jsp/boss/stat/customStat" type="com.ovt.idtv.boss.web.stat.customStat.CustomStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/customStat.do?methodToCall=openQuery"></forward>
+			<forward name="executeCustomStat" path="/boss/stat/customStatExecute.jsp"></forward>
+		</action>
+		<action path="/jsp/boss/stat/customStatService/*" type="com.ovt.idtv.boss.web.stat.customStat.CustomStatServiceAction"  
+			scope="request"
+			parameter="{1}">
+		</action>
+		<!-- 宽带到期用户统计 2012-10-12 liuxu -->
+		<action path="/jsp/boss/stat/bwExpireUserStatAction" type="com.ovt.idtv.boss.web.stat.bwExpireUserStat.BwExpireUserStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/stat/bwExpireUserStatAction.do?methodToCall=openQuery" />
+		</action>
+		<action path="/jsp/boss/stat/statChart" type="com.ovt.idtv.boss.web.stat.chart.StatChartAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="queryResult.success" path="/boss/stat/chart/queryOrderStat.jsp" />
+			<forward name="queryResult.failure" path="/boss/stat/chart/error.jsp" />
+			<forward name="view.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+		</action>
+		
+		<!-- 账户收入统计action配置 2012-12-17 liuxu -->
+		<action path="/jsp/boss/stat/accountIncomeStat" type="com.ovt.idtv.boss.web.stat.accountincome.AccountIncomeStatAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall" scope="request">
+			<forward name="initdata.success" path="/boss/stat/accountIncomeStat.jsp" />
+			<forward name="openQuery" path="/jsp/boss/stat/accountIncomeStat.do?methodToCall=openQuery" />
+		</action>
+		<!-- 账户收入统计打印action配置 2012-12-29 liuxu -->
+		<action path="/jsp/boss/stat/printAccountIncomeStat/print/*" type="com.ovt.idtv.boss.web.stat.accountincome.print.{1}"  scope="request" parameter="{1}">
+		</action>
+		<action path="/jsp/boss/stat/busiVerifyAccount/queryExport/*" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.query.export.ExportOperatingReceiptAction"  scope="request" parameter="{1}">
+		</action>
+		<!-- 营业自动对账统计 2013-3-3 yzy -->
+		<action name="verifyConditionForm" path="/jsp/boss/stat/autoVerifyAccount/*" type="com.ovt.idtv.boss.web.stat.busiVerifyAccount.AutoVerifyAccountAction"
+			parameter="methodToCall" scope="request">
+			<forward name="initdata" path="/boss/stat/receipt/receiptAutoSummaryForm.jsp" />
+			<forward name="summary" path="/boss/stat/receipt/receiptAutoSummaryForm.jsp"></forward>
+			<forward name="failed" path="/jsp/boss/stat/autoVerifyAccount/autoVerifyAccount.do?methodToCall=initData"/> 
+		</action>
+		<!-- 按片区设备统计 2013-4-8 yzy -->
+		<action name="verifyConditionForm" path="/jsp/boss/stat/statisticUserEquByAreaAction" type="com.ovt.idtv.boss.web.stat.equ.struts.StatisticUserEquByAreaAciton"
+			parameter="methodToCall" scope="request">
+			
+		</action>
+		<!-- 营收业务统计 2013-9-11 yzy -->
+		<action name="" path="/jsp/boss/stat/busi/busiNonReceiptStat" type="com.ovt.idtv.boss.web.stat.busi.nonReceipt.BusiNonReceiptStatAction"
+			parameter="methodToCall" scope="request">
+		</action>
+		<action name="" path="/jsp/boss/stat/busi/busiFeeReceiptStat" type="com.ovt.idtv.boss.web.stat.busi.feeReceipt.BusiFeeReceiptStatAction"
+			parameter="methodToCall" scope="request">
+		</action>
+	</action-mappings>
+</struts-config>

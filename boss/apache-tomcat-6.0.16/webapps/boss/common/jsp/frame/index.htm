@@ -1,0 +1,32 @@
+<%@ page import = "com.sitech.common.util.ResourceUtil"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<%
+  String system_name = ResourceUtil.getString("system.name.full");	
+%>
+<title><%=system_name%></title>
+</head>
+<!--
+<frameset rows="15%,*" cols="*" frameborder="0" border="0" framespacing="0">
+  <frame src="top.htm" name="top" frameborder="0" scrolling="NO" noresize>
+  <frameset rows="*" cols="25%,*" framespacing="0" frameborder="0" scrolling="auto" border="0">
+    <frame src="tree.jsp" frameborder="0" name="left" scrolling="auto" >
+    <frame src="content.jsp" frameborder="0"  name="right" scrolling="auto">
+  </frameset>
+</frameset>
+-->
+<frameset rows="76,*" cols="*" frameborder="NO" border="0" framespacing="0">
+  <frame src="top.jsp" name="top" scrolling="NO" noresize>
+  <frameset rows="*,24" cols="*" framespacing="0" frameborder="NO" border="0">
+    <frameset rows="*" cols="227,*" framespacing="0" frameborder="NO" border="0">
+      <frame src="tree.jsp" name="left" scrolling="auto">
+      <frame src="content.jsp" name="right" scrolling="auto">
+    </frameset>
+    <frame src="buttom.jsp" name="bottomFrame" scrolling="NO" noresize>
+  </frameset>
+</frameset>
+<noframes>
+<body>
+</body>
+</html>

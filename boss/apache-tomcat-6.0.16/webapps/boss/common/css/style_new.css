@@ -1,0 +1,150 @@
+td {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#000000;
+	text-decoration: none;
+}
+.letter:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.letter:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFCC33;
+	text-decoration: none;
+}
+.letter:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.letter_menu:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.letter_menu:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CC0000;
+	text-decoration: none;
+}
+.letter_menu:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+	text-decoration: none;
+}
+
+.background1 {
+	background-color: #D9D9D9;
+}
+.background3 {
+	background-color: #66BEFF;
+}
+
+.background2 {
+	background-color: #57AFF0;
+}
+
+.bottom1 {
+	background-color: #F5F5F5;
+}
+.bottom2 {
+	background-color: #E8E8E8;
+}
+
+
+.input1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	height: 14px;
+	border: 1px solid #000000;
+}
+.input2 {
+	height: 14px;
+	border: 1px solid #7A7979;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.form {
+	border: 1px solid #BABABA;
+}
+.row1 {
+	background-color: #FEDF8B;
+}
+.row2 {
+	height:17px;
+	background-color: #F0F0F0;
+	color: #3F3F3F;
+}
+.row3 {
+	background-color: #DDDDDD;
+	color: #3F3F3F;
+}
+.row4 {
+	background-color: #FEECB4;
+}
+
+.letter1:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0054BB;
+	text-decoration: none;
+}
+.letter1:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: underline;
+	color: #F26521;
+}
+.letter1:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0054BB;
+	text-decoration: none;
+}
+.letter2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	color: #3F3F3F;
+}
+.letter3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+}
+.letter4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: none;
+}
+.letter5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0054BB;
+	text-decoration: none;
+}

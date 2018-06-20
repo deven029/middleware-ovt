@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IPTV Version='2.0.4005.0' -->
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Liam O'Gorman (Microsoft) -->
+<s:schema xmlns="http://www.microsoft.com/iptv/bss" xmlns:tns="http://www.microsoft.com/iptv/bss" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/" targetNamespace="http://www.microsoft.com/iptv/bss" elementFormDefault="qualified">
+	<s:import namespace="http://microsoft.com/wsdl/types/" schemaLocation="guid.xsd"/>
+	<s:element name="PrincipalStatus" type="PrincipalStatus"/>
+	<s:simpleType name="PrincipalStatus">
+		<s:restriction base="s:string">
+			<s:enumeration value="enabled"/>
+			<s:enumeration value="disabled"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="TimeZonesEnumeration" type="TimeZonesEnumeration"/>
+	<s:simpleType name="TimeZonesEnumeration">
+		<s:restriction base="s:string">
+			<s:enumeration value="None"/>
+			<s:enumeration value="GMT_Minus_1200_InternationalDateLineWest"/>
+			<s:enumeration value="GMT_Minus_1100_MidwayIsland_Samoa"/>
+			<s:enumeration value="GMT_Minus_1000_Hawaii"/>
+			<s:enumeration value="GMT_Minus_0900_Alaska"/>
+			<s:enumeration value="GMT_Minus_0800_PacificTimeUSAndCanada_Tijuana"/>
+			<s:enumeration value="GMT_Minus_0700_Arizona"/>
+			<s:enumeration value="GMT_Minus_0700_Chihuahua_LaPaz_Mazatlan"/>
+			<s:enumeration value="GMT_Minus_0700_MountainTimeUSAndCanada"/>
+			<s:enumeration value="GMT_Minus_0600_CentralAmerica"/>
+			<s:enumeration value="GMT_Minus_0600_CentralTimeUSAndCanada"/>
+			<s:enumeration value="GMT_Minus_0600_Guadalajara_MexicoCity_Monterrey"/>
+			<s:enumeration value="GMT_Minus_0600_Saskatchewan"/>
+			<s:enumeration value="GMT_Minus_0500_Bogota_Lima_Quito"/>
+			<s:enumeration value="GMT_Minus_0500_EasternTimeUSAndCanada"/>
+			<s:enumeration value="GMT_Minus_0500_IndianaEast"/>
+			<s:enumeration value="GMT_Minus_0400_AtlanticTimeCanada"/>
+			<s:enumeration value="GMT_Minus_0400_Caracas_LaPaz"/>
+			<s:enumeration value="GMT_Minus_0400_Santiago"/>
+			<s:enumeration value="GMT_Minus_0330_Newfoundland"/>
+			<s:enumeration value="GMT_Minus_0300_Brasilia"/>
+			<s:enumeration value="GMT_Minus_0300_Buenos_Aires_Georgetown"/>
+			<s:enumeration value="GMT_Minus_0300_Greenland"/>
+			<s:enumeration value="GMT_Minus_0200_MidAtlantic"/>
+			<s:enumeration value="GMT_Minus_0100_Azores"/>
+			<s:enumeration value="GMT_Minus_0100_Cape_Verde_Is"/>
+			<s:enumeration value="GMT_Casablanca_Monrovia"/>
+			<s:enumeration value="GMT_GreenwichMeanTime_Dublin_Edinburgh_Lisbon_London"/>
+			<s:enumeration value="GMT_Plus_0100_Amsterdam_Berlin_Bern_Rome_Stockholm_Vienna"/>
+			<s:enumeration value="GMT_Plus_0100_Belgrade_Bratislava_Budapest_Ljubljana_Prague"/>
+			<s:enumeration value="GMT_Plus_0100_Brussels_Copenhagen_Madrid_Paris"/>
+			<s:enumeration value="GMT_Plus_0100_Sarajevo_Skopje_Warsaw_Zagreb"/>
+			<s:enumeration value="GMT_Plus_0100_WestCentralAfrica"/>
+			<s:enumeration value="GMT_Plus_0200_Athens_Beirut_Istanbul_Minsk"/>
+			<s:enumeration value="GMT_Plus_0200_Bucharest"/>
+			<s:enumeration value="GMT_Plus_0200_Cairo"/>
+			<s:enumeration value="GMT_Plus_0200_Harare_Pretoria"/>
+			<s:enumeration value="GMT_Plus_0200_Helsinki_Kyiv_Riga_Sofia_Tallinn_Vilnius"/>
+			<s:enumeration value="GMT_Plus_0200_Jerusalem"/>
+			<s:enumeration value="GMT_Plus_0300_Baghdad"/>
+			<s:enumeration value="GMT_Plus_0300_Kuwait_Riyadh"/>
+			<s:enumeration value="GMT_Plus_0300_Moscow_StPetersbug_Volgograd"/>
+			<s:enumeration value="GMT_Plus_0300_Nairobi"/>
+			<s:enumeration value="GMT_Plus_0330_Tehran"/>
+			<s:enumeration value="GMT_Plus_0400_AbuDhabi_Muscat"/>
+			<s:enumeration value="GMT_Plus_0400_Baku_Tbilsi_Yerevan"/>
+			<s:enumeration value="GMT_Plus_0430_Kabul"/>
+			<s:enumeration value="GMT_Plus_0500_Ekaterinburg"/>
+			<s:enumeration value="GMT_Plus_0500_Islamabad_Karachi_Tashkent"/>
+			<s:enumeration value="GMT_Plus_0530_Chennai_Kolkata_Mumbai_NewDelhi"/>
+			<s:enumeration value="GMT_Plus_0545_Kathmandu"/>
+			<s:enumeration value="GMT_Plus_0600_Almaty_Novosibirsk"/>
+			<s:enumeration value="GMT_Plus_0600_Astana_Dhaka"/>
+			<s:enumeration value="GMT_Plus_0600_SriJayawardenepura"/>
+			<s:enumeration value="GMT_Plus_0630_Rangoon"/>
+			<s:enumeration value="GMT_Plus_0700_Bangkok_Hanoi_Jakarta"/>
+			<s:enumeration value="GMT_Plus_0700_Kransnoyarsk"/>
+			<s:enumeration value="GMT_Plus_0800_Beijing_Chongqing_HongKong_Urumqi"/>
+			<s:enumeration value="GMT_Plus_0800_Irkutsk_UlaanBataar"/>
+			<s:enumeration value="GMT_Plus_0800_KualaLumpur_Singapore"/>
+			<s:enumeration value="GMT_Plus_0800_Perth"/>
+			<s:enumeration value="GMT_Plus_0800_Taipei"/>
+			<s:enumeration value="GMT_Plus_0900_Osaka_Sapporo_Tokyo"/>
+			<s:enumeration value="GMT_Plus_0900_Seoul"/>
+			<s:enumeration value="GMT_Plus_0900_Yakutsk"/>
+			<s:enumeration value="GMT_Plus_0930_Adelaide"/>
+			<s:enumeration value="GMT_Plus_0930_Darwin"/>
+			<s:enumeration value="GMT_Plus_1000_Brisbane"/>
+			<s:enumeration value="GMT_Plus_1000_Canberra_Melbourne_Sydney"/>
+			<s:enumeration value="GMT_Plus_1000_Guam_PortMoresby"/>
+			<s:enumeration value="GMT_Plus_1000_Hobart"/>
+			<s:enumeration value="GMT_Plus_1000_Vladivostok"/>
+			<s:enumeration value="GMT_Plus_1100_Magadan_SolomonIs_NewCaledonia"/>
+			<s:enumeration value="GMT_Plus_1200_Auckland_Wellington"/>
+			<s:enumeration value="GMT_Plus_1200_Fiji_Kamchatka_MarshallIs"/>
+			<s:enumeration value="GMT_Plus_1300_Nuku_alofa"/>
+      <s:enumeration value="GMT_Minus_0800_Tijuana_Baja_California"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="Account" type="Account"/>
+	<s:complexType name="Account" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Principal">
+				<s:sequence>
+					<s:element name="Devices" type="tns:ArrayOfDevice" nillable="true"/>
+					<s:element name="Users" type="tns:ArrayOfUser" nillable="true"/>
+				</s:sequence>
+				<s:attribute name="CreditLimit" type="s:double" use="required"/>
+				<s:attribute name="TimeZone" type="tns:TimeZonesEnumeration" use="required"/>
+				<s:attribute name="HDStreams" type="s:int" use="optional"/>
+				<s:attribute name="SDStreams" type="s:int" use="optional"/>
+        <s:attribute name="DVREnabled" type="s:boolean" use="optional"/>
+        <s:attribute name="RecordingDeviceId" type="s1:guid" use="optional"/>
+        <s:attribute name="Pin" type="s:string"/>
+				<s:attribute name="ServiceGroupName" type="s:string" use="optional"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<!--<s:element name="ArrayOfAccount" type="ArrayOfAccount"/>-->
+	<s:complexType name="ArrayOfAccount">
+		<s:sequence>
+			<s:element name="Account" type="tns:Account" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	
+	<s:element name="StreamAllocation" type="StreamAllocation"/>
+	<s:complexType name="StreamAllocation">
+		<s:sequence>
+			<s:element name="SDStreams" type="s:int"/>
+			<s:element name="HDStreams" type="s:int"/>
+		</s:sequence>
+	</s:complexType>
+
+	<!--<s:element name="ArrayOfChoice1" type="ArrayOfChoice1"/>-->
+	<s:complexType name="ArrayOfChoice1">
+		<s:choice minOccurs="0" maxOccurs="unbounded">
+			<s:element name="Device" type="tns:Device" nillable="true"/>
+			<s:element name="Account" type="tns:Account" nillable="true"/>
+		</s:choice>
+	</s:complexType>
+	<!--<s:element name="ArrayOfDevice" type="ArrayOfDevice"/>-->
+	<s:complexType name="ArrayOfDevice">
+		<s:sequence>
+			<s:element name="Device" type="tns:Device" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfDeviceValue" type="ArrayOfDeviceValue"/>-->
+	<s:complexType name="ArrayOfDeviceValue">
+		<s:sequence>
+			<s:element name="DeviceValue" type="tns:DeviceValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+  <!--<s:element name="ArrayOfAccountValue" type="ArrayOfAccountValue"/>-->
+  <s:complexType name="ArrayOfAccountValue">
+    <s:sequence>
+      <s:element name="AccountValue" type="tns:AccountValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </s:sequence>
+  </s:complexType>
+  <!--<s:element name="ArrayOfGroup" type="ArrayOfGroup"/>-->
+	<s:complexType name="ArrayOfGroup">
+		<s:sequence>
+			<s:element name="Group" type="tns:Group" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfSubscriberGroup" type="ArrayOfSubscriberGroup"/>-->
+	<s:complexType name="ArrayOfSubscriberGroup">
+		<s:sequence>
+			<s:element name="SubscriberGroup" type="tns:SubscriberGroup" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfPinInfo" type="ArrayOfPinInfo"/>-->
+	<s:complexType name="ArrayOfPinInfo">
+		<s:sequence>
+			<s:element name="PinInfo" type="tns:PinInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfUser" type="ArrayOfUser"/>-->
+	<s:complexType name="ArrayOfUser">
+		<s:sequence>
+			<s:element name="User" type="tns:User" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<s:element name="Device" type="Device"/>
+	<s:complexType name="Device" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Principal">
+				<s:attribute name="AccountExternalId" type="s:string"/>
+				<s:attribute name="Pin" type="s:string"/>
+				<s:attribute name="ID" type="s1:guid" use="required"/>
+				<s:attribute name="Version" type="s:string"/>
+				<s:attribute name="RequestedVersion" type="s:string"/>
+				<s:attribute name="ResolvedVersion" type="s:string"/>
+				<s:attribute name="LastReportedVersion" type="s:string"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="DeviceValue" type="DeviceValue"/>
+	<s:complexType name="DeviceValue">
+		<s:attribute name="Key" type="s:string"/>
+		<s:attribute name="Value" type="s:string"/>
+	</s:complexType>
+  <s:element name="AccountValue" type="AccountValue"/>
+  <s:complexType name="AccountValue">
+    <s:attribute name="Key" type="s:string"/>
+    <s:attribute name="Value" type="s:string"/>
+  </s:complexType>
+  <s:element name="Group" type="Group"/>
+	<s:complexType name="Group" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Principal">
+				<s:sequence>
+					<s:element name="Type" type="s:string" minOccurs="0"/>
+					<s:element name="Principals" type="tns:ArrayOfChoice1" nillable="true"/>
+				</s:sequence>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="SubscriberGroup" type="SubscriberGroup"/>
+	<s:complexType name="SubscriberGroup" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Principal">
+				<s:attribute name="GroupId" type="s1:guid" use="required"/>
+				<s:attribute name="Name" type="s:string"/>
+				<s:attribute name="Type" type="s:string"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="Principal" type="Principal"/>
+	<s:complexType name="Principal" abstract="true">
+		<s:attribute name="ExternalID" type="s:string"/>
+		<s:attribute name="Status" type="tns:PrincipalStatus" use="required"/>
+	</s:complexType>
+	<s:element name="User" type="User"/>
+	<s:complexType name="User" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Principal">
+				<s:attribute name="Pin" type="s:string"/>
+				<s:attribute name="AccountExternalId" type="s:string"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="PrincipalType" type="PrincipalType"/>
+	<s:simpleType name="PrincipalType">
+		<s:restriction base="s:string">
+			<s:enumeration value="Account"/>
+			<s:enumeration value="Device"/>
+			<s:enumeration value="Group"/>
+			<s:enumeration value="User"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="LicenseRightType" type="LicenseRightType"/>
+	<s:simpleType name="LicenseRightType">
+		<s:restriction base="s:string">
+			<s:enumeration value="Debar"/>
+			<s:enumeration value="Play"/>
+			<s:enumeration value="Pause"/>
+			<s:enumeration value="Record"/>
+			<s:enumeration value="Purchase"/>
+      <s:enumeration value="Browse"/>
+      <s:enumeration value="Download"/>
+      <s:enumeration value="PlayLocal"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="ResourceType" type="ResourceType"/>
+	<s:simpleType name="ResourceType">
+		<s:restriction base="s:string">
+			<s:enumeration value="Package"/>
+			<s:enumeration value="Service"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="Condition" type="Condition"/>
+	<s:complexType name="Condition" abstract="true">
+		<s:attribute name="Start" type="s:dateTime" use="required"/>
+		<s:attribute name="End" type="s:dateTime" use="required"/>
+		<s:attribute name="Type" type="tns:ConditionType" use="required"/>
+	</s:complexType>
+	<s:element name="ConditionType" type="ConditionType"/>
+	<s:simpleType name="ConditionType">
+		<s:restriction base="s:string">
+			<s:enumeration value="PlayCount"/>
+			<s:enumeration value="TimeDuration"/>
+			<s:enumeration value="TimeExpiration"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="Offer" type="Offer"/>
+	<s:complexType name="Offer">
+		<s:sequence>
+			<s:element name="Conditions" type="tns:ArrayOfConditions" nillable="true"/>
+		</s:sequence>
+		<s:attribute name="ExternalId" type="s:string"/>
+		<s:attribute name="OfferId" type="s1:guid" use="required"/>
+		<s:attribute name="ResourceId" type="s1:guid" use="required"/>
+		<s:attribute name="ResourceExternalId" type="s:string"/>
+		<s:attribute name="PrincipalExternalId" type="s:string"/>
+		<s:attribute name="PrincipalType" type="tns:PrincipalType" use="required"/>
+		<s:attribute name="Price" type="s:string"/>
+		<s:attribute name="Currency" type="s:string"/>
+		<s:attribute name="Tax" type="s:string"/>
+		<s:attribute name="Message" type="s:string"/>
+		<s:attribute name="Recurrent" type="s:boolean" use="required"/>
+		<s:attribute name="StartDate" type="s:dateTime" use="required"/>
+		<s:attribute name="Expiration" type="s:dateTime" use="required"/>
+		<s:attribute name="SubSystem" type="s:string"/>
+	</s:complexType>
+	<!--<s:element name="ArrayOfString" type="ArrayOfString"/>-->
+	<s:complexType name="ArrayOfString">
+		<s:sequence>
+			<s:element name="string" type="s:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfOffer" type="ArrayOfOffer"/>-->
+	<s:complexType name="ArrayOfOffer">
+		<s:sequence>
+			<s:element name="Offer" type="tns:Offer" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfConditions" type="ArrayOfConditions"/>-->
+	<s:complexType name="ArrayOfConditions">
+		<s:choice minOccurs="0" maxOccurs="unbounded">
+			<s:element name="TimeDuration" type="tns:TimeDuration" nillable="true"/>
+			<s:element name="TimeExpiration" type="tns:TimeExpiration" nillable="true"/>
+			<s:element name="PlayCount" type="tns:PlayCount" nillable="true"/>
+		</s:choice>
+	</s:complexType>
+	<s:element name="PlayCount" type="PlayCount"/>
+	<s:complexType name="PlayCount" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Condition">
+				<s:attribute name="Count" type="s:unsignedInt" use="required"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="TimeDuration" type="TimeDuration"/>
+	<s:complexType name="TimeDuration" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Condition">
+				<s:attribute name="DurationInSecs" type="s:long" use="required"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="TimeExpiration" type="TimeExpiration"/>
+	<s:complexType name="TimeExpiration" mixed="false">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Condition">
+				<s:attribute name="Expiration" type="s:dateTime" use="required"/>
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:element name="Grant" type="Grant"/>
+	<s:complexType name="Grant">
+		<s:sequence>
+			<s:element name="Conditions" type="tns:ArrayOfConditions" nillable="true"/>
+		</s:sequence>
+		<s:attribute name="ExternalId" type="s:string"/>
+		<s:attribute name="ResourceId" type="s1:guid" use="required"/>
+		<s:attribute name="ResourceExternalId" type="s:string"/>
+		<s:attribute name="PrincipalExternalId" type="s:string"/>
+		<s:attribute name="PrincipalType" type="tns:PrincipalType" use="required"/>
+		<s:attribute name="ResType" type="tns:ResourceType" use="required"/>
+		<s:attribute name="Right" type="tns:LicenseRightType" use="required"/>
+	</s:complexType>
+	<!--<s:element name="ArrayOfGrant" type="ArrayOfGrant"/>-->
+	<s:complexType name="ArrayOfGrant">
+		<s:sequence>
+			<s:element name="Grant" type="tns:Grant" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<s:element name="GrantStatus" type="GrantStatus"/>
+	<s:simpleType name="GrantStatus">
+		<s:restriction base="s:string">
+			<s:enumeration value="CreditLimitExceeded"/>
+			<s:enumeration value="Error"/>
+			<s:enumeration value="Success"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:simpleType name="BillingEventStatus">
+		<s:restriction base="s:string">
+			<s:enumeration value="UnRead"/>
+			<s:enumeration value="Read"/>
+			<s:enumeration value="Recorded"/>
+			<s:enumeration value="Deletable"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="BillingEventStatus" type="BillingEventStatus"/>
+	<s:element name="PinStatus" type="PinStatus"/>
+	<s:simpleType name="PinStatus">
+		<s:restriction base="s:string">
+			<s:enumeration value="NoError"/>
+			<s:enumeration value="Forbidden"/>
+			<s:enumeration value="NoMatch"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="PinInfo" type="PinInfo"/>
+	<s:complexType name="PinInfo">
+		<s:attribute name="Pin" type="s:string"/>
+		<s:attribute name="PinType" type="s:short" use="required"/>
+		<s:attribute name="EnableDate" type="s:dateTime" use="required"/>
+	</s:complexType>
+	<s:element name="BillingRecord" type="BillingRecord"/>
+	<s:complexType name="BillingRecord">
+		<s:attribute name="PrincipalExternalId" type="s:string"/>
+		<s:attribute name="PrincipalType" type="tns:PrincipalType" use="required"/>
+		<s:attribute name="Id" type="s1:guid" use="required"/>
+		<s:attribute name="ResourceId" type="s1:guid" use="required"/>
+		<s:attribute name="ResourceExternalId" type="s:string"/>
+		<s:attribute name="PurchaseDateTime" type="s:dateTime" use="required"/>
+		<s:attribute name="Price" type="s:string"/>
+		<s:attribute name="ExternalId" type="s:string"/>
+		<s:attribute name="Status" type="tns:BillingEventStatus" use="required"/>
+		<s:attribute name="SubSystem" type="s:string"/>
+		<s:attribute name="StartDate" type="s:dateTime" use="required"/>
+		<s:attribute name="EndDate" type="s:dateTime" use="required"/>
+	</s:complexType>
+	<!-- Package types-->
+	<!--<s:element name="ArrayOfGuid" type="ArrayOfGuid"/>-->
+	<s:complexType name="ArrayOfGuid">
+		<s:sequence>
+			<s:element name="ServiceId" type="s1:guid" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<!--<s:element name="ArrayOfPackage" type="ArrayOfPackage"/>-->
+	<s:complexType name="ArrayOfPackage">
+		<s:sequence>
+			<s:element name="Package" type="tns:Package" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<s:element name="Package" type="Package"/>
+	<s:complexType name="Package">
+		<s:sequence>
+			<s:element name="ServiceIds" type="tns:ArrayOfGuid" nillable="true"/>
+			<s:element name="Packages" type="tns:ArrayOfGuid" nillable="true"/>
+		</s:sequence>
+		<s:attribute name="Name" type="s:string"/>
+		<s:attribute name="PackageId" type="s1:guid" use="required"/>
+	</s:complexType>
+	<s:element name="PackageOffer" type="PackageOffer"/>
+	<s:complexType name="PackageOffer">
+		<s:sequence>
+			<s:element name="Price" type="s:double"/>
+			<s:element name="Currency" type="s:string" minOccurs="0"/>
+			<s:element name="StartDate" type="s:dateTime"/>
+			<s:element name="EndDate" type="s:dateTime"/>
+			<s:element name="PlayCount" type="s:int"/>
+		</s:sequence>
+	</s:complexType>
+</s:schema>

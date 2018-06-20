@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossCoreUserWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>UserWebPlugin</name>
+	<description>BOSS客服管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.UserWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<!-- 为了将客服管理应用于框架 -->
+	<func_tree>
+		<func code="001" name="客户服务" srcFile=""  descInfo="客户服务" status="1" alias="" seqNo="0" funcType="0" developFlag="">
+			<func code="001001" name="开户" srcFile="/jsp/boss/customer/register/register.do"  descInfo="开户" status="1" alias="pm.register" seqNo="" funcType="1" developFlag="">
+				<func code="001001001" name="清空用户基本信息" srcFile=""  descInfo="清空用户基本信息" status="1" alias="pm.register.clear" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001002" name="添加设备信息" srcFile=""  descInfo="添加设备信息" status="1" alias="pm.register.addEqu" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001003" name="删除设备信息" srcFile=""  descInfo="删除设备信息" status="1" alias="pm.register.delEqu" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001004" name="添加产品" srcFile=""  descInfo="添加产品" status="1" alias="pm.register.addProduct" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001005" name="删除产品" srcFile=""  descInfo="删除产品" status="1" alias="pm.register.delProduct" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001006" name="保存用户所有信息" srcFile="ajaxUserAllInfoSave"  descInfo="保存用户所有信息" status="1" alias="pm.register.addUserInfo" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001007" name="搜索产品" srcFile="ajaxSearchProducts"  descInfo="根据条件搜索产品信息" status="1" alias="pm.register.searchProducts" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+			<func code="001002" name="业务受理" srcFile="/jsp/boss/customer/baseBusiness/search.do"  descInfo="业务受理" status="1" alias="pm.baseBusi" seqNo="" funcType="1" developFlag="">
+				<func code="001002001" name="搜索用户" srcFile="ajaxSearchUser"  descInfo="搜索用户" status="1" alias="pm.baseBusi.searchUser" seqNo="" funcType="2" developFlag="">
+					<func code="001002001001" name="修改用户基本信息" srcFile="ajaxUserInfoModify"  descInfo="修改用户基本信息" status="1" alias="pm.baseBusi.modifyUser" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001002" name="增加设备" srcFile=""  descInfo="增加设备" status="1" alias="pm.baseBusi.addEqu" seqNo="" funcType="2" developFlag="">
+						<func code="001002001002001" name="增加" srcFile="ajaxAddUserEqu"  descInfo="增加" status="1" alias="pm.baseBusi.addEqu.addOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001002002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.addEqu.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001003" name="机顶盒注销" srcFile="ajaxEquLogoff"  descInfo="机顶盒注销" status="1" alias="pm.baseBusi.equLogout" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001004" name="机顶盒换机" srcFile=""  descInfo="机顶盒换机" status="1" alias="pm.baseBusi.chEqu" seqNo="" funcType="2" developFlag="">
+						<func code="001002001004001" name="更换" srcFile="ajaxEquChange?equType=stb"  descInfo="更换" status="1" alias="pm.baseBusi.chEqu.chOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001004002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.chEqu.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001005" name="机卡绑定操作" srcFile=""  descInfo="机卡绑定操作" status="1" alias="pm.baseBusi.equBind" seqNo="" funcType="2" developFlag="">
+						<func code="001002001005001" name="解除绑定" srcFile="ajaxUnBinding"  descInfo="解除绑定" status="1" alias="pm.baseBusi.equBind.delBindOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001005002" name="机卡绑定" srcFile="ajaxBinding"  descInfo="机卡绑定" status="1" alias="pm.baseBusi.equBind.equCardBindOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001005003" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.baseBusi.equBind.closeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001006" name="移机" srcFile=""  descInfo="移机" status="1" alias="pm.baseBusi.chAddr" seqNo="" funcType="2" developFlag="">
+						<func code="001002001006001" name="移机" srcFile="ajaxChangeAddr"  descInfo="移机" status="1" alias="pm.baseBusi.chAddr.chOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001006002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.chAddr.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001007" name="过户" srcFile=""  descInfo="过户" status="1" alias="pm.baseBusi.transAcc" seqNo="" funcType="2" developFlag="">
+						<func code="001002001007001" name="搜索" srcFile="ajaxSearchUser"  descInfo="搜索" status="1" alias="pm.baseBusi.transAcc.searchOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001007002" name="过户" srcFile="ajaxTransferAccount"  descInfo="过户" status="1" alias="pm.baseBusi.transAcc.transOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001007003" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.transAcc.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001008" name="智能卡报停" srcFile="ajaxCardStop"  descInfo="智能卡报停" status="1" alias="pm.baseBusi.cardPause" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001009" name="智能卡开通" srcFile="ajaxCardReopen"  descInfo="智能卡开通" status="1" alias="pm.baseBusi.cardOpen" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001010" name="智能卡注销" srcFile="ajaxEquLogoff"  descInfo="智能卡注销" status="1" alias="pm.baseBusi.cardLogout" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001011" name="智能卡挂失" srcFile="ajaxCardReportLoss"  descInfo="智能卡挂失" status="1" alias="pm.baseBusi.cardReportLoss" seqNo="" funcType="2" developFlag=""/>
+					<!-- 增加智能卡找回按钮 YanxuLiu 20120328 -->
+					<func code="001002001072" name="智能卡找回" srcFile="ajaxCardReportFind" descInfo="智能卡找回" status="1" alias="pm.baseBusi.cardReportFind" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001012" name="智能卡换卡" srcFile="ajaxEquChange?equType=card"  descInfo="智能卡换卡" status="1" alias="pm.baseBusi.chCard" seqNo="" funcType="2" developFlag="">
+						<func code="001002001012001" name="更换" srcFile="ajaxEquChange"  descInfo="更换" status="1" alias="pm.baseBusi.chCard.chOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001012002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.chCard.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001013" name="订购产品" srcFile=""  descInfo="订购产品" status="1" alias="pm.baseBusi.orderProduct" seqNo="" funcType="2" developFlag="">
+						<func code="001002001013001" name="选择终端" srcFile="ajaxDoUserOrder"  descInfo="选择终端" status="1" alias="pm.baseBusi.orderProduct.chOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001013002" name="修改订购金额" srcFile=""  descInfo="修改订购金额" status="1" alias="pm.baseBusi.orderProduct.modifySupplyCancelFeeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001014" name="退订产品" srcFile=""  descInfo="退订产品" status="1" alias="pm.baseBusi.undoOrder" seqNo="" funcType="2" developFlag="">
+						<func code="001002001014001" name="退订" srcFile="ajaxUndoUserOrder2"  descInfo="退订" status="1" alias="pm.baseBusi.undoOrder.undoOrderOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001014002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.undoOrder.cancelOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001014004" name="修改退费金额" srcFile=""  descInfo="修改退费金额" status="1" alias="pm.baseBusi.undoOrder.modifyCancelFeeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001015" name="设为黑名单" srcFile="ajaxUserBlackListOper"  descInfo="设为黑名单" status="1" alias="pm.baseBusi.setBlack" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001016" name="取消黑名单" srcFile="ajaxUserBlackListUndoOper"  descInfo="取消黑名单" status="1" alias="pm.baseBusi.delBlack" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001017" name="用户报停" srcFile="ajaxPauseUser"  descInfo="用户报停" status="1" alias="pm.baseBusi.userPause" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001018" name="用户开通" srcFile="ajaxOpenUser"  descInfo="用户开通" status="1" alias="pm.baseBusi.userOpen" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001019" name="用户注销" srcFile="ajaxLogoutUser"  descInfo="用户注销" status="1" alias="pm.baseBusi.userLogout" seqNo="" funcType="2" developFlag=""/>
+					<!-- 增加注销用户开通按钮  20120319 YanxuLiu -->
+					<func code="001002001070" name="注销用户开通" srcFile="ajaxLogoutUserOpen" descInfo="注销用户开通" status="1" alias="pm.baseBusi.userLogoutOpen" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001020" name="打印用户证" srcFile="ajaxReportServlet?printType=2"  descInfo="打印用户证" status="1" alias="pm.baseBusi.printUserCard" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001021" name="查询帐户变动历史" srcFile="ajaxGetUserAccountHis"  descInfo="查询帐户变动历史" status="1" alias="pm.baseBusi.searchAccHis" seqNo="" funcType="2" developFlag=""/>
+					<!-- 增加删除注销用户按钮 20120319 YanxuLiu -->
+					<func code="001002001071" name="删除用户" srcFile="ajaxLogoutUserDrop" descInfo="删除用户" status="1" alias="pm.baseBusi.userLogoutDrop" seqNo="" funcType="2" developFlag="" />
+					<func code="001002001022" name="打印发票" srcFile=""  descInfo="打印发票" status="1" alias="pm.baseBusi.printinv" seqNo="" funcType="2" developFlag="">
+						<func code="001002001022001" name="增加项目" srcFile=""  descInfo="增加项目" status="1" alias="pm.baseBusi.printinv.addItemOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001022002" name="删除项目" srcFile=""  descInfo="删除项目" status="1" alias="pm.baseBusi.printinv.delItemOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001022003" name="打印" srcFile="ajaxSaveInvoice"  descInfo="打印" status="1" alias="pm.baseBusi.priinv.printOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001022004" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.baseBusi.priinv.closeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001023" name="查询营业日志" srcFile="ajaxGetUserBusinessLog"  descInfo="查询营业日志" status="1" alias="pm.baseBusi.searchBusiLog" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001024" name="打印登记单" srcFile="ajaxReportServlet?printType=1"  descInfo="打印登记单" status="1" alias="pm.baseBusi.printRegList" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001025" name="查看发票信息" srcFile="ajaxGetInvoice"  descInfo="查看发票信息" status="1" alias="pm.baseBusi.viewInvInfo" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001026" name="发票打印" srcFile="ajaxReportServlet?printType=0"  descInfo="发票打印" status="1" alias="pm.baseBusi.invPrint" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001027" name="号码回填" srcFile=""  descInfo="号码回填" status="1" alias="pm.baseBusi.noRewrite" seqNo="" funcType="2" developFlag="">
+						<func code="001002001027001" name="保存" srcFile="ajaxInvoiceNoWriteBack"  descInfo="保存" status="1" alias="pm.baseBusi.noRewrite.saveOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001027002" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.baseBusi.noRewrite.closeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001028" name="发票作废" srcFile=""  descInfo="发票作废" status="1" alias="pm.baseBusi.invDiscard" seqNo="" funcType="2" developFlag="">
+						<func code="001002001028001" name="作废" srcFile="ajaxInvoiceDiscard"  descInfo="作废" status="1" alias="pm.baseBusi.invDiscard.discardOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001028002" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.baseBusi.noRewrite.closeOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<!-- ajaxSaveInvoice?invoiceId 此参数只是说明invoiceId不为空-->
+					<func code="001002001029" name="作废重打" srcFile="ajaxSaveInvoice?invoiceId"  descInfo="作废重打" status="1" alias="pm.baseBusi.invDiscardReprint" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001030" name="查询发票" srcFile="ajaxSearchInvoices"  descInfo="查询发票" status="1" alias="pm.baseBusi.searchinv" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001031" name="缴费" srcFile="ajaxPayment"  descInfo="缴费" status="1" alias="pm.baseBusi.payment" seqNo="" funcType="2" developFlag="">
+						<!-- add by jhg 缴费充值时，功能权限控制设置，请不要修改这里的code编码  -->
+						<func code="001002001031001" name="充负值" srcFile="a"  descInfo="充负值" status="1" alias="pm.baseBusi.payment.a" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001031002" name="券充值" srcFile="b"  descInfo="券充值" status="1" alias="pm.baseBusi.payment.b" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001031003" name="点充值" srcFile="c"  descInfo="点充值" status="1" alias="pm.baseBusi.payment.c" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001032" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.baseBusi.closePayment" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001033" name="同步用户" srcFile="ajaxSyncUserNotify"  descInfo="同步用户" status="1" alias="pm.baseBusi.syncUserNotify" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001034" name="同步智能卡" srcFile="ajaxUpdateIcRights"  descInfo="同步智能卡" status="1" alias="pm.baseBusi.updateIcRights" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001035" name="查询用户设备信息" srcFile="ajaxSearchUserEquList"  descInfo="查询用户设备信息" status="1" alias="pm.baseBusi.userEquList" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001036" name="查询用户订购信息" srcFile="ajaxSearchUserProducts"  descInfo="查询用户订购信息" status="1" alias="pm.baseBusi.userOrderList" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001037" name="查询用户帐户信息" srcFile="ajaxGetUserAccount"  descInfo="查询用户帐户信息" status="1" alias="pm.baseBusi.getUserAccount" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001038" name="查询用户账单信息" srcFile="ajaxGetUserUnpaidDetailBills"  descInfo="查询用户账单信息" status="1" alias="pm.baseBusi.viewBill" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001039" name="确认收费项" srcFile="ajaxConfirmCost"  descInfo="确认收费项" status="1" alias="pm.baseBusi.confirmCost" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001040" name="查询产品信息" srcFile="ajaxGetAllProducts"  descInfo="查询产品信息" status="1" alias="pm.baseBusi.queryProduct" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001041" name="智能卡回收" srcFile="ajaxEquRetrieve"  descInfo="智能卡回收" status="1" alias="pm.baseBusi.cardRetrieve" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001042" name="机顶盒回收" srcFile="ajaxEquRetrieve"  descInfo="机顶盒回收" status="1" alias="pm.baseBusi.equRetrieve" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001043" name="用户缴费历史查询" srcFile="ajaxGetUserReceipt"  descInfo="用户缴费历史查询" status="1" alias="pm.baseBusi.userReceipt" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001044" name="终端对调" srcFile="ajaxEquSwap"  descInfo="终端对调" status="1" alias="pm.baseBusi.equSwap" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001045" name="终端转组" srcFile="ajaxEquChangeGroup"  descInfo="终端转组" status="1" alias="pm.baseBusi.equChangeGroup" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001046" name="刷新授权" srcFile="ajaxUpdateIcRights"  descInfo="刷新授权" status="1" alias="pm.baseBusi.updateIcRights" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001047" name="清除授权" srcFile="ajaxClearIcRights"  descInfo="清除授权" status="1" alias="pm.baseBusi.clearIcRights" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001048" name="服务开通" srcFile="ajaxOpenIcServ"  descInfo="服务开通" status="1" alias="pm.baseBusi.openIcServ" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001078" name="设备服务升级" srcFile="ajaxEquOrderPromotion"  descInfo="设备服务升级" status="1" alias="pm.baseBusi.cardPromtion" seqNo="" funcType="2" developFlag="">
+						<func code="001002001078001" name="确定升级" srcFile="ajaxEquOrderPromotion"  descInfo="确定升级" status="1" alias="pm.baseBusi.cardPromtion.changeOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001078002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.cardPromtion.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001049" name="银行代扣资料审核" srcFile="ajaxChangeBankCheckFlag"  descInfo="银行代扣资料审核" status="1" alias="pm.baseBusi.bankCheck" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001050" name="打印用户订购信息" srcFile="ajaxReportServlet?printType=3"  descInfo="打印用户订购信息" status="1" alias="pm.baseBusi.printUserOrderInfo" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001051" name="退订申请中产品" srcFile=""  descInfo="退订申请中产品" status="1" alias="pm.baseBusi.undoApplyOrder" seqNo="" funcType="2" developFlag="">
+						<func code="001002001051001" name="退订" srcFile="ajaxUndoUserOrder3"  descInfo="退订" status="1" alias="pm.baseBusi.undoApplyOrder.undoOrderOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001051002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.undoApplyOrder.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001052" name="智能卡挂起" srcFile="ajaxCardDisable"  descInfo="智能卡挂起" status="1" alias="pm.baseBusi.cardDisable" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001053" name="智能卡启用" srcFile="ajaxCardEnable"  descInfo="智能卡启用" status="1" alias="pm.baseBusi.cardEnable" seqNo="" funcType="2" developFlag=""/>
+					<!-- add by jhg 2012-07-23 导出用户订购信息 -->
+					<func code="001002001054" name="导出订购历史信息" srcFile="ajaxExportUserOrder"  descInfo="导出订购历史信息" status="1" alias="pm.baseBusi.exportUserOrderInfo" seqNo="" funcType="2" developFlag=""/>
+					<!-- add by jhg start -->
+					<func code="001002001060" name="查询用户宽带帐号信息" srcFile="ajaxSearchUserBWList"  descInfo="查询用户宽带帐号信息" status="1" alias="pm.baseBusi.userBWList" seqNo="" funcType="2" developFlag=""/>
+					<func code="001002001061" name="宽带新建帐户" srcFile=""  descInfo="新建用户宽带账户" status="1" alias="pm.baseBusi.addBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020061001" name="确定" srcFile="ajaxAddUserBW"  descInfo="增加" status="1" alias="pm.baseBusi.addBw.addOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020061002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.addBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001062" name="宽带业务变更" srcFile=""  descInfo="修改宽带账户所选产品" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020062001" name="确定" srcFile="ajaxModifyUserBW"  descInfo="修改业务" status="1" alias="pm.baseBusi.modifyBw.modifyOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020062002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001063" name="宽带密码重置" srcFile=""  descInfo="重置宽带账户密码" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020063001" name="确定" srcFile="ajaxChangePwUserBW"  descInfo="重置密码" status="1" alias="pm.baseBusi.modifyBw.changePwOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020063002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001064" name="宽带充值" srcFile=""  descInfo="充值" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020064001" name="确定" srcFile="ajaxFeeUserBW"  descInfo="充值" status="1" alias="pm.baseBusi.modifyBw.feeOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020064002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001065" name="宽带充值历史记录查询" srcFile=""  descInfo="充值记录查询" status="1" alias="pm.baseBusi.queryBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020065001" name="确定" srcFile="ajaxQueryFeeHistory"  descInfo="充值记录查询" status="1" alias="pm.baseBusi.queryBw.feeHisOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020065002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.queryBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001066" name="宽带销户" srcFile=""  descInfo="销户" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020066001" name="确定" srcFile="ajaxUserBwLogoff"  descInfo="销户" status="1" alias="pm.baseBusi.modifyBw.logoffOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020066002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001073" name="宽带删除" srcFile=""  descInfo="删除" status="1" alias="pm.baseBusi.deleteBw" seqNo="" funcType="2" developFlag="">
+						<func code="001002001073001" name="确定" srcFile="ajaxUserBwDel"  descInfo="销户" status="1" alias="pm.baseBusi.modifyBw.deleteOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="001002001073002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001067" name="宽带信息同步" srcFile=""  descInfo="信息同步" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020067001" name="确定" srcFile="ajaxSyncUserBw"  descInfo="信息同步" status="1" alias="pm.baseBusi.modifyBw.syncOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020067002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001068" name="宽带业务提交" srcFile=""  descInfo="业务提交" status="1" alias="pm.baseBusi.submitBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020068001" name="查询" srcFile="ajaxQuerySubmitOpr"  descInfo="查询业务操作日志信息" status="1" alias="pm.baseBusi.modifyBw.querySubmitOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020068002" name="查询" srcFile="ajaxQueryUnSubmitOpr"  descInfo="查询未提交业务信息" status="1" alias="pm.baseBusi.modifyBw.queryUnSubmitOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020068003" name="确定" srcFile="ajaxSubmitUserBW"  descInfo="业务提交" status="1" alias="pm.baseBusi.modifyBw.submitOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020068004" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<!-- 2012-8-14 yzy -->
+					<func code="001002001076" name="打印宽带受理单" srcFile="ajaxReportServlet?printType=4"  descInfo="打印宽带受理单" status="1" alias="pm.baseBusi.printBwAccept" seqNo="" funcType="2" developFlag="">
+					</func>
+					<!-- add by jhg 增加忽略同步失败操作功能 20130226 -->
+					<func code="001002001077" name="忽略同步失败操作" srcFile=""  descInfo="忽略同步失败操作" status="1" alias="pm.baseBusi.modifyBw" seqNo="" funcType="2" developFlag="">
+						<func code="0010020077001" name="确定" srcFile="ajaxUserBwIgnore"  descInfo="忽略同步失败操作" status="1" alias="pm.baseBusi.modifyBw.ignoreOper" seqNo="" funcType="2" developFlag=""/>
+						<func code="0010020077002" name="取消" srcFile=""  descInfo="取消" status="1" alias="pm.baseBusi.modifyBw.cancelOper" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001002001069" name="查询宽带产品信息" srcFile="ajaxGetAllBwServs"  descInfo="查询宽带产品信息" status="1" alias="pm.baseBusi.queryBwServ" seqNo="" funcType="2" developFlag=""/>
+					<!-- add by jhg end -->
+					<!-- 增加发送授权指令按钮 liuxu 2012-07-10 -->
+					<func code="001002001075" name="授权指令发送" srcFile="ajaxSendAuthorizeCommand" descInfo="授权指令发送" status="1" alias="pm.baseBusi.sendAuthorizeCommand" seqNo="" funcType="2" developFlag=""></func>
+				</func>
+			</func> 
+			<!-- <func code="001004" name="对账管理" srcFile="/jsp/boss/customer/verifyAccount/verifyAccountAction.do?methodToCall=openQuery"  descInfo="对账管理" status="1" alias="pm.verifyAccount.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="001004001" name="对账" srcFile=""  descInfo="对账" status="1" alias="pm.verifyAccount.verifyAccount" seqNo="" funcType="2" developFlag=""/>
+			</func>	-->
+			<!-- BOSSv1.2 去掉以下所有信息 -->
+			<!-- 
+			<func code="001001" name="用户管理" srcFile="/jsp/boss/user/userInfo.do?methodToCall=openQuery&amp;userManage=true"  descInfo="用户查询" status="1" alias="pm.userInfo.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="001001001" name="开户" srcFile=""  descInfo="开户" status="1" alias="pm.userInfo.addView" seqNo="" funcType="2" developFlag="">
+					<func code="001001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userInfo.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001001002" name="编辑" srcFile=""  descInfo="编辑" status="1" alias="pm.userInfo.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="001001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userInfo.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001001003" name="注销" srcFile=""  descInfo="注销" status="1" alias="pm.userInfo.logout" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001004" name="停机" srcFile=""  descInfo="停机" status="1" alias="pm.userInfo.stopEqu" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001005" name="迁移" srcFile=""  descInfo="迁移" status="1" alias="pm.userInfo.migrate" seqNo="" funcType="2" developFlag="">
+					<func code="001001005001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userInfo.migrate.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001001006" name="设备维护" srcFile=""  descInfo="设备维护" status="1" alias="pm.userInfo.equMaintain" seqNo="" funcType="2" developFlag="">
+					<func code="001001006001" name="挂起" srcFile=""  descInfo="挂起" status="1" alias="pm.userEquInfo.suspend" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006002" name="启用" srcFile=""  descInfo="启用" status="1" alias="pm.userEquInfo.enabled" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006003" name="挂失" srcFile=""  descInfo="挂失" status="1" alias="pm.userEquInfo.reportTheLoss" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006004" name="更换IC卡" srcFile=""  descInfo="更换IC卡" status="1" alias="pm.userEquInfo.changeIccard" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006005" name="更换机顶盒" srcFile=""  descInfo="更换机顶盒" status="1" alias="pm.userEquInfo.changeStb" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006006" name="注销" srcFile=""  descInfo="注销" status="1" alias="pm.userEquInfo.logout" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006007" name="机卡绑定" srcFile=""  descInfo="机卡绑定" status="1" alias="pm.userEquInfo.equCardBind" seqNo="" funcType="2" developFlag=""/>	
+					<func code="001001006008" name="设备查询" srcFile=""  descInfo="设备查询" status="1" alias="pm.userEquInfo.openQuery" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006009" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.userEquInfo.returnBack" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006010" name="增卡" srcFile=""  descInfo="增卡" status="1" alias="pm.userEquInfo.addCard" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006011" name="增机" srcFile=""  descInfo="增机" status="1" alias="pm.userEquInfo.addStb" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006012" name="设备编号查询" srcFile=""  descInfo="设备编号查询" status="1" alias="pm.userEquEncode.openQuery" seqNo="" funcType="2" developFlag="">
+						<func code="001001006012001" name="确定" srcFile=""  descInfo="confirm" status="1" alias="pm.userEquEncode.confirm" seqNo="" funcType="2" developFlag=""/>
+						<func code="001001006012002" name="更换" srcFile=""  descInfo="confirm" status="1" alias="pm.userEquEncode.change" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="001001006013" name="机卡解绑" srcFile=""  descInfo="机卡解绑" status="1" alias="pm.userEquInfo.equCardUnbind" seqNo="" funcType="2" developFlag=""/>	
+					<func code="001001006014" name="过户" srcFile=""  descInfo="过户" status="1" alias="pm.userEquInfo.toNewOwner" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006015" name="字母卡绑定" srcFile=""  descInfo="字母卡绑定" status="1" alias="pm.userEquInfo.mainChildCardBind" seqNo="" funcType="2" developFlag=""/>
+					<func code="001001006016" name="字母卡解绑" srcFile=""  descInfo="字母卡解绑" status="1" alias="pm.userEquInfo.mainChildCardUnbind" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001001007" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.userInfo.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001008" name="过户" srcFile=""  descInfo="过户" status="1" alias="pm.userInfo.changeUser" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001009" name="导出" srcFile=""  descInfo="导出" status="1" alias="pm.userInfo.export" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001010" name="复机" srcFile=""  descInfo="复机" status="1" alias="pm.userInfo.resetEqu" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001011" name="选择" srcFile=""  descInfo="选择" status="1" alias="pm.userInfo.chooseUser" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001012" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.userInfo.back" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001013" name="确认" srcFile=""  descInfo="确认" status="1" alias="pm.userInfo.confirm" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001014" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.userInfo.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="001001015" name="暂停" srcFile=""  descInfo="暂停" status="1" alias="pm.userInfo.pause" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="001002" name="集团用户管理" srcFile="/jsp/boss/user/corpUser.do?methodToCall=openQuery&amp;corpUserManage=true"  descInfo="集团用户管理" status="1" alias="pm.corpUser.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="001002001" name="开户" srcFile=""  descInfo="开户" status="1" alias="pm.corpUser.addView" seqNo="" funcType="2" developFlag="">
+					<func code="001002001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.corpUser.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001002002" name="编辑" srcFile=""  descInfo="编辑" status="1" alias="pm.corpUser.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="001002002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.corpUser.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001002003" name="注销" srcFile=""  descInfo="注销" status="1" alias="pm.corpUser.logout" seqNo="" funcType="2" developFlag=""/>
+				<func code="001002004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.corpUser.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="001002005" name="集团客户" srcFile=""  descInfo="集团客户" status="1" alias="pm.corpUser.manageUser" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="001003" name="用户组管理" srcFile="/jsp/boss/sysext/areaInfo.do?methodToCall=select"  descInfo="用户组管理" status="1" alias="pm.userGroup.select" seqNo="1" funcType="1" developFlag="" >
+				<func code="001003001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.userGroup.addView" seqNo="" funcType="2" developFlag="">
+					<func code="001003001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userGroup.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001003002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.userGroup.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="001003002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userGroup.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001003003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.userGroup.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="001003004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.userGroup.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="001003005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.userGroup.openQuery" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="001004" name="注销用户管理" srcFile="/jsp/boss/user/userInfo.do?methodToCall=openQuery&amp;logoutUserManage=true"  descInfo="注销用户管理" status="1" alias="pm.userInfo.logout" seqNo="1" funcType="1" developFlag="" >
+				<func code="001004001" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.userInfo.delete" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="001005" name="用户帐户管理" srcFile="/jsp/boss/user/userAccount.do?methodToCall=openQuery"  descInfo="用户帐户管理" status="1" alias="pm.userAccount.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="001005001" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.userAccount.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="001005001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userAccount.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001005002" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.userAccount.view" seqNo="" funcType="2" developFlag=""/>
+				<func code="001005003" name="充值" srcFile=""  descInfo="充值" status="1" alias="pm.userAccount.charge" seqNo="" funcType="2" developFlag="">
+					<func code="001005003001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userAccount.charge.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001005004" name="扣款" srcFile=""  descInfo="扣款" status="1" alias="pm.userAccount.deduct" seqNo="" funcType="2" developFlag="">
+					<func code="001005004001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userAccount.deduct.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001005005" name="冻结金额" srcFile=""  descInfo="冻结金额" status="1" alias="pm.userAccount.lock" seqNo="" funcType="2" developFlag="">
+					<func code="001005005001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userAccount.lock.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="001005006" name="解结金额" srcFile=""  descInfo="解冻金额" status="1" alias="pm.userAccount.unLock" seqNo="" funcType="2" developFlag="">
+					<func code="001005006001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.userAccount.unLock.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			</func>
+			<func code="001006" name="注销集团用户管理" srcFile="/jsp/boss/user/corpUser.do?methodToCall=openQuery&amp;logoutCorpUserManage=true"  descInfo="注销集团用户管理" status="1" alias="pm.corpUser.logout" seqNo="1" funcType="1" developFlag="" >
+				<func code="001006001" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.corpUser.delete" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="001007" name="用户帐户历史查询" srcFile="/jsp/boss/user/userAccountHis.do?methodToCall=openQuery"  descInfo="用户帐户历史查询" status="1" alias="pm.userAccountHis.openQuery" seqNo="1" funcType="1" developFlag="" />
+			<func code="001008" name="简单用户查询" srcFile=""  descInfo="简单用户查询" status="1" alias="pm.shortUserInfo.openQuery" seqNo="1" funcType="2" developFlag="" >
+				<func code="001008001" name="确认" srcFile=""  descInfo="确认" status="1" alias="pm.shortUserInfo.confirm" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			 -->
+			<!-- 20110719 yhj 
+			<func code="001006" name="批量授权处理" srcFile="/jsp/boss/customer/batchUpdateRights/updateRights.do?methodToCall=initData"  descInfo="批量授权处理" status="1" alias="pm.updateRiths.initData" seqNo="1" funcType="1" >
+				<func code="001006001" name="刷新授权" srcFile=""  descInfo="刷新授权" status="1" alias="pm.updateRiths.updateRights" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+			-->
+		</func>
+		
+		<func code="005" name="客户管理" srcFile=""  descInfo="客户管理" status="1" alias="" seqNo="1" funcType="0" developFlag="">
+			
+			<func code="005001" name="用户综合查询" srcFile="/jsp/boss/customer/userDInfoSearch.do?methodToCall=openQuery"  descInfo="用户综合查询" status="1" alias="pm.userDInfoSearch.openQuery" seqNo="1" funcType="1" >
+				<func code="005001001" name="导出到Excel" srcFile=""  descInfo="" status="1" alias="pm.userDInfoSearch.export" seqNo="0" funcType="2" />
+				<!-- 20120522 yzy -->
+				<func code="005001002" name="导出用户设备信息到Excel" srcFile=""  descInfo="" status="1" alias="pm.userDInfoSearch.userEquExp" seqNo="1" funcType="2" />
+				<func code="005001003" name="导出用户设备服务信息到Excel" srcFile=""  descInfo="" status="1" alias="pm.userDInfoSearch.userEquServiceExp" seqNo="1" funcType="2" />
+			</func>
+			 <func code="005016" name="批量授权处理" srcFile="/jsp/boss/customer/batchUpdateRights/updateRights.do?methodToCall=initData"  descInfo="批量授权处理" status="1" alias="pm.updateRiths.initData" seqNo="1" funcType="1" >
+				<func code="005016001" name="刷新授权" srcFile=""  descInfo="刷新授权" status="1" alias="pm.updateRiths.updateRights" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+			<!-- 用户组管理  2012-5-7 ysm -->
+			<func code="005002" name="用户组管理" srcFile="/jsp/boss/user/userGroup.do?methodToCall=openQuery"  descInfo="用户组管理" status="1" alias="pm.userGroup.openQuery" seqNo="0" funcType="1" >
+				<func code="005002001" name="增加" srcFile=""  descInfo="" status="1" alias="pm.userGroup.addView" seqNo="0" funcType="2" >
+					<func code="005002001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.userGroup.addView.submit" seqNo="0" funcType="2" />
+				</func>
+				<func code="005002002" name="修改" srcFile=""  descInfo="" status="1" alias="pm.userGroup.modifyView" seqNo="0" funcType="2" >
+					<func code="005002002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.userGroup.modifyView.submit" seqNo="0" funcType="2" />
+				</func>
+				<func code="005002003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.userGroup.delete" seqNo="0" funcType="2" />
+				<func code="005002004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.userGroup.view" seqNo="0" funcType="2" />
+				<func code="005002005" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.userGroup.openQuery" seqNo="0" funcType="2"/>
+				<func code="005002006" name="组成员管理" srcFile=""  descInfo="组成员管理" status="1" alias="pm.userGroup.member" seqNo="" funcType="2" developFlag="">
+					<func code="005002006001" name="用户组对应组成员" srcFile=""  descInfo="用户组对应组成员" status="1" alias="pm.groupMember.openQuery" seqNo="" funcType="2" developFlag="">
+						<func code="005002006001001" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.groupMember.delete" seqNo="" funcType="2" developFlag=""/>
+						<func code="005002006001002" name="添加组成员" srcFile=""  descInfo="添加组成员" status="1" alias="pm.groupMember.batchMemberAdd" seqNo="" funcType="2" developFlag="">
+							<func code="005002006001002001" name="组成员列表" srcFile=""  descInfo="组成员列表" status="1" alias="pm.batchMemberAdd.openQuery" seqNo="" funcType="2" developFlag="">
+								<func code="005002006001002001001" name="按勾选用户批量添加" srcFile=""  descInfo="按勾选用户批量添加" status="1" alias="pm.batchMemberAdd.userAdd" seqNo="1" funcType="2" developFlag=""/>
+								<func code="005002006001002001002" name="按搜索条件批量添加" srcFile=""  descInfo="按搜索条件批量添加" status="1" alias="pm.batchMemberAdd.userAddCondition" seqNo="2" funcType="2" developFlag=""/>
+								<func code="005002006001002001003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.batchMemberAdd.back" seqNo="3" funcType="2" developFlag=""/>
+							</func>
+						</func>	
+						<func code="005002006001003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.groupMember.back" seqNo="" funcType="2" developFlag=""/>
+					</func>
+				</func>
+				<func code="005002007" name="组策略管理" srcFile=""  descInfo="组策略管理" status="1" alias="pm.userGroup.strategy" seqNo="0" funcType="2" />
+			</func>
+			<!-- 产品订购限制管理  2013-06-04 jhg -->
+			<func code="005003" name="订购限制管理" srcFile="/jsp/boss/user/orderPermit.do?methodToCall=openQuery"  descInfo="订购限制管理" status="1" alias="pm.orderPermit.openQuery" seqNo="0" funcType="1" >
+				<func code="005003001" name="编辑" srcFile=""  descInfo="" status="1" alias="pm.orderPermit.modifyView" seqNo="0" funcType="2" >
+					<func code="005003002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.orderPermit.modifyView.submit" seqNo="0" funcType="2" />
+				</func>
+				<func code="005003002" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.orderPermit.view" seqNo="0" funcType="2" />
+				<func code="005003003" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.orderPermit.openQuery" seqNo="0" funcType="2"/>
+				<func code="005003004" name="关联策略" srcFile="" descInfo="关联策略" status="1" alias="pm.orderPermit.permitProduct" seqNo="" funcType="2" developFlag="" />
+				<func code="005003005" name="关联策略信息" srcFile="" descInfo="关联策略信息" status="1" alias="pm.permitPolicy.openQuery" seqNo="" funcType="2" developFlag="">
+					<func code="005003005001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.permitPolicy.add" seqNo="" funcType="2" developFlag=""/>
+					<func code="005003005002" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.permitPolicy.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="005003005003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.permitPolicy.back" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="005003006" name="未关联策略信息" srcFile="" descInfo="未关联策略信息" status="1" alias="pm.addPolicy.openQuery" seqNo="" funcType="2" developFlag="">
+					<func code="005003006001" name="确认" srcFile="" descInfo="确认" status="1" alias="pm.addPolicy.confirm" seqNo="" funcType="2" developFlag="" />
+				</func>
+			</func>
+		</func>
+		
+		
+	</func_tree>
+</plugin>

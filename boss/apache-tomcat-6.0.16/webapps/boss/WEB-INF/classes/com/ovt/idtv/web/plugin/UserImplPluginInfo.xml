@@ -1,0 +1,85 @@
+<?xml version="1.0"  encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossCoreUserImpl</id>
+	<name>用户服务</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>用户服务实现</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCoreUserImplPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/boss_user.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>发票主表添加备注信息，保存订购信息</description>
+			<publishDate>2012-03-2</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		<!-- modify by liuxu at 2012/5/2 -->
+		<version>
+			<versionNo>1.0.5</versionNo>
+			<description>用户信息表添加用户业务类别和基本服务截止时间两个字段</description>
+			<publishDate>2012-05-2</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.6</versionNo>
+			<description>用户分组表中增加优惠方式字段</description>
+			<publishDate>2012-10-27</publishDate>
+			<seqNo>4</seqNo>
+		</version>
+		<!-- add by jhg 2013-07-01 -->
+		<version>
+			<versionNo>1.0.7</versionNo>
+			<description>初始化订购限制策略</description>
+			<publishDate>2013-07-01</publishDate>
+			<seqNo>5</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.web.db.BossUser"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserAccount"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserAccountD"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserAccountHis"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserEqu"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserGroup"/>
+			<class name="com.ovt.idtv.boss.web.db.BossCorpUser"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserAgent"/>
+			<class name="com.ovt.idtv.boss.web.db.BossInvoiceMain"/>
+			<class name="com.ovt.idtv.boss.web.db.BossInvoiceDetail"/>
+			<class name="com.ovt.idtv.boss.web.db.BossOperatingReceipt"/>
+			<class name="com.ovt.idtv.boss.web.db.BossReceiptItemDetail"/>
+			<class name="com.ovt.idtv.boss.web.db.VUserAccount"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserSyncLog"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserSyncLogHis"/>
+			<!-- add by jhg -->
+			<class name="com.ovt.idtv.boss.web.db.BossUserBwAccount"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserBwLog"/>
+			<class name="com.ovt.idtv.boss.web.db.BossUserBwLogHis"/>
+			<!--	20120521 ysm 客户组与客户关联关系表	-->
+			<class name="com.ovt.idtv.boss.web.db.BossUserGroupRela"/>
+			<!-- 20120610 add by jhg 操作日志管理类 -->
+			<class name="com.ovt.idtv.boss.web.db.BossBusiOperLog"/>
+			<class name="com.ovt.idtv.boss.web.db.BossBusiOperLogHis"/>
+			<!--	20120612 ysm 客户组与优惠策略关联关系表	-->
+			<class name="com.ovt.idtv.boss.web.db.BossUserGroupDiscount"/>
+			<!-- 2013-07-11 增加发票与营业关联 add by jhg -->
+			<class name="com.ovt.idtv.boss.web.db.BossInvoiceReceipt"/>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

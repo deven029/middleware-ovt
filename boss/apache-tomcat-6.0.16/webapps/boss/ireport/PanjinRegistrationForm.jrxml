@@ -1,0 +1,1859 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PanjinRegistrationForm"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="BlankPage"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="IS_PRINT" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="CURR_OPER" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="YEAR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="MONTH" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="DAY" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+
+	<field name="CUSTOMER_NAME" class="java.lang.String"/>
+	<field name="INSTALL_ADDRESS" class="java.lang.String"/>
+	<field name="CUSTOMER_CODE" class="java.lang.String"/>
+	<field name="CUSTOMER_CERTIFICATE_TYPE" class="java.lang.String"/>
+	<field name="CUSTOMER_CERTIFICATE_NUM" class="java.lang.String"/>
+	<field name="CUSTOMER_TEL" class="java.lang.String"/>
+	<field name="CUSTOMER_PHONE" class="java.lang.String"/>
+	<field name="CUSTOMER_EMAIL" class="java.lang.String"/>
+	<field name="PROXY_NAME" class="java.lang.String"/>
+	<field name="PROXY_CERTIFICATE_TYPE" class="java.lang.String"/>
+	<field name="PROXY_CERTIFICATE_NUM" class="java.lang.String"/>
+	<field name="PROXY_TEL" class="java.lang.String"/>
+	<field name="PROXY_PHONE" class="java.lang.String"/>
+	<field name="PROXY_EMAIL" class="java.lang.String"/>
+	<field name="FIRST_STB_NO" class="java.lang.String"/>
+	<field name="FIRST_IC_NO" class="java.lang.String"/>
+	<field name="FIRST_SUM_MONEY" class="java.lang.String"/>
+	<field name="SECOND_STB_NO" class="java.lang.String"/>
+	<field name="SECOND_IC_NO" class="java.lang.String"/>
+	<field name="SECOND_SUM_MONEY" class="java.lang.String"/>
+	<field name="THIRD_STB_NO" class="java.lang.String"/>
+	<field name="THIRD_IC_NO" class="java.lang.String"/>
+	<field name="THIRD_SUM_MONEY" class="java.lang.String"/>
+	<field name="FORTH_STB_NO" class="java.lang.String"/>
+	<field name="FORTH_IC_NO" class="java.lang.String"/>
+	<field name="FORTH_SUM_MONEY" class="java.lang.String"/>
+	<field name="COMMENT_CONTENT" class="java.lang.String"/>
+	<field name="COMMONE_SUM_MONEY" class="java.lang.String"/>
+	<field name="CUSTOMER_TYPE" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="842"  isSplitAllowed="true" >
+				<line direction="TopDown">
+					<reportElement
+						x="34"
+						y="55"
+						width="530"
+						height="0"
+						key="line-1">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="54"
+						y="43"
+						width="137"
+						height="12"
+						key="staticText-1">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<text><![CDATA[盘锦电视网络传播中心]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="482"
+						y="43"
+						width="79"
+						height="12"
+						key="staticText-2">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<text><![CDATA[第一联：工程留存]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="212"
+						y="73"
+						width="169"
+						height="20"
+						key="staticText-3">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[数字电视客户入网登记单]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="53"
+						y="107"
+						width="35"
+						height="15"
+						key="staticText-4">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[编号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="87"
+						y="107"
+						width="135"
+						height="15"
+						key="staticText-5">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="430"
+						y="106"
+						width="66"
+						height="15"
+						key="staticText-6">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[客服电话： 31114444]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="496"
+						y="104"
+						width="81"
+						height="17"
+						key="staticText-7">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3111444]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="127"
+						width="491"
+						height="20"
+						backcolor="#CCCCCC"
+						key="staticText-8">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[客户信息部分（客户填写相应信息，在□中打"√"确认您的选择）]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="109"
+						y="146"
+						width="187"
+						height="25"
+						key="textField-1"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="295"
+						y="146"
+						width="61"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-10">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[客户类型]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="355"
+						y="146"
+						width="189"
+						height="25"
+						key="staticText-11">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[□居民用户    □非居民用户]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="170"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-12">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[安装地址]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="109"
+						y="170"
+						width="435"
+						height="25"
+						key="textField-2"/>
+					<box leftPadding="8">					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INSTALL_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="194"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-13">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[客户编号]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="109"
+						y="194"
+						width="102"
+						height="25"
+						key="textField-3"/>
+					<box>					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_CODE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="210"
+						y="194"
+						width="85"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-14">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[证 件 种 类]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="194"
+						width="47"
+						height="25"
+						key="textField-4"/>
+					<box>					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_CERTIFICATE_TYPE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="342"
+						y="194"
+						width="58"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-15">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[证件号码]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="399"
+						y="194"
+						width="145"
+						height="25"
+						key="textField-5"/>
+					<box leftPadding="4">					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_CERTIFICATE_NUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="218"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-16">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[联系方式]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="218"
+						width="435"
+						height="25"
+						key="staticText-17">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="218"
+						width="63"
+						height="25"
+						key="staticText-18">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[固定电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="241"
+						y="218"
+						width="60"
+						height="25"
+						key="staticText-19">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[移动电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="364"
+						y="218"
+						width="51"
+						height="25"
+						key="staticText-20">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[E-mail：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="171"
+						y="218"
+						width="72"
+						height="25"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_TEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="300"
+						y="218"
+						width="66"
+						height="25"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_PHONE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="415"
+						y="218"
+						width="127"
+						height="25"
+						key="textField-8"/>
+					<box leftPadding="4">					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_EMAIL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="241"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-21">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[代  办  人]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="210"
+						y="241"
+						width="85"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-22">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[代办人证件种类]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="109"
+						y="241"
+						width="102"
+						height="25"
+						key="textField-9"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="241"
+						width="47"
+						height="25"
+						key="textField-10"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_CERTIFICATE_TYPE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="341"
+						y="241"
+						width="58"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-23">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[证件号码]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="398"
+						y="241"
+						width="146"
+						height="25"
+						key="textField-11"/>
+					<box leftPadding="4">					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_CERTIFICATE_NUM}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="289"
+						width="491"
+						height="20"
+						backcolor="#CCCCCC"
+						key="staticText-29">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[付费方式（客户填写相应信息，在□中打"√"确认您的选择）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="53"
+						y="308"
+						width="491"
+						height="25"
+						key="staticText-30">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[□ 现金支付              □ 银行转账                      □ 其他（请注明：                             ）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="331"
+						width="491"
+						height="20"
+						backcolor="#CCCCCC"
+						key="staticText-31">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[客户须知（请客户仔细阅读）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="53"
+						y="350"
+						width="491"
+						height="61"
+						key="staticText-32">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[1、以上客户资料信息必须真实有效；否则乙方有权暂停或终止提供相关业务；
+2、申请人（单位）在填写本登记表时，须签字或加盖单位印章；
+3、甲方已阅读以上及此表背面协议条款并已充分理解，甲乙双方对上述条款均无任何异议；]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="411"
+						width="491"
+						height="20"
+						backcolor="#CCCCCC"
+						key="staticText-33">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[机顶盒、智能卡信息部分（网络中心填写）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="431"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-34">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[机顶盒数]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="116"
+						y="431"
+						width="179"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-35">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[机   顶    盒   号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="294"
+						y="431"
+						width="169"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-36">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[智   能（IC）卡   号]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="462"
+						y="431"
+						width="82"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-37">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[金额（元）]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="456"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-38">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[第一台]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="456"
+						width="179"
+						height="25"
+						key="textField-15"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIRST_STB_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="456"
+						width="169"
+						height="25"
+						key="textField-16"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIRST_IC_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="456"
+						width="82"
+						height="25"
+						key="textField-17"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIRST_SUM_MONEY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="480"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-39">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[第二台]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="480"
+						width="179"
+						height="25"
+						key="textField-18"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SECOND_STB_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="480"
+						width="169"
+						height="25"
+						key="textField-19"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SECOND_IC_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="480"
+						width="82"
+						height="25"
+						key="textField-20"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SECOND_SUM_MONEY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="504"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-40">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[第三台]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="504"
+						width="179"
+						height="25"
+						key="textField-21"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{THIRD_STB_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="504"
+						width="169"
+						height="25"
+						key="textField-22"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{THIRD_IC_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="504"
+						width="82"
+						height="25"
+						key="textField-23"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{THIRD_SUM_MONEY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="528"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-41">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[第四台]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="528"
+						width="179"
+						height="25"
+						key="textField-24"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FORTH_STB_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="294"
+						y="528"
+						width="169"
+						height="25"
+						key="textField-25"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FORTH_IC_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="528"
+						width="82"
+						height="25"
+						key="textField-26"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FORTH_SUM_MONEY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="552"
+						width="65"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-42">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[备   注]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="552"
+						width="346"
+						height="25"
+						key="textField-27"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMENT_CONTENT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="462"
+						y="552"
+						width="82"
+						height="25"
+						key="textField-29"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMONE_SUM_MONEY}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="53"
+						y="576"
+						width="242"
+						height="138"
+						key="staticText-43">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font/>
+					</textElement>
+				<text><![CDATA[
+客户（甲方）签字：
+
+单位公章：
+
+
+
+
+                                                             年     月      日]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="53"
+						y="714"
+						width="242"
+						height="48"
+						key="staticText-45">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font/>
+					</textElement>
+				<text><![CDATA[      安装人员将为您安装数字电视，请您在安装员安装完毕后在右侧签字确认。
+      安装员：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="293"
+						y="714"
+						width="251"
+						height="48"
+						key="staticText-46">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<text><![CDATA[客户安装确认签字：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="293"
+						y="576"
+						width="251"
+						height="138"
+						key="staticText-47">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font/>
+					</textElement>
+				<text><![CDATA[
+盘锦电视网络传输中心（乙方）盖章：
+
+业务受理人：
+
+
+
+
+                                                                年     月      日]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="265"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-48">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[联系电话]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="265"
+						width="435"
+						height="25"
+						key="staticText-49">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="265"
+						width="63"
+						height="25"
+						key="staticText-50">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[固定电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="241"
+						y="265"
+						width="60"
+						height="25"
+						key="staticText-51">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[移动电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="364"
+						y="265"
+						width="52"
+						height="25"
+						key="staticText-52">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[E-mail：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="171"
+						y="265"
+						width="72"
+						height="25"
+						key="textField-30"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_TEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="300"
+						y="265"
+						width="66"
+						height="25"
+						key="textField-31"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_PHONE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="415"
+						y="265"
+						width="127"
+						height="25"
+						key="textField-32"/>
+					<box leftPadding="4">					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROXY_EMAIL}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="53"
+						y="146"
+						width="57"
+						height="25"
+						backcolor="#CCCCCC"
+						key="staticText-53">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[客户名称]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="146"
+						width="187"
+						height="25"
+						key="staticText-54">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box rightPadding="8">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="170"
+						width="435"
+						height="25"
+						key="staticText-55">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="194"
+						width="102"
+						height="25"
+						key="staticText-56">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="194"
+						width="47"
+						height="25"
+						key="staticText-57">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="399"
+						y="194"
+						width="145"
+						height="25"
+						key="staticText-58">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="109"
+						y="241"
+						width="102"
+						height="25"
+						key="staticText-59">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="241"
+						width="47"
+						height="25"
+						key="staticText-60">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="399"
+						y="241"
+						width="145"
+						height="25"
+						key="staticText-61">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="462"
+						y="552"
+						width="82"
+						height="25"
+						key="staticText-62">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="116"
+						y="456"
+						width="179"
+						height="25"
+						key="staticText-63">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="116"
+						y="480"
+						width="179"
+						height="25"
+						key="staticText-64">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="116"
+						y="504"
+						width="179"
+						height="25"
+						key="staticText-65">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="116"
+						y="528"
+						width="179"
+						height="25"
+						key="staticText-66">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="456"
+						width="169"
+						height="25"
+						key="staticText-67">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="480"
+						width="169"
+						height="25"
+						key="staticText-68">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="504"
+						width="169"
+						height="25"
+						key="staticText-69">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="294"
+						y="528"
+						width="169"
+						height="25"
+						key="staticText-70">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="116"
+						y="552"
+						width="346"
+						height="25"
+						key="staticText-71">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="462"
+						y="456"
+						width="82"
+						height="25"
+						key="staticText-72">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="462"
+						y="480"
+						width="82"
+						height="25"
+						key="staticText-73">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="462"
+						y="504"
+						width="82"
+						height="25"
+						key="staticText-74">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="462"
+						y="528"
+						width="82"
+						height="25"
+						key="staticText-75">
+							<printWhenExpression><![CDATA[new Boolean($P{IS_PRINT}.equals( "UserCertificateno" ))]]></printWhenExpression>
+						</reportElement>
+					<box>					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="355"
+						y="146"
+						width="189"
+						height="25"
+						key="textField-33"/>
+					<box leftPadding="4"></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CUSTOMER_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="364"
+						y="613"
+						width="74"
+						height="20"
+						key="textField-34"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{CURR_OPER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="438"
+						y="682"
+						width="38"
+						height="20"
+						key="textField-35"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{YEAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="480"
+						y="682"
+						width="26"
+						height="20"
+						key="textField-36"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{MONTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="504"
+						y="682"
+						width="26"
+						height="20"
+						key="textField-37"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{DAY}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

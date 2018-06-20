@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossStatEqu" table="BOSS_STAT_EQU">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_STAT_EQU</param>
+			</generator>
+		</id>
+		<property name="statDate" type="java.util.Date">
+			<column name="STAT_DATE"/>
+		</property>
+		<property name="equTypeId" type="java.lang.Long">
+			<column name="EQU_TYPE_ID"/>
+		</property>
+		<property name="equTypeName" type="java.lang.String">
+			<column name="EQU_TYPE_NAME"/>
+		</property>
+		<property name="equTotal" type="java.lang.Long">
+			<column name="EQU_TOTAL"/>
+		</property>
+		<property name="besaleTotal" type="java.lang.Long">
+			<column name="BESALE_TOTAL"/>
+		</property>
+		<property name="usingTotal" type="java.lang.Long">
+			<column name="USING_TOTAL"/>
+		</property>
+		<property name="damageTotal" type="java.lang.Long">
+			<column name="DAMAGE_TOTAL"/>
+		</property>
+		<property name="soldTotal" type="java.lang.Long">
+			<column name="SOLD_TOTAL"/>
+		</property>
+		<property name="persentedTotal" type="java.lang.Long">
+			<column name="PERSENTED_TOTAL"/>
+		</property>
+		<property name="selfbuyTotal" type="java.lang.Long">
+			<column name="SELFBUY_TOTAL"/>
+		</property>
+		<property name="mainterTotal" type="java.lang.Long">
+			<column name="MAINTER_TOTAL"/>
+		</property>
+		<property name="oneSubterTotal" type="java.lang.Long">
+			<column name="ONE_SUBTER_TOTAL"/>
+		</property>
+		<property name="twoSubterTotal" type="java.lang.Long">
+			<column name="TWO_SUBTER_TOTAL"/>
+		</property>
+		<property name="menufacturer" type="java.lang.String">
+			<column name="MENUFACTURER"/>
+		</property>
+		<property name="model" type="java.lang.String">
+			<column name="MODEL"/>
+		</property>
+	</class>
+</hibernate-mapping>

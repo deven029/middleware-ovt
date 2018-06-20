@@ -1,0 +1,22 @@
+##服务器端配置文件
+
+##服务器主机
+##2012-10-1之后的boss版本不在使用服务器主机配置参数
+Server.tcpHost=127.0.0.1
+##服务器端口
+Server.tcpPort=10000
+
+##消息包长，此为固定长度，设好后对所有的包有效
+Msg.Head.Length=4
+Msg.Character.Set=GB2312
+
+##盘锦银行实时充值对账FTP配置 #修改配置参数需要重启boss服务才能生效
+#银行实时充值行别代码(其中 PSBC:盘锦邮政,ABC:盘锦农行)，多个银行时用,分开。
+#请不要修改这项配置中的银行代码
+clientReg=PSBC:盘锦邮政
+
+#银行对账文件FTP上传目录，格式为（银行代码:对账文件ftp相对路径），多个银行时用,分开。
+ftpBillPath=PSBC:/home/bankFile
+
+#银行对账文件FTP下载目录，格式为（银行代码@对账文件本地路径），路径中有反斜杠时使用\\代替\，多个银行时用,分开。
+downloadBillPath=PSBC@/home/bossLocalDir

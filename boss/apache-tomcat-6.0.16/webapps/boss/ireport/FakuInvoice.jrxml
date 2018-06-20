@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="FakuInvoice"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="PARA_SUBREPORT" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="PARA_SUBREPORT_DIR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TAX_NO" isForPrompting="false" class="java.lang.String">
+		<parameterDescription><![CDATA[税务号]]></parameterDescription>
+	</parameter>
+
+	<field name="FIELD_DATE" class="java.lang.String"/>
+	<field name="FIELD_TRAN_NO" class="java.lang.String"/>
+	<field name="FIELD_PAYER_NAME" class="java.lang.String"/>
+	<field name="FIELD_PAYER_CODING" class="java.lang.String"/>
+	<field name="FIELD_PAYER_ADDRESS" class="java.lang.String"/>
+	<field name="FIELD_PAYEE_UNIT" class="java.lang.String"/>
+	<field name="FIELD_OPER" class="java.lang.String"/>
+	<field name="FIELD_INDUSTRY_TYPE" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="144"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="168"
+						y="27"
+						width="260"
+						height="22"
+						forecolor="#FF6633"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="14"/>
+					</textElement>
+				<text><![CDATA[法库有线数字电视收视维护费缴费凭证]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="239"
+						y="52"
+						width="123"
+						height="17"
+						forecolor="#FF6633"
+						key="textField-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_DATE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="92"
+						y="68"
+						width="57"
+						height="17"
+						forecolor="#FF6633"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<text><![CDATA[ 流水号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="92"
+						y="84"
+						width="88"
+						height="17"
+						forecolor="#FF6633"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<text><![CDATA[ 企业所属行业：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="331"
+						y="84"
+						width="66"
+						height="17"
+						forecolor="#FF6633"
+						key="staticText-5"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<text><![CDATA[税务登记号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="93"
+						y="102"
+						width="109"
+						height="14"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 付款单位（个人）：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="326"
+						y="102"
+						width="66"
+						height="14"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[用户编号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="93"
+						y="116"
+						width="48"
+						height="14"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 地址：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="93"
+						y="130"
+						width="90"
+						height="14"
+						key="staticText-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 项目名称]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="274"
+						y="130"
+						width="49"
+						height="14"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 时段]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="420"
+						y="130"
+						width="49"
+						height="14"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 金额]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="92"
+						y="101"
+						width="0"
+						height="43"
+						forecolor="#FF6633"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="501"
+						y="101"
+						width="0"
+						height="43"
+						forecolor="#FF6633"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="141"
+						y="68"
+						width="148"
+						height="16"
+						forecolor="#FF6633"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_TRAN_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="172"
+						y="84"
+						width="128"
+						height="16"
+						forecolor="#FF6633"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_INDUSTRY_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="382"
+						y="102"
+						width="100"
+						height="14"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_CODING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="132"
+						y="116"
+						width="229"
+						height="14"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="197"
+						y="102"
+						width="142"
+						height="14"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYER_NAME}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="93"
+						y="101"
+						width="409"
+						height="0"
+						forecolor="#FF6633"
+						key="line-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="397"
+						y="84"
+						width="104"
+						height="17"
+						key="textField-11"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{TAX_NO}]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="13"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="92"
+						y="0"
+						width="409"
+						height="13"
+						key="subreport-1"/>
+					<dataSourceExpression><![CDATA[$P{PARA_SUBREPORT}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{PARA_SUBREPORT_DIR}+"FakusubInvoice.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="619"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="93"
+						y="2"
+						width="66"
+						height="16"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[ 收款单位：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="377"
+						y="2"
+						width="53"
+						height="16"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<text><![CDATA[收款人：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="151"
+						y="2"
+						width="148"
+						height="16"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_PAYEE_UNIT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="419"
+						y="2"
+						width="91"
+						height="16"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="宋体" size="11"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FIELD_OPER}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="92"
+						y="1"
+						width="409"
+						height="0"
+						forecolor="#FF6633"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

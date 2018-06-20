@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossMessageWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>MessageWebPlugin</name>
+	<description>BOSS消息管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.MessageWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		 <version>
+			<versionNo>1.0.5</versionNo>
+			<description>更新初始消息任务类型SQl语句</description>
+			<publishDate>2011-10-12</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		 <version>
+			<versionNo>1.1.0</versionNo>
+			<description>更新初始化插入OSD消息类型</description>
+			<publishDate>2011-11-18</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	
+	<!-- 为了将消息管理应用于框架 -->
+	<func_tree>
+		<func code="010" name="消息管理" srcFile=""  descInfo="消息管理" status="1" alias="" seqNo="5" funcType="0" developFlag="">
+			<!-- -<func code="010001" name="邮件管理（框架实现）" srcFile="/bossCoreMessage/email.do?methodToCall=openQuery"  descInfo="邮件 管理" status="1" alias="pm.email.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010001001" name="新增邮件" srcFile=""  descInfo="新增邮件" status="1" alias="pm.email.addView" seqNo="" funcType="2" developFlag=""/>
+			</func>	 -->
+ 			<func code="010002" name="邮件管理" srcFile="/bossCoreMessage/email.do?method=list"  descInfo="邮件 管理" status="1" alias="pm.email1.openQuery" seqNo="" funcType="1" developFlag=""> 
+				<!-- <func code="010002001" name="新增邮件" srcFile=""  descInfo="新增邮件" status="1" alias="pm.email1.addView" seqNo="" funcType="2" developFlag=""/>   -->
+			<func code="010002001" name="增加" srcFile=""  descInfo="新增邮件" status="1" alias="pm.email1.addView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010002002" name="修改" srcFile=""  descInfo="修改邮件" status="1" alias="pm.email1.modifyView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010002003" name="删除" srcFile=""  descInfo="删除邮件" status="1" alias="pm.email1.deleteView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010002004" name="发布" srcFile=""  descInfo="发布邮件" status="1" alias="pm.email1.publicView" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+			<func code="010003" name="OSD管理" srcFile="/bossCoreMessage/osd.do?method=list"  descInfo="OSD 管理" status="1" alias="pm.osd.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010003001" name="增加" srcFile=""  descInfo="新增OSD" status="1" alias="pm.osd.addView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010003002" name="修改" srcFile=""  descInfo="修改OSD" status="1" alias="pm.osd.modifyView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010003003" name="删除" srcFile=""  descInfo="删除OSD" status="1" alias="pm.osd.deleteView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010003004" name="发布" srcFile=""  descInfo="发布OSD" status="1" alias="pm.osd.publicView" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+			<!-- <func code="010004" name="定期消息参数管理" srcFile="/bossCoreMessage/remindThreadPara.do?method=list"  descInfo="参数 管理" status="1" alias="pm.remindThreadPara.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010004001" name="增加" srcFile=""  descInfo="新增参数" status="1" alias="pm.remindThreadPara.addView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010004002" name="修改" srcFile=""  descInfo="修改参数" status="1" alias="pm.remindThreadPara.modifyView" seqNo="" funcType="2" developFlag=""/>
+				<func code="010004003" name="删除" srcFile=""  descInfo="删除参数" status="1" alias="pm.remindThreadPara.deleteView" seqNo="" funcType="2" developFlag=""/>
+			</func>	
+		    <func code="010005" name="定期管理" srcFile="/jsp/boss/remind.do?methodToCall=openQuery"  descInfo="定期提醒功能" status="1" alias="pm.remind.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010005001" name="增加" srcFile=""  descInfo="增加定期提醒线程" status="1" alias="pm.remind.addView" seqNo="" funcType="2" developFlag="">
+					<func code="010005001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.remind.addView.submit" seqNo="0" funcType="2" />
+				</func>
+				<func code="010005002" name="关联线程参数" srcFile=""  descInfo="" status="1" alias="pm.remind.threadPara.openQuery" seqNo="" funcType="2" >
+						<func code="010005002001" name="返回" srcFile=""  descInfo="" status="1" alias="pm.remind.threadPara.return" seqNo="" funcType="2" />
+						<func code="010005002002" name="提交对应" srcFile=""  descInfo="" status="1" alias="pm.remind.threadPara.subPara" seqNo="" funcType="2" />
+				</func>
+				<func code="010005003" name="修改" srcFile=""  descInfo="修改定期提醒线程" status="1" alias="pm.remind.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="010005003001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.remind.modifyView.submit" seqNo="0" funcType="2" />
+				</func>
+				<func code="010005004" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.remind.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="010005005" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.remind.view" seqNo="" funcType="2" developFlag=""/>
+			</func> 
+			-->
+			<func code="010006" name="消息类型管理" srcFile="/jsp/boss/remind/remindType.do?methodToCall=openQuery"  descInfo="消息类型管理" status="1" alias="pm.remindTypeManage.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010006001" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.remindTypeManage.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="010006001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.remindTypeManage.modifyView.submit" seqNo="0" funcType="2" />
+				</func>
+			</func>	
+			<func code="010007" name="消息记录管理" srcFile="/jsp/boss/remind/remindLog.do?methodToCall=openQuery"  descInfo="消息记录管理" status="1" alias="pm.remindLog.openQuery" seqNo="" funcType="1" developFlag="">
+				<func code="010007001" name="发布" srcFile=""  descInfo="发布" status="1" alias="pm.remindLog.publishLog" seqNo="" funcType="2" developFlag=""/>
+			</func>
+		</func>
+	</func_tree>
+</plugin>

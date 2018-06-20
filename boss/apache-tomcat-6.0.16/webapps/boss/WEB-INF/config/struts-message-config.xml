@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="emailForm" type="com.ovt.idtv.boss.core.service.message.model.BossEmailForm"></form-bean>
+		<form-bean name="osdForm" type="com.ovt.idtv.boss.core.service.message.model.BossOsdForm"></form-bean>
+		<form-bean name="RemindForm" type="com.ovt.idtv.boss.web.remind.form.RemindForm"></form-bean>
+		<form-bean name="remindThreadParaForm" type="com.ovt.idtv.boss.core.service.message.model.RemindThreadPara"></form-bean>
+		<form-bean name="remindTypeForm" type="com.ovt.idtv.boss.web.remind.form.RemindTypeForm"></form-bean>
+	</form-beans>
+
+	<global-forwards />
+
+	<action-mappings>
+		<!-- <action name="emailForm" path="/bossCoreMessage/email"
+			type="com.ovt.idtv.boss.web.message.struts.EmailAction"
+			unknown="false" validate="false" parameter="methodToCall">
+			<forward name="select.success" path="/bossCoreMessage/email.do?methodToCall=openQuery"></forward>
+		</action> -->
+		
+		<action name="emailForm" path="/bossCoreMessage/email" type="com.ovt.idtv.boss.web.message.struts.EmailAction"
+			unknown="false" validate="false">
+			<forward name="ListSuccess" path="/boss/message/email/message_list.jsp"></forward>
+			<forward name="ForwardSuccess" path="/boss/message/email/message_add_modify.jsp"></forward>
+			<forward name="SaveOrUpdateSuccess" path="/bossCoreMessage/email.do?method=list"></forward>
+		</action>
+		
+		<action name="osdForm" path="/bossCoreMessage/osd" type="com.ovt.idtv.boss.web.message.struts.OsdAction"
+			unknown="false" validate="false">
+			<forward name="ListSuccess" path="/boss/message/osd/message_list.jsp"></forward>
+			<forward name="ForwardSuccess" path="/boss/message/osd/message_add_modify.jsp"></forward>
+			<forward name="SaveOrUpdateSuccess" path="/bossCoreMessage/osd.do?method=list"></forward>
+		</action>
+		
+		<action name="remindThreadParaForm" path="/bossCoreMessage/remindThreadPara" type="com.ovt.idtv.boss.web.message.struts.RemindParaManagerAction"
+			unknown="false" validate="false">
+			<forward name="ListSuccess" path="/boss/message/para/para_list.jsp"></forward>
+			<forward name="ForwardSuccess" path="/boss/message/para/para_add_modify.jsp"></forward>
+			<forward name="SaveOrUpdateSuccess" path="/bossCoreMessage/remindThreadPara.do?method=list"></forward>
+		</action>
+		
+		<action name="RemindForm" path="/jsp/boss/remind" type="com.ovt.idtv.boss.web.message.struts.RemindAction"
+			unknown="false" validate="false" parameter="methodToCall" >
+		</action>
+		
+		<action  path="/jsp/boss/remindPara" type="com.ovt.idtv.boss.web.message.struts.RemindParaAction"
+			unknown="false" validate="false" parameter="methodToCall" >
+		</action>
+		
+		<action name="remindTypeForm" path="/jsp/boss/remind/remindType" type="com.ovt.idtv.boss.web.message.struts.RemindTypeAction"
+			unknown="false" validate="false" parameter="methodToCall" >
+		</action>
+		<action  path="/jsp/boss/remind/remindLog" type="com.ovt.idtv.boss.web.message.struts.RemindLogAction"
+			unknown="false" validate="false" parameter="methodToCall" >
+		</action>
+	</action-mappings>
+</struts-config>

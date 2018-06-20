@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossChargeWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>ChargeWebPlugin</name>
+	<description>BOSS计费管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.ChargeWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>在新增服务信息时，增加"支付的账号类别"这一属性，供计费时使用</description>
+			<publishDate>2011-08-23</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.5</versionNo>
+			<description>更改所有的所有日期类字段类型String改为date,并修改优惠策略ID为number型,以及优惠策略表中日期类字段的修改</description>
+			<publishDate>2012-08-20</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+			<func code="006" name="产品管理" srcFile=""  descInfo="产品管理" status="1" alias="" seqNo="4" funcType="0" >
+				<func code="006002" name="服务管理" srcFile=""  descInfo="服务管理" status="1" alias="" seqNo="1" funcType="0" >
+						<func code="006002001" name="服务分类" srcFile="/jsp/boss/charge/servType.do?methodToCall=select&amp;groupOrItem=group"  descInfo="" status="1" alias="pm.servtype.openQuery" seqNo="0" funcType="1" >
+							 <func code="006002001001" name="增加" srcFile=""  descInfo="" status="1" alias="pm.servtype.addView" seqNo="0" funcType="2" >
+								<func code="006002001001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.servtype.addView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006002001002" name="修改" srcFile=""  descInfo="" status="1" alias="pm.servtype.modifyView" seqNo="0" funcType="2" >
+								<func code="006002001002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.servtype.modifyView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006002001003" name="删除" srcFile=""  descInfo="" status="1" alias="pm.servtype.delete" seqNo="0" funcType="2" />
+							<func code="006002001004" name="查看" srcFile=""  descInfo="" status="1" alias="pm.servtype.view" seqNo="0" funcType="2" />
+							<func code="006002001005" name="服务信息管理" srcFile=""  descInfo="" status="1" alias="pm.service.openQuery" seqNo="0" funcType="2" >
+								<func code="006002001005001" name="新增服务" srcFile=""  descInfo="" status="1" alias="pm.service.addView" seqNo="0" funcType="2" >
+										<func code="006002001005001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.addView.submit" seqNo="0" funcType="2" />
+								</func>
+								<func code="006002001005002" name="服务导入" srcFile=""  descInfo="" status="1" alias="pm.service.import" seqNo="0" funcType="2" >
+										<func code="006002001005002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.import.submit" seqNo="0" funcType="2" />
+								</func>
+								<func code="006002001005003" name="服务定义" srcFile=""  descInfo="" status="1" alias="pm.service.modifyView" seqNo="0" funcType="2" >
+										<func code="006002001005003001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.modifyView.submit" seqNo="0" funcType="2" />
+								</func>
+								<func code="006002001005004" name="服务发布" srcFile=""  descInfo="" status="1" alias="pm.service.deploy" seqNo="0" funcType="2" />
+								<func code="006002001005005" name="服务删除" srcFile=""  descInfo="" status="1" alias="pm.service.delete" seqNo="0" funcType="2" />
+								<func code="006002001005006" name="服务查看" srcFile=""  descInfo="" status="1" alias="pm.service.view" seqNo="0" funcType="2" />
+								<func code="006002001005007" name="服务导出" srcFile=""  descInfo="" status="1" alias="pm.service.export" seqNo="0" funcType="2" />
+								<func code="006002001005008" name="服务定发布义" srcFile=""  descInfo="" status="1" alias="pm.service.deployModify" seqNo="0" funcType="2" >
+										<func code="006002001005008001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.deployModify.submit" seqNo="0" funcType="2" />
+								</func>
+							</func>
+						</func>
+						<func code="006002002" name="服务信息管理" srcFile="/jsp/boss/charge/service.do?methodToCall=openQuery&amp;groupId=-1"  descInfo="" status="1" alias="pm.service.openQuery" seqNo="0" funcType="1" >
+							<func code="006002002007" name="新增服务" srcFile=""  descInfo="" status="1" alias="pm.service.addView" seqNo="0" funcType="2" >
+									<func code="006002002007001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.addView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006002002001" name="服务导入" srcFile=""  descInfo="" status="1" alias="pm.service.import" seqNo="0" funcType="2" >
+									<func code="006002002001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.import.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006002002002" name="服务定义" srcFile=""  descInfo="" status="1" alias="pm.service.modifyView" seqNo="0" funcType="2" >
+									<func code="006002002002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.modifyView.submit" seqNo="0" funcType="2" />
+							</func>
+							
+							<func code="006002002008" name="审核" srcFile=""  descInfo="" status="1" alias="pm.service.verify" seqNo="0" funcType="2" >
+								<func code="006002002008001" name="通过" srcFile=""  descInfo="" status="1" alias="pm.service.verify.submit" seqNo="0" funcType="2" />
+								<func code="006002002008002" name="不通过" srcFile=""  descInfo="" status="1" alias="pm.service.verify.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006002002003" name="服务发布" srcFile=""  descInfo="" status="1" alias="pm.service.deploy" seqNo="0" funcType="2" />
+							 
+							<func code="006002002004" name="服务删除" srcFile=""  descInfo="" status="1" alias="pm.service.delete" seqNo="0" funcType="2" />
+							<func code="006002002005" name="服务查看" srcFile=""  descInfo="" status="1" alias="pm.service.view" seqNo="0" funcType="2" />
+							<func code="006002002006" name="服务导出" srcFile=""  descInfo="" status="1" alias="pm.service.export" seqNo="0" funcType="2" />
+							<func code="006002002009" name="服务定发布义" srcFile=""  descInfo="" status="1" alias="pm.service.deployModify" seqNo="0" funcType="2" >
+										<func code="006002002009001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.deployModify.submit" seqNo="0" funcType="2" />
+							</func>
+						</func>
+						<func code="006002004" name="服务升级" srcFile="/jsp/boss/charge/service/promote.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.service.promote.openQuery" seqNo="0" funcType="1" >
+							<func code="006003003001" name="服务升级" srcFile=""  descInfo="" status="1" alias="pm.service.promote.modifyView" seqNo="0" funcType="2" >
+									<func code="006003003001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.service.promote.modifyView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006003003002" name="查看升级历史 " srcFile=""  descInfo="" status="1" alias="pm.service.promote.viewhistory" seqNo="" funcType="2" >
+									<func code="006003003002001" name="查看" srcFile=""  descInfo="" status="1" alias="pm.service.promote.view" seqNo="" funcType="2" />
+									<func code="006003003002002" name="返回" srcFile=""  descInfo="" status="1" alias="pm.service.promote.returnback" seqNo="" funcType="2" />				
+							</func>
+						</func>
+						<func code="006002005" name="服务下架" srcFile="/jsp/boss/charge/service/shelves.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.service.shelves.openQuery" seqNo="0" funcType="1" >
+							<func code="006002005001" name="服务下架" srcFile=""  descInfo="" status="1" alias="pm.service.shelves.delete" seqNo="0" funcType="2" />
+							<func code="006002005002" name="服务查看" srcFile=""  descInfo="" status="1" alias="pm.service.shelves.view" seqNo="0" funcType="2" />
+						</func>
+						<func code="006002006" name="服务退出" srcFile="/jsp/boss/charge/service/exit.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.service.exit.openQuery" seqNo="0" funcType="1" >
+							<func code="006002006001" name="服务退出" srcFile=""  descInfo="" status="1" alias="pm.service.exit.delete" seqNo="0" funcType="2" />
+							<func code="006002006002" name="服务查看" srcFile=""  descInfo="" status="1" alias="pm.service.exit.view" seqNo="0" funcType="2" />
+						</func>
+				 </func>
+				<func code="006001" name="套餐管理" srcFile=""  descInfo="套餐管理" status="1" alias="" seqNo="2" funcType="0" >
+					<func code="006001001" name="套餐信息管理" srcFile="/jsp/boss/charge/product.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.product.openQuery" seqNo="0" funcType="1" >
+							<func code="006001001001" name="增加" srcFile=""  descInfo="" status="1" alias="pm.product.addView" seqNo="0" funcType="2" >
+									<func code="006001001001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.product.addView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006001001002" name="修改" srcFile=""  descInfo="" status="1" alias="pm.product.modifyView" seqNo="0" funcType="2" >
+									<func code="006001001002001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.product.modifyView.submit" seqNo="0" funcType="2" />
+							</func>
+							
+							<func code="006001001007" name="审核" srcFile=""  descInfo="" status="1" alias="pm.product.verify" seqNo="0" funcType="2" >
+								<func code="006001001007001" name="通过" srcFile=""  descInfo="" status="1" alias="pm.product.verify.submit" seqNo="0" funcType="2" />
+								<func code="006001001007002" name="不通过" srcFile=""  descInfo="" status="1" alias="pm.product.verify.submit" seqNo="0" funcType="2" />
+							</func>
+							
+							
+							<func code="006001001003" name="发布" srcFile=""  descInfo="" status="1" alias="pm.product.deploy" seqNo="0" funcType="2" />
+							<func code="006001001004" name="删除" srcFile=""  descInfo="" status="1" alias="pm.product.delete" seqNo="0" funcType="2" />
+							<func code="006001001005" name="查看" srcFile=""  descInfo="" status="1" alias="pm.product.view" seqNo="0" funcType="2" />
+							<func code="006001001006" name="关联服务" srcFile=""  descInfo="" status="1" alias="pm.product.relServ.openQuery" seqNo="" funcType="2" >
+									<func code="006001001006001" name="返回" srcFile=""  descInfo="" status="1" alias="pm.product.relServ.return" seqNo="" funcType="2" />
+									<func code="006001001006002" name="提交对应" srcFile=""  descInfo="" status="1" alias="pm.product.relServ.subrel" seqNo="" funcType="2" />
+						    </func>
+						    <func code="006001001008" name="套餐发布义" srcFile=""  descInfo="" status="1" alias="pm.product.deployModify" seqNo="0" funcType="2" >
+										<func code="006001001008001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.product.deployModify.submit" seqNo="0" funcType="2" />
+							</func>
+					</func>
+					 <func code="006001003" name="套餐升级" srcFile="/jsp/boss/charge/product/promote.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.product.promote.openQuery" seqNo="0" funcType="1" >
+							<func code="006001003001" name="套餐升级" srcFile=""  descInfo="" status="1" alias="pm.product.promote.modifyView" seqNo="0" funcType="2" >
+									<func code="006001003001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.product.promote.modifyView.submit" seqNo="0" funcType="2" />
+							</func>
+							<func code="006001003002" name="查看升级历史 " srcFile=""  descInfo="" status="1" alias="pm.product.promote.viewhistory" seqNo="" funcType="2" >
+									<func code="006001003002001" name="查看" srcFile=""  descInfo="" status="1" alias="pm.product.promote.view" seqNo="" funcType="2" />
+									<func code="006001003002002" name="返回" srcFile=""  descInfo="" status="1" alias="pm.product.promote.returnback" seqNo="" funcType="2" />				
+							</func>
+					 </func>
+					  <func code="006001004" name="套餐下架" srcFile="/jsp/boss/charge/product/shelves.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.product.shelves.openQuery" seqNo="0" funcType="1" >
+							<func code="006001004001" name="套餐下架" srcFile=""  descInfo="" status="1" alias="pm.product.shelves.delete" seqNo="0" funcType="2" />
+							<func code="006001004002" name="套餐查看" srcFile=""  descInfo="" status="1" alias="pm.product.shelves.view" seqNo="0" funcType="2" />
+						</func>
+					
+				</func>	
+				<func code="006006" name="收费策略" srcFile="/jsp/boss/charge/feeType.do?methodToCall=openQuery"  descInfo="" status="1" alias="pm.feetype.openQuery" seqNo="3" funcType="1" >
+				</func>
+			</func>
+	</func_tree>
+</plugin>

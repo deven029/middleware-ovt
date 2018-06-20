@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+*{font-size:12px; margin: 0px;}
+table{border:0px;}
+/*table{border-top:1px solid #67BF7F;border-left:1px solid #67BF7F;border-bottom:1px solid #67BF7F;border-right:1px solid #67BF7F}*/
+
+#mask{position:absolute;z-index:1;top:0px;left:0px;background-color:#CCC;width:100%;height:100%;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;}
+#equMask{position:absolute;z-index:10;top:0px;left:0px;background-color:#CCC;width:100%;height:100%;filter:alpha(opacity=30);-moz-opacity:0.30;opacity:0.30;}
+#mask_iframe{position:absolute;z-index:-1;top:0px;left:0px;width:100%;height:100%;border:0px}
+.bigButton{font-size:14px;font-weight:700;margin:10px;width:80px;height:30px;}
+#message{background-color:/*#00A6AD*/#EEE;color:#C50023;position:absolute;top:150px;left:250px;z-index:2;width:200px;height:30px;border:3px solid #CCC}
+.customer_group_search_dialog_class{background-color:#D7EBF9;position:absolute;z-index:2;border:5px solid #5C9CCC}
+.ui_icon { width: 16px; height: 16px; background-image: url(images/ui-icons_256x240.png); display:inline-block}
+/*.message_submit{background-position: -64px -80px;}*/
+.message_submit{width: 24px; height: 16px;background-image: url(images/showmsg.gif);}
+.open_icon {background-position: 0px -16px;}
+.close_icon {background-position: -64px -16px;}
+.secondary_icon{background-position: -80px 0px;}
+.dialog_close_icon{background-position: -96px -128px;display:inline-block}
+.dialog_close_over_icon{background-position: -32px -192px;}
+.dialog_no_close_icon{background-position: -128px -80px;}
+.policy_info{background-color:#D7EBF9;position:absolute;z-index:11;padding:2px;border:1px dashed #5C9CCC}
+.policy_info_colse{background-position: -32px -16px;}
+.policy_info_open{background-position: -48px -16px;}
+.hide{display:none}
+.show{display:block}
+.info_title{font-size:14px;font-weight:700;color:/*#FFFFFF*/#000000;margin-top:2px;background-image=url(../../../../common/images/bar_bg(1).gif);border-top:1px solid #000000;border-left:1px solid #000000;}
+.input_text{border:1px solid #000;}
+.input_text_model{border-width:1px 1px 1px 0px;border-style:solid;border-color:#000;}
+.input_text_short{border:1px solid #000;width:50px;}
+.input_text_short_part{border:1px solid #000;width:25px;}
+
+.text_focus{background-color:#FFFF00}
+.text_readonly{border-width:0px 0px 1px 0px;border-style:solid;border-color:color;text-align:center;width:60px;}
+.text_readonly_money{border-width:0px 0px 1px 0px;border-style:solid;border-color:color;text-align:center;width:110px;}
+/*.tableBorder td{border:1px dotted #000000}*/
+.tableBorder {border:1px solid #67BF7F;border-collapse:collapse ;border-spacing:0px;empty-cells:show}
+.tableBorder td{border:1px solid #67BF7F;}
+.tableBorder th{border:1px solid #67BF7F;font-weight:bold;background:#CCCCCC}
+
+.orderTableBorder{border:1px solid #67BF7F;border-collapse:collapse ;border-spacing:0px;empty-cells:show}
+.orderTableBorder td{border:1px solid #67BF7F;}
+.orderTableBorder th{border:1px solid #67BF7F;font-weight:bold;background:#CCCCCC}
+
+.productTable {background-color:#FDF1DE;}
+.dialog_product{background-color:#FFF;color:#000;position:absolute;z-index:3;border:3px solid #CCC}
+.dialog_showOrderProduct{background-color:#FFF;color:#000;position:absolute;z-index:3;border:3px solid #5C9CCC}
+.dialog_title{background-color:#5C9CCC;text-align:right;}
+.font14{font:14px}
+.moneyTotal{font:25px;font-weight:700;margin-top:5px}
+.moneyTotal_money{font:50px;font-weight:700;margin-top:5px}
+.border_top{border-top:#000 solid 1px}
+.border_bottom{border-bottom:#000 solid 1px}
+.pruduct_span{width:12px;font-weight:bold;text-align:center;}
+
+#tab_title {border-bottom:1px solid #0080FF;}
+.tab_title_head{border-left:1px solid #0080FF;border-top:1px solid #0080FF;border-right:1px solid #0080FF;font-size:13px;color:#FFFFFF;background-color:#0080FF;margin-left:2px; margin-top:2px;padding-left:2px;padding-top:5px;padding-right:2px;height:18px;}
+.tab_title_head_out{background-image:url(images/button.png);}
+.tab_title_head_over{font-size:13px;color:#FFFFFF;background-image:url(images/button2.png);}
+.tab_title_head_click{font-size:13px;color:#FFFFFF;background-image:url(images/button3.png);}
+.tab_title_head_close_icon{};
+#search_info_title{margin-top:10px;margin-left:5px;}
+#search_info_result_title{margin-top:10px;margin-left:5px;border-top:1px solid #000000}
+.width_height{width:100%;height:100%;}
+.tab_main_content{margin-left:2px;border-top:2px solid #0080FF;padding-left:2px;padding-top:5px}
+.common_bar_button{width:65px; height:20px;display:inline-block}
+.common_bar_payment{background-image:url(images/button-payment.png);}
+.common_bar_print{background-image:url(images/button-print.png);}
+.second_content_div{margin-top:22px;border-top:2px solid #0080FF;padding-top:5px}
+
+.confirm_cost_class{text-align:center;background-color:#FFF9E5;position:absolute;z-index:5;border:1px solid #FAD42E;padding:50px;}
+.select_card_class{text-align:center;background-color:#DFEFFC;position:absolute;z-index:4;border:3px solid #5C9CCC;padding:20px;}
+
+.clickable{cursor:hand}
+.payment_class{text-align:center;background-color:rgb(212,227,246);position:absolute;z-index:6;border:2.5px solid rgb(92,156,204);width:80%}
+.payment_div_class{padding:10px;}
+.dialog_title{background-color:#5C9CCC;text-align:right;}
+.payment_width{width:80%}
+.payment_inner_div{text-align:left;margin:auto;width:80%;}
+
+.accountHead{font-weight:bold;}
+.accountSpan{margin:2px;padding:2px}
+.account_table_border{border:#000 solid 1px}
+.account_input_align{text-align:right}
+
+.print_choice_class{text-align:center;background-color:#FFF;position:absolute;z-index:7;border:1px solid #CCC;padding:50px;}
+.invoice_input_class{text-align:center;background-color:rgb(212,227,246);position:absolute;z-index:8;border:2.5px solid rgb(92,156,204);}
+
+.input_required{color:red}
+.upHideDiv{display:none;cursor:default;background-color:#EED2A9;color:#000;z-index:5;border:2px solid #67BF7F}
+.selectlight { background-color:#9ACCFB;cursor: hand; }

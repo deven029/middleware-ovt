@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+
+<plugin>
+	<id>OvtBossCoreMessageImpl</id>
+	<name>消息服务</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>消息服务实现</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BosscoreMessageImpPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/boss_message.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.5</versionNo>
+			<description>完善邮件、OSD</description>
+			<publishDate>2011-10-30</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		<version>
+			<versionNo>1.1.0</versionNo>
+			<description>更新初始化插入OSD消息类型</description>
+			<publishDate>2011-11-18</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.message.db.BossEmail"/>
+			<class name="com.ovt.idtv.boss.message.db.BossOsd"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadChild"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadLog"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadLogHis"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadMain"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadPara"/>
+			<class name="com.ovt.idtv.boss.message.db.BossRemindThreadType"/>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+	
+</plugin>

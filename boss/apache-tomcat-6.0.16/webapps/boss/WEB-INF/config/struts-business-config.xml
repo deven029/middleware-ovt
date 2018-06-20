@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="BusinessForm" type="com.ovt.idtv.boss.web.business.form.BusinessForm" />
+		<!-- add by jhg 2013-01-20批量订购提交-->
+		<form-bean name="batchOrderInfoForm" type="com.ovt.idtv.boss.web.business.form.UserBatchOrderFileForm"></form-bean>
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="BusinessForm" path="/jsp/boss/business" type="com.ovt.idtv.boss.web.business.struts.BusinessAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/business.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 批量订购 2012-3-29 yzy -->
+		<action name="batchOrderInfoForm" path="/jsp/boss/business/batchUserOrder/batchUserOrder" type="com.ovt.idtv.boss.web.business.batchUserOrder.BatchUserOrderAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall" >
+			<forward name="batchUserOrder.userOrder.success" path="/boss/business/batchProductOrder.jsp"></forward>
+			<forward name="batchUserOrder.userOrderCondition.success" path="/boss/business/batchProductOrder.jsp"></forward>
+			<forward name="batchUserOrderImpResult" path="/boss/business/userBatchOrderImpResult.jsp" redirect="false"></forward>
+		</action>
+		<!-- 同步日志管理 2012-11-15 liuxu -->
+		<action path="/jsp/boss/business/syncBusiLog/syncBusiLog" type="com.ovt.idtv.boss.web.business.syncBusiLog.SyncBusiLogAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/business/syncBusiLog/syncBusiLog.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 数据备份 2013-4-16 yzy-->
+		<action path="/jsp/boss/databackup/*" type="com.ovt.idtv.boss.web.business.databackup.struts.DataBackupAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="bossDataBackup" path="/boss/business/databack/bossDataBackup.jsp"></forward>
+			<forward name="result" path="/boss/business/databack/backupResult.jsp"></forward>
+		</action>
+	</action-mappings>
+</struts-config>

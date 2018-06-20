@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+
+  <!-- ============== Tag Library Description Elements ============= -->
+
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>SITECH Tag Library</shortname>
+  <uri>http://jakarta.apache.org/taglibs/struts-1.0</uri>
+  <info>
+    This tag library contains useful general-purpose tags supporting the
+    development of JSP/servlet applications based on the "Model 2" (MVC
+    based) design pattern.
+
+    WARNING:  ALL OF THE TAGS IN THIS LIBRARY ARE DEPRECATED, AND
+    ARE MAINTAINED ONLY FOR BACKWARDS COMPATIBILITY.  THEY WILL BE
+    REMOVED IN A FUTURE VERSION OF STRUTS.
+
+  </info>
+
+  <!-- ===================== Control Flow Tags ====================== -->
+
+  <tag>
+    <name>HTMLDefine</name>
+    <tagclass>com.sitech.common.taglib.HTMLDefineTag</tagclass>
+    <attribute>
+      <name>htmlID</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>table</name>
+    <tagclass>com.sitech.common.taglib.TableTag</tagclass>
+    <attribute>
+      <name>dataModelClassName</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>viewModelClassName</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>modelPassMean</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>dataModelAttrName</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>viewModelAttrName</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  
+</taglib>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossQueueOper" table="BOSS_QUEUE_OPER">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0"/>
+			<generator class="sequence">
+				<param name="sequence">SEQ_BOSS_QUEUE_OPER</param>
+			</generator>
+		</id>
+		<property name="queueId" type="java.lang.Long">
+			<column name="QUEUE_ID" precision="38" scale="0" />
+		</property>
+		<property name="loginOper" type="java.lang.String">
+			<column name="LOGIN_OPER" length="32" />
+		</property>
+		<property name="queueName" type="java.lang.String">
+			<column name="QUEUE_NAME" length="128" />
+		</property>
+		<property name="modifyDate" type="java.lang.String">
+			<column name="MODIFY_DATE" length="14" />
+		</property>
+		<property name="modifyOper" type="java.lang.String">
+			<column name="MODIFY_OPER" length="16" />
+		</property>
+		<property name="createDate" type="java.lang.String">
+			<column name="CREATE_DATE" length="14" />
+		</property>
+		<property name="createOper" type="java.lang.String">
+			<column name="CREATE_OPER" length="16"/>
+		</property>
+	</class>
+</hibernate-mapping>

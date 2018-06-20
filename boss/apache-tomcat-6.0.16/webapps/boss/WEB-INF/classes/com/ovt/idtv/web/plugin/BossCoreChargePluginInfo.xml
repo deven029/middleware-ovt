@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<plugin>
+	<id>OvtBossCoreChargeImpl</id>
+	<name>Boss计费插件</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>Boss计费插件</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCoreChargePlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/ovt_boss_charge.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.charge.db.BossFeeTypeDefine"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossProduct"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossProductFeeType"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossProductOrderStat"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossProductRela"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossProductServ"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossServ"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossServFeeType"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossServType"/>
+			<class name="com.ovt.idtv.boss.charge.db.BossDiscountPolicy"/>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

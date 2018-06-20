@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<id>OvtBossWorkOrderWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>WorkOrderWebPlugin</name>
+	<description>BOSS工单管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.WorkOrderWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2012-11-19</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+		<func code="101" name="工单管理" srcFile="" descInfo="工单管理" status="1" alias="" seqNo="2" funcType="0" developFlag="">
+			<func code="101001" name="工单队列管理" srcFile="/jsp/boss/workOrder/workOrderQueueManage.do?methodToCall=openQuery" descInfo="工单队列管理" status="1" alias="pm.workOrderQueueManage.openQuery" seqNo="1" funcType="1" developFlag="">
+				<func code="101001001" name="增加" srcFile="" descInfo="增加" status="1" alias="pm.workOrderQueueManage.addView" seqNo="" funcType="2" developFlag="">
+					<func code="101001001001" name="提交" srcFile="" descInfo="提交" status="1" alias="pm.workOrderQueueManage.addView.submit" seqNo="" developFlag="" />
+				</func>
+				<func code="101001002" name="删除" srcFile="" descInfo="删除" status="1" alias="pm.workOrderQueueManage.delete" seqNo="" funcType="2" developFlag=""></func>
+				<func code="101001003" name="修改" srcFile="" descInfo="修改" status="1" alias="pm.workOrderQueueManage.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="101001003001" name="提交" srcFile="" descInfo="提交" status="1" alias="pm.workOrderQueueManage.modifyView.submit" seqNo="" funcType="2" develogFlag="" />
+				</func>
+				<func code="101001004" name="查询" srcFile="" descInfo="查询" status="1" alias="pm.workOrderQueueManage.openQuery" seqNo="" funcType="2" developFlag="" />
+				<func code="101001005" name="维护队列操作员" srcFile="" descInfo="维护队列操作员" status="1" alias="pm.workOrderQueueManage.maintainOper" seqNo="" funcType="2" developFlag="" />
+				<func code="101001006" name="工单队列关联操作员" srcFile="" descInfo="工单队列关联操作员" status="1" alias="pm.maintainWoQueue.openQuery" seqNo="" funcType="2" developFlag="">
+					<func code="101001006001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.maintainWoQueue.add" seqNo="" funcType="2" developFlag=""/>
+					<func code="101001006002" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.maintainWoQueue.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="101001006003" name="返回" srcFile=""  descInfo="返回" status="1" alias="pm.maintainWoQueue.back" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="101001007" name="未关联操作员" srcFile="" descInfo="未关联操作员" status="1" alias="pm.addWoQueueOper.openQuery" seqNo="" funcType="2" developFlag="">
+					<func code="101001007001" name="确认" srcFile="" descInfo="确认" status="1" alias="pm.addWoQueueOper.confirm" seqNo="" funcType="2" developFlag="" />
+				</func>
+			</func>
+			<func code="101002" name="工单信息管理" srcFile="/jsp/boss/workOrder/workOrderInfo.do?methodToCall=openQuery" descInfo="工单信息管理" status="1" alias="pm.workOrderInfo.openQuery" seqNo="1" funcType="1">
+				<func code="101002001" name="创建" srcFile=""  descInfo="创建" status="1" alias="pm.workOrderInfo.addView" seqNo="" funcType="2" developFlag="">
+					<func code="101002001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.workOrderInfo.addView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="101002002" name="接受工单" srcFile=""  descInfo="修改" status="1" alias="pm.workOrderInfo.accept" seqNo="" funcType="2" developFlag="">
+				</func>
+				<func code="101002003" name="回应工单" srcFile=""  descInfo="修改" status="1" alias="pm.workOrderInfo.modifyView" seqNo="" funcType="2" developFlag="">
+					<func code="101002003001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.workOrderInfo.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="101002004" name="完成工单" srcFile=""  descInfo="完成工单" status="1" alias="pm.workOrderInfo.finish" seqNo="" funcType="2" developFlag="">
+				</func>
+				<func code="101002005" name="工单转派" srcFile=""  descInfo="工单转派" status="1" alias="pm.workOrderInfo.changeGroup" seqNo="" funcType="2" developFlag="">
+					<func code="101002005001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.workOrderInfo.changeGroup.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<!-- add by jhg 2013-03-02 start -->
+				<func code="101002010" name="重启工单" srcFile=""  descInfo="重启工单" status="1" alias="pm.workOrderInfo.restart" seqNo="" funcType="2" developFlag=""></func>
+				<!-- add by jhg 2013-03-02 end -->
+				<func code="101002006" name="关闭工单" srcFile=""  descInfo="关闭工单" status="1" alias="pm.workOrderInfo.close" seqNo="" funcType="2" developFlag="">
+				</func>
+				<func code="101002007" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.workOrderInfo.delete" seqNo="" funcType="2" developFlag=""/>
+				<func code="101002008" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.workOrderInfo.view" seqNo="" funcType="2" developFlag="">
+					<func code="101002008001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.workOrderInfo.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+				</func>
+				<func code="101002009" name="打印工单" srcFile=""  descInfo="打印工单" status="1" alias="pm.workOrderInfo.print" seqNo="" funcType="2" developFlag=""/>
+			</func>
+		</func>
+	</func_tree>
+</plugin>

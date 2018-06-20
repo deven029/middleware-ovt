@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IPTV Version='2.0.4005.0' -->
+<wsdl:definitions 
+  xmlns:s1="http://microsoft.com/wsdl/types/" 
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:s="http://www.w3.org/2001/XMLSchema" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:tns="http://www.microsoft.com/iptv/bss" 
+  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+  targetNamespace="http://www.microsoft.com/iptv/bss" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/iptv/bss">
+      <s:include schemaLocation="bsstypes.xsd"/>
+      <s:import id="guid" namespace="http://microsoft.com/wsdl/types/" schemaLocation="guid.xsd"></s:import>
+      <s:element name="AddPackagesToPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageIdsToAdd" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPackagesToPackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddServicesToPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceIds" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddServicesToPackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreatePackageOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageOffer" type="tns:PackageOffer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageOfferResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreatePackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="packageName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceIds" type="tns:ArrayOfGuid" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageIds" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatePackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeletePackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePackageOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePackageOfferResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeletePackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPackages">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPackagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPackagesResult" type="tns:ArrayOfPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackageResult" type="tns:Package" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackagesFiltered">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="filter" type="s:string" />
+	    <s:element minOccurs="1" maxOccurs="1" name="maxRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPackagesFilteredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPackagesFilteredResult" type="tns:ArrayOfPackage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePackagesFromPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="packageIdsToRemove" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemovePackagesFromPackageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveServicesFromPackage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="packageId" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="serviceIds" type="tns:ArrayOfGuid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveServicesFromPackageResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    
+  </wsdl:types>
+  <wsdl:message name="GetAllPackagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPackages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPackagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPackagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackage" />
+  </wsdl:message>
+  <wsdl:message name="GetPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPackagesFilteredSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPackagesFiltered" />
+  </wsdl:message>
+  <wsdl:message name="GetPackagesFilteredSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPackagesFilteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackage" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePackageSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePackage" />
+  </wsdl:message>
+  <wsdl:message name="DeletePackageSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPackagesToPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPackagesToPackage" />
+  </wsdl:message>
+  <wsdl:message name="AddPackagesToPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPackagesToPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemovePackagesFromPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:RemovePackagesFromPackage" />
+  </wsdl:message>
+  <wsdl:message name="RemovePackagesFromPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:RemovePackagesFromPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddServicesToPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:AddServicesToPackage" />
+  </wsdl:message>
+  <wsdl:message name="AddServicesToPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:AddServicesToPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveServicesFromPackageSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveServicesFromPackage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveServicesFromPackageSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveServicesFromPackageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:CreatePackageOffer" />
+  </wsdl:message>
+  <wsdl:message name="CreatePackageOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:CreatePackageOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePackageOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePackageOffer" />
+  </wsdl:message>
+  <wsdl:message name="DeletePackageOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePackageOfferResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PackageManagementSoap">
+    <wsdl:operation name="GetAllPackages">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Get all the packages in the system</documentation>
+      <wsdl:input message="tns:GetAllPackagesSoapIn" />
+      <wsdl:output message="tns:GetAllPackagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Gets a package</documentation>
+      <wsdl:input message="tns:GetPackageSoapIn" />
+      <wsdl:output message="tns:GetPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPackagesFiltered">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Gets packages that meet the filter criteria</documentation>
+      <wsdl:input message="tns:GetPackagesFilteredSoapIn" />
+      <wsdl:output message="tns:GetPackagesFilteredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Creates a package from packages and/or services</documentation>
+      <wsdl:input message="tns:CreatePackageSoapIn" />
+      <wsdl:output message="tns:CreatePackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Deletes a package</documentation>
+      <wsdl:input message="tns:DeletePackageSoapIn" />
+      <wsdl:output message="tns:DeletePackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPackagesToPackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Adds packages to a package.</documentation>
+      <wsdl:input message="tns:AddPackagesToPackageSoapIn" />
+      <wsdl:output message="tns:AddPackagesToPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePackagesFromPackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Removes packages from a package.</documentation>
+      <wsdl:input message="tns:RemovePackagesFromPackageSoapIn" />
+      <wsdl:output message="tns:RemovePackagesFromPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddServicesToPackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Adds services in media descriptions to a package.</documentation>
+      <wsdl:input message="tns:AddServicesToPackageSoapIn" />
+      <wsdl:output message="tns:AddServicesToPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveServicesFromPackage">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Removes services from a package.</documentation>
+      <wsdl:input message="tns:RemoveServicesFromPackageSoapIn" />
+      <wsdl:output message="tns:RemoveServicesFromPackageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageOffer">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Creates an offer for the package</documentation>
+      <wsdl:input message="tns:CreatePackageOfferSoapIn" />
+      <wsdl:output message="tns:CreatePackageOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePackageOffer">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/"> Deletes an offer for the package</documentation>
+      <wsdl:input message="tns:DeletePackageOfferSoapIn" />
+      <wsdl:output message="tns:DeletePackageOfferSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PackageManagementSoap" type="tns:PackageManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="GetAllPackages">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/GetAllPackages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/GetPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPackagesFiltered">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/GetPackagesFiltered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/CreatePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeletePackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPackagesToPackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/AddPackagesToPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePackagesFromPackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/RemovePackagesFromPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddServicesToPackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/AddServicesToPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveServicesFromPackage">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/RemoveServicesFromPackage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePackageOffer">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/CreatePackageOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePackageOffer">
+      <soap:operation soapAction="http://www.microsoft.com/iptv/bss/DeletePackageOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PackageManagement">
+    <wsdl:port name="PackageManagementSoap" binding="tns:PackageManagementSoap">
+      <soap:address location="http://localhost/bss/PackageManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>  

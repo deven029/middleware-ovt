@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/BossSelfServiceWsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BossSelfServiceWsdl" targetNamespace="http://www.example.org/BossSelfServiceWsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/BossSelfServiceWsdl/">
+      <xsd:element name="queryUnOrderProduct">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryUnOrderProductResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="productList" type="tns:Product"
+          		maxOccurs="unbounded" minOccurs="0" />
+          	<xsd:element name="result" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryUnOrderProductRequest"
+      	type="tns:queryUnOrderProductRequest">
+      </xsd:element>
+
+      <xsd:complexType name="queryUnOrderProductRequest">
+      	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+      </xsd:complexType>
+    
+      <xsd:complexType name="Product">
+      	<xsd:attribute name="id" type="xsd:long"></xsd:attribute>
+      	<xsd:attribute name="policyId" type="xsd:long"></xsd:attribute>
+      	<xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+      	<xsd:attribute name="price" type="xsd:double"></xsd:attribute>
+      	<xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+      	<xsd:attribute name="productType" type="xsd:string"></xsd:attribute>
+      	<xsd:attribute name="effectiveDate" type="xsd:string"></xsd:attribute>
+      	<xsd:attribute name="expiryDate" type="xsd:string"></xsd:attribute>
+      </xsd:complexType>
+
+      <xsd:element name="queryUnOrderInteractProductResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="productList"
+            				type="tns:Product" maxOccurs="unbounded"
+            				minOccurs="0">
+            			</xsd:element>
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryUnOrderInteractProductRequest"
+            	type="tns:queryUnOrderInteractProductRequest">
+            </xsd:element>
+            
+            <xsd:complexType
+            	name="queryUnOrderInteractProductRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="orderProductResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="orderProductRequest"
+            	type="tns:orderProductRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="orderProductRequest">
+            	<xsd:sequence>
+            		<xsd:element name="orderProducts" type="tns:OrderProduct" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+            	</xsd:sequence>
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryOrderProductResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="productList"
+            				type="tns:Product" maxOccurs="unbounded"
+            				minOccurs="0">
+            			</xsd:element>
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryOrderProductRequest"
+            	type="tns:queryOrderProductRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryOrderProductRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryOrderInteractProductResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="productList"
+            				type="tns:Product" maxOccurs="unbounded"
+            				minOccurs="0">
+            			</xsd:element>
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryOrderInteractProductRequest"
+            	type="tns:queryOrderInteractProductRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryOrderInteractProductRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="cancelOrderProductResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="cancelOrderProductRequest"
+            	type="tns:cancelOrderProductRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="cancelOrderProductRequest">
+            	<xsd:sequence>
+            		<xsd:element name="productIds" type="xsd:long" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+            	</xsd:sequence>
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryUserInfoResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="name" type="xsd:string"></xsd:element>
+            			<xsd:element name="userCoding"
+            				type="xsd:string">
+            			</xsd:element>
+            			<xsd:element name="accountNo"
+            				type="xsd:string">
+            			</xsd:element>
+            			<xsd:element name="money" type="xsd:double">
+            			</xsd:element>
+            			<xsd:element name="icInfoList" type="tns:IcInfo"
+            				maxOccurs="unbounded" minOccurs="0">
+            			</xsd:element>
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryUserInfoRequest"
+            	type="tns:queryUserInfoRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryUserInfoRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+    
+            <xsd:complexType name="IcInfo">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="label" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryBusinessLogResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="businessLogList"
+            				type="tns:BusinessLog" maxOccurs="unbounded"
+            				minOccurs="0">
+            			</xsd:element>
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryBusinessLogRequest"
+            	type="tns:queryBusinessLogRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryBusinessLogRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="startTime" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="endTime" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+    
+            <xsd:complexType name="BusinessLog">
+            	<xsd:attribute name="money" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="cause" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="operDate" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryIcCardPasswordResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryIcCardPasswordRequest"
+            	type="tns:queryIcCardPasswordRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryIcCardPasswordRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="updateIcCardPasswordResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="updateIcCardPasswordRequest"
+            	type="tns:updateIcCardPasswordRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="updateIcCardPasswordRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="oldPassword" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="newPassword" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+            <xsd:element name="queryUserAccountBalanceResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryUserAccountBalanceRequest"
+            	type="tns:queryUserAccountBalanceRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryUserAccountBalanceRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+
+
+            </xsd:complexType>
+
+            <xsd:element name="queryUserBillInfoResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+
+            			<xsd:element name="result"
+            				type="xsd:string">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryUserBillInfoRequest"
+            	type="tns:queryUserBillInfoRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryUserBillInfoRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="startTime" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="endTime" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:complexType name="BossBill">
+            	<xsd:attribute name="feeItemName" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="commodityName" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="fee" type="xsd:double"></xsd:attribute>
+
+                <xsd:attribute name="createDate" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryUserLastConsumeMoneyResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="out" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryUserLastConsumeMoneyRequest"
+            	type="tns:queryUserLastConsumeMoneyRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryUserLastConsumeMoneyRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="startTime" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+
+            <xsd:element name="queryBillDetailInfoResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            			<xsd:element name="billDList"
+            				type="tns:BossBill" maxOccurs="unbounded" minOccurs="0">
+            			</xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="queryBillDetailInfoRequest"
+            	type="tns:queryBillDetailInfoRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="queryBillDetailInfoRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="startTime" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="endTime" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+    
+            <xsd:complexType name="OrderProduct">
+            	<xsd:attribute name="productId" type="xsd:long"></xsd:attribute>
+            	<xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="orderCount" type="xsd:int"></xsd:attribute>
+            </xsd:complexType>
+            <xsd:element name="checkIcCardPasswordResponse">
+            	<xsd:complexType>
+            		<xsd:sequence>
+            			<xsd:element name="result" type="xsd:string"></xsd:element>
+            		</xsd:sequence>
+            	</xsd:complexType>
+            </xsd:element>
+            <xsd:element name="checkIcCardPasswordRequest"
+            	type="tns:checkIcCardPasswordRequest">
+            </xsd:element>
+            
+            <xsd:complexType name="checkIcCardPasswordRequest">
+            	<xsd:attribute name="cardNumber" type="xsd:string"></xsd:attribute>
+            	<xsd:attribute name="password" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="queryUnOrderProductRequest">
+    <wsdl:part element="tns:queryUnOrderProductRequest" name="queryUnOrderProductRequest"/>
+  </wsdl:message>
+  <wsdl:message name="queryUnOrderProductResponse">
+    <wsdl:part element="tns:queryUnOrderProductResponse" name="queryUnOrderProductResponse"/>
+  </wsdl:message>
+  <wsdl:message name="queryUnOrderInteractProductRequest">
+  	<wsdl:part name="queryUnOrderInteractProductRequest" element="tns:queryUnOrderInteractProductRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUnOrderInteractProductResponse">
+  	<wsdl:part name="queryUnOrderInteractProductResponse" element="tns:queryUnOrderInteractProductResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderProductRequest">
+  	<wsdl:part name="orderProductRequest" element="tns:orderProductRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderProductResponse">
+  	<wsdl:part name="orderProductResponse" element="tns:orderProductResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryOrderProductRequest">
+  	<wsdl:part name="queryOrderProductRequest" element="tns:queryOrderProductRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryOrderProductResponse">
+  	<wsdl:part name="queryOrderProductResponse" element="tns:queryOrderProductResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryOrderInteractProductRequest">
+  	<wsdl:part name="queryOrderInteractProductRequest" element="tns:queryOrderInteractProductRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryOrderInteractProductResponse">
+  	<wsdl:part name="queryOrderInteractProductResponse" element="tns:queryOrderInteractProductResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderProductRequest">
+  	<wsdl:part name="cancelOrderProductRequest" element="tns:cancelOrderProductRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderProductResponse">
+  	<wsdl:part name="cancelOrderProductResponse" element="tns:cancelOrderProductResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserInfoRequest">
+  	<wsdl:part name="queryUserInfoRequest" element="tns:queryUserInfoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserInfoResponse">
+  	<wsdl:part name="queryUserInfoResponse" element="tns:queryUserInfoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryBusinessLogRequest">
+  	<wsdl:part name="queryBusinessLogRequest" element="tns:queryBusinessLogRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryBusinessLogResponse">
+  	<wsdl:part name="queryBusinessLogResponse" element="tns:queryBusinessLogResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryIcCardPasswordRequest">
+  	<wsdl:part name="queryIcCardPasswordRequest" element="tns:queryIcCardPasswordRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryIcCardPasswordResponse">
+  	<wsdl:part name="queryIcCardPasswordResponse" element="tns:queryIcCardPasswordResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateIcCardPasswordRequest">
+  	<wsdl:part name="updateIcCardPasswordRequest" element="tns:updateIcCardPasswordRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateIcCardPasswordResponse">
+  	<wsdl:part name="updateIcCardPasswordResponse" element="tns:updateIcCardPasswordResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserAccountBalanceRequest">
+  	<wsdl:part name="queryUserAccountBalanceRequest" element="tns:queryUserAccountBalanceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserAccountBalanceResponse">
+  	<wsdl:part name="queryUserAccountBalanceResponse" element="tns:queryUserAccountBalanceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserBillInfoRequest">
+  	<wsdl:part name="queryUserBillInfoRequest" element="tns:queryUserBillInfoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserBillInfoResponse">
+  	<wsdl:part name="queryUserBillInfoResponse" element="tns:queryUserBillInfoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserLastConsumeMoneyRequest">
+  	<wsdl:part name="queryUserLastConsumeMoneyRequest" element="tns:queryUserLastConsumeMoneyRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryUserLastConsumeMoneyResponse">
+  	<wsdl:part name="parameters" element="tns:queryUserLastConsumeMoneyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryBillDetailInfoRequest">
+  	<wsdl:part name="queryBillDetailInfoRequest" element="tns:queryBillDetailInfoRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryBillDetailInfoResponse">
+  	<wsdl:part name="queryBillDetailInfoResponse" element="tns:queryBillDetailInfoResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkIcCardPasswordRequest">
+  	<wsdl:part name="checkIcCardPasswordRequest" element="tns:checkIcCardPasswordRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkIcCardPasswordResponse">
+  	<wsdl:part name="checkIcCardPasswordResponse" element="tns:checkIcCardPasswordResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BossSelfServiceWsdl">
+    <wsdl:operation name="queryUnOrderProduct">
+      <wsdl:input message="tns:queryUnOrderProductRequest"/>
+      <wsdl:output message="tns:queryUnOrderProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="queryUnOrderInteractProduct">
+    	<wsdl:input message="tns:queryUnOrderInteractProductRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryUnOrderInteractProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderProduct">
+    	<wsdl:input message="tns:orderProductRequest"></wsdl:input>
+    	<wsdl:output message="tns:orderProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryOrderProduct">
+    	<wsdl:input message="tns:queryOrderProductRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryOrderProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryOrderInteractProduct">
+    	<wsdl:input message="tns:queryOrderInteractProductRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryOrderInteractProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrderProduct">
+    	<wsdl:input message="tns:cancelOrderProductRequest"></wsdl:input>
+    	<wsdl:output message="tns:cancelOrderProductResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryUserInfo">
+    	<wsdl:input message="tns:queryUserInfoRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryUserInfoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryBusinessLog">
+    	<wsdl:input message="tns:queryBusinessLogRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryBusinessLogResponse"></wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="updateIcCardPassword">
+    	<wsdl:input message="tns:updateIcCardPasswordRequest"></wsdl:input>
+    	<wsdl:output message="tns:updateIcCardPasswordResponse"></wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="queryUserBillInfo">
+    	<wsdl:input message="tns:queryUserBillInfoRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryUserBillInfoResponse"></wsdl:output>
+    </wsdl:operation>
+
+    <wsdl:operation name="queryBillDetailInfo">
+    	<wsdl:input message="tns:queryBillDetailInfoRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryBillDetailInfoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkIcCardPassword">
+    	<wsdl:input message="tns:checkIcCardPasswordRequest"></wsdl:input>
+    	<wsdl:output message="tns:checkIcCardPasswordResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BossSelfServiceWsdlSOAP"
+  	type="tns:BossSelfServiceWsdl">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="queryUnOrderProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryUnOrderProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryUnOrderInteractProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryUnOrderInteractProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="orderProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/orderProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryOrderProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryOrderProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryOrderInteractProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryOrderInteractProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="cancelOrderProduct">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/cancelOrderProduct" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryUserInfo">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryUserInfo" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryBusinessLog">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryBusinessLog" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="updateIcCardPassword">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/updateIcCardPassword" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryUserBillInfo">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryUserBillInfo" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryBillDetailInfo">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/queryBillDetailInfo" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="checkIcCardPassword">
+  		<soap:operation
+  			soapAction="http://www.example.org/BossSelfServiceWsdl/checkIcCardPassword" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BossSelfServiceWsdl">
+    <wsdl:port binding="tns:BossSelfServiceWsdlSOAP" name="BossSelfServiceWsdlSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

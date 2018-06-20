@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="woQueueManageForm" type="com.ovt.idtv.boss.web.workOrder.queueManage.command.WoQueueActionForm"></form-bean>
+		<form-bean name="workOrderForm" type="com.ovt.idtv.boss.web.workOrder.struts.form.WorkOrderForm" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="woQueueManageForm" path="/jsp/boss/workOrder/workOrderQueueManage" type="com.ovt.idtv.boss.web.workOrder.queueManage.WorkOrderQueueManageAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/workOrder/workOrderQueueManage.do?methodToCall=openQuery" />
+			<forward name="woQueueOper" path="/jsp/boss/workOrder/maintainWoQueue.do?methodToCall=openQuery" />
+		</action>
+		<action path="/jsp/boss/workOrder/maintainWoQueue" type="com.ovt.idtv.boss.web.workOrder.queueManage.MaintainWoQueueAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/workOrder/maintainWoQueue.do?methodToCall=openQuery" />
+			<forward name="woQueueManage" path="/jsp/boss/workOrder/workOrderQueueManage.do?methodToCall=openQuery" />
+		</action>
+		<action path="/jsp/boss/workOrder/addWoQueueOper" type="com.ovt.idtv.boss.web.workOrder.queueManage.AddWoQueueOperAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name ="openQuery" path="/jsp/boss/workOrder/addWoQueueOper.do?methodToCall=openQuery" />
+			<forward name ="success" path="/boss/workOrder/queueManage/success.jsp" />
+		</action>
+		<action name="workOrderForm" path="/jsp/boss/workOrder/workOrderInfo" type="com.ovt.idtv.boss.web.workOrder.struts.WorkOrderAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/workOrder/workOrderInfo.do?methodToCall=openQuery" />
+			<!-- add by jhg 2013-03-04 -->
+			<forward name="addView" path="/boss/workOrder/workOrderFlow/workOrderAddView.jsp" />
+			<forward name="modifyView" path="/boss/workOrder/workOrderFlow/workOrderModifyView.jsp" />
+			<forward name="view" path="/boss/workOrder/workOrderFlow/workOrderView.jsp" />
+			<forward name="changeGroup" path="/boss/workOrder/workOrderFlow/workOrderChangeGroup.jsp" />
+			<forward name="errorChangeGroup" path="/boss/workOrder/workOrderFlow/workOrderChangeGroup.jsp" />
+			<forward name="errorView" path="/boss/workOrder/workOrderFlow/workOrderView.jsp" />
+			<forward name="errorModify" path="/boss/workOrder/workOrderFlow/workOrderModifyView.jsp" />
+			<forward name="errorAdd" path="/boss/workOrder/workOrderFlow/workOrderAddView.jsp" />
+		</action>
+		<action path="/jsp/boss/workOrder/workOrderInfo/print/*" type="com.ovt.idtv.boss.web.workOrder.struts.print.{1}"  scope="request" parameter="{1}">
+		</action>
+	</action-mappings>
+</struts-config>	

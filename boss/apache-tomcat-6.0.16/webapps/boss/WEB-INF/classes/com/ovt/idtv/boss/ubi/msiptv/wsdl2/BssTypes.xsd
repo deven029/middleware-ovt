@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IPTV Version='2.0.4005.0' -->
+<s:schema targetNamespace="http://www.microsoft.com/iptv/bss2" elementFormDefault="qualified" xmlns="http://www.microsoft.com/iptv/bss2" xmlns:tns="http://www.microsoft.com/iptv/bss2" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://microsoft.com/wsdl/types/">
+  <s:import namespace="http://microsoft.com/wsdl/types/" schemaLocation="guid.xsd" />
+	<!-- General types -->
+	<s:element name="UpgradeGroup" type="UpgradeGroup" />
+	<s:complexType name="UpgradeGroup">
+		<s:complexContent mixed="false">
+			<s:extension base="tns:Group">
+				<s:attribute name="Subtype" use="required"  type="s:unsignedInt" />
+				<s:attribute name="Version" use="optional"  type="s:string" />
+			</s:extension>
+		</s:complexContent>
+	</s:complexType>
+	<s:complexType name="ArrayOfUpgradeGroup">
+		<s:sequence>
+			<s:element name="UpgradeGroup" type="tns:UpgradeGroup" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	<s:element name="VersionStack" type="VersionStack" />
+	<s:complexType name="VersionStack">
+		<s:sequence>
+			<s:element name="Branch" minOccurs="1" maxOccurs="1" type="tns:UpgradeGroup" />
+			<s:element name="ServiceGroup" minOccurs="1" maxOccurs="1" type="tns:UpgradeGroup" />
+			<s:element name="AccountGroup" minOccurs="1" maxOccurs="1" type="tns:UpgradeGroup" />
+			<s:element name="DeviceGroup" minOccurs="1" maxOccurs="1" type="tns:UpgradeGroup" />
+			<s:element name="DeviceVersion" minOccurs="0" maxOccurs="1" type="s:string" />
+		</s:sequence>
+	</s:complexType>
+	<s:element name="UserstoreNameValue"/>
+	<s:complexType name="UserstoreNameValue">
+		<s:attribute name="Key" type="s:string"/>
+		<s:attribute name="Value" type="s:string"/>
+	</s:complexType>
+	<s:complexType name="ArrayOfUserstoreNameValue">
+		<s:sequence>
+			<s:element name="UserstoreNameValue" type="tns:UserstoreNameValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+		</s:sequence>
+	</s:complexType>
+	
+	<s:element name="streamcount" type="streamcount" />
+  <s:simpleType name="streamcount">
+    <s:restriction base="s:unsignedInt">
+      <s:maxInclusive value="10"/>
+      <s:minInclusive value="0"/>
+    </s:restriction>
+  </s:simpleType>
+  <s:complexType name="ArrayOfExternalIds">
+    <s:sequence>
+      <s:element minOccurs="1" maxOccurs="unbounded" name="string" nillable="false" type="s:string" />
+    </s:sequence>
+  </s:complexType>
+  <!-- Principal Type-->
+  <s:element name="Principal" type="Principal" />
+  <s:complexType name="Principal" abstract="true">
+    <s:attribute name="ExternalID" type="s:string" use="required" />
+    <s:attribute name="Status" type="tns:PrincipalStatus" use="optional" />
+  </s:complexType>
+  <s:element name="PrincipalStatus" type="PrincipalStatus" />
+  <s:simpleType name="PrincipalStatus">
+    <s:restriction base="s:string">
+      <s:enumeration value="enabled" />
+      <s:enumeration value="disabled" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="PrincipalType" type="PrincipalType" />
+  <s:simpleType name="PrincipalType">
+    <s:restriction base="s:string">
+      <s:enumeration value="Account" />
+      <s:enumeration value="Device" />
+      <s:enumeration value="Group" />
+      <s:enumeration value="User" />
+    </s:restriction>
+  </s:simpleType>
+  <!-- Group Type-->
+  <s:element name="Group" type="Group">
+  </s:element>
+  <s:complexType name="Group">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Principal">
+        <s:attribute name="Type" type="s:string" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:complexType name="ArrayOfGroup">
+    <s:sequence>
+      <s:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </s:sequence>
+  </s:complexType>
+  <s:element name="LicenseRightType" type="LicenseRightType" />
+  <s:simpleType name="LicenseRightType">
+    <s:restriction base="s:string">
+      <s:enumeration value="Debar" />
+      <s:enumeration value="Play" />
+      <s:enumeration value="Pause" />
+      <s:enumeration value="Record" />
+      <s:enumeration value="Purchase" />
+      <s:enumeration value="Browse" />
+      <s:enumeration value="Download" />
+      <s:enumeration value="PlayLocal" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="Condition" type="Condition" />
+  <s:complexType name="Condition" abstract="true">
+    <s:attribute name="Start" type="s:dateTime" use="required" />
+    <s:attribute name="End" type="s:dateTime" use="required" />
+    <s:attribute name="Type" type="tns:ConditionType" use="required" />
+  </s:complexType>
+  <s:element name="ConditionType" type="ConditionType" />
+  <s:simpleType name="ConditionType">
+    <s:restriction base="s:string">
+      <s:enumeration value="PlayCount" />
+      <s:enumeration value="TimeDuration" />
+      <s:enumeration value="TimeExpiration" />
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="PlayCount" type="PlayCount" />
+  <s:complexType name="PlayCount" mixed="false">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Condition">
+        <s:attribute name="Count" type="s:unsignedInt" use="required" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="TimeDuration" type="TimeDuration" />
+  <s:complexType name="TimeDuration" mixed="false">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Condition">
+        <s:attribute name="DurationInSecs" type="s:long" use="required" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="TimeExpiration" type="TimeExpiration" />
+  <s:complexType name="TimeExpiration" mixed="false">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:Condition">
+        <s:attribute name="Expiration" type="s:dateTime" use="required" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- Principal Identifier Type-->
+  <s:element name="PrincipalIdentifier" type="PrincipalIdentifier" />
+  <s:complexType name="PrincipalIdentifier" abstract="true">
+  </s:complexType>
+  <!-- DevicePrincipalExternalId Type -->
+  <s:element name="DevicePrincipalExternalId" type="DevicePrincipalExternalId">
+  </s:element>
+  <s:complexType name="DevicePrincipalExternalId">
+	<s:complexContent mixed="false">
+		<s:extension base="tns:PrincipalIdentifier">
+			<s:attribute name="Id" type="s:string" />
+		</s:extension>
+ 	</s:complexContent>
+  </s:complexType>
+  <!-- AccountPrincipalExternalId Type-->
+  <s:element name="AccountPrincipalExternalId" type="AccountPrincipalExternalId">
+  </s:element>
+  <s:complexType name="AccountPrincipalExternalId">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:PrincipalIdentifier">
+        <s:attribute name="Id" type="s:string" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- GroupPrincipalExternalId Type-->
+  <s:element name="GroupPrincipalExternalId" type="GroupPrincipalExternalId">
+  </s:element>
+  <s:complexType name="GroupPrincipalExternalId">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:PrincipalIdentifier">
+        <s:attribute name="Id" type="s:string" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- DeviceGuidPrincipalId Type-->
+  <s:element name="DeviceGuidPrincipalId" type="DeviceGuidPrincipalId">
+  </s:element>
+  <s:complexType name="DeviceGuidPrincipalId">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:PrincipalIdentifier">
+        <s:attribute name="Id" type="s1:guid" use="required" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- Resource Identifier Type-->
+  <s:element name="ResourceIdentifier" type="ResourceIdentifier" />
+  <s:complexType name="ResourceIdentifier" abstract="true">
+  </s:complexType>
+  <!-- ResourceExternalId Type-->
+  <s:element name="ResourceExternalId" type="ResourceIdentifier">
+  </s:element>
+  <s:complexType name="ResourceExternalId">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:ResourceIdentifier">
+        <s:attribute name="Id" type="s:string" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- A ResourceGuid Type-->
+  <s:element name="ResourceGuid" type="ResourceGuid">
+  </s:element>
+  <s:complexType name="ResourceGuid">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:ResourceIdentifier">
+        <s:attribute name="Id" type="s1:guid" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- External Identifier Type-->
+  <s:element name="ExternalIdentifier" type="ExternalIdentifier" />
+  <s:complexType name="ExternalIdentifier" abstract="true">
+  </s:complexType>
+  <!-- ExternalStringIdentifier Type-->
+  <s:element name="ExternalStringIdentifier" type="ExternalStringIdentifier">
+  </s:element>
+  <s:complexType name="ExternalStringIdentifier">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:ExternalIdentifier">
+        <s:attribute name="Id" type="s:string" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <!-- ExternalGuidIdentifier Type-->
+  <s:element name="ExternalGuidIdentifier" type="ExternalGuidIdentifier">
+  </s:element>
+  <s:complexType name="ExternalGuidIdentifier">
+    <s:complexContent mixed="false">
+      <s:extension base="tns:ExternalIdentifier">
+        <s:attribute name="Id" type="s1:guid" />
+      </s:extension>
+    </s:complexContent>
+  </s:complexType>
+  <s:element name="Grant" type="Grant" />
+  <s:complexType name="Grant">
+    <s:sequence>
+      <s:element name="Condition" type="tns:Condition" nillable="true" />
+      <s:element name="PrincipalId" type="tns:PrincipalIdentifier" nillable="false" />
+      <s:element name="ResourceId" type="tns:ResourceIdentifier" nillable="false" />
+      <s:element name="ExternalId" type="tns:ExternalIdentifier" nillable="false" />
+      <s:element name="RightMask" type="s:int" minOccurs="0" maxOccurs="1" />
+      <s:element name="GrantId" type="tns:ExternalGuidIdentifier" minOccurs="0" maxOccurs="1" />
+    </s:sequence>
+    <s:attribute name="IsPurchased" type="s:boolean" use="required" />
+    <s:attribute name="Right" type="tns:LicenseRightType" />
+  </s:complexType>
+  <s:complexType name="ArrayOfGrant">
+    <s:sequence>
+      <s:element name="Grant" type="tns:Grant" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </s:sequence>
+  </s:complexType>
+  <s:element name="GRCMembership" type="GRCMembership"/>
+  <s:complexType name="GRCMembership" mixed="false">
+	  <s:sequence>
+		  <s:element name="GroupSetId" type="s:unsignedByte" minOccurs="1" maxOccurs="1"  nillable="false" />
+		  <s:element name="GroupId" type="s:unsignedByte" minOccurs="1" maxOccurs="1"  nillable="false"  />
+	  </s:sequence>
+  </s:complexType>
+  <s:complexType name="ArrayOfGRCMembership">
+	<s:sequence>
+		<s:element minOccurs="0" maxOccurs="unbounded" name="GRCMembership" nillable="true" type="tns:GRCMembership" />
+	</s:sequence>
+   </s:complexType>
+  <s:element name="PrincipalGRCMembership" type="PrincipalGRCMembership"/>
+  <s:complexType name="PrincipalGRCMembership" mixed="false">
+	<s:sequence>
+		<s:element name="Principal" type="tns:AccountPrincipalExternalId" nillable="false" />
+		<s:element name="Membership" type="tns:ArrayOfGRCMembership" nillable="false" />
+	</s:sequence>
+  </s:complexType>
+  <s:element name="StreamManagementProfile" type="StreamManagementProfile"/>
+  <s:complexType name="StreamManagementProfile" mixed="false">
+    <s:sequence>
+      <s:element name="IPTVHDStreams" type="streamcount"  maxOccurs="1" minOccurs="1"/>
+      <s:element name="IPTVSDStreams" type="streamcount"  maxOccurs="1" minOccurs="1"/>
+      <s:element name="DTTStreams" type="streamcount"   maxOccurs="1" minOccurs="1"/>
+      <s:element name="MaxBitRate" type="s:unsignedInt"  maxOccurs="1" minOccurs="1"/>
+    </s:sequence>
+  </s:complexType>
+  <s:element name="StreamManagementProfileType" type="StreamManagementProfileType"/>
+  <s:simpleType name="StreamManagementProfileType">
+    <s:restriction base="s:string">
+      <s:enumeration value="IngressProfile"/>
+      <s:enumeration value="EgressProfile"/>
+      <s:enumeration value="WANProfile"/>
+    </s:restriction>
+  </s:simpleType>
+  <s:element name="GroupMembership" type="GroupMembership"/>
+  <s:complexType name="GroupMembership" mixed="false">
+    <s:sequence>
+      <s:element name="GroupExternalId" type="GroupPrincipalExternalId"  maxOccurs="1" minOccurs="1"/>
+    </s:sequence>
+  </s:complexType>
+</s:schema>

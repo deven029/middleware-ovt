@@ -1,0 +1,138 @@
+20101231 lyj
+1、测试打印开户信息，测试结果：
+	正常：1、开户正常	2、点击打印执行打印
+	异常： 1、用户基本信息中，用户类型无显示、证件类型显示为证件的ID(已解决)、代扣银行无显示，---应显示用户类型名称、证件类型名称、代扣银行名称
+		  2、开户打印智能卡号、机顶盒ID号显示为其ID号，---应显示其编号
+		  3、开户打印机顶盒型号、订购节目无数据显示，----应显示机顶盒型号、订购节目信息
+--------------------------------------------------------------------------------------------------------------------------
+
+20100102 lyj
+1、测试打印开户信息，测试结果：
+	正常：1、开户正常 	2、点击打印用户证、用户登记单打印程序启动	   3、打印用户证正常
+	异常： 1、打印用户登记单：用户基本信息中，用户类型显示为ID号----应显示为用户类型名称
+		  2、打印用户登记单：用户基本信息中，代扣银行显示为ID号----应显示为代扣银行名称
+		  3、打印用户登记单：受理业务中，订购多个产品只显示一个----应显示多条订购信息-----刘瑞杰(完成)
+		  4、打印用户登记单：机顶盒型号无显示-----应正常显示机顶盒型号----李东峰(完成)
+		  5、boss增加新设备正常执行：打印用户登记单时，选中新办理增机增卡业务，打印单只显示办理业务的终端名称-----应正常显示新增设备的
+		  	 智能卡号、机顶盒型号、机顶盒ID号、购机情况、订购节目等数据信息(未解决)
+-------------------------------------------------------------------------------------------------------------------------
+
+20110104 lyj
+1、测试打印开户信息，测试结果：
+	正常：1、开户正常 	2、点击打印用户证、用户登记单打印程序启动	   3、打印用户证正常
+	异常： 1、boss增加新设备提示：“通过用户id冻结用户账号金额异常”，添加设备不成功---应正常执行添加新设备（未解决）
+		  2、boss注销设备后，在打印用户登记单时，在开户数据内容中，存在已注销的设备---应不显示注销的设备信息（问题错误）
+		  3、boss注销设备，执行对同一终端进行一次机顶盒注销和一次智能卡注销， 在打印用户登记单时，在注销数据内容中，注销机顶盒的业务办理只显示终端名称，智能卡注销的业务办理无数据。刘瑞杰（已解决）
+		  4、boss移机操作，更换新地址，片区没有改变，点击“移机”，提示：“系统异常！请联系维护人员！”，后台错误信息：李东峰（已解决）
+		  java.lang.NumberFormatException: null
+		  at java.lang.Long.parseLong(Long.java:372)
+	      at java.lang.Long.<init>(Long.java:671)
+	      at com.ovt.idtv.boss.web.customer.CustomerServiceAction.ajaxChangeAddr(CustomerServiceAction.java:1272)
+	      5、boss过户操作，选中过户终端及过户给的用户，点击过户时提示：“通过用户id扣除用户账号指定金额异常”，后台错误信息：童胜杰
+	      com.ovt.idtv.boss.core.BossOperException: 通过用户id扣除用户账户指定金额异常
+		  at com.ovt.idtv.boss.core.service.user.impl.UserAccountService.deductAccountMoney(UserAccountService.java:342)
+		  at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		  at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+		  at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+		  6、boss智能卡报停操作，选中报停终端，点击“智能卡报停”按钮，提示错误：null，后台错误信息：（童胜杰）
+		  Hibernate:  select a.ID as ID46_0_, a.USER_ID as USER2_46_0_, a.EQU_ID as EQU3_46_0_, a.LABEL as LABEL46_0_, a.EQU_SLAVE_TYPE as EQU5_46_0_, a.EQU_STATUS as EQU6_46_0_, a.EQU_TYPE_ID as EQU7_46_0_, a.MODIFY_DATE as MODIFY8_46_0_, a.VERSION as VERSION46_0_,b.ID as ID26_1_, b.EQU_NO as EQU2_26_1_, b.EQU_CODE as EQU3_26_1_, b.EQU_TYPE as EQU4_26_1_, b.AREA_ID as AREA5_26_1_, b.VERSION as VERSION26_1_, b.STATUS as STATUS26_1_, b.SELF_FLAG as SELF8_26_1_, b.FIELD1 as FIELD9_26_1_, b.FIELD2 as FIELD10_26_1_, b.FIELD3 as FIELD11_26_1_, b.FIELD4 as FIELD12_26_1_, b.FIELD5 as FIELD13_26_1_, b.FIELD6 as FIELD14_26_1_, b.FIELD7 as FIELD15_26_1_, b.FIELD8 as FIELD16_26_1_, b.FIELD9 as FIELD17_26_1_, b.FIELD10 as FIELD18_26_1_, b.FIELD11 as FIELD19_26_1_, b.FIELD12 as FIELD20_26_1_, b.FIELD13 as FIELD21_26_1_, b.FIELD14 as FIELD22_26_1_, b.FIELD15 as FIELD23_26_1_, b.FIELD16 as FIELD24_26_1_, b.FIELD17 as FIELD25_26_1_, b.FIELD18 as FIELD26_26_1_, b.FIELD19 as FIELD27_26_1_, b.FIELD20 as FIELD28_26_1_, b.DESCRIPTION as DESCRIP29_26_1_, b.MENUFACTURER as MENUFAC30_26_1_, b.MODEL as MODEL26_1_, b.PRODUCT_DATE as PRODUCT32_26_1_, b.CREATE_DATE as CREATE33_26_1_, b.MODIFY_DATE as MODIFY34_26_1_, b.STORE_PLACE as STORE35_26_1_, b.LAST_IN_TIME as LAST36_26_1_, b.LAST_OUT_TIME as LAST37_26_1_, b.PRIOR_RIGHT as PRIOR38_26_1_ from BOSS_USER_EQU  a ,BOSS_EQU_INFO b where 1=1   and a.EQU_ID = b.id  and a.USER_ID =?  and a.EQU_ID in (?) 
+			2011-01-04 14:15:26,162 ERROR [com.ovt.idtv.boss.web.customer.EquServiceAction:625] - 
+			com.ovt.idtv.boss.core.BossOperException
+			at com.ovt.idtv.boss.core.service.ServiceInvokeProxy$InvokeHandler.invoke(ServiceInvokeProxy.java:139)
+			at $Proxy32.suspendCharge(Unknown Source)
+			at com.ovt.idtv.boss.web.customer.EquServiceAction.ajaxCardStop(EquServiceAction.java:610)
+		  7、boss智能卡开通操作，选中智能卡开通服务的终端，点击“智能卡开通”按钮，提示：系统异常!请联系维护人员,后台错误信息：李东峰
+		  Hibernate: select count(*) from Boss_Equ_Rela e  where  1=1  and  e.equ_Id2 in ( -1,16,15 )   and   e.rela_Id = 'STB-IC_CARD'  
+			2011-01-04 14:19:35,928 ERROR [com.ovt.idtv.boss.web.customer.EquServiceAction:719] - String index out of range: -1
+			java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+			at java.lang.StringBuffer.charAt(StringBuffer.java:162)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.createBusinessLog(BusinessLogFactory.java:145)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.getBusinessLog(BusinessLogFactory.java:61)
+			at com.ovt.idtv.boss.web.customer.EquServiceAction.ajaxCardReopen(EquServiceAction.java:705)
+			at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		  8、boss智能卡注销，注销费用项目中计费单位为1.0元，数量为0个，注销完成后，打印用户登记单时，打印出用户办理注销费用为1元--应该为无业务办理费用：李东峰
+		  9、机顶盒换机、智能卡换卡时，提示错误：设备关系异常，设备关系定义中的设备类型1/2不存在！
+		  Hibernate: select bossequinf0_.ID as col_0_0_, bossequinf0_.EQU_NO as col_1_0_, bossequinf0_.EQU_TYPE as col_2_0_ from BOSS_EQU_INFO bossequinf0_ where 1=1 and (bossequinf0_.EQU_NO in (? , ?))
+			2011-01-04 16:34:30,381 ERROR [com.ovt.idtv.boss.web.customer.EquServiceAction:575] - 设备关系异常，设备关系定义中的设备类型2不存在！
+			com.ovt.idtv.boss.core.BossOperException: 设备关系异常，设备关系定义中的设备类型2不存在！
+		  10、boss中无补卡操作，
+		  11、boss中无用户信息变更操作，
+		  12、boss中无机顶盒挂失
+		  13、boss中智能卡挂失提示null
+		===========================================================
+20110104 问题解决情况总结：
+	已解决： 1、打印用户登记单之用户基本信息：用户基本信息中，用户类型显示为ID号----应显示为用户类型名称---李东峰（完成）
+ 			2、打印用户登记单之用户基本信息：用户基本信息中，代扣银行显示为ID号----应显示为代扣银行名称---李东峰（完成）
+ 			3、打印用户登记单之开户业务：受理业务中，订购多个产品只显示一个----应显示多条订购信息---刘瑞杰(完成)
+ 			4、打印用户登记单之开户业务：机顶盒型号无显示-----应正常显示机顶盒型号----李东峰(完成)
+ 			5、打印用户登记表之移机业务：boss移机操作提示错误，过户成功后打印移机为过户---李东峰（完成）
+ 			6、打印用户登记单之注销业务：boss注销终端时提示错误，打印时获取不到注销用户信息---刘瑞杰（完成）
+ 			
+ 	未解决： 1、打印用户登记单之过户业务：boss过户操作时，提示错误：用户ID扣除用户账户指定金额异常
+ 			2、打印用户登记表之报停业务：boss智能卡报停操作，选中报停终端，点击“智能卡报停”按钮，提示错误：null
+  			3、打印用户登记单之增加设备业务：boss增加新设备提示：“通过用户id冻结用户账号金额异常”，添加设备不成功---应正常执行添加新设备（未解决）
+  			4、打印用户登记单之开通业务：boss智能卡开通操作，选中智能卡开通服务的终端，点击“智能卡开通”按钮，提示：系统异常!请联系维护人员,后台错误信息：李东峰
+  			5、打印用户登记单之增值服务变更业务：boss订购或退订操作时，错误提示null
+  			6、打印用户登记单之挂失业务：boss中智能卡挂失提示null，boss中无机顶盒挂失功能
+  			7、打印用户登记单之补卡业务：boss中无补卡功能
+  			8、打印用户登记单之用户信息变更业务：boss用户信息变更功能正在完善
+ --------------------------------------------------------------------------------------------------------------
+ 
+ 20110105 lyj
+ 	问题：1、boss中，过户错误提示：获取用户ID和对应设备列表失败---（完成）
+	Hibernate: select bossusereq0_.USER_ID as col_0_0_, bossusereq0_.EQU_ID as col_1_0_ from BOSS_USER_EQU bossusereq0_ where (bossusereq0_.USER_ID in (? , ?)) and bossusereq0_.EQU_TYPE_ID=?
+		2011-01-05 09:45:50,062 ERROR [org.hibernate.hql.PARSER:33] - <AST>: unexpected end of subtree
+		2011-01-05 09:45:50,078 ERROR [com.ovt.idtv.boss.core.service.resource.impl.EquService:428] - 
+		org.hibernate.hql.ast.QuerySyntaxException: unexpected end of subtree [from com.ovt.idtv.boss.web.db.BossEquInfo e where  1=1  and  id in () ]
+		at org.hibernate.hql.ast.QuerySyntaxException.convert(QuerySyntaxException.java:31)
+		at org.hibernate.hql.ast.QuerySyntaxException.convert(QuerySyntaxException.java:24)
+		at org.hibernate.hql.ast.ErrorCounter.throwQueryException(ErrorCounter.java:59)
+		 2、boss中，无机顶盒报停，智能卡报停错误提示：系统异常！请联系维护人员，后台错误：---（完成）
+		 011-01-05 09:56:51,750 ERROR [com.ovt.idtv.boss.web.customer.EquServiceAction:682] - String index out of range: -1
+			java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+			at java.lang.StringBuffer.charAt(StringBuffer.java:162)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.createBusinessLog(BusinessLogFactory.java:148)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.getBusinessLog(BusinessLogFactory.java:61)
+		3、boss中，增加设备，错误提示：系统异常！请联系维护人员。后台错误：---（完成）
+		2011-01-05 09:58:30,265 ERROR [com.ovt.idtv.boss.web.customer.EquServiceAction:210] - String index out of range: -1
+			java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+			at java.lang.StringBuffer.charAt(StringBuffer.java:162)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.createBusinessLog(BusinessLogFactory.java:148)
+			at com.ovt.idtv.boss.web.customer.data.BusinessLogFactory.getBusinessLog(BusinessLogFactory.java:61)
+		4、片区中上级片区的依赖---（完成）
+		5、boss操作增机/增卡操作正常，且显示营业日志，打印时，增加设备的智能卡号、机顶盒ID号、订购节目、购机情况信息不存在---刘瑞杰（完成）
+		6、boss操作增值服务变更操作正常，且显示营业日志，打印时只显示对应的终端名称，不显示智能卡号、增值服务变更信息---刘瑞杰（完成订购）
+		7、boss操作过户操作正常，且显示营业日志，打印时只显示对应的终端名称和机顶盒型号，不显示智能卡号、机顶盒ID号---刘瑞杰（完成）
+ 		8、boss操作报停操作正常，且显示营业日志，打印时只显示对应的终端名称和机顶盒型号，不显示智能卡号、机顶盒ID号---刘瑞杰（完成）
+ 		9、boss操作挂失操作正常，且显示营业日志，打印时只显示对应的终端名称和机顶盒型号，不显示智能卡号、机顶盒ID号---刘瑞杰（完成）
+		10、boss操作开通操作正常，且显示营业日志，打印时只显示对应的终端名称，不显示智能卡号---刘瑞杰（完成）
+-----------------------------------------------------------------------------------------------------------------------------
+
+20100106 lyj 问题解决情况总结
+	已解决： 1、打印用户登记单之用户基本信息：用户基本信息中，用户类型显示为ID号----应显示为用户类型名称---李东峰（完成）
+ 			2、打印用户登记单之用户基本信息：用户基本信息中，代扣银行显示为ID号----应显示为代扣银行名称---李东峰（完成）
+ 			3、打印用户登记单之开户业务：受理业务中，订购多个产品只显示一个----应显示多条订购信息---刘瑞杰(完成)
+ 			4、打印用户登记单之开户业务：机顶盒型号无显示-----应正常显示机顶盒型号----李东峰(完成)
+ 			5、打印用户登记表之移机业务：boss移机操作提示错误，过户成功后打印移机为过户---李东峰（完成）
+ 			6、打印用户登记单之注销业务：boss注销终端时提示错误，打印时获取不到注销用户信息---刘瑞杰（完成）
+		    7、打印用户登记单之过户业务：boss过户操作时，提示错误：用户ID扣除用户账户指定金额异常---刘瑞杰（完成）
+ 			8、打印用户登记表之报停业务：boss智能卡报停操作，选中报停终端，点击“智能卡报停”按钮，提示错误：null---刘瑞杰（完成）
+  			9、打印用户登记单之增加设备业务：boss增加新设备提示：“通过用户id冻结用户账号金额异常”，添加设备不成功------刘瑞杰（完成）
+  			10、打印用户登记单之开通业务：boss智能卡开通操作，选中智能卡开通服务的终端，点击“智能卡开通”按钮，提示：系统异常!请联系维护人员,后台错误信息：---刘瑞杰（完成）
+  			11、打印用户登记单之增值服务变更业务：boss订购或退订操作时，错误提示null---刘瑞杰（完成）
+  			12、打印用户登记单之挂失业务：boss中智能卡挂失提示null，boss中无机顶盒挂失功能---刘瑞杰（完成）
+  			13、打印用户登记单之补卡业务：boss中无补卡功能
+  			14、打印用户登记单之用户信息变更业务：boss用户信息变更功能正在完善---刘瑞杰（完成）
+-----------------------------------------------------------------------------------------------------------------------------
+
+20110114 lyj 修改打印单
+	问题1、修改发票中用户地址长度问题 - 修改为可以容下26个汉字--完成
+		2、修改用户登记单中用户地址过长时换行--（完成）
+		3、修改用户登记单中过户，如果用户的过户了全部设备，则选中注销用户账户图标--需要业务处理提供标识（暂不处理）
+		4、修改用户登记单中机顶盒ID号名称改为机顶盒号---（完成）
+		5、修改用户证附单中设备名称打印时据中对齐--（完成）
+		6、打印用户登记单时，默认选中当天办理的业务
+		7、营业日志按照时间排序，最后办理的应该在最前面
+		8、发票信息按照时间排序，最后办理的应该在最前面
+	  			
+  

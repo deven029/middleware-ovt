@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="gbk"?>
+
+<plugin>
+	<id>OvtBossCoreResourceWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>ResourceWebPlugin</name>
+	<description>资源管理插件模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.ResourceWebPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>6</priority>
+	
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>更改设备信息表用户设备表设备编号长度</description>
+			<publishDate>2012-02-21</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.5</versionNo>
+			<description>更改设备信息将设备号对应的索引改为唯一索引</description>
+			<publishDate>2012-02-28</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.6</versionNo>
+			<description>更改设备信息将设备号对应的索引改为普通索引</description>
+			<publishDate>2012-05-09</publishDate>
+			<seqNo>3</seqNo>
+		</version>
+	</versions>
+
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>
+	<rights></rights>
+	<func_tree>	
+		<func code="004" name="资源管理" srcFile=""  descInfo="资源管理" status="1" alias="" seqNo="3" funcType="0">
+			<func code="004001" name="库存管理" srcFile="/bossCoreResource/store.do?methodToCall=openQuery"  descInfo="库存管理" status="1" alias="pm.resource.store.openQuery" seqNo="0" funcType="1" developFlag="">
+					<func code="004001001" name="增加" srcFile=""  descInfo="增加" status="1" alias="pm.resource.store.addView" seqNo="" funcType="2" developFlag="">
+						<func code="004001001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.store.addView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="004001002" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.resource.store.modifyView" seqNo="" funcType="2" developFlag="">
+						<func code="004001002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.store.modifyView.submit" seqNo="" funcType="2" developFlag=""/>
+					</func>
+					<func code="004001003" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.resource.store.delete" seqNo="" funcType="2" developFlag=""/>
+					<func code="004001004" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.resource.store.view" seqNo="" funcType="2" developFlag=""/>
+				</func>
+			<func code="004002" name="IC卡管理" srcFile="/bossCoreResource/iccard.do?methodToCall=openQuery"  descInfo="IC卡管理" status="1" alias="pm.resource.iccard.openQuery" seqNo="1" funcType="1">
+				<func code="004002001" name="入库" srcFile=""  descInfo="IC卡入库" status="1" alias="pm.resource.iccard.addView" seqNo="1" funcType="2">
+					<func code="004002001001" name="提交" srcFile=""  descInfo="IC卡入库提交" status="1" alias="pm.resource.iccard.addView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004002002" name="回收" srcFile=""  descInfo="IC卡回收" status="1" alias="pm.resource.iccard.recover" seqNo="9" funcType="2"/>
+				<func code="004002003" name="批量入库" srcFile=""  descInfo="IC卡批量入库" status="1" alias="pm.resource.iccard.batchAdd" seqNo="2" funcType="2">
+					<func code="004002003001" name="批量提交" srcFile=""  descInfo="IC卡批量入库提交" status="1" alias="pm.resource.iccard.batchAdd.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004002015" name="号段批量入库" srcFile=""  descInfo="号段批量入库" status="1" alias="pm.resource.iccard.batchNoAdd" seqNo="16" funcType="2" >
+					<func code="004002015001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.iccard.batchNoAdd.submit" seqNo="1" funcType="1" />
+				</func>
+				<func code="004002004" name="预绑定" srcFile=""  descInfo="机卡预绑定" status="1" alias="pm.resource.iccard.preBind" seqNo="3" funcType="2">
+					<func code="004002004001" name="提交" srcFile=""  descInfo="机卡预绑定提交" status="1" alias="pm.resource.iccard.preBind.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004002009" name="预授权" srcFile=""  descInfo="IC卡预授权" status="1" alias="pm.resource.iccard.preRights" seqNo="4" funcType="2">
+				</func>
+				<func code="004002010" name="取消授权" srcFile=""  descInfo="IC卡取消授权" status="1" alias="pm.resource.iccard.cancelPreRights" seqNo="4" funcType="2">
+				</func>
+				<func code="004002005" name="调拨" srcFile=""  descInfo="IC卡调拨" status="1" alias="pm.resource.iccard.allotView" seqNo="5" funcType="2">
+					<func code="004002005001" name="提交" srcFile=""  descInfo="IC卡调拨提交" status="1" alias="pm.resource.iccard.allotView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004002006" name="修改" srcFile=""  descInfo="IC卡修改" status="1" alias="pm.resource.iccard.modifyView" seqNo="6" funcType="2">
+					<func code="004002006001" name="修改提交" srcFile=""  descInfo="IC卡修改提交" status="1" alias="pm.resource.iccard.modifyView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004002007" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.resource.iccard.view" seqNo="7" funcType="2" developFlag="" />
+				<func code="004002008" name="删除" srcFile=""  descInfo="IC卡删除" status="1" alias="pm.resource.iccard.delete" seqNo="8" funcType="2"/>
+				<func code="004002011" name="修改密码" srcFile=""  descInfo="IC卡密码修改" status="1" alias="pm.resource.iccard.modifyPwdView" seqNo="9" funcType="2"/>
+				<func code="004002012" name="重置密码" srcFile=""  descInfo="重置密码" status="1" alias="pm.resource.iccard.iccardPwdReset" seqNo="10" funcType="2"/>
+<!-- 			<func code="004002013" name="合并IC卡授权" srcFile=""  descInfo="合并IC卡授权" status="1" alias="pm.resource.iccard.mergeIcRight" seqNo="10" funcType="2"/> -->	
+				<func code="004002014" name="批量刷新授权" srcFile=""  descInfo="批量刷新授权" status="1" alias="pm.resource.iccard.updateIcRights" seqNo="2" funcType="2">
+					<func code="004002014001" name="批量刷新授权提交" srcFile=""  descInfo="批量刷新授权提交" status="1" alias="pm.resource.iccard.updateIcRights.submit" seqNo="1" funcType="1"/>
+				</func>
+			</func>
+			<!-- 宽带帐号管理 start -->
+			<func code="004008" name="宽带帐号管理" srcFile="/bossCoreResource/bandWidth.do?methodToCall=openQuery"  descInfo="宽带帐号管理" status="1" alias="pm.resource.bandwidth.openQuery" seqNo="1" funcType="1">
+				<func code="004008001" name="入库" srcFile=""  descInfo="宽带帐号入库" status="1" alias="pm.resource.bandwidth.addView" seqNo="1" funcType="2">
+					<func code="004008001001" name="提交" srcFile=""  descInfo="宽带帐号入库提交" status="1" alias="pm.resource.bandwidth.addView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004008015" name="号段批量入库" srcFile=""  descInfo="号段批量入库" status="1" alias="pm.resource.bandwidth.batchNoAdd" seqNo="16" funcType="2" >
+					<func code="004008015001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.bandwidth.batchNoAdd.submit" seqNo="1" funcType="1" />
+				</func>
+				<func code="004008003" name="批量入库" srcFile=""  descInfo="宽带帐号批量入库" status="1" alias="pm.resource.bandwidth.batchAdd" seqNo="2" funcType="2">
+					<func code="004008003001" name="批量提交" srcFile=""  descInfo="宽带帐号入库提交" status="1" alias="pm.resource.bandwidth.batchAdd.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004008008" name="删除" srcFile=""  descInfo="宽带帐号删除" status="1" alias="pm.resource.bandwidth.delete" seqNo="8" funcType="2"/>
+			</func>
+			<!-- 宽带帐号管理 end -->
+			
+			<func code="004003" name="机顶盒管理" srcFile="/bossCoreResource/stb.do?methodToCall=openQuery"  descInfo="机顶盒管理" status="1" alias="pm.resource.stb.openQuery" seqNo="2" funcType="1">
+				<func code="004003001" name="入库" srcFile=""  descInfo="stb入库" status="1" alias="pm.resource.stb.addView" seqNo="1" funcType="2">
+					<func code="004003001001" name="提交" srcFile=""  descInfo="机顶盒入库提交" status="1" alias="pm.resource.stb.addView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004003002" name="回收" srcFile=""  descInfo="stb回收" status="1" alias="pm.resource.stb.recover" seqNo="9" funcType="2"/>
+				<func code="004003003" name="批量入库" srcFile=""  descInfo="stb批量入库" status="1" alias="pm.resource.stb.batchAdd" seqNo="2" funcType="2">
+					<func code="004003003001" name="批量提交" srcFile=""  descInfo="stb批量入库提交" status="1" alias="pm.resource.stb.batchAdd.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004003004" name="预绑定" srcFile=""  descInfo="机卡预绑定" status="1" alias="pm.resource.stb.preBind" seqNo="3" funcType="2">
+					<func code="004003004001" name="提交" srcFile=""  descInfo="机卡预绑定提交" status="1" alias="pm.resource.stb.preBind.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004003009" name="预授权" srcFile=""  descInfo="IC卡预授权" status="1" alias="pm.resource.stb.preRights" seqNo="4" funcType="2">
+				</func>
+				<func code="004003010" name="取消授权" srcFile=""  descInfo="IC卡取消授权" status="1" alias="pm.resource.stb.cancelPreRights" seqNo="4" funcType="2">
+				</func>
+				<func code="004003005" name="调拨" srcFile=""  descInfo="机顶盒调拨" status="1" alias="pm.resource.stb.allotView" seqNo="5" funcType="2">
+					<func code="004003005001" name="提交" srcFile=""  descInfo="机顶盒调拨提交" status="1" alias="pm.resource.stb.allotView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004003006" name="修改" srcFile=""  descInfo="机顶盒修改" status="1" alias="pm.resource.stb.modifyView" seqNo="6" funcType="2">
+					<func code="004003006001" name="修改提交" srcFile=""  descInfo="机顶盒修改提交" status="1" alias="pm.resource.stb.modifyView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004003007" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.resource.stb.view" seqNo="7" funcType="2" developFlag="" />
+				<func code="004003008" name="删除" srcFile=""  descInfo="机顶盒删除" status="1" alias="pm.resource.stb.delete" seqNo="8" funcType="2"/>
+				<!-- 机顶盒号按EXCEL文件批量导入2012-2-27 yzy -->
+				<func code="004003011" name="按文件批量入库" srcFile=""  descInfo="stb按文件批量入库" status="1" alias="pm.resource.stb.batchStbFileAdd" seqNo="11" funcType="2">
+					<func code="004003011001" name="按文件批量提交" srcFile=""  descInfo="stb按文件批量入库提交" status="1" alias="pm.resource.stb.batchStbFileAdd.submit" seqNo="1" funcType="1"/>
+				</func>
+			</func>
+			
+			<func code="004005" name="其它资源管理" srcFile=""  descInfo="其它资源管理" status="1" alias="pm.resource.other.select" seqNo="5" funcType="0" developFlag="" >
+				<func code="004005001" name="入库" srcFile=""  descInfo="入库" status="1" alias="pm.resource.other.addView" seqNo="1" funcType="2" developFlag="" >
+					<func code="004005001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.other.addView.submit" seqNo="0" funcType="2" developFlag="" />
+				</func>
+				<func code="004005002" name="批量入库" srcFile=""  descInfo="批量入库" status="1" alias="pm.resource.other.batchAdd" seqNo="2" funcType="2" developFlag="" >
+					<func code="004005002001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.other.batchAdd.submit" seqNo="0" funcType="2" developFlag="" />
+				</func>
+				<func code="004005003" name="调拨" srcFile=""  descInfo="机顶盒调拨" status="1" alias="pm.resource.other.allotView" seqNo="3" funcType="2">
+					<func code="004005003001" name="提交" srcFile=""  descInfo="机顶盒调拨提交" status="1" alias="pm.resource.other.allotView.submit" seqNo="1" funcType="1"/>
+				</func>
+				<func code="004005004" name="修改" srcFile=""  descInfo="修改" status="1" alias="pm.resource.other.modifyView" seqNo="4" funcType="2" developFlag="" >
+					<func code="004005004001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.other.modifyView.submit" seqNo="0" funcType="2" developFlag="" />
+				</func>
+				<func code="004005005" name="查看" srcFile=""  descInfo="查看" status="1" alias="pm.resource.other.view" seqNo="5" funcType="2" developFlag="" />
+				<func code="004005006" name="删除" srcFile=""  descInfo="删除" status="1" alias="pm.resource.other.delete" seqNo="6" funcType="2" developFlag="" />
+				<func code="004005007" name="查询" srcFile=""  descInfo="查询" status="1" alias="pm.resource.other.openQuery" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="004006" name="设备选择" srcFile="/bossCoreResource/iccardSelect.do?methodToCall=openQuery"  descInfo="设备选择" status="1" alias="pm.resource.iccardSelect.openQuery" seqNo="2" funcType="2">
+				<func code="004006001" name="选择" srcFile=""  descInfo="选择" status="1" alias="pm.resource.iccardSelect.select" seqNo="" funcType="2" developFlag=""/>
+				<func code="004006002" name="关闭" srcFile=""  descInfo="关闭" status="1" alias="pm.resource.iccardSelect.close" seqNo="" funcType="2" developFlag=""/>
+			</func>
+			<func code="004007" name="机卡绑定" srcFile="/bossCoreResource/stbIccardBind.do?methodToCall=openQuery"  descInfo="机卡绑定" status="1" alias="pm.resource.stbIccardBind.openQuery" seqNo="2" funcType="1">
+				<func code="004007001" name="增加绑定" srcFile=""  descInfo="增加绑定" status="1" alias="pm.resource.stbIccardBind.addView" seqNo="1" funcType="2" developFlag="" >
+					<func code="004007001001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.stbIccardBind.addView.submit" seqNo="0" funcType="2" developFlag="" />
+				</func>
+				<func code="004007002" name="取消绑定" srcFile=""  descInfo="取消绑定" status="1" alias="pm.resource.stbIccardBind.cancelPreBind" seqNo="1" funcType="2" developFlag="" />
+				<func code="004007003" name="批量预绑定" srcFile=""  descInfo="批量预绑定" status="1" alias="pm.resource.stbIccardBind.addMore" seqNo="1" funcType="2" developFlag="" >
+					<func code="004007003001" name="提交" srcFile=""  descInfo="提交" status="1" alias="pm.resource.stbIccardBind.addMore.submit" seqNo="0" funcType="2" developFlag="" />
+				</func>
+			</func>
+			
+		</func>
+	</func_tree>
+</plugin>

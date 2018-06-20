@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="RegistrationForm"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="595"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="isPrint" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="shuzidianshiMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="guohuMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="restartIcMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="addStbMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="remainingMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="totalMoney" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["0.00"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Costs" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="Account" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="TransferSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="NEW_USER_NAME" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TransferSource_LOGOUT_USER" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NEW_USERCODING" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RelocationSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="ReportedStoppingSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="OpenServiceSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="ChangesServicesSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="ReportLossSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="UpCardSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="PersonInformationChangesSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="LogoutSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="LogoutSource_LOGOUT_USER" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="LOSS_STOP" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOSS_LOGOUT" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="COST_JASPERREPORT" isForPrompting="false" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="LOGOUT_USERCODING" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="EquRecycleSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="EquChangeSource" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="OPERATOR" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGE_ON" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="IMAGE_OFF" isForPrompting="false" class="java.lang.String"/>
+
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="IDENTITY_TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="MESSAGE_ADR" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="TEL" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="USER_CODING" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="IDENTITY_CARD" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="EMAIL" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="POSTCODE" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="MOBILE" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="REGISTER_ID" class="java.lang.String">
+		<fieldDescription><![CDATA[""]]></fieldDescription>
+	</field>
+	<field name="BANK_NAME" class="java.lang.String"/>
+	<field name="BANK_ACCOUNT" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="275"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="279"
+						y="111"
+						width="52"
+						height="15"
+						key="staticText-1">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[受理日期：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="71"
+						y="144"
+						width="47"
+						height="13"
+						key="staticText-2">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[用户名称：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="71"
+						y="127"
+						width="45"
+						height="13"
+						key="staticText-3">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[客户信息：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="71"
+						y="162"
+						width="47"
+						height="13"
+						key="staticText-4">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="SansSerif" size="9"/>
+					</textElement>
+				<text><![CDATA[用户类型：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="71"
+						y="180"
+						width="45"
+						height="13"
+						key="staticText-5">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[安装地址：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="70"
+						y="215"
+						width="48"
+						height="13"
+						key="staticText-6">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[联  系  人：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="70"
+						y="197"
+						width="47"
+						height="13"
+						key="staticText-7">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[联系地址：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="255"
+						y="162"
+						width="47"
+						height="13"
+						key="staticText-8">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[证件类型：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="426"
+						y="197"
+						width="47"
+						height="13"
+						key="staticText-9">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[邮政编码：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="255"
+						y="215"
+						width="47"
+						height="13"
+						key="staticText-10">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[固定电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="426"
+						y="180"
+						width="47"
+						height="13"
+						key="staticText-11">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[电子邮箱：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="426"
+						y="215"
+						width="47"
+						height="13"
+						key="staticText-12">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[移动电话：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="426"
+						y="162"
+						width="47"
+						height="13"
+						key="staticText-13">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[证件号码：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="426"
+						y="144"
+						width="47"
+						height="13"
+						key="staticText-14">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[用户帐号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="232"
+						y="69"
+						width="187"
+						height="18"
+						key="staticText-15">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="宋体" pdfFontName="Helvetica" size="14" isBold="false"/>
+					</textElement>
+				<text><![CDATA[慈溪有线数字电视业务受理单]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="71"
+						y="262"
+						width="529"
+						height="1"
+						key="line-1">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<rectangle>
+					<reportElement
+						x="64"
+						y="124"
+						width="526"
+						height="1"
+						backcolor="#333333"
+						key="rectangle-1">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="70"
+						y="111"
+						width="47"
+						height="13"
+						key="staticText-16">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[受理编号：]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="71"
+						y="262"
+						width="354"
+						height="13"
+						key="staticText-17">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement verticalAlignment="Bottom">
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[受理信息 （以下是您的业务受理信息， 请您仔细核对， 如有问题请向服务人员咨询）： ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="331"
+						y="111"
+						width="113"
+						height="13"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{date}==null?"":$P{date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="71"
+						y="44"
+						width="50"
+						height="13"
+						key="staticText-18">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[合同编号：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="118"
+						y="144"
+						width="99"
+						height="13"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NAME}==null?"":$F{NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="118"
+						y="162"
+						width="99"
+						height="13"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TYPE}==null?"":$F{TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="180"
+						width="230"
+						height="13"
+						key="textField-5"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS}==null?"":$F{ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="118"
+						y="197"
+						width="228"
+						height="13"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MESSAGE_ADR}==null?"":$F{MESSAGE_ADR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="119"
+						y="215"
+						width="85"
+						height="13"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NAME}==null?"":$F{NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="302"
+						y="162"
+						width="108"
+						height="13"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{IDENTITY_TYPE}==null?"身份证":$F{IDENTITY_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="301"
+						y="215"
+						width="118"
+						height="13"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TEL}==null?"":$F{TEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="473"
+						y="144"
+						width="120"
+						height="13"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{USER_CODING}==null?"":$F{USER_CODING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="473"
+						y="162"
+						width="120"
+						height="13"
+						key="textField-11"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{IDENTITY_CARD}==null?"":$F{IDENTITY_CARD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="473"
+						y="180"
+						width="120"
+						height="13"
+						key="textField-12"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMAIL}==null?"":$F{EMAIL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="473"
+						y="197"
+						width="120"
+						height="13"
+						key="textField-13"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POSTCODE}==null?"":$F{POSTCODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="473"
+						y="215"
+						width="120"
+						height="13"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MOBILE}==null?"":$F{MOBILE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="116"
+						y="111"
+						width="155"
+						height="13"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{REGISTER_ID}==null?"":$F{REGISTER_ID}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="70"
+						y="231"
+						width="48"
+						height="13"
+						key="staticText-19">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[代扣 银行：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="118"
+						y="231"
+						width="85"
+						height="13"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BANK_NAME}==null?"":$F{BANK_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="255"
+						y="231"
+						width="46"
+						height="13"
+						key="staticText-20">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[银行帐号：]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="301"
+						y="231"
+						width="172"
+						height="13"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BANK_ACCOUNT}==null?"":$F{BANK_ACCOUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="450"
+						y="111"
+						width="35"
+						height="14"
+						key="staticText-21">
+							<printWhenExpression><![CDATA[new Boolean($P{isPrint}.equals( "no" ))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<text><![CDATA[操作员:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="485"
+						y="111"
+						width="84"
+						height="13"
+						key="textField-18"/>
+					<box></box>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{OPERATOR}==null?"":$P{OPERATOR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="139"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="19"
+						width="565"
+						height="10"
+						key="AccountSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{Account}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "AccountInfoReport.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="129"
+						width="565"
+						height="10"
+						key="CostsSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{Costs}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{COST_JASPERREPORT}]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="39"
+						width="565"
+						height="10"
+						key="TransferSub"
+						positionType="Float"/>
+					<subreportParameter  name="NEW_USER_NAME">
+						<subreportParameterExpression><![CDATA[$P{NEW_USER_NAME}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="NEW_USERCODING">
+						<subreportParameterExpression><![CDATA[$P{NEW_USERCODING}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="LOGOUT_USER">
+						<subreportParameterExpression><![CDATA[$P{TransferSource_LOGOUT_USER}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_ON">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_ON}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_OFF">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_OFF}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{TransferSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "guohu.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="29"
+						width="565"
+						height="10"
+						key="RelocationSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{RelocationSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "yiji.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="49"
+						width="565"
+						height="10"
+						key="ReportedStoppingSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{ReportedStoppingSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "baoting.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="59"
+						width="565"
+						height="10"
+						key="OpenServiceSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{OpenServiceSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "kaitong.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="69"
+						width="565"
+						height="10"
+						key="ChangesServicesSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{ChangesServicesSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "fuwubiangeng.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="79"
+						width="565"
+						height="10"
+						key="ReportLossSub"
+						positionType="Float"/>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="STOP">
+						<subreportParameterExpression><![CDATA[$P{LOSS_STOP}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="LOGOUT">
+						<subreportParameterExpression><![CDATA[$P{LOSS_LOGOUT}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_ON">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_ON}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_OFF">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_OFF}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{ReportLossSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "guashi.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="89"
+						width="565"
+						height="10"
+						key="PersonInformationChangesSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{PersonInformationChangesSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "xinxibiangeng.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="99"
+						width="565"
+						height="10"
+						key="LogoutSub"
+						positionType="Float"/>
+					<subreportParameter  name="SUBREPORT_DIR">
+						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="LOGOUT_USER">
+						<subreportParameterExpression><![CDATA[$P{LogoutSource_LOGOUT_USER}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="USERCODING">
+						<subreportParameterExpression><![CDATA[$P{LOGOUT_USERCODING}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_ON">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_ON}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter  name="IMAGE_OFF">
+						<subreportParameterExpression><![CDATA[$P{IMAGE_OFF}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[$P{LogoutSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "zhuxiao.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="119"
+						width="565"
+						height="10"
+						key="EquRecycleSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{EquRecycleSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "huishou.jasper"]]></subreportExpression>
+				</subreport>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="21"
+						y="109"
+						width="565"
+						height="10"
+						key="EquChangeSub"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{EquChangeSource}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "huanjika.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="138"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

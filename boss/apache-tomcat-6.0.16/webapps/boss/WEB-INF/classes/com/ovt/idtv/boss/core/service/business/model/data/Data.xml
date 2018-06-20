@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+使用说明： 
+1.所有数据格式均包含数据信息，用户基本信息，业务信息，费用信息，其他信息，各部分单独说明。
+2.不同的营业类别使用不同的标签进行封装。
+3.除了元数据信息，其他均为可直接显示的文本信息，各种参数已经还原为名称，不需要单独查询。
+4.为了以后扩展，数据尽量包含更多信息，解析时，只解析使用的信息即可，有些暂时未使用的信息，并未添加数据。
+
+版本记录
+20101208 lidf v1.0 原始版本
+20101210 lidf v1.1 去掉mtadata标签中的id标记，使用tranNo代替主键
+20101210 lidf v1.2 修改标记过户时， oldInfo标签内容为原用户账号:原用户姓名 newInfo标签内容为新用户账户:新用户名，
+20110321 lidf v1.3 增加收费项的类别
+-->
+<description><!-- 此行标签无用，只是为了解决MyEclipse报错问题，不属于数据格式一部分，使用时应去掉 -->
+<!-- 整体数据格式 -->
+<data>
+	<metadata>
+		<!-- 封装数据元信息 -->
+	</metadata>
+	<user>
+		<!-- 封装用户基本信息 -->		
+	</user>
+	<business>
+		<!-- 封装业务信息 -->
+	</business>
+	<fee>
+		<!-- 封装费用信息 -->
+	</fee>
+	<information>
+		<!-- 封装数据的其他信息 -->
+	</information>
+</data>
+
+<!-- 元数据封装 -->
+<metadata>
+	<!--<id> 数据库id ，去掉id，在保存营业日志时，为获取id</id>-->
+	<tranNo><!-- 业务流水号 --></tranNo>
+	<userId><!-- 用户id --></userId>
+	<storeId><!-- 营业点id --></storeId>
+	<bussType><!-- 营业类别 --></bussType>
+	<loginNo><!-- 操作员信息 --></loginNo>
+	<tranTime><!-- 业务时间 --></tranTime>
+	<tranContent><!-- 业务内容 --></tranContent>
+	<userAgentId><!-- 代办人id --></userAgentId>
+</metadata>
+
+<!-- 用户信息封装 -->
+<user>
+	<name><!-- 用户名称 --></name>
+	<userCoding><!-- 用户账号 --></userCoding>
+	<status><!-- 用户状态 --></status>
+	<type><!-- 用户类型 --></type>
+	<area><!-- 用户所属片区 --></area>
+	<address><!-- 安装地址 --></address>
+	<tel><!--  固定电话 --></tel>
+	<mobile><!-- 移动电话 --></mobile>
+	<email><!-- 电子邮件 --></email>
+	<identityType><!-- 证件类型 --></identityType>
+	<identityCard><!-- 证件号码 --></identityCard>
+	<ticketId><!-- 合同编号 --></ticketId>
+	<messageAdr><!-- 联系地址 --></messageAdr>
+	<messagePostcode><!-- 联系地址邮编 --></messagePostcode>
+	<gender><!-- 用户性别 --></gender>
+	<bankInfo><!-- 银行账号 --></bankInfo>
+	<corpId><!-- 所属集团Id --></corpId>
+	<contact><!-- 联系人姓名 --></contact>
+	<relateBank><!-- 代扣银行 --></relateBank>
+</user>
+
+<!-- 业务信息封装-开户 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+		<getType><!-- 机顶盒来源，即购机情况 --></getType>
+		<product><!-- 订购产品，即订购节目 --></product>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-过户 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<change>
+		<oldInfo><!-- 原用户账号:原用户姓名 --></oldInfo>
+		<newInfo><!-- 新用户账号:新用户姓名 --></newInfo>
+	</change>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-移机 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<change>
+		<!-- 变更的信息，包含一个或多个节点 -->
+		<oldInfo><!-- 原安装地址 --></oldInfo>
+		<newInfo><!-- 新安装地址 --></newInfo>
+	</change>
+</business>
+
+<!-- 业务信息封装-报停 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-开通 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-增值服务变更 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+		<productChange><!-- 增值服务变更 --></productChange>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-挂失 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-补卡 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+<!-- 业务信息封装-信息变更 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<change>
+		<!-- 变更的信息，包含一个或多个节点 -->
+		<oldInfo><!-- 原信息 --></oldInfo>
+		<newInfo><!-- 新信息 --></newInfo>
+	</change>
+</business>
+
+
+<!-- 业务信息封装-注销 -->
+<business>
+	<name><!-- 业务名称，即营业类别对应的名称 --></name>
+	<equipment>
+		<!-- 设备信息，此处为终端信息，包含一个或多个节点 -->
+		<name><!-- 终端名称，添加类似，主终端，第一副终端等内容 --></name>
+		<cardNo><!-- 智能卡号 --></cardNo>
+		<stbType><!-- 机顶盒型号 --></stbType>
+		<stbNo><!-- 机顶盒号，即机顶盒ID号 --></stbNo>
+	</equipment>
+</business>
+
+
+<!-- 费用信息封装 -->
+<fee>
+	<item>
+		<!-- 费用项，包含一个或多个节点 -->
+		<id><!-- 费用项ID --></id>
+		<name><!-- 费用名称 --></name>
+		<cost><!-- 费用 --></cost>
+		<type><!-- 类别 --></type>
+	</item>
+</fee>
+
+<!-- 其他信息封装 -->
+<information>
+	<!-- 暂时无信息 -->
+</information>
+</description><!-- 此行标签无用，只是为了解决MyEclipse报错问题，不属于数据格式一部分，使用时应去掉-->

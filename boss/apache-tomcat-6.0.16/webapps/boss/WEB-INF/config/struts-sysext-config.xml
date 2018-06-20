@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="areaInfoForm" type="com.ovt.idtv.boss.web.sysext.areaInfo.struts.AreaInfoForm" />
+		<form-bean name="busiDepForm" type="com.ovt.idtv.boss.web.sysext.busiDep.struts.BusiDepForm" />
+		<form-bean name="feeItemsForm" type="com.ovt.idtv.boss.web.sysext.feeItems.struts.FeeItemsForm" />
+		<form-bean name="equFeeItemForm" type="com.ovt.idtv.boss.web.sysext.equFeeItem.struts.EquFeeItemForm" />
+		<form-bean name="thirdPartySysForm" type="com.ovt.idtv.boss.web.sysext.thirdPartSys.struts.ThirdPartySysForm" />
+		<form-bean name="thirdPartySysPowerForm" type="com.ovt.idtv.boss.web.sysext.thirdPartSys.struts.ThirdPartySysPowerForm" />
+		<form-bean name="businessTypeForm" type="com.ovt.idtv.boss.web.sysext.businessType.struts.BusinessTypeActionForm" />
+		<form-bean name="businessTypeFeeForm" type="com.ovt.idtv.boss.web.sysext.businessTypeFee.struts.BusinessTypeFeeForm" />
+		<form-bean name="payOrganForm" type="com.ovt.idtv.boss.web.sysext.organOper.struts.PayOrganActionForm" />
+		<form-bean name="chargeOrderForm" type="com.ovt.idtv.boss.web.sysext.chargeOrder.model.ChargeOrderParamModel" />
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<action name="areaInfoForm" path="/jsp/boss/sysext/areaInfo" type="com.ovt.idtv.boss.web.sysext.areaInfo.struts.AreaInfoAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/sysext/areaInfo.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/jsp/boss/sysext/areaInfo.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+			<forward name="areaInfo.submit.success" path="/jsp/boss/sysext/areaInfo.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+		</action>
+		<action name="busiDepForm" path="/jsp/boss/sysext/busiDep" type="com.ovt.idtv.boss.web.sysext.busiDep.struts.BusiDepAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/sysext/busiDep.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/jsp/boss/sysext/busiDep.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+			<forward name="busiDep.submit.success" path="/jsp/boss/sysext/busiDep.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+			<forward name="busiDepOper" path="/jsp/boss/sysext/relOperator.do?methodToCall=openQuery"/>
+		</action>
+		<action path="/jsp/boss/sysext/relOperator" type="com.ovt.idtv.boss.web.sysext.busiDep.struts.RelOperatorAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/relOperator.do?methodToCall=openQuery"/>
+			<forward name="busiDep" path="/jsp/boss/sysext/busiDep.do?methodToCall=openQuery"/>
+		</action>
+		<action path="/jsp/boss/sysext/otherOperator" type="com.ovt.idtv.boss.web.sysext.busiDep.struts.OtherOperatorAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/otherOperator.do?methodToCall=openQuery"/>
+			<forward name="success" path="/boss/sysExt/busiDepOperator/success.jsp"/>
+		</action>
+		<action name="feeItemsForm" path="/jsp/boss/sysext/feeItems" type="com.ovt.idtv.boss.web.sysext.feeItems.struts.FeeItemsAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/jsp/boss/sysext/feeItems.do?methodToCall=openQuery"></forward>
+			<forward name="select.option" path="/boss/sysExt/feeItems/chooseFeeTypeOrItem.jsp"></forward>
+			<forward name="openQuery" path="/jsp/boss/sysext/feeItems.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+			<forward name="feeItems.submit.success" path="/jsp/boss/sysext/feeItems.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+		</action>
+		<action name="equFeeItemForm" path="/jsp/boss/sysext/equFeeItem" type="com.ovt.idtv.boss.web.sysext.equFeeItem.struts.EquFeeItemAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/equFeeItem.do?methodToCall=openQuery"/>
+		</action>
+		<action name="thirdPartySysForm" path="/jsp/boss/sysext/thirdPartySys" type="com.ovt.idtv.boss.web.sysext.thirdPartSys.struts.ThirdPartySysAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/thirdPartySys.do?methodToCall=openQuery"/>
+			<forward name="thirdPartySys.setPower" path="/boss/sysExt/thirdPartySys/setPower.jsp"></forward>
+		</action>
+		<action name="thirdPartySysPowerForm" path="/jsp/boss/sysext/thirdPartySysPower" type="com.ovt.idtv.boss.web.sysext.thirdPartSys.struts.ThirdPartySysPowerAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/thirdPartySysPower.do?methodToCall=openQuery"/>
+		</action>
+		<action name="businessTypeForm" path="/jsp/boss/sysext/businessType" type="com.ovt.idtv.boss.web.sysext.businessType.struts.BusinessTypeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="openQuery" path="/jsp/boss/sysext/businessType.do?methodToCall=openQuery"/>
+			<forward name="businessTypeFee" path="/jsp/boss/sysext/businessTypeFee.do?methodToCall=openQuery"/>
+		</action>
+		<action name="businessTypeFeeForm" path="/jsp/boss/sysext/businessTypeFee" type="com.ovt.idtv.boss.web.sysext.businessTypeFee.struts.BusinessTypeFeeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="businessType" path="/jsp/boss/sysext/businessType.do?methodToCall=openQuery"/>
+			<forward name="openQuery" path="/jsp/boss/sysext/businessTypeFee.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 营业单位 2012-1-10 yzy -->
+		<action name="payOrganForm" path="/jsp/boss/sysext/payOrgan" type="com.ovt.idtv.boss.web.sysext.organOper.struts.PayOrganAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="listOper" path="/jsp/boss/sysext/organOper.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 营业单位关联用户  2012-1-12 yzy -->
+		<action name="payOrganForm" path="/jsp/boss/sysext/organOper" type="com.ovt.idtv.boss.web.sysext.organOper.struts.OrganOperAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="back" path="/jsp/boss/sysext/payOrgan.do?methodToCall=openQuery"/>
+			<forward name="selectOrganOper" path="/jsp/boss/sysext/otherOrganOper.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 营业单位选择用户  2012-1-13 yzy -->
+		<action name="payOrganForm" path="/jsp/boss/sysext/otherOrganOper" type="com.ovt.idtv.boss.web.sysext.organOper.struts.OtherOrganOperAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="back" path="/jsp/boss/sysext/organOper.do?methodToCall=openQuery"/>
+		</action>
+		<!-- 充值自动订购，终端订购产品及计费策略  2013-7-8 yzy -->
+		<action name="chargeOrderForm" path="/jsp/boss/sysext/chargeOrderParam" type="com.ovt.idtv.boss.web.sysext.chargeOrder.struts.ChargeOrderParamAction" 
+			unknown="false"
+			validate="false" 
+			parameter="methodToCall">
+		</action>
+	</action-mappings>
+</struts-config>

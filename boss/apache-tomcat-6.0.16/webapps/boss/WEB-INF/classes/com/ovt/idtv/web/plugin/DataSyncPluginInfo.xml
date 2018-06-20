@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossCoreDataSyncWeb</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>ChargeWebPlugin</name>
+	<description>BOSS数据同步模块</description>
+	<pluginClass>com.ovt.idtv.web.plugin.DataSyncPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+			
+			
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+			  <!-- <func code="007" name="数据导入" srcFile=""  descInfo="数据导入" status="1" alias="" seqNo="10" funcType="0" >
+				<func code="007001" name="SMS数据导入到BOSS" srcFile="/jsp/boss/dataSync/smsSyncBoss.do?methodToCall=executeTableCommand&amp;commandId=modifyView&amp;OPER=modifyView"  descInfo="SMS数据导入到BOSS" status="1" alias="pm.smsSyncBoss.modifyView" seqNo="" funcType="1" developFlag="" >
+					<func code="007001001" name="提交" srcFile=""  descInfo="" status="1" alias="pm.smsSyncBoss.modifyView.submit" seqNo="" funcType="2" developFlag="" />
+				</func>	
+					
+			</func> 
+			 -->
+			
+	</func_tree>
+</plugin>

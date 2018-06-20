@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossBankService</id>
+	<name>实时代缴业务</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>实时代缴业务</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossBankServiceImplPlugin</pluginClass>
+	<pdmFileName></pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-11-08</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+		<version>
+			<versionNo>1.0.4</versionNo>
+			<description>实时充值添加对多家银行支持</description>
+			<publishDate>2012-10-9</publishDate>
+			<seqNo>2</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree>
+	</func_tree>
+	
+</plugin>

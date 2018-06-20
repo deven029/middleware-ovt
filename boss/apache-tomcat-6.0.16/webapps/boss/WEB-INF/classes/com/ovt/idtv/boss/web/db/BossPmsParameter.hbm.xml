@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.ovt.idtv.boss.web.db.BossPmsParameter" table="PMS_PARAMETER">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="10" scale="0" />
+			<generator class="assigned">
+				<param name="assigned">SEQ_PMS_PARAMETER</param>
+			</generator>
+		</id>
+		<property name="menuId" type="java.lang.String">
+			<column name="MENU_ID" length="20"></column>
+		</property>
+		<property name="code" type="java.lang.String">
+			<column name="CODE" length="20"></column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" length="20"></column>
+		</property>
+		<property name="value" type="java.lang.String">
+			<column name="VALUE" length="20"></column>
+		</property>
+		<property name="description" type="java.lang.String">
+			<column name="DESCRIPTION" length="20"></column>
+		</property>
+		<property name="editor" type="java.lang.String">
+			<column name="EDITOR" length="20"></column>
+		</property>
+		<property name="editType" type="java.lang.String">
+			<column name="EDIT_TYPE" length="20"></column>
+		</property>
+		<property name="editTime" type="java.util.Date">
+			<column name="EDIT_TIME"></column>
+		</property>
+		<property name="editProp" type="java.lang.Character">
+			<column name="EDIT_PROP"></column>
+		</property>
+		<property name="seqNo" type="java.lang.Double">
+			<column name="SEQ_NO"></column>
+		</property>
+	</class>
+</hibernate-mapping>

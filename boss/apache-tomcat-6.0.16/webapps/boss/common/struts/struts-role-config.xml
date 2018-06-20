@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "struts-config_1_2.dtd">
+<struts-config>
+	<data-sources />
+	<form-beans >
+		<form-bean name="sysParameterForm" type="com.ovt.idtv.common.web.sysparameter.SysParameterForm"></form-bean>
+		<form-bean name="paramForm" type="com.ovt.idtv.common.web.parameterconfig.ParamForm"></form-bean>
+		<form-bean name="loginForm" type="com.ovt.common.web.rights.struts.form.LoginForm">
+			<form-property name="pass_word" type="java.lang.String" />
+			<form-property name="login_no" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="treeForm" type="com.ovt.common.web.rights.struts.form.TreeForm">
+			<form-property name="action_type" type="java.lang.String" />
+			<form-property name="table_type" type="java.lang.String" />
+			<form-property name="tree_value" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="functionForm" type="com.ovt.common.web.rights.struts.form.FunctionForm">
+			<form-property name="action_type" type="java.lang.String" />
+			<form-property name="desc_info" type="java.lang.String" />
+			<form-property name="func_name" type="java.lang.String" />
+			<form-property name="src_file" type="java.lang.String" />
+			<form-property name="leafage_flag" type="java.lang.String" />
+			<form-property name="code" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="parent_code" type="java.lang.String" />
+			<form-property name="alias" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="serviceRoleForm" type="com.ovt.common.web.rights.struts.form.ServiceRoleForm">
+		    <form-property name="action_type" type="java.lang.String" />
+			<form-property name="service_role_name" type="java.lang.String" />
+			<form-property name="leafage_flag" type="java.lang.String" />
+			<form-property name="service_role_code" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="parent_code" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="dataPowerGroupForm" type="com.ovt.common.web.rights.struts.form.DataPowerGroupForm">
+		    <form-property name="action_type" type="java.lang.String" />
+			<form-property name="service_role_name" type="java.lang.String" />
+			<form-property name="leafage_flag" type="java.lang.String" />
+			<form-property name="service_role_code" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="parent_code" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="personnelRoleForm" type="com.ovt.common.web.rights.struts.form.PersonnelRoleForm">
+		    <form-property name="action_type" type="java.lang.String" />
+			<form-property name="personnel_role_name" type="java.lang.String" />
+			<form-property name="leafage_flag" type="java.lang.String" />
+			<form-property name="personnel_role_code" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="parent_code" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="relationForm" type="com.ovt.common.web.rights.struts.form.RelationForm">
+			<form-property name="table_type" type="java.lang.String" />
+			<form-property name="tree_value" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="operatorForm" type="com.ovt.common.web.rights.struts.form.OperatorForm">
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="action_type" type="java.lang.String" />
+			<form-property name="login_name" type="java.lang.String" />
+			<form-property name="effect_end_time" type="java.lang.String" />
+			<form-property name="operator_type" type="java.lang.String" />
+			<form-property name="pass_word" type="java.lang.String" />
+			<form-property name="status" type="java.lang.String" />
+			<form-property name="can_login_end_time" type="java.lang.String" />
+			<form-property name="personnel_code" type="java.lang.String" />
+			<form-property name="personnel_name" type="java.lang.String" />
+			<form-property name="login_flag" type="java.lang.String" />
+			<form-property name="login_ip" type="java.lang.String" />
+			<form-property name="effect_begin_time" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="can_login_begin_time" type="java.lang.String" />
+			<form-property name="login_no" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards>
+	 <forward name="operFailedAndGoBack" path="/common/jsp/common/error.jsp"/>
+	 <forward name="QLV_COMMON_VIEW" path="/common/jsp/qlv/view.jsp?viewId=COMMON_VIEW"/>
+	 <forward name="QLV_COMMON_QUERY" path="/common/jsp/qlv/query.jsp"/>
+	 <forward name="QLV_GWT_RESULT_ID" path="/common/jsp/qlv/qlvGwtResultId.jsp"/>
+	 <forward name="success" path="/common/jsp/common/success.jsp"/>
+	 <forward name="failure" path="/common/jsp/common/error.jsp"/>
+	 <forward name="result" path="/common/jsp/common/error.jsp" />
+	 <forward name="result1" path="/common/jsp/common/error1.jsp" />
+	 <forward name="confirm" path="/common/jsp/common/confirm.jsp" />
+	 <forward name="login" path="/common/jsp/frame/login.jsp" />
+	 <forward name="func_list" path="/common/jsp/rights/func_list.jsp" />
+	 <forward name="service_role_list" path="/common/jsp/rights/service_role_list.jsp" />
+	 <forward name="dataPower_group_list" path="/common/jsp/rights/dataPower_group_list.jsp" />
+	 <forward name="personnel_role_list" path="/common/jsp/rights/personnel_role_list.jsp" />
+	 <forward name="service_func_s_list" path="/common/jsp/rights/service_func_s_list.jsp" />
+	 <forward name="service_func_f_list" path="/common/jsp/rights/service_func_f_list.jsp" />
+	 <forward name="personnel_service_p_list" path="/common/jsp/rights/personnel_service_p_list.jsp" />
+	 <!--  <forward name="personnel_service_s_list" path="/common/jsp/rights/personnel_service_s_list.jsp" />-->
+	  <forward name="personnel_service_s_list" path="/common/jsp/rights/personnel_service_s_list.jsp" /> 
+	 
+	 <forward name="operator_list" path="/common/jsp/rights/operator_list.jsp" />
+	 <forward name="operator_query_suc" path="/common/jsp/frame/menu?alias=operator_list&amp;check_type=1"/>
+	 <forward name="selfoperator_list" path="/common/jsp/rights/selfoperator_list.jsp" />
+	 <forward name="operator_list_suc" path="/common/jsp/frame/menu?alias=operator_list&amp;check_type=1"/>
+	 <forward name="get_personnel_code_list" path="/common/jsp/rights/get_personnel_code_list.jsp" />
+	  <forward name="exportdata" path="/common/jsp/common/exportdata.jsp"></forward>
+	</global-forwards>
+	<action-mappings >
+		<action attribute="sysParameterForm" name="sysParameterForm" parameter="methodToCall"
+				path="/common/jsp/sys/sysparameter" type="com.ovt.idtv.common.web.sysparameter.SysParameterAction"
+				validate="false">
+				<forward name="sysparameter.modifyView.submit.success" path="/common/jsp/sys/sysparameter.do?methodToCall=executeTableCommand&amp;commandId=modifyView&amp;OPER=modifyView" />
+			</action>
+		<action
+			path="/common/jsp/sys/datapower"
+			type="com.ovt.idtv.common.web.datapower.DataPowerAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/common/jsp/rights/dataPower_group_datapowerdetail.jsp"></forward>
+		    <forward name="pageChoose.success" path="/common/jsp/rights/choosePageSuccess.jsp"></forward>
+		
+		</action>
+		<!-- 2010-03-18 数据迁移导出 -->
+		<action  path="/common/jsp/rights/transfer/choiceExport" parameter="methodToCall" type="com.ovt.idtv.common.web.datatransfer.action.TransferExportAction"
+				 validate="false" >
+				 <forward name="transfer.initAction" path="/common/jsp/rights/transfer/choiceExport.do?methodToCall=initAction"></forward>
+				 <forward name="transfer.index" path="/common/jsp/rights/transfer_index.jsp" ></forward>	
+			     <forward name="transfer.first" path="/common/jsp/rights/transfer_firstpage.jsp" ></forward>	
+			     <forward name="transfer.process" path="/common/jsp/rights/transfer_process_page.jsp" ></forward> 
+			     <forward name="transfer.lastStep" path="/common/jsp/rights/transfer/choiceExport.do?methodToCall=lastStep"></forward>
+			     <forward name="transfer.success" path="/common/jsp/rights/transfer_data_download.jsp"></forward>
+			     <forward name="transfer.download" path="/common/jsp/rights/transfer/choiceExport.do?methodToCall=downloadFile"></forward>
+			     <forward name="transfer.status" path="/common/jsp/rights/transfer_export_status.jsp"></forward>
+			     <forward name="transfer.singleton" path="/common/jsp/rights/transfer_export_only.jsp"></forward>
+			     <forward name="transfer.prve" path="/common/jsp/rights/transfer/choiceExport.do?methodToCall=prevStep" ></forward> 
+		</action>	
+		<!-- 2010-03-18 数据迁移导入-->
+		<action  path="/common/jsp/rights/transfer/choiceImport" parameter="methodToCall" type="com.ovt.idtv.common.web.datatransfer.action.TransferImportAction"
+				 validate="false" >
+				 <forward name="transfer.initAction" path="/common/jsp/rights/transfer/choiceImport.do?methodToCall=initAction"></forward>
+				 <forward name="transfer.index" path="/common/jsp/rights/transfer_index.jsp" ></forward>	
+			     <forward name="transfer.first" path="/common/jsp/rights/transfer_firstpage_import.jsp" ></forward>	
+			     <forward name="transfer.process" path="/common/jsp/rights/transfer_process_page_import.jsp" ></forward> 
+			     <forward name="transfer.lastStep" path="/common/jsp/rights/transfer/choiceImport.do?methodToCall=lastStep"></forward>
+			     <forward name="transfer.success" path="/common/jsp/rights/transfer_import_success.jsp"></forward>
+			     <forward name="transfer.download" path="/common/jsp/rights/transfer/choiceImport.do?methodToCall=downloadFile"></forward>
+			     <forward name="transfer.status" path="/common/jsp/rights/transfer_import_status.jsp"></forward>
+			     <forward name="transfer.singleton" path="/common/jsp/rights/transfer_export_only.jsp"></forward>
+			     <forward name="transfer.prve" path="/common/jsp/rights/transfer/choiceImport.do?methodToCall=prevStep" ></forward> 
+				 
+		</action>
+		
+		<!-- 2010-03-18 数据迁移重复数据-->
+		<action  path="/common/jsp/rights/transfer/existData" parameter="methodToCall" type="com.ovt.idtv.common.web.datatransfer.action.TransferExistDataAction"
+				 validate="false" >
+				 <forward name="exist.listFunc" path="/common/jsp/rights/transfer_data_download.jsp"></forward>
+		</action>
+		<!-- 2010-05-25 帮助管理框架使用 -->
+		<action  path="/common/jsp/rights/help/helpManage" parameter="methodToCall" type="com.ovt.idtv.common.web.help.action.HelpManageAction"
+				 validate="false" >
+				 <forward name="help.index" path="/common/jsp/rights/help/help_manage.jsp" /> 
+				 <forward name="help.plugin" path="/common/jsp/rights/help/help_manage_left_top.jsp" />
+				 <forward name="help.list" path="/common/jsp/rights/help/help_manage_left_bottom.jsp" />
+				 <forward name="help.page" path="/common/jsp/rights/help/help_manage_right.jsp" />
+		</action>
+		
+		<action
+			attribute="loginForm"
+			name="loginForm"
+			path="/common/jsp/frame/login"
+			type="com.ovt.common.web.rights.struts.action.LoginAction"
+			unknown="false"
+			validate="true">
+			<forward name="index" redirect="true" path="/common/jsp/frame/index.jsp"/>
+			<forward name="error" path="/common/jsp/frame/login.jsp"/>
+		</action>
+		<action
+			path="/common/jsp/rights/list"
+			type="com.ovt.common.web.rights.struts.action.ListAction"
+			unknown="false"
+			validate="true">
+		</action>
+		<action
+			attribute="treeForm"
+			name="treeForm"
+			path="/common/jsp/rights/tree"
+			type="com.ovt.common.web.rights.struts.action.TreeAction"
+			validate="true">
+			<forward name="func_add" path="/common/jsp/rights/func_add.jsp"/>
+			<forward name="func_update" path="/common/jsp/rights/func_update.jsp" />
+			<forward name="service_role_add" path="/common/jsp/rights/service_role_add.jsp"/>
+			<forward name="dataPower_group_add" path="/common/jsp/rights/dataPower_group_add.jsp"/>
+			<forward name="dataPower_group_datapowerdetail" path="/common/jsp/sys/datapower.do?methodToCall=skip"/>
+			<forward name="dataPower_group_update" path="/common/jsp/rights/dataPower_group_update.jsp" />
+			<forward name="service_role_update" path="/common/jsp/rights/service_role_update.jsp" />
+			<forward name="personnel_role_add" path="/common/jsp/rights/personnel_role_add.jsp"/>
+			<forward name="personnel_role_update" path="/common/jsp/rights/personnel_role_update.jsp" />
+			<forward name="operator_add" path="/common/jsp/rights/operator_add.jsp"/>
+			<forward name="operator_update" path="/common/jsp/rights/operator_update.jsp" />
+			<forward name="operator_pass" path="/common/jsp/rights/operator_pass.jsp" />
+			<forward name="operator_query" path="/common/jsp/rights/operator_query.jsp" />
+			<forward name="fsp_operator" path="/common/jsp/rights/fsp_operator.jsp" />
+		</action>
+		<action
+			attribute="functionForm"
+			name="functionForm"
+			path="/common/jsp/rights/function"
+			type="com.ovt.common.web.rights.struts.action.FunctionAction"
+			validate="true">
+		</action>
+		<action
+			attribute="serviceRoleForm"
+			name="serviceRoleForm"
+			path="/common/jsp/rights/serviceRole"
+			type="com.ovt.common.web.rights.struts.action.ServiceRoleAction"
+			validate="true" >
+		</action>
+		<action
+			attribute="dataPowerGroupForm"
+			name="dataPowerGroupForm"
+			path="/common/jsp/rights/dataPowerGroup"
+			type="com.ovt.common.web.rights.struts.action.DataPowerGroupAction"
+			validate="true" >
+		</action>
+		<action
+			attribute="personnelRoleForm"
+			name="personnelRoleForm"
+			path="/common/jsp/rights/personnelRole"
+			type="com.ovt.common.web.rights.struts.action.PersonnelRoleAction"
+			validate="true" >
+		</action>
+		<action
+			attribute="relationForm"
+			name="relationForm"
+			path="/common/jsp/rights/relation"
+			type="com.ovt.common.web.rights.struts.action.RelationAction"
+			unknown="false"
+			validate="true" >
+    	</action>
+		<action
+			attribute="operatorForm"
+			name="operatorForm"
+			path="/common/jsp/rights/operator"
+			type="com.ovt.common.web.rights.struts.action.OperatorAction"
+			unknown="false"
+			validate="true" >
+	 </action>
+	 	<action
+			path="/common/jsp/common/commonQuery"
+			type="com.ovt.common.web.taglib.query.CommonQueryAction"
+			unknown="false"
+			validate="false">
+			<forward name="success" redirect="false" path="/common/jsp/common/tableQuery.jsp" />
+			<forward name="failure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=spms.tableQuery.failure" />
+		</action>
+		<action
+			path="/common/jsp/common/tableQuery"
+			type="com.ovt.common.web.taglib.table.util.TableQueryAction"
+			unknown="false"
+			validate="false">
+			<forward name="query" redirect="false" path="/common/jsp/common/tableQuery.jsp" />
+			<forward name="failure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=spms.tableQuery.failure" />
+		</action>
+		<action
+			path="/common/jsp/common/querySubmit"
+			type="com.ovt.common.web.taglib.table.util.QuerySubmitAction"
+			unknown="false"
+			validate="false">
+			<forward name="query" redirect="false" path="/common/jsp/common/tableQuery.jsp" />
+			<forward name="commitQuery" redirect="false" path="/common/jsp/common/tableQuery.jsp" />
+			<forward name="failure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=spms.tableQuery.failure" />
+		</action>
+		<action
+			path="/common/jsp/common/getFuncTreeXml"
+			type="com.ovt.common.web.rights.struts.action.GetFuncTreeAction"
+			unknown="false"
+			validate="false">
+			<forward name="success" redirect="false" path="/common/jsp/common/funcTreeXml.jsp" />
+		</action>
+		<action
+			path="/common/jsp/common/getPluginInfo"
+			type="com.ovt.common.web.plugins.struts.PluginInfoAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/common/jsp/common/getPluginInfo.do?methodToCall=openQuery"></forward>
+			<forward name="look.history" path="/common/jsp/common/PluginInfoHistory.do?methodToCall=openQuery"></forward>
+		</action>
+		<action
+			path="/common/jsp/common/PluginInfoHistory"
+			type="com.ovt.common.web.plugins.struts.PluginInfoHistoryAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/common/jsp/common/PluginInfoHistory.do?methodToCall=openQuery"></forward>
+			<forward name="return.back" path="/common/jsp/common/getPluginInfo.do?methodToCall=openQuery"></forward>
+			
+		</action>
+		<action
+			path="/common/jsp/common/getententPointInfo"
+			type="com.ovt.common.web.plugins.struts.ExtentionPointAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/common/jsp/common/getententPointInfo.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 参数配置 -->
+		<action name="paramForm" path="/common/jsp/sys/param" type="com.ovt.idtv.common.web.parameterconfig.ParameterAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="select.success" path="/common/jsp/sys/param.do?methodToCall=openQuery"></forward>
+			<forward name="openQuery" path="/common/jsp/sys/param.do?methodToCall=select&amp;refreshTreeFlag=true"/>
+			<forward name="parameter.submit.success" path="/common/jsp/sys/param.do?methodToCall=select&amp;refreshTreeFlag=true"></forward>
+		</action>
+	</action-mappings>
+	<controller
+		bufferSize="4096"		
+		locale="false"
+		nocache="false"
+		inputForward="false" />
+	<message-resources null="true" parameter="" />
+</struts-config>
+

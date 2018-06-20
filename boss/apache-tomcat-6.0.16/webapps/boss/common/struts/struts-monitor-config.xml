@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "struts-config_1_1.dtd">
+<struts-config>
+	
+	<form-beans >
+		<form-bean name="monitorConfForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		<form-bean name="SysAppForm"
+			type="com.ovt.common.monitor.alarm.struts.form.SysAppForm" />
+		<form-bean name="monitorEventForm"
+			type="com.ovt.common.monitor.alarm.struts.form.MonitorEventForm" />
+    	<form-bean name="monitorUserGroupForm" type="com.ovt.common.monitor.alarm.struts.form.MonitorUserGroupForm" />
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards>
+	
+	</global-forwards>
+	<action-mappings >
+		<action
+			path="/common/jsp/frame/common/sendNotify"
+			type="com.ovt.common.web.SendNotify"
+			unknown="false"
+			validate="false">
+			<forward name="success" redirect="false" path="/common/jsp/common/success.jsp" />
+			<forward name="failure" redirect="false" path="/common/jsp/common/error.jsp" />
+		</action>
+		<action
+			path="/common/jsp/monitor/conf/update"
+			type="com.ovt.common.monitor.conf.struts.MonitorConfAction"
+			name="monitorConfForm"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="success" redirect="true" path="/common/jsp/common/success.jsp?result=oamp.monitorConf.update.success&amp;alias=oamp.monitorConf.openQuery" />
+			<forward name="InvalidData" redirect="true" path="/common/jsp/common/error.jsp?errMsg=oamp.monitorConf.update.failure&amp;alias=oamp.monitorConf.openQuery" />
+		</action>
+		<action
+			path="/common/jsp/monitor/conf/view"
+			type="com.ovt.common.monitor.conf.struts.MonitorConfAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="success" redirect="false" path="/common/jsp/monitor/conf/view.jsp" />
+			<forward name="InvalidData" redirect="true" path="/common/jsp/common/error.jsp?errMsg=oamp.monitorConf.updateview.failure&amp;alias=oamp.monitorConf.openQuery" />
+		</action>
+		<action
+			path="/common/jsp/monitor/conf/openQuery"
+			type="com.ovt.common.monitor.conf.struts.MonitorConfAction"
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="success" redirect="false" path="/common/jsp/monitor/conf/monitorConfQuery.jsp" />
+		</action>
+		
+		<action name="SysAppForm" path="/common/jsp/monitor/alarm/SysAppAction" scope="request"
+			type="com.ovt.common.monitor.alarm.struts.action.SysAppAction">
+			<forward name="sysapplist" path="/common/jsp/monitor/alarm/sysapplist.jsp" />
+		</action>
+	    <action
+	      attribute="monitorEventForm"
+	      input="/common/jsp/monitor/alarm/monitorEvent.jsp"
+	      name="monitorEventForm"
+	      path="/common/jsp/monitor/alarm/eventMonitor"
+	      scope="request"
+	      type="com.ovt.common.monitor.alarm.struts.action.EventMonitorAction"
+	      validate="false" 
+	      parameter="methodToCall">
+	      <forward name="querySuccess"  redirect="false" path="/common/jsp/monitor/alarm/monitorEvent.jsp"></forward>
+	      <forward name="deleteSuccess"  redirect="true" path="/common/jsp/common/success.jsp?result=oamp.monitor.event.delete.success&amp;alias=oamp.monitor.event.openQuery"></forward>
+		  <forward name="deleteFailure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=oamp.monitor.event.delete.failure&amp;alias=oamp.monitor.event.openQuery" />
+	      <forward name="Realtime" path="/common/jsp/monitor/alarm/RealtimeMonitor.jsp"/>
+	    </action>
+	    <action
+	      path="/common/jsp/monitor/alarm/mm1CALog"
+	      scope="request"
+	      type="com.ovt.common.monitor.alarm.struts.action.Mm1CALogAction"
+	      validate="false" 
+	      parameter="methodToCall">
+	      <forward name="querySuccess"  redirect="false" path="/common/jsp/monitor/alarm/mm1CALog.jsp"></forward>
+	      <forward name="deleteSuccess"  redirect="true" path="/common/jsp/common/success.jsp?result=oamp.monitor.mm1CALog.delete.success&amp;alias=oamp.monitor.mm1CALog.openQuery"></forward>
+		  <forward name="deleteFailure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=oamp.monitor.mm1CALog.delete.failure&amp;alias=oamp.monitor.mm1CALog.openQuery" />
+	    </action>
+	    <action
+	      path="/common/jsp/monitor/alarm/rightsCheckLog"
+	      scope="request"
+	      type="com.ovt.common.monitor.alarm.struts.action.RightsCheckLogAction"
+	      validate="false" 
+	      parameter="methodToCall">
+	      <forward name="querySuccess"  redirect="false" path="/common/jsp/monitor/alarm/rightsCheckLog.jsp"></forward>
+	      <forward name="deleteSuccess"  redirect="true" path="/common/jsp/common/success.jsp?result=oamp.monitor.rightsCheckLog.delete.success&amp;alias=oamp.monitor.rightsCheckLog.openQuery"></forward>
+		  <forward name="deleteFailure" redirect="true" path="/common/jsp/common/error.jsp?errMsg=oamp.monitor.rightsCheckLog.delete.failure&amp;alias=oamp.monitor.rightsCheckLog.openQuery" />
+	    </action>
+	    <action
+	      path="/common/jsp/monitor/alarm/ctlCapability"
+	      scope="request"
+	      type="com.ovt.common.monitor.alarm.struts.action.CtlCapabilityAction"
+	      validate="false" 
+	      parameter="methodToCall">
+	      <forward name="querySuccess"  redirect="false" path="/common/jsp/monitor/alarm/ctlCapabilityQuery.jsp"></forward>
+	      <forward name="monitor"  redirect="false" path="/common/jsp/monitor/alarm/ctlCapability.jsp"></forward>
+	    </action>
+	    <action
+	      attribute="monitorUserGroupForm"
+	      input="/common/jsp/monitor/alarm/monitorUserGroup.jsp"
+	      name="monitorUserGroupForm"
+	      path="/common/jsp/monitor/alarm/userGroup"
+	      scope="request"
+	      type="com.ovt.common.monitor.alarm.struts.action.MonitorUserGroupAction"
+	      validate="false" 
+	      parameter="methodToCall">
+	      	<forward name="openQuery.success" redirect="false" path="/common/jsp/monitor/alarm/monitorUserGroupQuery.jsp" />
+		  	<forward name="openQuery.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+			<forward name="delete.success" redirect="false" path="/common/jsp/monitor/alarm/userGroup.do?methodToCall=openQuery" />
+		  	<forward name="delete.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+			<forward name="modify.success" redirect="false" path="/common/jsp/monitor/alarm/userGroup.do?methodToCall=openQuery" />
+		  	<forward name="modify.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+			<forward name="view.success" redirect="false" path="/common/jsp/monitor/alarm/monitorUserGroupView.jsp" />
+		  	<forward name="view.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+			<forward name="add.success" redirect="false" path="/common/jsp/monitor/alarm/userGroup.do?methodToCall=openQuery" />
+		  	<forward name="add.failure" redirect="false" path="/common/jsp/common/error.jsp" />
+      </action>
+      
+      
+	</action-mappings>
+
+	<controller
+		bufferSize="4096"
+		debug="0"
+		locale="false"
+		nocache="false"
+		inputForward="false" />
+	<message-resources null="true" parameter="" />
+</struts-config>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.ovt.idtv.boss.web.db.BossOrderPermits" table="BOSS_ORDER_PERMITS" >
+         <id name="id" type="java.lang.Integer">
+            <column name="ID" precision="10" scale="0" />
+ 			<generator class="sequence">  
+    			 <param name="sequence">SEQ_BOSS_ORDER_PERMITS</param> 
+   			</generator> 
+  		 </id>
+        <property name="permitsCode" type="java.lang.String">
+            <column name="PERMITS_CODE"/>
+        </property>
+        <property name="permitsName" type="java.lang.String">
+            <column name="PERMITS_NAME"/>
+        </property>
+        <property name="permitsType" type="java.lang.Integer">
+            <column name="PERMITS_TYPE" />
+        </property>
+        <property name="permitsRand" type="java.lang.Integer">
+            <column name="PERMITS_RAND"/>
+        </property>
+        <property name="permitsDesc" type="java.lang.String">
+            <column name="PERMITS_DESC"/>
+        </property>
+        <property name="effctiveDate" type="java.lang.String">
+            <column name="EFFCTIVE_DATE"/>
+        </property>
+        <property name="expiryDate" type="java.lang.String">
+            <column name="EXPIRY_DATE"/>
+        </property>
+        <property name="effctiveTime" type="java.lang.String">
+            <column name="EFFCTIVE_TIME"/>
+        </property>
+        <property name="expiryTime" type="java.lang.String">
+            <column name="EXPIRY_TIME"/>
+        </property>
+        <property name="validFlag" type="java.lang.Integer">
+            <column name="VALID_FLAG"/>
+        </property>
+    </class>
+</hibernate-mapping>

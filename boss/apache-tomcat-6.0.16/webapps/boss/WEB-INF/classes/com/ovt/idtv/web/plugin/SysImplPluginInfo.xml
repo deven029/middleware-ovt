@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<plugin>
+	<id>OvtBossCoreSysImpl</id>
+	<ip>127.0.0.1</ip>
+	<port>8181</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<name>系统服务</name>
+	<description>系统服务实现</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BossCoreSysImplPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/boss_sysext.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.web.db.Boss3pSys"/>
+			<class name="com.ovt.idtv.boss.web.db.Boss3pSysPower"/>
+			<class name="com.ovt.idtv.boss.web.db.Boss3pSysRela"/>
+			<class name="com.ovt.idtv.boss.web.db.BossAreaInfo"/>
+			<class name="com.ovt.idtv.boss.web.db.BossBusinessDep"/>
+			<class name="com.ovt.idtv.boss.web.db.BossBusiType"/>
+			<class name="com.ovt.idtv.boss.web.db.BossBusiTypeFee"/>
+			<class name="com.ovt.idtv.boss.web.db.BossExtendFields"/>
+			<class name="com.ovt.idtv.boss.web.db.BossExtendFieldsD"/>
+			<class name="com.ovt.idtv.boss.web.db.BossExtendTable"/>
+			<class name="com.ovt.idtv.boss.web.db.BossExtendTableD"/>
+			<class name="com.ovt.idtv.boss.web.db.BossFeeItems"/>
+			<class name="com.ovt.idtv.boss.web.db.BossOperator"/>
+			<class name="com.ovt.idtv.boss.web.db.BossBusiDepOper"/>
+			<class name="com.ovt.idtv.boss.web.db.BossEquFeeItem"/>
+			<class name="com.ovt.idtv.boss.web.db.BossPayOrgan"/>
+			<class name="com.ovt.idtv.boss.web.db.BossPayOrganOper"/>
+			<class name="com.ovt.idtv.boss.web.db.BossChargeOrderParam"/>
+		</classes>
+	</hibernate>
+	<rights> 
+		
+	</rights>
+	<func_tree>
+	</func_tree>
+</plugin>

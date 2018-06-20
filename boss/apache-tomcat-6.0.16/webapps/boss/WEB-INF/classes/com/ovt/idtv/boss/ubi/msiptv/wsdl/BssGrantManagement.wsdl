@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- IPTV Version='2.0.4005.0' -->
+<wsdl:definitions 
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+  xmlns:s="http://www.w3.org/2001/XMLSchema" 
+  xmlns:s2="http://microsoft.com/wsdl/types/" 
+  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+  xmlns:tns="http://www.microsoft.com/iptv/bss" 
+  xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+  targetNamespace="http://www.microsoft.com/iptv/bss" 
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.microsoft.com/iptv/bss">
+      <s:include schemaLocation="bsstypes.xsd"/>
+      <s:import id="guid" namespace="http://microsoft.com/wsdl/types/" schemaLocation="guid.xsd"></s:import>
+      <s:element name="CreateGrant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grant" type="tns:Grant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateGrantResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateGrants">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grants" type="tns:ArrayOfGrant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateGrantsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteGrant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grant" type="tns:Grant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGrantResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Purchase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grant" type="tns:Grant" />
+            <s:element minOccurs="0" maxOccurs="1" name="offer" type="tns:Offer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PurchaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReadGrant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grant" type="tns:Grant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadGrantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadGrantResult" type="tns:ArrayOfGrant" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateGrantSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateGrant" />
+  </wsdl:message>
+  <wsdl:message name="CreateGrantSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateGrantResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateGrantsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateGrants" />
+  </wsdl:message>
+  <wsdl:message name="CreateGrantsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateGrantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGrantSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteGrant" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGrantSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteGrantResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadGrantSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadGrant" />
+  </wsdl:message>
+  <wsdl:message name="ReadGrantSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadGrantResponse" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Purchase" />
+  </wsdl:message>
+  <wsdl:message name="PurchaseSoapOut">
+    <wsdl:part name="parameters" element="tns:PurchaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GrantManagementSoap">
+    <wsdl:operation name="CreateGrant">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Creates Grant</documentation>
+      <wsdl:input message="tns:CreateGrantSoapIn" />
+      <wsdl:output message="tns:CreateGrantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGrants">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Creates Grants</documentation>
+      <wsdl:input message="tns:CreateGrantsSoapIn" />
+      <wsdl:output message="tns:CreateGrantsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGrant">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Creates Subscriber group</documentation>
+      <wsdl:input message="tns:DeleteGrantSoapIn" />
+      <wsdl:output message="tns:DeleteGrantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadGrant">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Get Grant information</documentation>
+      <wsdl:input message="tns:ReadGrantSoapIn" />
+      <wsdl:output message="tns:ReadGrantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Purchase">
+      <documentation xmlns="http://schemas.xmlsoap.org/wsdl/">Purchase the resource</documentation>
+      <wsdl:input message="tns:PurchaseSoapIn" />
+      <wsdl:output message="tns:PurchaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GrantManagementSoap" type="tns:GrantManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="CreateGrant">
+      <soap:operation soapAction="http://microsoft.com/iptv/bss/CreateGrant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGrants">
+      <soap:operation soapAction="http://microsoft.com/iptv/bss/CreateGrants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGrant">
+      <soap:operation soapAction="http://microsoft.com/iptv/bss/DeleteGrant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadGrant">
+      <soap:operation soapAction="http://microsoft.com/iptv/bss/ReadGrant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Purchase">
+      <soap:operation soapAction="http://microsoft.com/iptv/bss/Purchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GrantManagement">
+    <wsdl:port name="GrantManagementSoap" binding="tns:GrantManagementSoap">
+      <soap:address location="http://localhost/bss/GrantManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

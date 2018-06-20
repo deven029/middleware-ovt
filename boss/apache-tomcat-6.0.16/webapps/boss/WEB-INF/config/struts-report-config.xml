@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<global-forwards>
+		<forward name="printReport" path="/boss/report/jsp/printReport.jsp"></forward>
+	</global-forwards>
+</struts-config>

@@ -1,0 +1,248 @@
+<html>
+<head>
+<title>ReDialog帮助信息</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="javascript" src="../redialog.js"></script>
+<script language="javascript">
+function demo1 () {
+	rdShowMessageDialog("Hi, 欢迎使用ReDialog!");
+}
+
+function demo2 () {
+	rdShowMessageDialog("Hi, 这是另外一个对话框，注意图标不同", rdModeError);
+}
+
+function demo3() {
+	var returnValue = rdShowConfirmDialog("你确定要看这个对话框吗？")
+	if (returnValue == rdConstOK)
+		rdShowMessageDialog("你点了确定", rdModeInfo);
+	else
+		rdShowMessageDialog("你点了取消", rdModeInfo);
+}
+
+function demo4() {
+	var value = rdShowInputDialog("请输入一些内容吧：");
+	rdShowMessageDialog(value);
+}
+
+function demo5() {
+	while(true) {
+		var value = rdShowInputDialog("请输入一些内容（可以更改）");
+		if (rdShowConfirmDialog("你确定你的输入吗？") == rdConstOK) {
+			rdShowMessageDialog("你的输入是：["+value+"]");
+			break;
+		} 
+	}
+}
+</script>
+<style type="text/css">
+<!--
+.textmain {  font-size: 14px; line-height: 130%; text-decoration: none; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"}
+.textback {  background-color: #FFD360; font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 14px; font-weight: bolder; text-decoration: none}
+.text9t {  font-family: "Courier New", "Courier", "mono"; font-size: 9pt; line-height: 120%; text-decoration: none}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="redialog.gif" width="760" height="60"></td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" bgcolor="#FF9900" align="center">
+  <tr>
+    <td>
+      <div align="center">
+        <table width="100%" border="0" cellspacing="4" cellpadding="0" height="326" bgcolor="#FFFFFF">
+          <tr> 
+            <td class="textmain" width="246"> 
+              <div align="center"><img src="pic01.gif" width="200" height="95"><br>
+                消息框示例<br>
+                <img src="pic02.gif" width="200" height="95"><br>
+                输入框示例<br>
+                <img src="pic03.gif" width="200" height="95"><br>
+                确认框示例</div>
+            </td>
+            <td class="textmain" width="514" valign="top"> 
+              <p align="center"><b>ReDialog, 比window.alert()更好用！</b></p>
+              <p>在WEB开发中，无论服务器端使用什么技术，JSP, ASP, PHP, CGI, ASPX...都势必要将一些信息展现给客户，最普通的应用莫过于用户进行一个操作之后，服务器响应给客户一个消息。而在这之前，Web开发工程师们采用的最常用的方式是使用Javascript：window.alert(...)产生一个消息框，提示用户。消息框的样式是操作系统定义好的，无法格式化，也无法美观...</p>
+              <p>ReDialog将着重解决上面的问题。它采用JavaScript技术，结合弹出窗口技术，实现了更为友好的界面。更重要的是，它不依赖任何一种服务器脚本，纯粹的客户端脚本技术，使得应用程序的迁移、美观、升级更为方便和容易。现在就扔掉window.alert()吧！</p>
+              <p>目录</p>
+              <p>1、<a href="#1">ReDialog简介</a><br>
+                2、<a href="#2">ReDialog的特点</a><br>
+                3、<a href="#3">配置</a><br>
+                4、<a href="#4">范例</a><br>
+                5、<a href="#5">API说明</a><br>
+                6、<a href="#6">已知的Bugs</a></p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" bgcolor="#FF9900" align="center">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF" align="center">
+        <tr> 
+          <td height="77" class="textmain"> 
+            <p class="textback">1、ReDialog简介<a name="1"></a></p>
+            <p>在Web开发中，经常需要向客户端显示一些信息。在以前，window.alert()是经常被使用的。但是，Web开发工程师大多对window.alert()深恶痛绝，因为不但难以美化其外观，也不能对里面显示的文字进行颜色、大小等设置，这样给用户的是一个灰色而很不友好的小窗口，伴随着“当”的一声，出现在用户的面前，实在很不友好。对此Web工程师也没有好的办法----毕竟是操作系统的东西，没办法啊。</p>
+            <p>ReDialog的出现就是为了解决这个问题。ReDialog是采用客户端JavaScript技术，结合弹出窗口，实现了更为友好的界面（如图）。更重要的是，他不依赖于任何一种服务器脚本，如ActiveServerPage, 
+              Java Server Page, PHP, Perl, CGI等，可以很轻松的将现有的Web应用程序升级到ReDialog中。易于配置和维护，更大的自由度，使得ReDialog成为Web开发客户端消息响应显示的首选。</p>
+            <p>标准与客户交户的函数有三个：alert, confirm 和prompt。这些函数在ReDialog中都可以找到对应，并且它的使用方式、感觉、返回值等与它们基本相同。在一般情况下，开发人员不需要将源程序进行太大的改动就可以将Web程序升级为更为美观的ReDialog了。</p>
+            <p>ReDialog是一个开放源代码的项目，任何个人、商业组织都可以不受限制的使用、分发、修改其中的源程序为自己所用。作者也将不断的更新这个项目使之更加友好、方便。</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" bgcolor="#FF9900" align="center">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+        <tr> 
+          <td class="textmain"> 
+            <p class="textback">2、ReDialog的特点<a name="2"></a></p>
+            <ul>
+              <li>友好的界面，在一般情况下，ReDialog能够更友好的与客户交户</li>
+              <li>良好的兼容性。回车键(ENTER)、跳出键(ESC)的处理均与标准的Windows操作保持一致。</li>
+              <li>纯JavaScript设计，最大程度的与服务器脚本无关。</li>
+              <li>易于配置，你只需要更改一个参数即可让ReDialog正确运行。</li>
+              <li>个性化设置自由。一般情况下，只需要简单的更改两三个参数就可以设置出符合你自己的Web应用程序的外观。</li>
+              <li>免费。任何个人、商业组织都可以不受限制的使用、分发、修改其中的源程序为自己所用。</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" bgcolor="#FF9900" align="center">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellpadding="1" bgcolor="#FFFFFF" cellspacing="0">
+        <tr> 
+          <td class="textmain"> 
+            <p class="textback">3、ReDialog的配置<a name="3"></a></p>
+            <ul>
+              <li>下载最新的ReDialog程序 <a href="http://www.jzchen.net/redialog/">http://www.jzchen.net/redialog/</a></li>
+              <li>下载的程序为redialog.zip压缩包，解压缩到你想解压缩的地方</li>
+              <li>假定你将解压缩后的redialog文件夹位于到&quot;web程序根目录/redialog&quot;</li>
+              <li>打开redialog/redialog.js， 将“rdHome”变量更改为redialog的实际路径。注意：在路径的最后必须有一个&quot;/&quot;， 
+                不然出错。</li>
+              <li>（可选）打开redialog/rd-config.js， 设置相关变量，使之适应自己的Web程序</li>
+              <li>在你想加入ReDialog的网页中的&lt;head&gt;&lt;/head&gt;之间加入script应用：<br>
+                &lt;script language=&quot;javascript&quot; src=&quot;/redialog/redialog.js&quot;&gt;&lt;/script&gt;<br>
+              </li>
+              <li>最后，按照下面介绍的API说明，尽情使用ReDialog吧！</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#FF9900">
+  <tr>
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+        <tr> 
+          <td class="textmain"> 
+            <p class="textback">4、ReDialog范例<a name="4"></a></p>
+            <p>以下范例均需要包含文件redialog.js</p>
+            <ul>
+              <li>范例1：<a href="javascript:demo1();">显示一个正常消息框</a> </li>
+              <li>范例2：<a href="javascript:demo2();">显示一个错误消息框</a> </li>
+              <li>范例3：<a href="javascript:demo3();">显示确认框</a> </li>
+              <li>范例4：<a href="javascript:demo4();">请求输入，并显示输入的内容。</a> </li>
+              <li>范例5：<a href="javascript:demo5();">综合示例 查看代码</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#FF9900">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+        <tr> 
+          <td class="textmain"> 
+            <p class="textback">5、ReDialog API说明<a name="5"></a></p>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#CCCCCC">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellspacing="1" cellpadding="1" class="text9t">
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205"><b>方法名</b></td>
+                      <td width="214"><b>参数</b></td>
+                      <td width="335"><b>返回值</b></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205">rdShowMessageDialog(<font color="#0033FF">message</font>)</td>
+                      <td width="214"><font color="#0000FF">message</font>:要显示的信息文字</td>
+                      <td width="335"><font color="#FF0000">rdConstOK(1)</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205">rdShowMessageDialog(<font color="#0000FF">message</font>, 
+                        <font color="#0000FF">mode</font>)</td>
+                      <td width="214"><font color="#0000FF">message</font>:要显示的信息文字<br>
+                        <font color="#0000FF">mode</font>:信息框样式，可以是<font color="#FF0000">rdModeInfo(1)</font>或者<font color="#FF0000">rdModeError(0)</font></td>
+                      <td width="335"><font color="#FF0000">rdConstOK(1)</font></td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205">rdShowConfirmDialog(<font color="#0000FF">message</font>)</td>
+                      <td width="214"><font color="#0000FF">message</font>:要显示的信息文字</td>
+                      <td width="335"><font color="#FF0000">rdConstOK(1)</font>或者<font color="#FF0000">rdConstCancel(0)</font>, 
+                        取决于用户的点击</td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205">rdShowConfirmDialog(<font color="#0000FF">message</font>， 
+                        <font color="#0000FF">mode</font>)</td>
+                      <td width="214"><font color="#0000FF">message</font>:要显示的信息文字<br>
+                        <font color="#0000FF">mode</font>:信息框样式，可以是<font color="#FF0000">rdModeInfo(1)</font>或者<font color="#FF0000">rdModeError(0)</font></td>
+                      <td width="335">rdConstOK(1)或者<font color="#FF0000">rdConstCancel(0)</font>, 
+                        取决于用户的点击</td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF"> 
+                      <td width="205">rdShowInputDialog(<font color="#0000FF">message</font>)</td>
+                      <td width="214"><font color="#0000FF">message</font>:要显示的信息文字</td>
+                      <td width="335">用户的输入。</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" cellspacing="0" cellpadding="1" align="center" bgcolor="#FF9900">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#FFFFFF">
+        <tr> 
+          <td class="textmain"> 
+            <p class="textback">6、已知的Bugs<a name="6"></a></p>
+            <p>&nbsp;</p>
+            </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

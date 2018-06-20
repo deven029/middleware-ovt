@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<plugin>
+	<id>OvtBossCoreBusinessImpl</id>
+	<name>Boss营业插件</name>
+	<ip>127.0.0.1</ip>
+	<port>9191</port>
+	<contextPath></contextPath>
+	<pluginType>0</pluginType>
+	<dependPlugins></dependPlugins>
+	<description>Boss营业插件</description>
+	<pluginClass>com.ovt.idtv.web.plugin.BusinessImpPlugin</pluginClass>
+	<pdmFileName>/com/ovt/idtv/web/plugin/ovt_boss_business.pdm</pdmFileName>
+	<priority>1</priority>
+	<versions>
+		<version>
+			<versionNo>1.0.3</versionNo>
+			<description>初始版本</description>
+			<publishDate>2011-04-03</publishDate>
+			<seqNo>1</seqNo>
+		</version>
+	</versions>
+	<hibernate>
+		<classes>
+			<class name="com.ovt.idtv.boss.web.db.BossDealLog"/>
+		</classes>
+	</hibernate>	
+	<rights> 
+		
+	</rights>
+	<func_tree></func_tree>
+</plugin>

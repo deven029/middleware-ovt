@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "../struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="billInfoForm" type="com.ovt.idtv.boss.web.finance.struts.BillForm" />
+		<form-bean name="reminderFormulaForm" type="com.ovt.idtv.boss.web.finance.struts.ReminderFormulaForm" />
+		<form-bean name="taskForm" type="com.ovt.idtv.boss.web.finance.struts.TaskForm" />
+		<form-bean name="bankWithholdForm" type="com.ovt.idtv.boss.web.finance.struts.BankWithholdForm" />
+		<form-bean name="bossVoucherForm" type="com.ovt.idtv.boss.web.finance.struts.BossVoucherForm" />
+		<form-bean name="verifyAccountInfoForm" type="com.ovt.idtv.boss.web.finance.verifyAccount.model.VerifyAccountInfoForm"/>
+		<form-bean name="bankChargeReceiptForm" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptChargeForm"/>
+		
+	</form-beans>
+	<global-forwards />
+	<action-mappings>
+		<!-- 用户账单管理 -->
+		<action name="billInfoForm" path="/jsp/boss/finance/bill" type="com.ovt.idtv.boss.web.finance.struts.BillManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="billD.select" path="/jsp/boss/finance/billD.do?methodToCall=openQuery"></forward>
+			<forward name="submitSuccess" path="/jsp/boss/finance/bill.do?methodToCall=openQuery"></forward>
+			<forward name="billD.show" path="/boss/finance/bill/billDShow.jsp"></forward>
+		</action>
+		<!-- 用户账单明细管理 -->
+		<action name="" path="/jsp/boss/finance/billD" type="com.ovt.idtv.boss.web.finance.struts.BillDManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="billD.return" path="/jsp/boss/finance/bill.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 一次性收费管理 -->
+		<action name="" path="/jsp/boss/finance/operFee" type="com.ovt.idtv.boss.web.finance.struts.OperFeeManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="operFeeD.select" path="/jsp/boss/finance/operFeeD.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 一次性收费明细管理 -->
+		<action name="" path="/jsp/boss/finance/operFeeD" type="com.ovt.idtv.boss.web.finance.struts.OperFeeDManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="operFeeD.return" path="/jsp/boss/finance/operFee.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 催缴单管理 -->
+		<action name="" path="/jsp/boss/finance/reminder" type="com.ovt.idtv.boss.web.finance.struts.ReminderManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="reminder.manuallyCreate" path="/jsp/boss/finance/reminderUser.do?methodToCall=openQuery"></forward>
+			<forward name="reminder.openQuery" path="/jsp/boss/finance/reminder.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 手工生成账单时显示用户信息 -->
+		<action name="" path="/jsp/boss/finance/reminderUser" type="com.ovt.idtv.boss.web.finance.struts.ReminderUserManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="reminderUser.back" path="/jsp/boss/finance/reminder.do?methodToCall=openQuery"></forward>
+			<forward name="reminder.manuallyCreateSuccess" path="/jsp/boss/finance/reminder.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 用户类型催缴规则管理 -->
+		<action name="reminderFormulaForm" path="/jsp/boss/finance/rfUserType" type="com.ovt.idtv.boss.web.finance.struts.RFUserTypeManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="reminder.define" path="/boss/finance/remind/reminderFormulaUserType.jsp"></forward>
+			<forward name="reminder.formula" path="/jsp/boss/finance/rfUserType.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 账务任务管理 -->
+		<action name="taskForm" path="/jsp/boss/finance/task" type="com.ovt.idtv.boss.web.finance.struts.TaskManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="task.openQuery" path="/jsp/boss/finance/task.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 账务任务日志管理 -->
+		<action name="taskForm" path="/jsp/boss/finance/taskLog" type="com.ovt.idtv.boss.web.finance.struts.TaskLogManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="taskLog.next" path="/boss/finance/task/taskLogAddSubmit.jsp"></forward>
+			<forward name="taskLog.openQuery" path="/jsp/boss/finance/taskLog.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 银行代扣管理 -->
+		<action name="bankWithholdForm" path="/jsp/boss/finance/withhold" type="com.ovt.idtv.boss.web.finance.struts.BankWithholdAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<!-- 银行代扣代缴管理 -->
+		<action name="" path="/jsp/boss/finance/bankReceipt" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<!-- 银行代扣代缴任务管理 -->
+		<action name="" path="/jsp/boss/finance/bankReceiptTask" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptTaskAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<!-- 银行代扣充值记录管理 -->
+		<action name="bankChargeReceiptForm" path="/jsp/boss/finance/bankReceiptCharge" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptChargeAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<action name="" path="/jsp/boss/finance/struts/PrintBillAction" type="com.ovt.idtv.boss.web.finance.struts.PrintBillAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<action name="" path="/jsp/boss/finance/bankReceiptDelegate" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptDelegateAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<!-- 银行代扣对账统计 -->
+		<action name="" path="/jsp/boss/finance/bankReceiptStat" type="com.ovt.idtv.boss.web.finance.struts.BankReceiptStatAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+		</action>
+		<!-- 银行对账管理 yzy 11-12-23 -->
+		<action name="" path="/jsp/boss/finance/bankChargeReconcile" type="com.ovt.idtv.boss.web.finance.struts.BankChargeReconcileAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="reconDetail" path="/jsp/boss/finance/bankChargeReconcileDetail.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 银行对账明细  yzy 11-12-23-->
+		<action name="" path="/jsp/boss/finance/bankChargeReconcileDetail" type="com.ovt.idtv.boss.web.finance.struts.BankChargeReconcileDetailAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="returnToMain" path="/jsp/boss/finance/bankChargeReconcile.do?methodToCall=openQuery"></forward>
+		</action>
+		<!-- 代金券管理  ysm 2013-01-30-->
+		<action name="bossVoucherForm" path="/jsp/boss/finance/bossVoucher" type="com.ovt.idtv.boss.web.finance.struts.BossVoucherAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="returnToMain" path="/jsp/boss/finance/bossVoucher.do?methodToCall=openQuery"></forward>
+			<forward name="bossVoucher.openQuery" path="/jsp/boss/finance/bossVoucher.do?methodToCall=openQuery"></forward>
+			<forward name="blankOut.check" path="/boss/finance/voucher/voucherCheck.jsp"></forward>
+			<forward name="batchAdd.Write" path="/boss/finance/voucher/batchAddWriteVoucher.jsp"></forward>
+			<forward name="batchUserOrderImpResult" path="/boss/finance/voucher/voucherBatchOrderImpResult.jsp" redirect="false"></forward>
+		</action>
+		<!-- 自动对账统计信息管理  yzy 2013-3-18 -->
+		<action name="verifyAccountInfoForm" path="/jsp/boss/finance/autoVerifyAccountManage/*" type="com.ovt.idtv.boss.web.finance.verifyAccount.struts.AutoVerifyAccountManageAction" 
+			unknown="false"
+			validate="false"
+			parameter="methodToCall">
+			<forward name="query" path="/jsp/boss/finance/autoVerifyAccountManage/autoVerifyAccountManage.do?methodToCall=openQuery"></forward>
+			<forward name="verifyAccount" path="/boss/finance/verifyAccount/verifyAccountInfo.jsp"></forward>
+			<forward name="adjustAccount" path="/boss/finance/verifyAccount/adjustAccountInfo.jsp"></forward>
+		</action>
+	</action-mappings>
+</struts-config>
